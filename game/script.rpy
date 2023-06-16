@@ -3,9 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define mc = Character("MC", image="")
-define g = Character("Guide", image="")
-define l = Character("Lobbyist", image="")
+define mc = Character("MC")
+define g = Character("Guide")
+define l = Character("Lobbyist")
 
 transform left_side:
     xalign 0.1
