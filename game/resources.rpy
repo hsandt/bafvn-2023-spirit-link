@@ -16,6 +16,9 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 ## Characters
 
 image mc neutral = "images/chars/Almond Pack/Mielle/HM_FD_0.png"
+image mc angry = "images/chars/Almond Pack/Mielle/HM_FD_1.png"
+
+
 
 
 # Audio
