@@ -11,6 +11,16 @@ define maka = Character("Maka")
 define fan = Character("Fan")
 
 
+# Story event flags
+
+default has_analyzed_assassin_cloth = False
+default has_analyzed_assassin_power = False
+default has_analyzed_assassin_spirit = False
+default has_analyzed_assassin_stone = False
+
+
+# Transforms
+
 transform character_left:
     xalign 0.1
 
