@@ -4,7 +4,7 @@ label a1s1:
 
     "Act 1: Scene 1 - Travelers' gathering"
 
-    scene bg university_fair
+    scene bg university_outside
 
     show charlet neutral at character_left
 
