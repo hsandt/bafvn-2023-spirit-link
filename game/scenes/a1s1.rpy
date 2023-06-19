@@ -4,7 +4,7 @@ label a1s1:
 
     "Act 1: Scene 1 - Travelers' gathering"
 
-    show mc neutral at left_side
+    show charlet neutral at left_side
 
     "Part A"
 
@@ -17,7 +17,12 @@ label a1s1:
 
     "Part B"
 
+    show pichit neutral at center
+
     "1. MC meets Pichit, a guide introduced by her University friend Bayani"
+
+    show raegan neutral at right_side
+
     "2. Pichit himself introduces Raegan, a stern but friendly business man who shares interest in MC's project"
     "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
 

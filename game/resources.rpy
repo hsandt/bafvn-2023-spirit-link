@@ -15,9 +15,10 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 
 ## Characters
 
-image mc neutral = "images/chars/Almond Pack/Mielle/HM_FD_0.png"
-image mc angry = "images/chars/Almond Pack/Mielle/HM_FD_1.png"
-
+image charlet neutral = Transform("images/chars/mc proto.png", zoom=0.5)
+image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.5)
+image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.5)
+image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.5)
 
 
 

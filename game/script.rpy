@@ -10,6 +10,9 @@ define l = Character("Lobbyist")
 transform left_side:
     xalign 0.1
 
+transform center:
+    xalign 0.5
+
 transform right_side:
     xalign 0.9
 
