@@ -6,12 +6,19 @@ label a1s1:
 
     show mc neutral at left_side
 
-    "1. In the middle of the meetup event, chill mood. Some people talk about recent events including the attack on a Black Market the previous day (that the police doesn't investigate so much about)."
-    "2. MC is looking for people to recruit for her cultural expedition and meets Guide. Guide is pretty enthusiastic about the project."
-    "3. Lobbyist joins the conversation, says he also loves the cultural aspects of the island and would love to sponsor the trip."
-    "4 Relarin version"
-    "5. komehara version"
-    "6. new message"
-    "7. Merged version 2"
+    "Part A"
+
+    "1. Describe hot weather"
+    "2. Describe objective of fair: each booth tries to gather sponsors"
+    "3. Engineering and alchemy using magi tech are much more popular than MC's own booth"
+    "4. Tell about ILF's marginals' attacks 2 days ago and black market"
+    "5. Switch to food and professor Mara"
+    "6. Goal: find a sponsor for project of island culture preservation"
+
+    "Part B"
+
+    "1. MC meets Pichit, a guide introduced by her University friend Bayani"
+    "2. Pichit himself introduces Raegan, a stern but friendly business man who shares interest in MC's project"
+    "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
 
     jump a1s2
