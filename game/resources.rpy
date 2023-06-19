@@ -19,6 +19,8 @@ image charlet neutral = Transform("images/chars/mc proto.png", zoom=0.5)
 image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.5)
 image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.5)
 image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.5)
+image maka neutral = Transform("images/chars/mc spirit draft 1.png", zoom=1.0)
+image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0)
 
 
 
