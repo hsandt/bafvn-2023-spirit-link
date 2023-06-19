@@ -1,17 +1,57 @@
 label a1s2:
     "Act 1: Scene 2 - Gathering Attack"
 
-    "1. A blast is heard coming from the entrance."
-    "2. Panic. People run everywhere, but our main cast stands still to observe the situation from a safe spot, e.g. crouching behind a table."
-    "3. Assassin enters the room and shows disgust as the luxury of the reception and island natives mixing up with continental people."
-    "4. MC understands the Assassin is from the ILF and attacked the Black Market the steal a gemstone the day before."
-    "5. Assassin calls for the Lobbyist to show up"
-    "6. Guide shows first instead to protect the party"
-    "7. Assassin sees he's an island native and criticizes him for standing with the continental industry. Guide self-justifies in a light way, prepared to fight."
-    "8. Fight: Guide vs Assassin with MC's assistance (controlled by player). Inserted dialogues:"
-    "   - hinting at attack reasons: natives using stones are traitors continent is exploiting island resources"
-    "   - Guide criticizes Assassin for using fire and hurting what their creature produces, also symbol of island traditional art"
-    "9. MC and Guide win. Intruder gets captured, explains a bit about world lore and reasons for attack:"
-    "continent is exploiting island resources, capturing creatures normally living in harmony and extracting stones."
+    scene bg smoke
+    show phrarat neutral at character_middle
+
+    "Assassin appears in the middle of smoke"
+
+    show phrarat neutral at character_right
+    show raegan neutral at character_left
+
+    "Assassin detaches some cloth, burn it and throw it at Lobbyist like an arrow"
+
+    show pichit neutral at character_middle
+
+    "Guide protects lobbyist, deviating arrow with a blade. Guide uses single long blade."
+
+    hide phrarat
+    show charlet neutral at character_left
+    show raegan neutral at character_middle
+    show pichit neutral at character_right
+
+    "Guide: go away and take refuge in building!"
+
+    hide charlet
+    hide raegan
+
+    "MC and Lobbyist enter building"
+
+    show pichit neutral at character_left
+    show phrarat neutral at character_right
+
+    phrarat "Don't get in my way!"
+
+    "Assassin unsheathes two short blades (fire whip is controlled from his neck?)"
+    "Guide and Assassin cross blades a few times. Assassin also uses fire whip, which Guide must dodge."
+
+    "At some point, Assassin dodges one slash and use cloth whip to catch Guide's arm"
+    "Assassin use fire to burn whip and Guide's arm at the same time. Assassin chains with a slash with the other arm."
+
+    pichit "Fan!"
+
+    scene battle_splash
+    show fan neutral at companion_middle
+
+    "Fan appears."
+
+    show pichit neutral at character_left
+    show fan neutral at companion_left
+
+    "Guide generates bark shield to protect himself, then cuts cloth whip from arm and throws it away."
+    "Notices how long it stays burning without disappearing"
+
+    pichit "Phew, thanks!"
+    fan "nice scarf!"
 
     jump a1s3

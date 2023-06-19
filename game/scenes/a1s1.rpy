@@ -4,7 +4,9 @@ label a1s1:
 
     "Act 1: Scene 1 - Travelers' gathering"
 
-    show charlet neutral at left_side
+    scene bg university_fair
+
+    show charlet neutral at character_left
 
     "Part A"
 
@@ -17,11 +19,11 @@ label a1s1:
 
     "Part B"
 
-    show pichit neutral at center
+    show pichit neutral at character_middle
 
     "1. MC meets Pichit, a guide introduced by her University friend Bayani"
 
-    show raegan neutral at right_side
+    show raegan neutral at character_right
 
     "2. Pichit himself introduces Raegan, a stern but friendly business man who shares interest in MC's project"
     "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"

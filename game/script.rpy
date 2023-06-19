@@ -3,18 +3,37 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define mc = Character("MC")
-define g = Character("Guide")
-define l = Character("Lobbyist")
+define charlet = Character("Charlet")
+define pichit = Character("Pichit")
+define raegan = Character("Raegan")
+define phrarat = Character("Phrarat")
+define maka = Character("Maka")
+define fan = Character("Fan")
 
-transform left_side:
+
+transform character_left:
     xalign 0.1
 
-transform center:
+transform character_middle:
     xalign 0.5
 
-transform right_side:
+transform character_right:
     xalign 0.9
+
+transform companion_left:
+    xalign 0.1
+    yalign 0.1
+
+transform companion_middle:
+    xalign 0.5
+    yalign 0.5
+
+transform companion_right:
+    xalign 0.9
+    yalign 0.1
+
+transform half_size:
+    xysize 0.5
 
 
 # The game starts here.
