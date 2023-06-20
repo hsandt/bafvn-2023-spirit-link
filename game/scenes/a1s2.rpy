@@ -92,13 +92,13 @@ label .analyze:
             has_analyzed_assassin_spirit and has_analyzed_assassin_stone):
         menu:
             "Analyze cloth" if not has_analyzed_assassin_cloth:
-                call .analyze_cloth
+                call .analyze_cloth from _call_a1s2_analyze_cloth
             "Analyze power" if not has_analyzed_assassin_power:
-                call .analyze_power
+                call .analyze_power from _call_a1s2_analyze_power
             "Analyze spirit" if has_analyzed_assassin_power and not has_analyzed_assassin_spirit:
-                call .analyze_spirit
+                call .analyze_spirit from _call_a1s2_analyze_spirit
             "Analyze stone" if has_analyzed_assassin_power and not has_analyzed_assassin_stone:
-                call .analyze_stone
+                call .analyze_stone from _call_a1s2_analyze_stone
 
     jump .after_analysis
 
