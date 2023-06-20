@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_exclude_patterns": ["*.rpyc"]
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Play",
+			"cmd":
+			[
+				"renpy.sh",
+				"${project_path}"
+			],
+			"variants": [
+				{
+					"name": "Warp: a1s1",
+					"cmd":
+					[
+						"renpy.sh",
+						"${project_path}",
+						"--warp",
+						"scenes/a1s1.rpy:5"
+					]
+				}
+			]
+		}
+	]
+}

@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "0.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -183,6 +183,16 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+
+    ## Sublime Text
+    build.classify('*.sublime-project', None)
+    build.classify('*.sublime-workspace', None)
+
+    # Ren'Py log files.
+    build.classify('log.txt', None)
+    build.classify('errors.txt', None)
+    build.classify('traceback.txt', None)
+    build.classify('lint.txt', None)
 
     ## To archive files, classify them as 'archive'.
 

@@ -3,31 +3,50 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define charlet = Character("Charlet")
+define pichit = Character("Pichit")
+define raegan = Character("Raegan")
+define phrarat = Character("Phrarat")
+define maka = Character("Maka")
+define fan = Character("Fan")
+
+
+# Story event flags
+
+default has_analyzed_assassin_cloth = False
+default has_analyzed_assassin_power = False
+default has_analyzed_assassin_spirit = False
+default has_analyzed_assassin_stone = False
+
+
+# Transforms
+
+transform character_left:
+    xalign 0.1
+
+transform character_middle:
+    xalign 0.5
+
+transform character_right:
+    xalign 0.9
+
+transform companion_left:
+    xalign 0.1
+    yalign 0.1
+
+transform companion_middle:
+    xalign 0.5
+    yalign 0.5
+
+transform companion_right:
+    xalign 0.9
+    yalign 0.1
+
+transform half_size:
+    xysize 0.5
 
 
 # The game starts here.
 
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
-
-    return
+    jump a1s1
