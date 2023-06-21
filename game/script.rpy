@@ -3,16 +3,21 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define charlet = Character("Charlet")
+define charlet = Character("Charlet", color="#7B68EE")
 define pichit = Character("Pichit")
 define raegan = Character("Raegan")
 define phrarat = Character("Phrarat")
-define maka = Character("Maka")
+define makara = Character("Makara", color="#6495ED")
 define fan = Character("Fan")
 
 
 # Story event flags
 
+# A1S1
+default has_looked_at_booth = False
+default has_looked_at_crowd = False
+
+# A1S2
 default has_analyzed_assassin_cloth = False
 default has_analyzed_assassin_power = False
 default has_analyzed_assassin_spirit = False
