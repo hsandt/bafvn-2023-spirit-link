@@ -1,8 +1,8 @@
 label a1s2:
     "Act 1: Scene 2 - Gathering Attack"
-    jump .battle_outside
+    jump .refuging_in_building
 
-label .battle_outside:
+label .refuging_in_building:
     scene bg smoke
     show phrarat neutral at character_middle
 
@@ -32,6 +32,10 @@ label .battle_outside:
 
     show pichit neutral at character_left
     show phrarat neutral at character_right
+
+    jump .fight1
+
+label .fight1:
 
     phrarat "Don't get in my way!"
 
