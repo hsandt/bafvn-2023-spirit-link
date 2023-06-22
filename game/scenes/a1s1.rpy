@@ -3,15 +3,19 @@ label a1s1:
     # Renpy needs to be told to stop Main Menu BGM (Title Theme)
     stop music fadeout 2.0
 
-    "Act 1: Scene 1 - Travelers' gathering"
+    # TO REVISE: find a better act name
+    "Act 1 - The summer fair" with dissolve
 
-    "How far would you go to achieve your dreams?"
-    "This was a question Professor Mara once posed to me as a green, first year."
-    # Writing suggestion: consider matching "how far" which "I'd do anything"
-    "At the time I said 'Anything'. Now standing under the scorching, summer sun I was reconsidering."
+    pause 2.0
 
-    scene bg university_outside
-    with fade
+    nvl_narrator "How far would you go to achieve your dreams?"
+    nvl_narrator "This was a question Professor Mara once posed to me as a green, first year."
+    nvl_narrator "At the time I said 'I'd do anything'. Now standing under the scorching, summer sun, I was reconsidering."
+
+    scene bg university_outside with fade
+
+    # uncomment when asset is ready
+    # play music chill
 
     show charlet neutral at character_left
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
@@ -21,7 +25,7 @@ label a1s1:
     hide charlet
 
     "Today was unmercifully hot. Humidity had made the air oppressive and the colorful umbrellas above me,
-    dyed in the traditional patterns of the Mawi tribe did little to protect from the heat."
+    dyed in the traditional patterns of the Mawi tribe, did little to protect from the heat."
     "I dabbed at the sweat on my brow, lamenting the loss of the expensive powder I had applied that morning."
 
     show charlet neutral at character_left
@@ -51,11 +55,11 @@ label .look_choice:
 label .look_at_crowd:
     #bg focus on crowd (new bg or zoom in?)
 
-    "A throng of curious passerby fill Panha-Kam's courtyard lured by the colorful booths lining the square."
+    "A throng of curious passerbys fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
     "Each department has brought their best each aiming to net themselves a rich, sponsor.
     Colorful signboards cry out the merits of their research."
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
-    from hunters’ and merchant guilds to investors mingle with students and curious onlookers."
+    from hunters’ and merchant guilds to investors, mingle with students and curious onlookers."
 
     $ has_looked_at_crowd = True
     return
@@ -104,6 +108,8 @@ label .after_look:
 
     # maybe add a highlight of some sort of dessert like a call out a box in the middle of the screen?
 
+    pause 1.0
+
     "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but had been too busy setting up the booth."
 
     show charlet neutral at character_left
@@ -122,7 +128,10 @@ label .after_look:
 
     hide makara neutral
 
-    "This event was my chance. I had to secure a sponsor. Otherwise my dreams of preserving the island's rich culture will dissipate like the mists that once shrouded Moacu-Laedan's some 250 years ago."
+    "This event was my chance. I had to secure a sponsor."
+    "Otherwise, my dreams of preserving the island's rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
+
+    # odd transition, may need transitional sentence
     "The booth, pamphlets with their colorful photographs showcasing the island’s rich history seemed to mock me.
     I had spent months researching the island and stayed up all night printing pamphlets."
     "But for what? To hand out six to a handful of students who took them out of pity?"
@@ -132,24 +141,25 @@ label .after_look:
     charlet "...maybe I should just grab lunch."
     "Just as I make to leave, a voice stops me."
 
-    show pichit happy at character_left
+    show pichit happy at character_right
 
     pichit "Oi! Charlet! Hey!"
 
     "It was Pichit wearing his signature, broad grin. He was a born and bred native of Mocau-Laedan, though he had moved to the continent for school."
+
+    # Bayani's role was removed, need to see if player still understands
     "Bayani had introduced him to me as a potential guide for my expedition two months ago."
 
     charlet "Hey Pichit. Who is the gentleman with you?"
+
+    show pichit happy at character_middle
+    show raegan neutral at character_right
 
     "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
     "Instead his collar and cuffs were clean and neat as though freshly laundered.
     Even his hair was impeccable. Meanwhile, my own hair felt matted and itchy."
 
-    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich,  founder of the Vanich Trading Company. He said he was interested in sponsoring the expedition!"
-
-    show pichit happy at character_middle
-
-    show raegan neutral at character_right
+    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company. He said he was interested in sponsoring the expedition!"
 
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains of behind the expedition."
 
@@ -166,3 +176,5 @@ label .after_look:
     #more scene tbd
 
     "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
+
+    jump a1s2
