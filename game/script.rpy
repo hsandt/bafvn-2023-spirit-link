@@ -1,5 +1,11 @@
 ﻿# The script of the game goes in this file.
 
+# Uncomment this when you have issues with Renpy reloading again and again after the shift manual reload (Shift+R)
+# even if there are no changes
+# See https://github.com/renpy/renpy/issues/4762
+# define config.autoreload = False
+
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
