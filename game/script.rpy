@@ -1,9 +1,19 @@
 ﻿# The script of the game goes in this file.
 
+
 # Uncomment this when you have issues with Renpy reloading again and again after the shift manual reload (Shift+R)
 # even if there are no changes
 # See https://github.com/renpy/renpy/issues/4762
 # define config.autoreload = False
+
+
+# Custom keymap
+
+init python:
+    # Add Ctrl+Q => Quit if not already set (a priori it is not set for any OS,
+    # although macOS uses Cmd+Q)
+    if 'quit' not in config.keymap or 'ctrl_K_q' not in config.keymap['quit']:
+        config.keymap['quit'].append('ctrl_K_q')
 
 
 # Declare characters used by this game. The color argument colorizes the
