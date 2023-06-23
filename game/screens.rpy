@@ -345,7 +345,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox.png", xalign=0.5, yalign=1.0) #Solid("#123456") #
 
 style namebox:
     xpos gui.name_xpos
@@ -450,20 +450,20 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    if quick_menu and not renpy.get_screen('choice'):
         
-        use gear(10, 1.4, 1388, 600, -1)
+        use gear(10, 1.4, 1388, 600, 0)
         
         frame:
             background None
             xpos 1480
             ypos 700
-            use gear(26, 0.4, 60, 20, 1)
-            use gear(26, 0.4, 180, 20, 1)
-            use gear(26, 0.4, 0, 120, 1)
-            use gear(26, 0.4, 240, 120, 1)
-            use gear(26, 0.4, 60, 220, 1)
-            use gear(26, 0.4, 180, 220, 1)
+            use gear(26, 0.4, 60, 20, 0)
+            use gear(26, 0.4, 180, 20, 0)
+            use gear(26, 0.4, 0, 120, 0)
+            use gear(26, 0.4, 240, 120, 0)
+            use gear(26, 0.4, 60, 220, 0)
+            use gear(26, 0.4, 180, 220, 0)
         
         frame:
             background None
