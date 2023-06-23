@@ -47,7 +47,7 @@ label .fight1:
 
     pichit "Fan!"
 
-    scene battle_splash
+    scene bg battle_splash
     show fan neutral at companion_middle
 
     "Fan appears."
@@ -65,7 +65,7 @@ label .fight1:
     phrarat "so you have a spirit and you waste your power to protect continentals? Don't you see what they are doing?!"
     pichit "and you, aren't you afraid of burning an important Moacu symbol in your rage?"
 
-    scene assassin_cloth
+    scene bg assassin_cloth
     show phrarat neutral at character_middle
 
     # Reduce amount of science here, but just enough for a JoJo/ARMS-like experience
@@ -82,7 +82,7 @@ label .fight1:
     "The shield is too dry and burns too fast, so Guide must cancel it to avoid burning his arm."
     "Assassin uses this opportunity for a strong hit powered by fire like a rocket. Guide blocks it but gets projected onto grass."
 
-    scene university_building
+    scene bg university_inside
     show charlet neutral at character_middle
 
     "Meanwhile, MC uses her vision skills to analyze Assassin from inside the building"

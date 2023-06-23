@@ -47,10 +47,10 @@ label .look_choice:
     while not (has_looked_at_crowd and has_looked_at_booth):
         menu:
             "Look at the crowd." if not has_looked_at_crowd:
-                call .look_at_crowd
+                call .look_at_crowd from _call_a1s1_look_at_crowd
 
             "Observe the booths." if not has_looked_at_booth:
-                call .look_at_booth
+                call .look_at_booth from _call_a1s1_look_at_booth
 
     jump .after_look
 
@@ -148,7 +148,9 @@ label .after_look:
     charlet "...maybe I should just grab lunch."
     "Just as I make to leave, a voice stops me."
 
-    show pichit happy at character_right
+    show pichit neutral at character_right
+    # When asset is ready, replace with:
+    # show pichit happy at character_right
 
     pichit "Oi! Charlet! Hey!"
 
@@ -158,8 +160,12 @@ label .after_look:
 
     "He is also accompanied by a spirit."
 
-    show makara neutral at companion_left
-    show fan neutral at companion_right
+    # Move characters to far sides to leave space for spirits
+    show charlet at character_far_left
+    show pichit at character_far_right
+
+    show makara neutral at companion_middle_left, flip
+    show fan neutral at companion_middle_right
 
     makara "We meet again, my fellow. How do you feel today?"
 
@@ -174,7 +180,9 @@ label .after_look:
 
     charlet "Hey Pichit. Who is the gentleman with you?"
 
-    show pichit happy at character_middle
+    # When asset is ready, replace with:
+    show pichit neutral at character_middle
+    # show pichit happy at character_right
     show raegan neutral at character_right
 
     "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
@@ -197,6 +205,13 @@ label .after_look:
 
     #more scene tbd
 
-    "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
+    # End of playtesting
 
-    jump a1s2
+    pause 1.0
+
+    "This is the end of the playtesting section. Thank you for playing!"
+
+    # Commented out for playtesting
+    # "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
+
+    # jump a1s2
