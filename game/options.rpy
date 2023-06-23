@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.1"
+define config.version = "0.2"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -106,7 +106,7 @@ define config.end_game_transition = None
 ## After the game has started, this can be changed with the "window show",
 ## "window hide", and "window auto" statements.
 
-define config.window = "auto"
+define config.window = "hide"
 
 
 ## Transitions used to show and hide the dialogue window

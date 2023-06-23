@@ -7,7 +7,25 @@ image underlay white_half_alpha = Solid("#ffffff80")
 
 ## Backgrounds (1080p)
 
-# image bg shop = "images/bg/shop.jpg"
+image bg university_outside = Solid("#af9750")
+# Replace with asset when ready
+# image bg university_outside = "images/bg/university_outside.jpg"
+
+image bg university_inside = Solid("#6d5e32")
+# Replace with asset when ready
+# image bg university_inside = "images/bg/university_inside.jpg"
+
+image bg smoke = Solid("#9f9f9f")
+# Replace with asset when ready
+# image bg smoke = "images/bg/smoke.jpg"
+
+image bg battle_splash = Solid("#a848b7")
+# Replace with asset when ready
+# image bg battle_splash = "images/bg/battle_splash.jpg"
+
+image bg assassin_cloth = Solid("#bf4040")
+# Replace with asset when ready
+# image bg assassin_cloth = "images/bg/assassin_cloth.jpg"
 
 # Useful if force showing standard overlays at some point (e.g. during credits)
 image bg main_menu_overlay = "gui/overlay/main_menu.jpg"
@@ -19,9 +37,9 @@ image charlet neutral = Transform("images/chars/mc proto.png", zoom=0.5)
 image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.5)
 image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.5)
 image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.5)
-image maka neutral = Transform("images/chars/mc spirit draft 1.png", zoom=1.0)
+image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.7)
 image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0)
-image pen neutral = Transform("images/chars/Mr Fuffington (CC0 from doublefree.itch.io_mr-fuffington)/fuff_hate.png", zoom=1.0)
+image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=1.0)
 
 
 # Audio

@@ -25,7 +25,7 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#cc0000'
+define gui.accent_color = '#e0bd86'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
@@ -107,7 +107,7 @@ define gui.textbox_yalign = 1.0
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
 define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_ypos = -10
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -131,14 +131,15 @@ define gui.namebox_tile = False
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
 define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_ypos = 130
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1116
+define gui.dialogue_width = 1016
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.dialogue_text_xalign = 0.0
+define gui.dialogue_text_yalign = 0.5
 
 
 ## Buttons #####################################################################
@@ -180,9 +181,9 @@ define gui.button_text_xalign = 0.0
 ##
 ## These customizations are used by the default interface:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(35, -5, 6, 6)
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(35, -5, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -190,7 +191,8 @@ define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
 define gui.quick_button_text_size = 21
-define gui.quick_button_text_idle_color = gui.idle_small_color
+define gui.quick_button_text_idle_color = '#000000'
+define gui.quick_button_text_insensitive_color = '#404040a0'
 define gui.quick_button_text_selected_color = gui.accent_color
 
 ## You can also add your own customizations, by adding properly-named variables.
@@ -205,9 +207,9 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## Choice buttons are used in the in-game menus.
 
 define gui.choice_button_width = 1185
-define gui.choice_button_height = None
+define gui.choice_button_height = 88
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 8, 150, 8)
+define gui.choice_button_borders = Borders(150, 28, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
@@ -341,7 +343,7 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 210
+define gui.history_height = 150
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
@@ -362,7 +364,7 @@ define gui.history_text_xalign = 0.0
 ## The NVL-mode screen displays the dialogue spoken by NVL-mode characters.
 
 ## The borders of the background of the NVL-mode background window.
-define gui.nvl_borders = Borders(0, 15, 0, 30)
+define gui.nvl_borders = Borders(0, 115, 0, 30)
 
 ## The maximum number of NVL-mode entries Ren'Py will display. When more entries
 ## than this are to be show, the oldest entry will be removed.
@@ -370,11 +372,11 @@ define gui.nvl_list_length = 6
 
 ## The height of an NVL-mode entry. Set this to None to have the entries
 ## dynamically adjust height.
-define gui.nvl_height = 173
+define gui.nvl_height = None
 
 ## The spacing between NVL-mode entries when gui.nvl_height is None, and between
 ## NVL-mode entries and an NVL-mode menu.
-define gui.nvl_spacing = 15
+define gui.nvl_spacing = 40
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.

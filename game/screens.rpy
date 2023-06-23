@@ -4,6 +4,215 @@
 
 init offset = -1
 
+transform circle_rotate_0(_xpos=0, _ypos=0):
+    xpos _xpos
+    ypos _ypos
+    rotate 0
+
+transform circle_rotate(_xpos=0, _ypos=0):
+    xpos _xpos
+    ypos _ypos
+    parallel:
+      linear 5.0 alpha 1.0
+      repeat
+    parallel:
+      rotate 0
+      linear 0.1 rotate 10
+      linear 1.0 rotate 10
+      linear 0.1 rotate 20
+      linear 1.0 rotate 20
+      linear 0.1 rotate 30
+      linear 1.0 rotate 30
+      linear 0.1 rotate 40
+      linear 1.0 rotate 40
+      linear 0.1 rotate 50
+      linear 1.0 rotate 50
+      linear 0.1 rotate 60
+      linear 1.0 rotate 60
+      linear 0.1 rotate 70
+      linear 1.0 rotate 70
+      linear 0.1 rotate 80
+      linear 1.0 rotate 80
+      linear 0.1 rotate 90
+      linear 1.0 rotate 90
+      linear 0.1 rotate 100
+      linear 1.0 rotate 100
+
+      linear 0.1 rotate 110
+      linear 1.0 rotate 110
+      linear 0.1 rotate 120
+      linear 1.0 rotate 120
+      linear 0.1 rotate 130
+      linear 1.0 rotate 130
+      linear 0.1 rotate 140
+      linear 1.0 rotate 140
+      linear 0.1 rotate 150
+      linear 1.0 rotate 150
+      linear 0.1 rotate 160
+      linear 1.0 rotate 160
+      linear 0.1 rotate 170
+      linear 1.0 rotate 170
+      linear 0.1 rotate 180
+      linear 1.0 rotate 180
+      linear 0.1 rotate 190
+      linear 1.0 rotate 190
+      linear 0.1 rotate 200
+      linear 1.0 rotate 200
+
+      linear 0.1 rotate 210
+      linear 1.0 rotate 210
+      linear 0.1 rotate 220
+      linear 1.0 rotate 220
+      linear 0.1 rotate 230
+      linear 1.0 rotate 230
+      linear 0.1 rotate 240
+      linear 1.0 rotate 240
+      linear 0.1 rotate 250
+      linear 1.0 rotate 250
+      linear 0.1 rotate 260
+      linear 1.0 rotate 260
+      linear 0.1 rotate 270
+      linear 1.0 rotate 270
+      linear 0.1 rotate 280
+      linear 1.0 rotate 280
+      linear 0.1 rotate 290
+      linear 1.0 rotate 290
+      linear 0.1 rotate 300
+      linear 1.0 rotate 300
+
+      linear 0.1 rotate 310
+      linear 1.0 rotate 310
+      linear 0.1 rotate 320
+      linear 1.0 rotate 320
+      linear 0.1 rotate 330
+      linear 1.0 rotate 330
+      linear 0.1 rotate 340
+      linear 1.0 rotate 340
+      linear 0.1 rotate 350
+      linear 1.0 rotate 350
+      linear 0.1 rotate 360
+      linear 1.0 rotate 360
+      repeat
+
+transform circle_rotate_r(_xpos=0, _ypos=0):
+    xpos _xpos
+    ypos _ypos
+    parallel:
+      linear 5.0 alpha 1.0
+      repeat
+    parallel:
+      rotate 0
+      linear 0.1 rotate -10
+      linear 1.0 rotate -10
+      linear 0.1 rotate -20
+      linear 1.0 rotate -20
+      linear 0.1 rotate -30
+      linear 1.0 rotate -30
+      linear 0.1 rotate -40
+      linear 1.0 rotate -40
+      linear 0.1 rotate -50
+      linear 1.0 rotate -50
+      linear 0.1 rotate -60
+      linear 1.0 rotate -60
+      linear 0.1 rotate -70
+      linear 1.0 rotate -70
+      linear 0.1 rotate -80
+      linear 1.0 rotate -80
+      linear 0.1 rotate -90
+      linear 1.0 rotate -90
+      linear 0.1 rotate -100
+      linear 1.0 rotate -100
+
+      linear 0.1 rotate -110
+      linear 1.0 rotate -110
+      linear 0.1 rotate -120
+      linear 1.0 rotate -120
+      linear 0.1 rotate -130
+      linear 1.0 rotate -130
+      linear 0.1 rotate -140
+      linear 1.0 rotate -140
+      linear 0.1 rotate -150
+      linear 1.0 rotate -150
+      linear 0.1 rotate -160
+      linear 1.0 rotate -160
+      linear 0.1 rotate -170
+      linear 1.0 rotate -170
+      linear 0.1 rotate -180
+      linear 1.0 rotate -180
+      linear 0.1 rotate -190
+      linear 1.0 rotate -190
+      linear 0.1 rotate -200
+      linear 1.0 rotate -200
+
+      linear 0.1 rotate -210
+      linear 1.0 rotate -210
+      linear 0.1 rotate -220
+      linear 1.0 rotate -220
+      linear 0.1 rotate -230
+      linear 1.0 rotate -230
+      linear 0.1 rotate -240
+      linear 1.0 rotate -240
+      linear 0.1 rotate -250
+      linear 1.0 rotate -250
+      linear 0.1 rotate -260
+      linear 1.0 rotate -260
+      linear 0.1 rotate -270
+      linear 1.0 rotate -270
+      linear 0.1 rotate -280
+      linear 1.0 rotate -280
+      linear 0.1 rotate -290
+      linear 1.0 rotate -290
+      linear 0.1 rotate -300
+      linear 1.0 rotate -300
+
+      linear 0.1 rotate -310
+      linear 1.0 rotate -310
+      linear 0.1 rotate -320
+      linear 1.0 rotate -320
+      linear 0.1 rotate -330
+      linear 1.0 rotate -330
+      linear 0.1 rotate -340
+      linear 1.0 rotate -340
+      linear 0.1 rotate -350
+      linear 1.0 rotate -350
+      linear 0.1 rotate -360
+      linear 1.0 rotate -360
+      repeat
+
+screen gear(_style=8, _scale=1.0, _xpos=0, _ypos=0, _direction=1):
+        $gearlist = [8,10,11,14, 26, 19, 13]
+        if not _style in gearlist:
+          $_style = 8
+        $offset = int(5*_scale)
+        if _direction == 0:
+            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate_0(_xpos+offset, _ypos+offset)
+            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate_0(_xpos, _ypos)
+        elif _direction > 0:
+            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate(_xpos+offset, _ypos+offset)
+            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate(_xpos, _ypos)
+        else:
+            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate_r(_xpos+offset, _ypos+offset)
+            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate_r(_xpos, _ypos)
+
+screen gear_8(_scale=1.0, _xpos=0, _ypos=0):
+        $offset = int(5*_scale)
+        add im.FactorScale("gui/gears/gear_big_b_8.png", _scale) at circle_rotate(_xpos+offset, _ypos+offset)
+        add im.FactorScale("gui/gears/gear_big_w_8.png", _scale) at circle_rotate(_xpos, _ypos)
+
+screen gear_10(_scale=1.0, _xpos=0, _ypos=0):
+        $offset = int(5*_scale)
+        add im.FactorScale("gui/gears/gear_big_b_10.png", _scale) at circle_rotate(_xpos+offset, _ypos+offset)
+        add im.FactorScale("gui/gears/gear_big_w_10.png", _scale) at circle_rotate(_xpos, _ypos)
+
+screen gear_11(_scale=1.0, _xpos=0, _ypos=0):
+        $offset = int(5*_scale)
+        add im.FactorScale("gui/gears/gear_big_b_11.png", _scale) at circle_rotate(_xpos+offset, _ypos+offset)
+        add im.FactorScale("gui/gears/gear_big_w_11.png", _scale) at circle_rotate(_xpos, _ypos)
+
+screen gear_14(_scale=1.0, _xpos=0, _ypos=0):
+        $offset = int(5*_scale)
+        add im.FactorScale("gui/gears/gear_big_b_14.png", _scale) at circle_rotate(_xpos+offset, _ypos+offset)
+        add im.FactorScale("gui/gears/gear_big_w_14.png", _scale) at circle_rotate(_xpos, _ypos)
 
 ################################################################################
 ## Styles
@@ -136,7 +345,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox.png", xalign=0.5, yalign=1.0) #Solid("#123456") #
 
 style namebox:
     xpos gui.name_xpos
@@ -241,22 +450,38 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    if quick_menu and not renpy.get_screen('choice'):
 
-        hbox:
+        use gear(10, 1.4, 1388, 600, 0)
+
+        frame:
+            background None
+            xpos 1480
+            ypos 700
+            use gear(26, 0.4, 60, 20, 0)
+            use gear(26, 0.4, 180, 20, 0)
+            use gear(26, 0.4, 0, 120, 0)
+            use gear(26, 0.4, 240, 120, 0)
+            use gear(26, 0.4, 60, 220, 0)
+            use gear(26, 0.4, 180, 220, 0)
+
+        frame:
+            background None
+            xpos 1525
+            ypos 770
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+            #xalign 0.5
+            #yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Back") xpos 60 ypos 20 action Rollback()
+            textbutton _("Log")xpos 180 ypos 20 action ShowMenu('history')
+            textbutton _("Skip") xpos 0 ypos 120 action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Auto") xpos 240 ypos 120 action Preference("auto-forward", "toggle")
+            textbutton _("Save") xpos 60 ypos 220 action ShowMenu('save')
+            #textbutton _("Q.Save") action QuickSave()
+            #textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Prefs") xpos 180 ypos 220 action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -297,7 +522,9 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start"):
+              action Start()
+              default_focus 1
 
         else:
 
@@ -413,6 +640,18 @@ style main_menu_version:
 ## This screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
+screen menu_gears():
+
+        use gear(8, 0.3, 230, 500)
+        use gear(8, 0.3, 350, 580, -1)
+
+        use gear(11, 0.6, 200, 500, -1)
+        use gear(10, 0.6, 80, 450 )
+        use gear(10, 0.6, 300, 600)
+
+        use gear(26, 1.0, 50, 500, -1)
+        add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset 15
+
 screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
@@ -473,8 +712,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         style "return_button"
 
         action Return()
-
-    label title
+    add "gui/overlay/options_menu_titlebox.png"
+    label title xalign 0.5 yoffset 30
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -725,9 +964,9 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
-
+    use game_menu(_("Options"), scroll="viewport"):
         vbox:
+            yoffset 100
 
             hbox:
                 box_wrap True
@@ -801,6 +1040,12 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
+    #add "gui/overlay/options_menu_powerlines.png"
+    frame:
+        background None
+        yoffset 200
+        xoffset -25
+        use menu_gears()
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -843,7 +1088,7 @@ style radio_vbox:
 
 style radio_button:
     properties gui.button_properties("radio_button")
-    foreground "gui/button/radio_[prefix_]foreground.png"
+    foreground "gui/button/button_[prefix_]foreground.png"
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -853,13 +1098,17 @@ style check_vbox:
 
 style check_button:
     properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
+    foreground "gui/button/button_[prefix_]foreground.png"
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
 
 style slider_slider:
-    xsize 525
+    xsize 336
+    ysize 25
+    left_bar "gui/slider/slider_full.png"
+    right_bar "gui/slider/slider_empty.png"
+    thumb None
 
 style slider_button:
     properties gui.button_properties("slider_button")
