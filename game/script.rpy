@@ -15,6 +15,10 @@ init python:
     if 'quit' not in config.keymap or 'ctrl_K_q' not in config.keymap['quit']:
         config.keymap['quit'].append('ctrl_K_q')
 
+    # Add Space => Confirm selected button (instead of just Enter, etc.) for convenience
+    if 'button_select' not in config.keymap or 'K_SPACE' not in config.keymap['button_select']:
+        config.keymap['button_select'].append('K_SPACE')
+
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
