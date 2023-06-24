@@ -173,7 +173,7 @@ label .after_look:
 
     makara "... I will take this as your greetings."
 
-    "I'm glad that only both of us can see and hear our spirits. Especially as I see man I don't know in the back."
+    "I'm glad that only both of us can see and hear our spirits. Especially as I see a man I don't know in the back."
 
     hide makara
     hide fan
@@ -189,7 +189,8 @@ label .after_look:
     "Instead his collar and cuffs were clean and neat as though freshly laundered.
     Even his hair was impeccable. Meanwhile, my own hair felt matted and itchy."
 
-    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company. He said he was interested in sponsoring the expedition!"
+    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company."
+    "He said he was interested in sponsoring the expedition!"
 
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains of behind the expedition."
 
