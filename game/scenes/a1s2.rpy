@@ -181,7 +181,7 @@ label .fight1:
 
     "I try to analyze the opponent."
 
-    call .analyze_one_element
+    call .analyze_one_element from _call_a1s2_analyze_one_element
 
     scene bg university_inside
     show pichit neutral at character_left
@@ -209,7 +209,7 @@ label .fight1:
 
     "I try to analyze the opponent once more."
 
-    call .analyze_one_element
+    call .analyze_one_element from _call_a1s2_analyze_one_element_1
 
     scene bg university_inside
     show charlet neutral at character_left
@@ -321,9 +321,9 @@ label .fight2:
 label .analyze_one_element:
     menu:
         "Analyze weapon" if not has_analyzed_assassin_weapon:
-            call .analyze_weapon
+            call .analyze_weapon from _call_a1s2_analyze_weapon
         "Analyze stone" if not has_analyzed_assassin_stone:
-            call .analyze_stone
+            call .analyze_stone from _call_a1s2_analyze_stone
 
     return
 
