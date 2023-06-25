@@ -153,6 +153,12 @@ define config.save_directory = "bafvn_2023_spirit_link-1686163119"
 define config.window_icon = "gui/window_icon.png"
 
 
+## More custom options
+
+## Show last statement while displaying menu choices
+define config.choice_empty_window = extend
+
+
 ## Build configuration #########################################################
 ##
 ## This section controls how Ren'Py turns your project into distribution files.
