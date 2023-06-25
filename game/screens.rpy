@@ -4,12 +4,14 @@
 
 init offset = -1
 
-transform circle_rotate_0(_xpos=0, _ypos=0):
+transform circle_rotate_0(_xpos=0, _ypos=0, _depth=0):
+    matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
     ypos _ypos
     rotate 0
 
-transform circle_rotate(_xpos=0, _ypos=0):
+transform circle_rotate(_xpos=0, _ypos=0, _depth=0):
+    matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
     ypos _ypos
     parallel:
@@ -94,7 +96,8 @@ transform circle_rotate(_xpos=0, _ypos=0):
       linear 1.0 rotate 360
       repeat
 
-transform circle_rotate_r(_xpos=0, _ypos=0):
+transform circle_rotate_r(_xpos=0, _ypos=0, _depth=0):
+    matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
     ypos _ypos
     parallel:
@@ -179,20 +182,20 @@ transform circle_rotate_r(_xpos=0, _ypos=0):
       linear 1.0 rotate -360
       repeat
 
-screen gear(_style=8, _scale=1.0, _xpos=0, _ypos=0, _direction=1):
+screen gear(_style=8, _scale=1.0, _xpos=0, _ypos=0, _direction=1, _depth=0):
         $gearlist = [8,10,11,14, 26, 19, 13]
         if not _style in gearlist:
           $_style = 8
         $offset = int(5*_scale)
         if _direction == 0:
-            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate_0(_xpos+offset, _ypos+offset)
-            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate_0(_xpos, _ypos)
+            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate_0(_xpos+offset, _ypos+offset, _depth)
+            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate_0(_xpos, _ypos, _depth)
         elif _direction > 0:
-            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate(_xpos+offset, _ypos+offset)
-            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate(_xpos, _ypos)
+            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate(_xpos+offset, _ypos+offset, _depth)
+            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate(_xpos, _ypos, _depth)
         else:
-            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate_r(_xpos+offset, _ypos+offset)
-            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate_r(_xpos, _ypos)
+            add im.FactorScale("gui/gears/gear_big_b_"+str(_style)+".png", _scale) at circle_rotate_r(_xpos+offset, _ypos+offset, _depth)
+            add im.FactorScale("gui/gears/gear_big_w_"+str(_style)+".png", _scale) at circle_rotate_r(_xpos, _ypos, _depth)
 
 screen gear_8(_scale=1.0, _xpos=0, _ypos=0):
         $offset = int(5*_scale)
@@ -445,6 +448,31 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
+screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction()):
+
+    
+    $offset = int(5*_size)      
+    add im.FactorScale("gui/gears/gear_big_b_26.png", _size) at circle_rotate(_xpos+offset, _ypos+offset)
+    
+    button: 
+      at circle_rotate(_xpos, _ypos)
+      background im.FactorScale("gui/gears/gear_big_w_26.png", _size)
+      hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size) 
+      selected_idle_background im.FactorScale("gui/gears/gear_big_y_26.png", _size) 
+      xpos _xpos 
+      ypos _ypos 
+      action _action
+      xsize int(310 * _size)
+      ysize int(310 * _size)
+      has vbox: 
+        yalign 0.5
+        xalign 0.5
+        text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
+        
+    #imagebutton idle im.FactorScale("gui/gears/gear_big_w_26.png", _size) hover im.FactorScale("gui/gears/gear_big_y_26.png", _size)  xpos _xpos  ypos _ypos  action _action
+    
+    
+
 screen quick_menu():
 
     ## Ensure this appears on top of other screens.
@@ -452,36 +480,50 @@ screen quick_menu():
 
     if quick_menu and not renpy.get_screen('choice'):
 
-        use gear(10, 1.4, 1388, 600, 0)
+        use gear(10, 1.4, 1388, 600, 0, 3)
+
+        #frame:
+        #    background None
+        #    xpos 1480
+        #    ypos 700
+        #    use gear(26, 0.4, 60, 20, 0)
+        #    use gear(26, 0.4, 180, 20, 0)
+        #    use gear(26, 0.4, 0, 120, 0)
+        #    use gear(26, 0.4, 240, 120, 0)
+        #    use gear(26, 0.4, 60, 220, 0)
+        #    use gear(26, 0.4, 180, 220, 0)
 
         frame:
             background None
             xpos 1480
             ypos 700
-            use gear(26, 0.4, 60, 20, 0)
-            use gear(26, 0.4, 180, 20, 0)
-            use gear(26, 0.4, 0, 120, 0)
-            use gear(26, 0.4, 240, 120, 0)
-            use gear(26, 0.4, 60, 220, 0)
-            use gear(26, 0.4, 180, 220, 0)
-
-        frame:
-            background None
-            xpos 1525
-            ypos 770
             style_prefix "quick"
 
             #xalign 0.5
             #yalign 1.0
-
-            textbutton _("Back") xpos 60 ypos 20 action Rollback()
-            textbutton _("Log")xpos 180 ypos 20 action ShowMenu('history')
-            textbutton _("Skip") xpos 0 ypos 120 action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") xpos 240 ypos 120 action Preference("auto-forward", "toggle")
-            textbutton _("Save") xpos 60 ypos 220 action ShowMenu('save')
+            
+            #button :
+            #  background im.FactorScale("gui/gears/gear_big_w_26.png", 0.4) 
+            #  hover_background im.FactorScale("gui/gears/gear_big_y_26.png", 0.4) 
+            #  xpos 60 ypos 20 
+            #  action Rollback()
+            #  xsize int(310*.4)
+            #  ysize int(310*.4)
+            #  has vbox: 
+            #    yalign 0.5
+            #    xalign 0.5
+            #    text _("Back") hover_color "#000000"
+            #use gear_button("Log", 0.4, 180, 20, ShowMenu('history'))
+            
+            
+            use gear_button("Back", 0.4, 60 , 20 ,  Rollback())
+            use gear_button("Log", 0.4, 180 , 20 ,  ShowMenu('history'))
+            use gear_button("Skip", 0.4, 0 , 120 ,  Skip()) # alternate Skip(fast=True, confirm=True))
+            use gear_button("Auto", 0.4, 240 , 120 ,  Preference("auto-forward", "toggle"))
+            use gear_button("Save", 0.4, 60 , 220 ,  ShowMenu('save'))
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") xpos 180 ypos 220 action ShowMenu('preferences')
+            use gear_button("Prefs", 0.4, 180 , 220 ,  ShowMenu('preferences'))
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -512,50 +554,79 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    $new_yoffset = 25      
+    $new_xoffset = 110 
+    $new_xpos = 500 
+    frame:
+        background None
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        ypos gui.navigation_ypos
+        xalign 0.6
 
-        spacing gui.navigation_spacing
+        #spacing gui.navigation_spacing
 
+
+        use gear_button("Return", 0.4, new_xpos , new_yoffset , Return())
+        $new_yoffset = new_yoffset * -1 
+        $new_xpos = new_xpos + new_xoffset
         if main_menu:
 
-            textbutton _("Start"):
-              action Start()
-              default_focus 1
+            use gear_button("Start", 0.4, new_xpos , new_yoffset , Start())
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
+            #textbutton _("Start"):
+            #  action Start()
+            #  default_focus 1
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            use gear_button("History", 0.4, new_xpos , new_yoffset ,  ShowMenu("history"))
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
 
-            textbutton _("Save") action ShowMenu("save")
+            use gear_button("Save", 0.4, new_xpos , new_yoffset ,  ShowMenu("save"))
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
 
-        textbutton _("Load") action ShowMenu("load")
+        use gear_button("Load", 0.4, new_xpos , new_yoffset ,  ShowMenu("load"))
+        $new_yoffset = new_yoffset * -1 
+        $new_xpos = new_xpos + new_xoffset
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        use gear_button("Config", 0.4, new_xpos , new_yoffset ,  ShowMenu("preferences"))
+        $new_yoffset = new_yoffset * -1 
+        $new_xpos = new_xpos + new_xoffset
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            use gear_button("End Replay", 0.4, new_xpos , new_yoffset ,  EndReplay(confirm=True))
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            use gear_button("Main Menu", 0.4, new_xpos , new_yoffset ,  MainMenu())
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
 
-        textbutton _("About") action ShowMenu("about")
+        use gear_button("About", 0.4, new_xpos , new_yoffset ,  ShowMenu("about"))
+        $new_yoffset = new_yoffset * -1 
+        $new_xpos = new_xpos + new_xoffset
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            use gear_button("Help", 0.4, new_xpos , new_yoffset ,  ShowMenu("help"))
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            use gear_button("Quit", 0.4, new_xpos , new_yoffset ,  Quit(confirm=not main_menu))
+            $new_yoffset = new_yoffset * -1 
+            $new_xpos = new_xpos + new_xoffset
 
 
 style navigation_button is gui_button
@@ -589,7 +660,7 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
-
+    
     if gui.show_name:
 
         vbox:
@@ -618,7 +689,7 @@ style main_menu_vbox:
     xalign 1.0
     xoffset -30
     xmaximum 1200
-    yalign 1.0
+    yalign 0.5
     yoffset -30
 
 style main_menu_text:
@@ -642,15 +713,27 @@ style main_menu_version:
 
 screen menu_gears():
 
-        use gear(8, 0.3, 230, 500)
-        use gear(8, 0.3, 350, 580, -1)
+        use gear(8, 0.3, 230, 500,1,9)
+        use gear(8, 0.3, 350, 580, -1,9)
 
-        use gear(11, 0.6, 200, 500, -1)
-        use gear(10, 0.6, 80, 450 )
-        use gear(10, 0.6, 300, 600)
+        use gear(11, 0.6, 200, 500, -1,7)
+        use gear(10, 0.6, 80, 450 ,1, 5)
+        use gear(10, 0.6, 300, 600,1, 5)
 
         use gear(26, 1.0, 50, 500, -1)
         add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset 15
+        
+screen menu_gears2():
+
+        use gear(8, 0.3, -10, 250, 1, 9)
+        use gear(8, 0.3, 80, 330, -1, 9)
+
+        use gear(11, 0.6, 0, 180, -1, 7)
+        use gear(14, 0.6, -50, 100, 1, 5)
+        use gear(14, 0.6, 100, 250, 1, 5)
+
+        use gear(26, 1.0, 0, 0, -1)
+        add "gui/overlay/options_menu_gem.png" yoffset -670 xoffset -35
 
 screen game_menu(title, scroll=None, yinitial=0.0):
 
@@ -667,8 +750,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         hbox:
 
             ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
 
             frame:
                 style "game_menu_content_frame"
@@ -706,13 +787,23 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
+            frame:
+                style "game_menu_navigation_frame"
     use navigation
+    if not title == "History":
+      frame:
+          background None
+          yoffset 200
+          xoffset -25
+          use menu_gears()
+      frame:
+          background None
+          yoffset -50
+          xoffset 1450
+          use menu_gears2()
 
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
     add "gui/overlay/options_menu_titlebox.png"
+    label title text_color "#000000" xalign 0.5 yoffset 33 xoffset 3
     label title xalign 0.5 yoffset 30
 
     if main_menu:
@@ -733,19 +824,23 @@ style return_button is navigation_button
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
+    #background "#123456"
     bottom_padding 45
     top_padding 180
 
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-    xsize 420
-    yfill True
+    #background "#223456"
+    ysize 420
+    xfill True
 
 style game_menu_content_frame:
-    left_margin 60
-    right_margin 30
-    top_margin 15
+    #background "#323456"
+    left_margin 230
+    right_margin 230
+    top_margin 0
+    bottom_margin 110
 
 style game_menu_viewport:
     xsize 1380
@@ -849,6 +944,7 @@ screen file_slots(title):
                 style "page_label"
 
                 key_events True
+                yalign 0.2
                 xalign 0.5
                 action page_name_value.Toggle()
 
@@ -889,7 +985,7 @@ screen file_slots(title):
                 style_prefix "page"
 
                 xalign 0.5
-                yalign 1.0
+                yalign 0.8
 
                 hbox:
                     xalign 0.5
@@ -948,6 +1044,8 @@ style page_button_text:
 
 style slot_button:
     properties gui.button_properties("slot_button")
+    foreground "gui/button/slot_idle_frame.png"
+    hover_foreground "gui/button/slot_hover_frame.png"
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
@@ -966,6 +1064,8 @@ screen preferences():
 
     use game_menu(_("Options"), scroll="viewport"):
         vbox:
+            xfill True
+            xoffset 200
             yoffset 100
 
             hbox:
@@ -1039,13 +1139,14 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+                            xoffset 0
 
     #add "gui/overlay/options_menu_powerlines.png"
-    frame:
-        background None
-        yoffset 200
-        xoffset -25
-        use menu_gears()
+    #frame:
+    #    background None
+    #    yoffset 200
+    #    xoffset -25
+    #    use menu_gears()
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1089,6 +1190,7 @@ style radio_vbox:
 style radio_button:
     properties gui.button_properties("radio_button")
     foreground "gui/button/button_[prefix_]foreground.png"
+    xoffset 50
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -1099,6 +1201,7 @@ style check_vbox:
 style check_button:
     properties gui.button_properties("check_button")
     foreground "gui/button/button_[prefix_]foreground.png"
+    xoffset 50
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
@@ -1109,6 +1212,7 @@ style slider_slider:
     left_bar "gui/slider/slider_full.png"
     right_bar "gui/slider/slider_empty.png"
     thumb None
+    xoffset 50
 
 style slider_button:
     properties gui.button_properties("slider_button")
