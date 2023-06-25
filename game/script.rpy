@@ -23,12 +23,17 @@ init python:
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# Main characters
 define charlet = Character("Charlet", color="#7B68EE")
 define pichit = Character("Pichit")
 define raegan = Character("Raegan")
 define phrarat = Character("Phrarat")
 define makara = Character("Makara", color="#6495ED")
 define fan = Character("Fan")
+
+# Secondary characters
+define mara = Character("Professor Mara")
+define man_with_rifle = Character("Man")
 
 
 # Story event flags
@@ -38,9 +43,7 @@ default has_looked_at_booth = False
 default has_looked_at_crowd = False
 
 # A1S2
-default has_analyzed_assassin_cloth = False
-default has_analyzed_assassin_power = False
-default has_analyzed_assassin_spirit = False
+default has_analyzed_assassin_weapon = False
 default has_analyzed_assassin_stone = False
 
 

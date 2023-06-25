@@ -206,13 +206,7 @@ label .after_look:
 
     #more scene tbd
 
-    # End of playtesting
-
-    pause 1.0
-
-    "This is the end of the playtesting section. Thank you for playing!"
-
     # Commented out for playtesting
     # "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
 
-    # jump a1s2
+    jump a1s2
