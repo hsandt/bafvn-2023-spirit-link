@@ -33,10 +33,18 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 
 ## Characters
 
-image charlet neutral = Transform("images/chars/mc proto.png", zoom=0.5)
-image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.5)
-image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.5)
-image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.5)
+# Charlet
+image charlet neutral = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet scared = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet shout = Transform("images/chars/mc_shout.png", zoom=0.4, anchor=(0.53, 0.735))
+image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
+image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet telepathy = Transform("images/chars/mc_telepathy.png", zoom=0.4, anchor=(0.53, 0.735))
+image side charlet telepathy = Transform("images/chars/mc_telepathy_side.png", zoom=1.0)
+
+image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.7)
 image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0)
 image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=1.0)
