@@ -448,13 +448,15 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _default_focus = None):
+screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _id = None):
 
 
     $offset = int(5*_size)
     add im.FactorScale("gui/gears/gear_big_b_26.png", _size) at circle_rotate(_xpos+offset, _ypos+offset)
 
     button:
+      if _id:
+        id _id
       at circle_rotate(_xpos, _ypos)
       background im.FactorScale("gui/gears/gear_big_w_26.png", _size)
       hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
@@ -468,10 +470,6 @@ screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullActi
         yalign 0.5
         xalign 0.5
         text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
-
-      if _default_focus:
-        # FIXME: does not work for some reason
-        default_focus _default_focus
 
     #imagebutton idle im.FactorScale("gui/gears/gear_big_w_26.png", _size) hover im.FactorScale("gui/gears/gear_big_y_26.png", _size)  xpos _xpos  ypos _ypos  action _action
 
@@ -576,7 +574,7 @@ screen navigation():
         $new_xpos = new_xpos + new_xoffset
         if main_menu:
 
-            use gear_button("Start", 0.4, new_xpos , new_yoffset , Start(), 1)
+            use gear_button("Start", 0.4, new_xpos , new_yoffset , Start(), _id="start")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
             #textbutton _("Start"):
@@ -675,6 +673,10 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
+
+    # default_focus doesn't work on button inside screen (gear_button)
+    # so we use the manual method: add id to button and set_focus on show
+    on "show" action Function(renpy.set_focus, 'main_menu', 'start')
 
 
 style main_menu_frame is empty
