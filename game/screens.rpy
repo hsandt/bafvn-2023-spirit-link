@@ -9,8 +9,20 @@ transform circle_rotate_0(_xpos=0, _ypos=0, _depth=0):
     xpos _xpos
     ypos _ypos
     rotate 0
-
+    
 transform circle_rotate(_xpos=0, _ypos=0, _depth=0):
+    matrixcolor TintMatrix(str("#000"+str(_depth)))
+    xpos _xpos
+    ypos _ypos
+    rotate 0
+    
+transform circle_rotate_r(_xpos=0, _ypos=0, _depth=0):
+    matrixcolor TintMatrix(str("#000"+str(_depth)))
+    xpos _xpos
+    ypos _ypos
+    rotate 0
+
+transform circle_rotate_old(_xpos=0, _ypos=0, _depth=0):
     matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
     ypos _ypos
@@ -95,8 +107,9 @@ transform circle_rotate(_xpos=0, _ypos=0, _depth=0):
       linear 0.1 rotate 360
       linear 1.0 rotate 360
       repeat
-
-transform circle_rotate_r(_xpos=0, _ypos=0, _depth=0):
+      
+      
+transform circle_rotate_r_old(_xpos=0, _ypos=0, _depth=0):
     matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
     ypos _ypos
@@ -795,8 +808,11 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
             frame:
                 style "game_menu_navigation_frame"
+    #add "gui/overlay/options_menu_bolts.png"
     use navigation
-    if not title == "History":
+    if title == "Options":
+      add "gui/overlay/options_menu_powerlines2.png" xoffset 4 yoffset 2
+    if not title == "History" and not title == "Help":
       frame:
           background None
           yoffset 200
@@ -846,7 +862,7 @@ style game_menu_content_frame:
     left_margin 230
     right_margin 230
     top_margin 0
-    bottom_margin 110
+    bottom_margin 160
 
 style game_menu_viewport:
     xsize 1380
@@ -1146,8 +1162,6 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
                             xoffset 0
-
-    #add "gui/overlay/options_menu_powerlines.png"
     #frame:
     #    background None
     #    yoffset 200
@@ -1509,7 +1523,9 @@ screen confirm(message, yes_action, no_action):
     add "gui/overlay/confirm.png"
 
     frame:
-
+        xsize 725
+        ysize 265
+        
         vbox:
             xalign .5
             yalign .5
@@ -1519,12 +1535,14 @@ screen confirm(message, yes_action, no_action):
                 style "confirm_prompt"
                 xalign 0.5
 
-            hbox:
-                xalign 0.5
-                spacing 150
-
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+    frame:
+                  background None
+                  xsize int(310*.4)
+                  ysize int(310*.4)
+                  xalign 0.4
+                  yalign 0.55
+                  use gear_button("Yes", 0.4, 0 , -20 ,  yes_action)
+                  use gear_button("No", 0.4, 200 , -20 ,  no_action)
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
@@ -1537,10 +1555,10 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background None #Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
     xalign .5
-    yalign .5
+    yalign .45
 
 style confirm_prompt_text:
     textalign 0.5
