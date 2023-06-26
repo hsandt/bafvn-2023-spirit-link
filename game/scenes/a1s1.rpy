@@ -19,7 +19,7 @@ label a1s1:
     # uncomment when asset is ready
     # play music chill
 
-    show charlet neutral at character_left
+    show charlet neutral at character_warp_to("left")
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
     #sunlight effect? flash?
@@ -30,7 +30,7 @@ label a1s1:
     dyed in the traditional patterns of the Mawi tribe, did little to protect from the heat."
     "I dabbed at the sweat on my brow, lamenting the loss of the expensive powder I had applied that morning."
 
-    show charlet neutral at character_left
+    show charlet neutral at character_warp_to("left")
     charlet "Great. So much for best impressions."
 
     hide charlet
@@ -78,7 +78,7 @@ label .look_at_booth:
     "I cringe as he peers down its nozzle."
 
 
-    show makara neutral at character_right
+    show makara neutral at character_warp_to("right")
 
     makara "Do not worry. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful at these times."
 
@@ -119,11 +119,11 @@ label .after_look:
 
     "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but had been too busy setting up the booth."
 
-    show charlet neutral at character_left
+    show charlet neutral at character_warp_to("left")
 
     charlet "Maybe I should have focused my studies on food instead of folklore. At least then I’d have an excuse to eat."
 
-    show makara neutral at character_right
+    show makara neutral at character_warp_to("right")
 
     makara "And what? Bribed your advisor with cake? I could hardly see that working. With how much time she spends reading, one would think she lived off prose and not portions."
 
@@ -148,9 +148,9 @@ label .after_look:
     charlet "...maybe I should just grab lunch."
     "Just as I make to leave, a voice stops me."
 
-    show pichit neutral at character_right
+    show pichit neutral at character_warp_to("right")
     # When asset is ready, replace with:
-    # show pichit happy at character_right
+    # show pichit happy at character_warp_to("right")
 
     pichit "Oi! Charlet! Hey!"
 
@@ -161,11 +161,11 @@ label .after_look:
     "He is also accompanied by a spirit."
 
     # Move characters to far sides to leave space for spirits
-    show charlet at character_far_left
-    show pichit at character_far_right
+    show charlet at character_warp_to("far_left")
+    show pichit at character_warp_to("far_right")
 
-    show makara neutral at companion_middle_left, flip
-    show fan neutral at companion_middle_right
+    show makara neutral at companion_warp_to("middle_left"), flip
+    show fan neutral at companion_warp_to("middle_right")
 
     makara "We meet again, my fellow. How do you feel today?"
 
@@ -181,9 +181,9 @@ label .after_look:
     charlet "Hey Pichit. Who is the gentleman with you?"
 
     # When asset is ready, replace with:
-    show pichit neutral at character_middle
-    # show pichit happy at character_right
-    show raegan neutral at character_right
+    show pichit neutral at character_warp_to("middle")
+    # show pichit happy at character_warp_to("right")
+    show raegan neutral at character_warp_to("right")
 
     "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
     "Instead his collar and cuffs were clean and neat as though freshly laundered.

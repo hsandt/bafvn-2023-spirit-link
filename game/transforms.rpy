@@ -31,13 +31,13 @@ init:
         anchor (0.5, 0.5)
         xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
-        ypos 0.1
+        ypos 0.2
 
     transform companion_move_to(target_pos, duration=1.0):
         anchor (0.5, 0.5)
         easeout duration xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
-        ypos 0.1
+        ypos 0.2
 
     transform half_size:
         xysize 0.5

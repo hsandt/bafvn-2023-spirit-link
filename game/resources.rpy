@@ -47,7 +47,7 @@ image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, an
 image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.7)
 image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0)
-image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=1.0)
+image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0.5)
 
 
 # Audio

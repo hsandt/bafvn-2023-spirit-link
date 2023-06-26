@@ -47,63 +47,6 @@ default has_analyzed_assassin_weapon = False
 default has_analyzed_assassin_stone = False
 
 
-# Transforms
-
-transform character_far_left:
-    xalign 0.0
-
-transform character_left:
-    xalign 0.1
-
-transform character_middle_left:
-    xalign 0.3
-
-transform character_middle:
-    xalign 0.5
-
-transform character_middle_right:
-    xalign 0.7
-
-transform character_right:
-    xalign 0.9
-
-transform character_far_right:
-    xalign 1.0
-
-transform companion_far_left:
-    xalign 0.0
-    yalign 0.1
-
-transform companion_left:
-    xalign 0.1
-    yalign 0.1
-
-transform companion_middle_left:
-    xalign 0.3
-    yalign 0.1
-
-transform companion_middle:
-    xalign 0.5
-    yalign 0.5
-
-transform companion_middle_right:
-    xalign 0.7
-    yalign 0.1
-
-transform companion_right:
-    xalign 0.9
-    yalign 0.1
-
-transform companion_far_right:
-    xalign 1.0
-    yalign 0.1
-
-transform half_size:
-    xysize 0.5
-
-transform flip:
-    xzoom -1.0
-
 # The game starts here.
 
 label start:

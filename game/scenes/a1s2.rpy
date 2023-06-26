@@ -5,14 +5,17 @@ label a1s2:
 label .assassin_appears:
     scene bg university_outside
 
-    show charlet neutral at character_far_left
-    show raegan neutral at character_middle
-    show pichit neutral at character_far_right
+    show charlet neutral at character_warp_to("left")
+    show raegan neutral at character_warp_to("middle")
+    show pichit neutral at character_warp_to("right"), darker
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
 
     charlet "Oh, my family was from the island. Studying at the academia made me realize just how little we in Enon know about the island."
     charlet "I am hoping this work will help build bridges between our peoples."
+
+    show charlet scared
+    show pichit at reset_brightness
 
     "Raegan opened his mouth to respond but a commotion behind him made all three of us turn."
     "Smoke seemed to pour out of a few stands to the west; confused mumblings rose from the nearby crowd."
@@ -24,10 +27,10 @@ label .assassin_appears:
     pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
 
     scene bg smoke
-    show charlet neutral at character_far_left
-    show raegan neutral at character_middle_left
-    show pichit neutral at character_middle_right
-    show phrarat neutral at character_far_right
+    show charlet neutral at character_move_to("far_left")
+    show raegan neutral at character_move_to("middle_left")
+    show pichit neutral at character_move_to("middle_right")
+    show phrarat neutral at character_warp_to("far_right")
 
     "No sooner had the words left Pichit’s mouth that a man covered in a red scarf emerged from the dispersing smoke."
     "A knife flashes into his hands."
@@ -61,8 +64,8 @@ label .assassin_appears:
 
     hide charlet
     hide raegan
-    show pichit neutral at character_left
-    show phrarat neutral at character_right
+    show pichit neutral at character_warp_to("left")
+    show phrarat neutral at character_warp_to("right")
 
     phrarat "Don’t get in my way, I have no quarrel with you."
 
@@ -103,7 +106,7 @@ label .fight1:
 
     pichit "Of course! Fan, a little help please!"
 
-    show fan neutral at companion_left
+    show fan neutral at companion_warp_to("left")
 
     "A large bark shield wove itself into existence around Pichit’s arm."
 
@@ -111,15 +114,15 @@ label .fight1:
 
     scene bg university_inside
 
-    show charlet neutral at character_left
+    show charlet neutral at character_warp_to("left")
 
     # TODO: simplify top rafters
     "Through a haze of smoke the assassin fixates his gaze on us. Spinning back, I notice Raegan is missing."
     "A sound pulls my gaze upwards. There. he somehow made his way up onto one of the top rafters."
     "I never imagined he was so nimble, I thought a little hysterically. He looks down on me."
 
-    show raegan neutral at character_right
-    # show raegan smile at character_right
+    show raegan neutral at character_warp_to("right")
+    # show raegan smile at character_warp_to("right")
 
     "There’s sprinklers in this building."
 
@@ -127,9 +130,9 @@ label .fight1:
     "Reaching out to the connection, I tell Pichit the plan, who starts backing up toward the warehouse entrance."
 
     scene bg university_inside
-    show pichit neutral at character_left
-    show phrarat neutral at character_right
-    # show phrarat angry at character_right
+    show pichit neutral at character_warp_to("left")
+    show phrarat neutral at character_warp_to("right")
+    # show phrarat angry at character_warp_to("right")
 
     phrarat "Cowering away as usual Pichit Sirawa!"
 
@@ -165,8 +168,8 @@ label .fight1:
     "Good enough. breaking the connection I head upstairs towards Raegen who's too busy studying the switch, flipping it back and forth."
 
     scene bg university_inside
-    show charlet neutral at character_left
-    show raegan neutral at character_right
+    show charlet neutral at character_warp_to("left")
+    show raegan neutral at character_warp_to("right")
 
     raegan "There’s no electricity. It’s got to be in the basement."
 
@@ -184,8 +187,8 @@ label .fight1:
     call .analyze_one_element from _call_a1s2_analyze_one_element
 
     scene bg university_inside
-    show pichit neutral at character_left
-    show phrarat neutral at character_right
+    show pichit neutral at character_warp_to("left")
+    show phrarat neutral at character_warp_to("right")
 
     pichit "Why Vanich? There are men out there that are far worse. He at least acts humanely."
 
@@ -212,8 +215,8 @@ label .fight1:
     call .analyze_one_element from _call_a1s2_analyze_one_element_1
 
     scene bg university_inside
-    show charlet neutral at character_left
-    show raegan neutral at character_right
+    show charlet neutral at character_warp_to("left")
+    show raegan neutral at character_warp_to("right")
 
     "In addition, Lobbyist notices a fire sprinkler inside the building. MC transmits the info and tell Guide to lure him inside the building."
 
@@ -221,12 +224,12 @@ label .fight1:
 
 label .fight2:
     scene bg university_inside
-    show pichit neutral at character_left
-    show phrarat neutral at character_right
+    show pichit neutral at character_warp_to("left")
+    show phrarat neutral at character_warp_to("right")
 
     # show phrarat sad
     # TODO: pen sad
-    show pen neutral at companion_far_right
+    show pen neutral at companion_warp_to("far_right")
 
     phrarat "What a waste."
 
@@ -274,8 +277,8 @@ label .fight2:
     "Fortunately I feel Raegan’s presence as he finally links up with my gemstone."
 
     scene bg university_inside
-    show charlet neutral at character_left
-    show raegan neutral at character_right
+    show charlet neutral at character_warp_to("left")
+    show raegan neutral at character_warp_to("right")
 
     raegan "I do hope I’m not late, the power should be back on."
 
@@ -285,9 +288,9 @@ label .fight2:
     "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
 
     scene bg university_inside
-    show pichit neutral at character_left
-    show charlet neutral at character_middle
-    show phrarat neutral at character_far_right
+    show pichit neutral at character_warp_to("left")
+    show charlet neutral at character_warp_to("middle")
+    show phrarat neutral at character_warp_to("far_right")
 
     phrarat "Of course, the host to Makara is the one who stops me."
 
