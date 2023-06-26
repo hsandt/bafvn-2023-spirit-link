@@ -450,28 +450,28 @@ style choice_button_text is default:
 
 screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction()):
 
-    
-    $offset = int(5*_size)      
+
+    $offset = int(5*_size)
     add im.FactorScale("gui/gears/gear_big_b_26.png", _size) at circle_rotate(_xpos+offset, _ypos+offset)
-    
-    button: 
+
+    button:
       at circle_rotate(_xpos, _ypos)
       background im.FactorScale("gui/gears/gear_big_w_26.png", _size)
-      hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size) 
-      selected_idle_background im.FactorScale("gui/gears/gear_big_y_26.png", _size) 
-      xpos _xpos 
-      ypos _ypos 
+      hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
+      selected_idle_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
+      xpos _xpos
+      ypos _ypos
       action _action
       xsize int(310 * _size)
       ysize int(310 * _size)
-      has vbox: 
+      has vbox:
         yalign 0.5
         xalign 0.5
         text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
-        
+
     #imagebutton idle im.FactorScale("gui/gears/gear_big_w_26.png", _size) hover im.FactorScale("gui/gears/gear_big_y_26.png", _size)  xpos _xpos  ypos _ypos  action _action
-    
-    
+
+
 
 screen quick_menu():
 
@@ -501,21 +501,21 @@ screen quick_menu():
 
             #xalign 0.5
             #yalign 1.0
-            
+
             #button :
-            #  background im.FactorScale("gui/gears/gear_big_w_26.png", 0.4) 
-            #  hover_background im.FactorScale("gui/gears/gear_big_y_26.png", 0.4) 
-            #  xpos 60 ypos 20 
+            #  background im.FactorScale("gui/gears/gear_big_w_26.png", 0.4)
+            #  hover_background im.FactorScale("gui/gears/gear_big_y_26.png", 0.4)
+            #  xpos 60 ypos 20
             #  action Rollback()
             #  xsize int(310*.4)
             #  ysize int(310*.4)
-            #  has vbox: 
+            #  has vbox:
             #    yalign 0.5
             #    xalign 0.5
             #    text _("Back") hover_color "#000000"
             #use gear_button("Log", 0.4, 180, 20, ShowMenu('history'))
-            
-            
+
+
             use gear_button("Back", 0.4, 60 , 20 ,  Rollback())
             use gear_button("Log", 0.4, 180 , 20 ,  ShowMenu('history'))
             use gear_button("Skip", 0.4, 0 , 120 ,  Skip()) # alternate Skip(fast=True, confirm=True))
@@ -554,9 +554,9 @@ style quick_button_text:
 
 screen navigation():
 
-    $new_yoffset = 25      
-    $new_xoffset = 110 
-    $new_xpos = 500 
+    $new_yoffset = 25
+    $new_xoffset = 110
+    $new_xpos = 500
     frame:
         background None
         style_prefix "navigation"
@@ -568,12 +568,12 @@ screen navigation():
 
 
         use gear_button("Return", 0.4, new_xpos , new_yoffset , Return())
-        $new_yoffset = new_yoffset * -1 
+        $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
         if main_menu:
 
             use gear_button("Start", 0.4, new_xpos , new_yoffset , Start())
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
             #textbutton _("Start"):
             #  action Start()
@@ -582,42 +582,42 @@ screen navigation():
         else:
 
             use gear_button("History", 0.4, new_xpos , new_yoffset ,  ShowMenu("history"))
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
             use gear_button("Save", 0.4, new_xpos , new_yoffset ,  ShowMenu("save"))
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
         use gear_button("Load", 0.4, new_xpos , new_yoffset ,  ShowMenu("load"))
-        $new_yoffset = new_yoffset * -1 
+        $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
         use gear_button("Config", 0.4, new_xpos , new_yoffset ,  ShowMenu("preferences"))
-        $new_yoffset = new_yoffset * -1 
+        $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
         if _in_replay:
 
             use gear_button("End Replay", 0.4, new_xpos , new_yoffset ,  EndReplay(confirm=True))
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
         elif not main_menu:
 
             use gear_button("Main Menu", 0.4, new_xpos , new_yoffset ,  MainMenu())
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
         use gear_button("About", 0.4, new_xpos , new_yoffset ,  ShowMenu("about"))
-        $new_yoffset = new_yoffset * -1 
+        $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
             use gear_button("Help", 0.4, new_xpos , new_yoffset ,  ShowMenu("help"))
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
         if renpy.variant("pc"):
@@ -625,7 +625,7 @@ screen navigation():
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             use gear_button("Quit", 0.4, new_xpos , new_yoffset ,  Quit(confirm=not main_menu))
-            $new_yoffset = new_yoffset * -1 
+            $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
 
@@ -660,7 +660,7 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
-    
+
     if gui.show_name:
 
         vbox:
@@ -722,7 +722,7 @@ screen menu_gears():
 
         use gear(26, 1.0, 50, 500, -1)
         add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset 15
-        
+
 screen menu_gears2():
 
         use gear(8, 0.3, -10, 250, 1, 9)
