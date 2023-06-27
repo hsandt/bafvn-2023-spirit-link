@@ -19,6 +19,10 @@ init python:
     if 'button_select' not in config.keymap or 'K_SPACE' not in config.keymap['button_select']:
         config.keymap['button_select'].append('K_SPACE')
 
+    def play_delayed_sfx(sfx, delay):
+        """Play sfx with delay. You can directly enter sfx alias such as audio.sfx.fire (without quotes) as sfx"""
+        ui.timer(delay, Play("sound", sfx))
+
 
 # Copied and adapted from renpy-sdk/renpy/common/00definitions.rpy
 define vpunch_powerful = Move((0, 20), (0, -20), .10, bounce=True, repeat=True, delay=.275)

@@ -37,6 +37,9 @@ label .assassin_appears:
     pause 0.5
 
     "No sooner have the words left Pichit’s mouth that a man covered in red emerges from the dispersing smoke. A knife flashes on his waist."
+
+    $ play_delayed_sfx(audio.sfx.fire, 0.5)
+
     "He tears a piece of his fabric scarf and wads it up into his hand before it catches fire."
 
     scene bg university_inside with Dissolve(0.25)
@@ -52,10 +55,11 @@ label .assassin_appears:
     "The man grits his teeth before launching the fire projectile with inhuman speed directly at Raegan."
 
     show phrarat determined at bump_left
-
     pause 0.1
-
     show pichit battle serious at character_move_to("middle", 0.25)
+    pause 0.25
+    play sound audio.sfx.throw
+    pause 0.5
 
     "Before Raegan or I could react, Pichit's sword thrusts forward, protecting Raegan from the projectile and sending it falling to the pavement."
 
@@ -102,12 +106,18 @@ label .fight1:
     show phrarat determined at character_move_to("middle_right", 0.1)
     pause 0.05
     show pichit at character_move_to("far_left", 0.1)
+    play sound audio.sfx.scarf
 
     "The assassin uses his scarf as a whip and swings it toward my face. I dance backward to dodge..."
 
-    show pichit at character_move_to_easein_elastic("middle_left", 0.25)
+    play sound audio.sfx.slash_impact3
+    pause 0.15
+
+    show pichit at character_move_to_easein_elastic("middle_left", 0.4)
     show phrarat at bump_left(0.05, 0.1)
+
     pause 0.25
+
     show phrarat at character_move_to("middle_right", 0.25)
     show bg at hpunch_powerful
 
@@ -120,7 +130,10 @@ label .fight1:
 
         show pichit at character_move_to_easein("left", 0.25)
         show phrarat at character_move_to_easein("right", 0.25)
-        pause 0.25
+
+        pause 0.15
+        play sound audio.sfx.slash_impact3
+        pause 0.10
 
         show pichit at character_move_to_easein_elastic("middle_left", 0.25)
         show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
@@ -129,13 +142,12 @@ label .fight1:
 
         $ count -= 1
 
-
-    show pichit at character_move_to_easein_elastic("middle_left", 0.25)
-    show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
-    show bg at hpunch_powerful
-
     "Our two blades lock."
 
+    play sound audio.sfx.scarf
+    pause 0.5
+    play sound audio.sfx.catch
+    pause 0.1
     show phrarat at bump_left(0.05, 0.1)
     show pichit at fall_left
 

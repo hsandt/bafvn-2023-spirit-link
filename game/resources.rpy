@@ -113,7 +113,27 @@ init -1:
     )
 
     ## SFX assets
-    # define audio.slash = "audio/sfx/sfx_slash.ogg"
+    define audio.sfx.fire = "audio/sfx/sfx_fire.opus"
+    define audio.sfx.fire_blast = "audio/sfx/sfx_fire_blast.opus"
+    define audio.sfx.hit = "audio/sfx/sfx_hit.opus"
+    define audio.sfx.impact1 = "audio/sfx/sfx_impact1.opus"
+    define audio.sfx.impact2 = "audio/sfx/sfx_impact2.opus"
+    define audio.sfx.impact3 = "audio/sfx/sfx_impact3.opus"
+    define audio.sfx.slash1 = "audio/sfx/sfx_slash1.opus"
+    define audio.sfx.slash2 = "audio/sfx/sfx_slash2.opus"
+    define audio.sfx.slash3 = "audio/sfx/sfx_slash3.opus"
+    define audio.sfx.slash_impact1 = "audio/sfx/sfx_slash_impact1.opus"
+    define audio.sfx.slash_impact2 = "audio/sfx/sfx_slash_impact2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.slash_impact3 = "audio/sfx/sfx_slash_impact2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.blade_clash = "audio/sfx/sfx_impact3.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.throw = "audio/sfx/sfx_slash2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.scarf = "audio/sfx/sfx_slash2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.catch = "audio/sfx/sfx_hit.opus"
 
     ## SFX mapping (to allow to reuse audio assets for actions with different meanings,
     ## and also so accessibility feature can use short name as dict key rather than filepath)
