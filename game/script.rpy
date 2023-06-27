@@ -33,7 +33,7 @@ define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, 
 # name of the character.
 
 # Main characters
-define charlet = Character("Charlet", color="#b4a9f5")
+define charlet = Character("Charlet", color="#b4a9f5", image="charlet")
 define pichit = Character("Pichit", color="#a9d978")
 define raegan = Character("Raegan", color="#e1cc5e")
 define phrarat = Character("Assassin", color="#dd796e")

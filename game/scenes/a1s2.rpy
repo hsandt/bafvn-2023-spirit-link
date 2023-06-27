@@ -157,29 +157,24 @@ label .fight1:
     show phrarat at bump_left(0.05, 0.1)
     show pichit at fall_left
 
-    "The Assassin wraps his whip around my leg, pulls it to make me lose my balance and tackles me to the ground."
+    "This time, the assassin manages to wrap his fire whip around my leg and scorches it. He then pulls the whip back to make me lose my balance."
 
-    "If only I could get rid of that whip! Come to think of it, how hadn’t it burned to ash already?"
+    "{i}If only I could get rid of that whip! Come to think of it, how hadn’t it burned to ash already?{/i}"
 
-    # TODO - reformat below
+    "I'm interrupted in my thoughts by the assassin jumping at me to tackle me to the ground. He raises his dagger, ready to stab me in the chest."
 
-    "Pichit continued to attack to no avail."
-
-    "There, I spied it. A small spirit hidden in the assassin’s headdress. It was reconstructing the cloth faster than it burned."
-    "Recalling my lessons with my father I  reached out into the ether, calling for Pichit."
-    "Please. Please let him hear it. Then. There it was. A snap!"
-
-    charlet "On his shoulder! There’s a spirit on his shoulder. It is keeping the scarf from burning up!"
-
-    "Pichit looked surprised but responded with perfect fluidity. It was obvious from his movements he had done this before."
-
-    pichit "Of course! Fan, a little help please!"
+    pichit "Fan, now!"
 
     show fan neutral at companion_warp_to("left")
 
     "A large bark shield wove itself into existence around Pichit’s arm."
 
     phrarat "Neat parlor trick. Too bad your shield will burn to ash long before Vanich has a chance to escape."
+
+    charlet telepathy "Pichit! Can you hear me?"
+
+    pichit "On his shoulder! There’s a spirit on his shoulder. It was reconstructing the cloth faster than it burned. It is keeping the scarf from burning up!"
+
 
     scene bg black with CropMove(0.5, "wipeleft")
     scene bg university_inside with wipeleft
