@@ -461,8 +461,11 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _id = None):
-
+screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _id = None, _isQuick=False):
+    
+    $iconoffset = 0#
+    if _isQuick:
+      $iconoffset = -3
 
     $offset = int(5*_size)
     add im.FactorScale("gui/gears/gear_big_b_26.png", _size) at circle_rotate(_xpos+offset, _ypos+offset)
@@ -482,7 +485,10 @@ screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullActi
       has vbox:
         yalign 0.5
         xalign 0.5
-        text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
+        if ".png" in _text:
+          add "gui/button/icon_"+_text yoffset iconoffset at circle_rotate_r(0, 0)
+        else:
+          text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
 
     #imagebutton idle im.FactorScale("gui/gears/gear_big_w_26.png", _size) hover im.FactorScale("gui/gears/gear_big_y_26.png", _size)  xpos _xpos  ypos _ypos  action _action
 
@@ -531,14 +537,14 @@ screen quick_menu():
             #use gear_button("Log", 0.4, 180, 20, ShowMenu('history'))
 
 
-            use gear_button("Back", 0.4, 60 , 20 ,  Rollback())
-            use gear_button("Log", 0.4, 180 , 20 ,  ShowMenu('history'))
-            use gear_button("Skip", 0.4, 0 , 120 ,  Skip()) # alternate Skip(fast=True, confirm=True))
-            use gear_button("Auto", 0.4, 240 , 120 ,  Preference("auto-forward", "toggle"))
-            use gear_button("Save", 0.4, 60 , 220 ,  ShowMenu('save'))
+            use gear_button("back.png", 0.4, 60 , 20 ,  Rollback(), _isQuick=True)
+            use gear_button("log.png", 0.4, 180 , 20 ,  ShowMenu('history'), _isQuick=True)
+            use gear_button("skip.png", 0.4, 0 , 120 ,  Skip(), _isQuick=True) # alternate Skip(fast=True, confirm=True))
+            use gear_button("auto.png", 0.4, 240 , 120 ,  Preference("auto-forward", "toggle"), _isQuick=True)
+            use gear_button("save.png", 0.4, 60 , 220 ,  ShowMenu('save', _isQuick=True))
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
-            use gear_button("Prefs", 0.4, 180 , 220 ,  ShowMenu('preferences'))
+            use gear_button("config.png", 0.4, 180 , 220 ,  ShowMenu('preferences'), _isQuick=True)
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -581,13 +587,17 @@ screen navigation():
 
         #spacing gui.navigation_spacing
 
-
-        use gear_button("Return", 0.4, new_xpos , new_yoffset , Return())
+        if not renpy.get_screen('main_menu'):
+            use gear_button("return.png", 0.4, new_xpos , new_yoffset , Return())
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
+        
         if main_menu:
 
-            use gear_button("Start", 0.4, new_xpos , new_yoffset , Start(), _id="start")
+            if not renpy.get_screen('main_menu'):
+                use gear_button("Start", 0.4, new_xpos , new_yoffset , Start(), _id="start")
+            else:
+                use gear_button("Start", 0.8, new_xpos-140 , new_yoffset-140 , Start(), _id="start")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
             #textbutton _("Start"):
@@ -596,19 +606,19 @@ screen navigation():
 
         else:
 
-            use gear_button("History", 0.4, new_xpos , new_yoffset ,  ShowMenu("history"))
+            use gear_button("log.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("history"))
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
-            use gear_button("Save", 0.4, new_xpos , new_yoffset ,  ShowMenu("save"))
+            use gear_button("save.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("save"))
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
-        use gear_button("Load", 0.4, new_xpos , new_yoffset ,  ShowMenu("load"))
+        use gear_button("load.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("load"))
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
-        use gear_button("Config", 0.4, new_xpos , new_yoffset ,  ShowMenu("preferences"))
+        use gear_button("config.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("preferences"))
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
@@ -620,18 +630,18 @@ screen navigation():
 
         elif not main_menu:
 
-            use gear_button("Main Menu", 0.4, new_xpos , new_yoffset ,  MainMenu())
+            use gear_button("home.png", 0.4, new_xpos , new_yoffset ,  MainMenu())
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
-        use gear_button("About", 0.4, new_xpos , new_yoffset ,  ShowMenu("about"))
+        use gear_button("about.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("about"))
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            use gear_button("Help", 0.4, new_xpos , new_yoffset ,  ShowMenu("help"))
+            use gear_button("help.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("help"))
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
@@ -639,7 +649,7 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            use gear_button("Quit", 0.4, new_xpos , new_yoffset ,  Quit(confirm=not main_menu))
+            use gear_button("quit.png", 0.4, new_xpos , new_yoffset ,  Quit(confirm=not main_menu))
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
