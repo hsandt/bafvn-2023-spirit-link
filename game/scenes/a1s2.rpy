@@ -16,38 +16,52 @@ label .assassin_appears:
     # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
     charlet "I am hoping this work will help build bridges between our peoples."
 
-    show charlet scared
-    show raegan surprised
-    show pichit surprised
-    show pichit at reset_brightness
+    show charlet intrigued
+    show raegan intrigued
+    show pichit intrigued at reset_brightness
 
-    "Raegan opened his mouth to respond but a commotion behind him made all three of us turn."
-    "Smoke seemed to pour out of a few stands to the west; confused mumblings rose from the nearby crowd."
+    "Before Raegan can respond, a commotion behind him made all three of us turn."
+    "Smoke seems to pour out of a few stands to the west; confused mumblings rise from the nearby crowd."
 
     raegan "My pardons, Pichit, was this planned as part of the event?"
 
-    "Pichit smiled lazily, waving a hand to dismiss the commotion."
+    show pichit smile
+
+    "Pichit smiles lazily, waving a hand to dismiss the commotion."
 
     pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
 
-    scene bg smoke
-    show charlet neutral at character_warp_to("far_left")
-    show raegan neutral at character_warp_to("middle_left")
-    show pichit neutral at character_warp_to("middle_right")
+    scene bg smoke with Dissolve(0.25)
+    show phrarat neutral at character_warp_to("middle")
+
+    pause 0.5
+
+    "No sooner have the words left Pichit’s mouth that a man covered in red emerges from the dispersing smoke. A knife flashes on his waist."
+    "He tears a piece of his fabric scarf and wads it up into his hand before it catches fire."
+
+    scene bg university_inside with Dissolve(0.25)
+    show charlet scared at character_warp_to("far_left", 0.5)
+    show raegan surprised at character_warp_to("middle_left", 0.5)
+    show pichit surprised at character_warp_to("middle_right", 0.5)
     show phrarat neutral at character_warp_to("far_right")
 
-    "No sooner had the words left Pichit’s mouth that a man covered in a red scarf emerged from the dispersing smoke."
-    "A knife flashes into his hands."
-    "Tearing a piece of his fabric scarf and wadding it up into his hands before it catches fire in his hands."
+    pause 0.5
 
-    charlet "I think we should go."
+    charlet "A vigilante?!"
 
-    "The man grits his teeth before launching the fire projectile with inhuman speed directly at Mr. Vanich."
+    "The man grits his teeth before launching the fire projectile with inhuman speed directly at Raegan."
 
-    "Before Vanich or I could react, Pichit's sword thrusts forward, smashing into the assassin’s cloth and sending it falling to the pavement."
-    "Pichit spun suddenly, no trace of his easier, easy humor left in his face."
+    show phrarat determined at bump_left
 
-    # show pichit serious
+    pause 0.1
+
+    show pichit battle serious at character_move_to("middle", 0.25)
+
+    "Before Raegan or I could react, Pichit's sword thrusts forward, protecting Raegan from the projectile and sending it falling to the pavement."
+
+    "Pichit spun suddenly, with no trace of his earlier, easy humor left in his face."
+
+    show pichit shout
 
     pichit "Get inside, now!"
 
@@ -66,10 +80,10 @@ label .assassin_appears:
 
     "Vanich grabs my arm, hauling me backwards into a nearby storage room."
 
-    hide charlet
-    hide raegan
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show charlet at character_exit_to_left(0.5)
+    show raegan at character_exit_to_left(0.8)
+    show pichit neutral at character_move_to("left")
+    show phrarat neutral at character_move_to("right")
 
     phrarat "Don’t get in my way, I have no quarrel with you."
 
@@ -80,8 +94,6 @@ label .assassin_appears:
     jump .fight1
 
 label .fight1:
-
-    phrarat "Don't get in my way!"
 
     "The makeshift whip swung toward Pichit’s face. Pichit dances backwards, before slashing back with a stroke of his blade."
     "Their two blades lock. I feel a hand on my shoulder, tugging me away from the open door."

@@ -41,6 +41,8 @@ image charlet neutral = Transform("images/chars/mc_neutral.png", zoom=0.4, ancho
 image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
 # TODO: use dedicated sprite when ready
 image charlet surprised = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
+# TODO: use dedicated sprite when ready
+image charlet intrigued = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet scared = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet shout = Transform("images/chars/mc_shout.png", zoom=0.4, anchor=(0.53, 0.735))
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
@@ -52,7 +54,11 @@ image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.4, ancho
 # TODO: use dedicated sprite when ready
 image pichit smile = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
+image pichit intrigued = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
 image pichit surprised = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit battle serious = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
 image pichit battle grimace = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
@@ -65,6 +71,8 @@ image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, an
 # TODO: use dedicated sprite when ready
 image raegan smile = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
 # TODO: use dedicated sprite when ready
+image raegan intrigued = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+# TODO: use dedicated sprite when ready
 image raegan think = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
 # TODO: use dedicated sprite when ready
 image raegan surprised = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
@@ -75,6 +83,8 @@ image raegan anxious = Transform("images/chars/lobbyist proto.png", zoom=0.4, an
 image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 # TODO: use dedicated sprite when ready
 image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+# TODO: use dedicated sprite when ready
+image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 # TODO: use dedicated sprite when ready
 image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 # TODO: use dedicated sprite when ready
