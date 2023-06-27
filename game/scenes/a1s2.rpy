@@ -11,7 +11,7 @@ label .assassin_appears:
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
 
-    charlet "My ascendants came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu."
+    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu."
 
     # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
     charlet "I am hoping this work will help build bridges between our peoples."
@@ -21,7 +21,7 @@ label .assassin_appears:
     show pichit intrigued at reset_brightness
 
     "Before Raegan can respond, a commotion behind him made all three of us turn."
-    "Smoke seems to pour out of a few stands to the west; confused mumblings rise from the nearby crowd."
+    "Smoke began pouring out of a few stands to the west; confused mumblings rise from the nearby crowd."
 
     raegan "My pardons, Pichit, was this planned as part of the event?"
 
@@ -37,13 +37,13 @@ label .assassin_appears:
     stop music fadeout 1.0
     pause 0.5
 
-    "No sooner have the words left Pichit’s mouth that a man covered in red emerges from the dispersing smoke. A knife flashes on his waist."
+    "Before I can process Pichit's explnaiton, a man covered in red emerges from the dispersing smoke. A knife glistening on his waist."
 
-    "He tears a piece of his fabric scarf, wads it up into his hand..."
+    "He tears a piece of his fabric scarf, wads it up in his hand..."
 
     play sound audio.sfx.fire
 
-    "... and makes it burn."
+    "... and ignites it."
 
     scene bg university_inside with Dissolve(0.25)
     show charlet scared at character_warp_to("far_left", 0.5)
@@ -55,7 +55,7 @@ label .assassin_appears:
 
     charlet "A vigilante?!"
 
-    "The man grits his teeth before launching the fire projectile with inhuman speed directly at Raegan."
+    "The man grits his teeth before launching a flaming projectile with inhuman speed directly at Raegan."
 
     show phrarat determined at bump_left
     pause 0.1
@@ -66,7 +66,7 @@ label .assassin_appears:
 
     "Before Raegan or I could react, Pichit's sword thrusts forward, protecting Raegan from the projectile and sending it falling to the pavement."
 
-    "Pichit spun suddenly, with no trace of his earlier, easy humor left on his face."
+    "Pichit has zero left on his face."
 
     show pichit shout
 
@@ -85,7 +85,7 @@ label .assassin_appears:
 
     # "The choice is stolen from me just as I finally make up my mind."
 
-    "Vanich grabs my arm, hauling me backward into a nearby storage room."
+    "Vanich grabs my arm, hauling me backward into a nearby storage room. But I continue watching from afar."
 
     show charlet at character_exit_to_left(0.5)
     show raegan at character_exit_to_left(0.8)
@@ -127,7 +127,7 @@ label .fight1:
     show phrarat at character_move_to("middle_right", 0.25)
     show bg at hpunch_powerful
 
-    "... and slash back with a stroke of my blade, but my opponent blocks it."
+    "... and slash back with a stroke of my blade, but he blocks it."
     "We keep crossing each other's blade."
 
     $ count = 2
@@ -210,14 +210,14 @@ label .fight1:
 
     phrarat "I know the names of all my family. Especially cowards who betray our heritage for the likes of Vanich enterprises."
 
-    "The assassin flicks his wrist. A rope binds Pichit’s shield, burning it to ash. rope twirls around Pichit’s wooden shield, searing it to pieces."
+    "The assassin flicks his wrist. A rope binds Pichit’s shield searing it to pieces."
     "Your guide’s spirit is quick enough to blast vines through the ground, blocking the Assassin’s path and allowing Pichit to inch closer to the building."
 
     pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
 
     phrarat "A small price to pay. Their corruption must stop. They are raping our land, stealing our gemstones, murdering our spirits for their own gain."
 
-    "The Assassin strikes at the vines. Instead of cleaving through them, more, grow back in their place."
+    "The Assassin strikes at the vines but they keep growing back."
 
     pichit "For someone so concerned with our native culture, I’m surprised you don’t even recognize what type kind of vines these are."
 
@@ -233,9 +233,9 @@ label .fight1:
 
     charlet "We have a plan-"
 
-    mara "There’s no time! Goto the basement. There should be a console there that will lock you in a safe room."
+    mara "There’s no time! Go to the basement. There should be a console there that will lock you in a safe room."
 
-    "Good enough. breaking the connection I head upstairs towards Raegan who's too busy studying the switch, flipping it back and forth."
+    "Good enough. Breaking the connection I head upstairs towards Raegan who's too busy studying the switch, flipping it back and forth."
 
     scene bg university_inside
     show charlet neutral at character_warp_to("left")
@@ -249,7 +249,7 @@ label .fight1:
 
     charlet "It’ll protect you and let me communicate with you. I’ll turn the sprinklers on once he’s inside and you get the power on!"
 
-    "To his credit the Raegan sighs but does as he is told, loping down the stairs and toward the secure room."
+    "To his credit Raegan sighs but does as he is told, loping down the stairs and toward the secure room."
     "Once the door slams behind him, I reestablish a connection with Pichit."
 
     "I try to analyze the opponent."
@@ -260,9 +260,9 @@ label .fight1:
     show pichit neutral at character_warp_to("left")
     show phrarat neutral at character_warp_to("right")
 
-    pichit "Why Vanich? There are men out there that are far worse. He at least acts humanely."
+    pichit "Why Vanich? He's trying to improve our relationship with Enon and the rest of the mainlanders."
 
-    phrarat "You really think so? You think there’s profit in waiting for spirits to die? Don’t tell me you really believe they offer their gemstones willingly? No!"
+    phrarat "You really believe that? You think there’s profit in building bridges? They won't wait for spirits to die? Don’t tell me you really believe they offer their gemstones willingly? No!"
     phrarat "He takes them by force just like the rest. He just hides it better than the others."
 
     # show phrarat angry
@@ -271,14 +271,12 @@ label .fight1:
 
     "The telepathic connection with Pichit goes numb for a moment before the entryway erupts, caving in, my guide along with it, caked in dirt."
 
-    pichit "That worked faster than expected."
+    pichit "That worked better than expected."
 
     "Smoke begins to ooze into the warehouse, Pichit wouldn’t see an attack coming before it was too late!"
     "I call upon Makara for assistance but he refused, the smoke would only render him useless."
 
     phrarat "No more plants, no more chances. Choose: move or die."
-
-    "Before I’m able to get a good look, a sword skewers out of the shadows and toward Pichit, who barely dodges it but is sent careening into one of the exhibits. A glass case full of exquisite vases."
 
     "I try to analyze the opponent once more."
 
@@ -287,8 +285,6 @@ label .fight1:
     scene bg university_inside
     show charlet neutral at character_warp_to("left")
     show raegan neutral at character_warp_to("right")
-
-    "In addition, Lobbyist notices a fire sprinkler inside the building. MC transmits the info and tell Guide to lure him inside the building."
 
     jump .fight2
 
@@ -300,6 +296,8 @@ label .fight2:
     # show phrarat sad
     # TODO: pen sad
     show pen neutral at companion_warp_to("far_right")
+
+    "Before I’m able to get a good look, a dagger skewers out of the shadows and toward Pichit, who barely dodges it but is sent careening into one of the exhibits. A glass case full of exquisite vases."
 
     phrarat "What a waste."
 
@@ -313,7 +311,7 @@ label .fight2:
 
     phrarat "You destroy our culture without hesitation."
 
-    "Before Pichit can respond, the man from the military booth emerges from the open doorway behind the Assassin. his rifle aimed for the Assassin’s head."
+    "Before Pichit can respond, the man from the military booth emerges from the open doorway behind the Assassin. His rifle aimed for the Assassin’s head."
 
     man_with_rifle "Freeze!!!"
 
@@ -329,9 +327,9 @@ label .fight2:
 
     "The Assassin grips at the ground, trying to grapple his way toward his Spirit only who isn’t even moving from where it landed. It’s panting relentlessly, trying to catch its breath."
 
-    pichit "This is over. I know your cause is a noble one, please, let me help you."
+    pichit "This is over. I know your cause is a noble one, please, let me help you. I can explain everything to you."
 
-    "The Assassin bares his teeth as a response and with a sudden screech of his shoes, rolls upward, snatching his spirit into his arms and landing on his feet."
+    "The Assassin bares his teeth and with a sudden screech of his shoes, rolls upward, snatching his spirit into his arms and landing on his feet."
     "Immediately he brings his dagger close, cutting another piece of his scarf, putting it to the spirits mouth."
 
     phrarat "Please, make more, I need another whip."
@@ -384,7 +382,7 @@ label .fight2:
 
     pichit "Over where?"
 
-    phrarat "Vanich enterprises let my father burn alive in a factory because they weren’t willing to spend the money in a poorer district to ensureit was well protected."
+    phrarat "Vanich enterprises let my father burn alive in a factory because they weren’t willing to spend the money in a poorer district to ensure it was well protected."
 
     "I don't know what to say to that, Pichit doesn’t know what to say to that and Raegan is dead silent over the shared link."
     "The sounds of hooves and shuffling boots, sound at the entrance to the warehouse where the Military showman must have slinked off to."
@@ -414,17 +412,16 @@ label .analyze_weapon:
     # TODO: new text
     "Clothes have traditional patterns of Moacu, but are written roughly."
     "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
-    "Guide could take advantage of this, or try to slow him down."
+    "Pichit could take advantage of this, or try to slow him down."
     $ has_analyzed_assassin_weapon = True
     return
 
 label .analyze_stone:
-    "Normally people and esp. Moacu natives are specialized in one color. A few experts master two colors."
-    "In his case, the creature (that she can see) is clearly Green and handles cloth creation and patterns."
-    "So Red Fire must be produced by the stone, maybe stolen from the previous attack."
+    "Normally people and esp. Moacu natives wear one color, symbolic of their aptitude for an art. A few experts master and show two colors."
+    "In his case, the creature is clearly Green and handles cloth creation and patterns."
+    "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
 
-    "He seems to be mastering Fire less and attacks are quite brutal and uncontrolled. Guide could take advantage of this."
+    "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
 
-    "Creature seems exhausted, maybe by the usage of Fire on top of its works. Maybe he can't create more cloth during fight and is limited?"
     $ has_analyzed_assassin_stone = True
     return
