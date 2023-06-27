@@ -15,6 +15,7 @@ label a1s1:
     "At the time, I said ‘I'd do anything’. Now standing under the scorching, summer sun, I was reconsidering."
 
     scene bg university_outside with fade
+    play music mystery
 
     # uncomment when asset is ready
     # play music chill

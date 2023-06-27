@@ -41,6 +41,8 @@ image charlet neutral = Transform("images/chars/mc_neutral.png", zoom=0.4, ancho
 image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
 # TODO: use dedicated sprite when ready
 image charlet surprised = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
+# TODO: use dedicated sprite when ready
+image charlet intrigued = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet scared = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet shout = Transform("images/chars/mc_shout.png", zoom=0.4, anchor=(0.53, 0.735))
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
@@ -52,7 +54,11 @@ image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.4, ancho
 # TODO: use dedicated sprite when ready
 image pichit smile = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
+image pichit intrigued = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
 image pichit surprised = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit battle serious = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
 image pichit battle grimace = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
@@ -65,6 +71,8 @@ image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, an
 # TODO: use dedicated sprite when ready
 image raegan smile = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
 # TODO: use dedicated sprite when ready
+image raegan intrigued = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+# TODO: use dedicated sprite when ready
 image raegan think = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
 # TODO: use dedicated sprite when ready
 image raegan surprised = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
@@ -75,6 +83,8 @@ image raegan anxious = Transform("images/chars/lobbyist proto.png", zoom=0.4, an
 image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 # TODO: use dedicated sprite when ready
 image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+# TODO: use dedicated sprite when ready
+image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 # TODO: use dedicated sprite when ready
 image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 # TODO: use dedicated sprite when ready
@@ -92,8 +102,9 @@ image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0
 # -1 so it's done just before music_dictionary definition in accessibility_setup.rpy
 init -1:
     ## BGM assets
-    # define audio.title_theme = "<loop 19.2>audio/bgm/bgm_title.ogg"
-    # define audio.chill = "<loop 199.92>audio/bgm/bgm_chill.ogg"
+    # define audio.title_theme = "<loop 19.2>audio/bgm/Title.ogg"
+    define audio.mystery = "<loop 7.5>audio/bgm/Lore Forgotten.ogg"
+    define audio.battle = "<loop 1.5>audio/bgm/Storm Soul.ogg"
 
     ## BGM mapping (so accessibility feature can get BGM notification text from core name
     ## instead of filepath, which contains the <loop> pattern and is not very convenient)
@@ -103,7 +114,27 @@ init -1:
     )
 
     ## SFX assets
-    # define audio.slash = "audio/sfx/sfx_slash.ogg"
+    define audio.sfx.fire = "audio/sfx/sfx_fire.opus"
+    define audio.sfx.fire_blast = "audio/sfx/sfx_fire_blast.opus"
+    define audio.sfx.hit = "audio/sfx/sfx_hit.opus"
+    define audio.sfx.impact1 = "audio/sfx/sfx_impact1.opus"
+    define audio.sfx.impact2 = "audio/sfx/sfx_impact2.opus"
+    define audio.sfx.impact3 = "audio/sfx/sfx_impact3.opus"
+    define audio.sfx.slash1 = "audio/sfx/sfx_slash1.opus"
+    define audio.sfx.slash2 = "audio/sfx/sfx_slash2.opus"
+    define audio.sfx.slash3 = "audio/sfx/sfx_slash3.opus"
+    define audio.sfx.slash_impact1 = "audio/sfx/sfx_slash_impact1.opus"
+    define audio.sfx.slash_impact2 = "audio/sfx/sfx_slash_impact2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.slash_impact3 = "audio/sfx/sfx_slash_impact2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.blade_clash = "audio/sfx/sfx_impact3.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.throw = "audio/sfx/sfx_slash2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.scarf = "audio/sfx/sfx_slash2.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.catch = "audio/sfx/sfx_hit.opus"
 
     ## SFX mapping (to allow to reuse audio assets for actions with different meanings,
     ## and also so accessibility feature can use short name as dict key rather than filepath)

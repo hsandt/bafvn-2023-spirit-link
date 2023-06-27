@@ -16,38 +16,59 @@ label .assassin_appears:
     # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
     charlet "I am hoping this work will help build bridges between our peoples."
 
-    show charlet scared
-    show raegan surprised
-    show pichit surprised
-    show pichit at reset_brightness
+    show charlet intrigued
+    show raegan intrigued
+    show pichit intrigued at reset_brightness
 
-    "Raegan opened his mouth to respond but a commotion behind him made all three of us turn."
-    "Smoke seemed to pour out of a few stands to the west; confused mumblings rose from the nearby crowd."
+    "Before Raegan can respond, a commotion behind him made all three of us turn."
+    "Smoke seems to pour out of a few stands to the west; confused mumblings rise from the nearby crowd."
 
     raegan "My pardons, Pichit, was this planned as part of the event?"
 
-    "Pichit smiled lazily, waving a hand to dismiss the commotion."
+    show pichit smile
+
+    "Pichit smiles lazily, waving a hand to dismiss the commotion."
 
     pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
 
-    scene bg smoke
-    show charlet neutral at character_warp_to("far_left")
-    show raegan neutral at character_warp_to("middle_left")
-    show pichit neutral at character_warp_to("middle_right")
+    scene bg smoke with Dissolve(0.25)
+    show phrarat neutral at character_warp_to("middle")
+
+    stop music fadeout 1.0
+    pause 0.5
+
+    "No sooner have the words left Pichit’s mouth that a man covered in red emerges from the dispersing smoke. A knife flashes on his waist."
+
+    "He tears a piece of his fabric scarf, wads it up into his hand..."
+
+    play sound audio.sfx.fire
+
+    "... and makes it burn."
+
+    scene bg university_inside with Dissolve(0.25)
+    show charlet scared at character_warp_to("far_left", 0.5)
+    show raegan surprised at character_warp_to("middle_left", 0.5)
+    show pichit surprised at character_warp_to("middle_right", 0.5)
     show phrarat neutral at character_warp_to("far_right")
 
-    "No sooner had the words left Pichit’s mouth that a man covered in a red scarf emerged from the dispersing smoke."
-    "A knife flashes into his hands."
-    "Tearing a piece of his fabric scarf and wadding it up into his hands before it catches fire in his hands."
+    pause 0.5
 
-    charlet "I think we should go."
+    charlet "A vigilante?!"
 
-    "The man grits his teeth before launching the fire projectile with inhuman speed directly at Mr. Vanich."
+    "The man grits his teeth before launching the fire projectile with inhuman speed directly at Raegan."
 
-    "Before Vanich or I could react, Pichit's sword thrusts forward, smashing into the assassin’s cloth and sending it falling to the pavement."
-    "Pichit spun suddenly, no trace of his easier, easy humor left in his face."
+    show phrarat determined at bump_left
+    pause 0.1
+    show pichit battle serious at character_move_to("middle", 0.25)
+    pause 0.25
+    play sound audio.sfx.throw
+    pause 0.5
 
-    # show pichit serious
+    "Before Raegan or I could react, Pichit's sword thrusts forward, protecting Raegan from the projectile and sending it falling to the pavement."
+
+    "Pichit spun suddenly, with no trace of his earlier, easy humor left on his face."
+
+    show pichit shout
 
     pichit "Get inside, now!"
 
@@ -64,12 +85,14 @@ label .assassin_appears:
 
     # "The choice is stolen from me just as I finally make up my mind."
 
-    "Vanich grabs my arm, hauling me backwards into a nearby storage room."
+    "Vanich grabs my arm, hauling me backward into a nearby storage room."
 
-    hide charlet
-    hide raegan
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show charlet at character_exit_to_left(0.5)
+    show raegan at character_exit_to_left(0.8)
+    show pichit battle serious at character_move_to("left")
+    show phrarat at character_move_to("right")
+
+    pause 1.0
 
     phrarat "Don’t get in my way, I have no quarrel with you."
 
@@ -81,22 +104,64 @@ label .assassin_appears:
 
 label .fight1:
 
-    phrarat "Don't get in my way!"
+    "{i}I don't know what he's talking about, but he seems pretty determined to finish Raegan. I won't let him!{/i}"
 
-    "The makeshift whip swung toward Pichit’s face. Pichit dances backwards, before slashing back with a stroke of his blade."
-    "Their two blades lock. I feel a hand on my shoulder, tugging me away from the open door."
+    play music battle
+    pause 1.7
 
-    raegan "We can’t stay here. He’ll be fine on his own."
+    show phrarat determined at character_move_to("middle_right", 0.1)
+    pause 0.05
+    show pichit at character_move_to("far_left", 0.1)
+    play sound audio.sfx.scarf
 
-    "Silently, I sent out a call to Professor Mara and Bayani. There was no response."
+    "The assassin uses his scarf as a whip and swings it toward my face. I dance backward to dodge..."
 
-    "He was right. Island Security would be here at any moment. Unfortunately, I hadn’t managed to link with them before the festival."
+    play sound audio.sfx.slash_impact3
+    pause 0.15
 
-    # TODO: Switch to Pichit's PoV
-    "The Assassin swings his whip, wrapping it around Pichit’s leg before he could move it, and sending him straight into the ground below."
-    "Pichit doesn’t look hurt but there's definitely enough terror in his eyes to cause concern."
+    show pichit at character_move_to_easein_elastic("middle_left", 0.4)
+    show phrarat at bump_left(0.05, 0.1)
 
-    "If only that whip wasn’t a problem. Come to think of it, how hadn’t the whip burned to ash already?"
+    pause 0.25
+
+    show phrarat at character_move_to("middle_right", 0.25)
+    show bg at hpunch_powerful
+
+    "... and slash back with a stroke of my blade, but my opponent blocks it."
+    "We keep crossing each other's blade."
+
+    $ count = 2
+
+    while count > 0:
+
+        show pichit at character_move_to_easein("left", 0.25)
+        show phrarat at character_move_to_easein("right", 0.25)
+
+        pause 0.15
+        play sound audio.sfx.slash_impact3
+        pause 0.10
+
+        show pichit at character_move_to_easein_elastic("middle_left", 0.25)
+        show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
+        show bg at hpunch_powerful
+        pause 0.5
+
+        $ count -= 1
+
+    "Our two blades lock."
+
+    play sound audio.sfx.scarf
+    pause 0.5
+    play sound audio.sfx.catch
+    pause 0.1
+    show phrarat at bump_left(0.05, 0.1)
+    show pichit at fall_left
+
+    "The Assassin wraps his whip around my leg, pulls it to make me lose my balance and tackles me to the ground."
+
+    "If only I could get rid of that whip! Come to think of it, how hadn’t it burned to ash already?"
+
+    # TODO - reformat below
 
     "Pichit continued to attack to no avail."
 
@@ -170,7 +235,7 @@ label .fight1:
 
     mara "There’s no time! Goto the basement. There should be a console there that will lock you in a safe room."
 
-    "Good enough. breaking the connection I head upstairs towards Raegen who's too busy studying the switch, flipping it back and forth."
+    "Good enough. breaking the connection I head upstairs towards Raegan who's too busy studying the switch, flipping it back and forth."
 
     scene bg university_inside
     show charlet neutral at character_warp_to("left")

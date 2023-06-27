@@ -16,8 +16,31 @@ init python:
             raise ValueError(f"Invalid position_name: {position_name}")
 
 init:
-    transform character_move_left_exit(duration=1.0):
+    # Move character to left until it exits screen
+    # Remember to hide it afterward to avoid keeping the sprite in memory,
+    # unless you make it reenter soon
+    transform character_exit_to_left(duration=1.0):
+        linear duration xpos -0.5
+    transform character_exit_to_left_easeout(duration=1.0):
         easeout duration xpos -0.5
+
+    # Move character to right until it exits screen
+    # Remember to hide it afterward to avoid keeping the sprite in memory,
+    # unless you make it reenter soon
+    transform character_exit_to_right(duration=1.0):
+        linear duration xpos -0.5
+    transform character_exit_to_right_easeout(duration=1.0):
+        easeout duration xpos -0.5
+
+    # Move character from outside left to target position
+    transform character_enter_from_left_to(target_pos, duration=1.0):
+        xpos 0.5
+        linear duration xpos position_name_to_xpos_value(target_pos)
+
+    # Move character from outside right to target position
+    transform character_enter_from_right_to(target_pos, duration=1.0):
+        xpos 0.5
+        linear duration xpos position_name_to_xpos_value(target_pos)
 
     transform character_warp_to(target_pos, fade_duration=0.5):
         xpos position_name_to_xpos_value(target_pos)
@@ -26,7 +49,16 @@ init:
         easein fade_duration alpha 1.0
 
     transform character_move_to(target_pos, duration=1.0):
-        easeout duration xpos position_name_to_xpos_value(target_pos)
+        linear duration xpos position_name_to_xpos_value(target_pos)
+        ypos 1.0
+    transform character_move_to_easein(target_pos, duration=1.0):
+        easein duration xpos position_name_to_xpos_value(target_pos)
+        ypos 1.0
+    transform character_move_to_easein_elastic(target_pos, duration=1.0):
+        easein_elastic duration xpos position_name_to_xpos_value(target_pos)
+        ypos 1.0
+    transform character_move_to_easeout_elastic(target_pos, duration=1.0):
+        easeout_elastic duration xpos position_name_to_xpos_value(target_pos)
         ypos 1.0
 
     transform companion_warp_to(target_pos):
@@ -37,7 +69,7 @@ init:
 
     transform companion_move_to(target_pos, duration=1.0):
         anchor (0.5, 0.5)
-        easeout duration xpos position_name_to_xpos_value(target_pos)
+        linear duration xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
         ypos 0.2
 
@@ -52,3 +84,12 @@ init:
 
     transform reset_brightness:
         linear 0.1 matrixcolor TintMatrix("#ffffff")
+
+    transform bump_left(move_duration=0.1, come_back_duration=0.2):
+        linear move_duration xoffset -50
+        linear come_back_duration xoffset 0
+
+    transform fall_left(fall_duration=0.1, partial_come_back_duration=0.2):
+        linear fall_duration xoffset -150
+        linear fall_duration yoffset 350
+        linear partial_come_back_duration yoffset 300

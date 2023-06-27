@@ -4,7 +4,7 @@
 # Uncomment this when you have issues with Renpy reloading again and again after the shift manual reload (Shift+R)
 # even if there are no changes
 # See https://github.com/renpy/renpy/issues/4762
-# define config.autoreload = False
+define config.autoreload = False
 
 
 # Custom keymap
@@ -19,17 +19,26 @@ init python:
     if 'button_select' not in config.keymap or 'K_SPACE' not in config.keymap['button_select']:
         config.keymap['button_select'].append('K_SPACE')
 
+    def play_delayed_sfx(sfx, delay):
+        """Play sfx with delay. You can directly enter sfx alias such as audio.sfx.fire (without quotes) as sfx"""
+        ui.timer(delay, Play("sound", sfx))
+
+
+# Copied and adapted from renpy-sdk/renpy/common/00definitions.rpy
+define vpunch_powerful = Move((0, 20), (0, -20), .10, bounce=True, repeat=True, delay=.275)
+define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, delay=.275)
+
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
 # Main characters
-define charlet = Character("Charlet", color="#7B68EE")
-define pichit = Character("Pichit")
-define raegan = Character("Raegan")
-define phrarat = Character("Phrarat")
-define makara = Character("Makara", color="#6495ED")
-define fan = Character("Fan")
+define charlet = Character("Charlet", color="#b4a9f5")
+define pichit = Character("Pichit", color="#a9d978")
+define raegan = Character("Raegan", color="#e1cc5e")
+define phrarat = Character("Assassin", color="#dd796e")
+define makara = Character("Makara", color="#6495ed")
+define fan = Character("Fan", color="#89d47d")
 
 # Secondary characters
 define mara = Character("Professor Mara")
