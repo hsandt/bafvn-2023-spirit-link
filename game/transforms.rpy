@@ -19,9 +19,11 @@ init:
     transform character_move_left_exit(duration=1.0):
         easeout duration xpos -0.5
 
-    transform character_warp_to(target_pos):
+    transform character_warp_to(target_pos, fade_duration=0.5):
         xpos position_name_to_xpos_value(target_pos)
         ypos 1.0
+        alpha 0.0
+        easein fade_duration alpha 1.0
 
     transform character_move_to(target_pos, duration=1.0):
         easeout duration xpos position_name_to_xpos_value(target_pos)
