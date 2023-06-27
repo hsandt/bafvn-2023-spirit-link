@@ -103,8 +103,8 @@ image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0
 init -1:
     ## BGM assets
     # define audio.title_theme = "<loop 19.2>audio/bgm/Title.ogg"
-    define audio.mystery = "<loop 7.5>audio/bgm/Lore Forgotten.ogg"
-    define audio.battle = "<loop 1.5>audio/bgm/Storm Soul.ogg"
+    define audio.battle = "<loop 1.807 to 72.289>audio/bgm/Storm Soul.ogg"
+    define audio.mystery = "<loop 8.000 to 80.000>audio/bgm/Lore Forgotten.ogg"
 
     ## BGM mapping (so accessibility feature can get BGM notification text from core name
     ## instead of filepath, which contains the <loop> pattern and is not very convenient)
