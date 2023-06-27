@@ -24,12 +24,12 @@ init python:
 # name of the character.
 
 # Main characters
-define charlet = Character("Charlet", color="#7B68EE")
-define pichit = Character("Pichit")
-define raegan = Character("Raegan")
-define phrarat = Character("Phrarat")
-define makara = Character("Makara", color="#6495ED")
-define fan = Character("Fan")
+define charlet = Character("Charlet", color="#b4a9f5")
+define pichit = Character("Pichit", color="#a9d978")
+define raegan = Character("Raegan", color="#e1cc5e")
+define phrarat = Character("Phrarat", color="#dd796e")
+define makara = Character("Makara", color="#6495ed")
+define fan = Character("Fan", color="#89d47d")
 
 # Secondary characters
 define mara = Character("Professor Mara")
