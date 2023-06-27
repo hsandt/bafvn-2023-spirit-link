@@ -102,8 +102,9 @@ image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0
 # -1 so it's done just before music_dictionary definition in accessibility_setup.rpy
 init -1:
     ## BGM assets
-    # define audio.title_theme = "<loop 19.2>audio/bgm/bgm_title.ogg"
-    # define audio.chill = "<loop 199.92>audio/bgm/bgm_chill.ogg"
+    # define audio.title_theme = "<loop 19.2>audio/bgm/Title.ogg"
+    define audio.mystery = "<loop 7.5>audio/bgm/Lore Forgotten.ogg"
+    define audio.battle = "<loop 1.5>audio/bgm/Storm Soul.ogg"
 
     ## BGM mapping (so accessibility feature can get BGM notification text from core name
     ## instead of filepath, which contains the <loop> pattern and is not very convenient)

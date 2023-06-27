@@ -34,13 +34,16 @@ label .assassin_appears:
     scene bg smoke with Dissolve(0.25)
     show phrarat neutral at character_warp_to("middle")
 
+    stop music fadeout 1.0
     pause 0.5
 
     "No sooner have the words left Pichit’s mouth that a man covered in red emerges from the dispersing smoke. A knife flashes on his waist."
 
-    $ play_delayed_sfx(audio.sfx.fire, 0.5)
+    "He tears a piece of his fabric scarf, wads it up into his hand..."
 
-    "He tears a piece of his fabric scarf and wads it up into his hand before it catches fire."
+    play sound audio.sfx.fire
+
+    "... and makes it burn."
 
     scene bg university_inside with Dissolve(0.25)
     show charlet scared at character_warp_to("far_left", 0.5)
@@ -102,6 +105,9 @@ label .assassin_appears:
 label .fight1:
 
     "{i}I don't know what he's talking about, but he seems pretty determined to finish Raegan. I won't let him!{/i}"
+
+    play music battle
+    pause 1.7
 
     show phrarat determined at character_move_to("middle_right", 0.1)
     pause 0.05
