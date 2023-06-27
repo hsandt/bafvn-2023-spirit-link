@@ -37,7 +37,7 @@ label .assassin_appears:
     stop music fadeout 1.0
     pause 0.5
 
-    "Before I can process Pichit's explnaiton, a man covered in red emerges from the dispersing smoke. A knife glistening on his waist."
+    "Before I can process Pichit's explanation, a man covered in red emerges from the dispersing smoke. A knife glistening on his waist."
 
     "He tears a piece of his fabric scarf, wads it up in his hand..."
 
@@ -417,6 +417,6 @@ label .analyze_stone:
     "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
 
     "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
-
+    "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
     $ has_analyzed_assassin_stone = True
     return
