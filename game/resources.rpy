@@ -36,6 +36,8 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 
 ## Characters
 
+# Humans place anchors at leg center, where screen bottom cuts them
+
 # Charlet
 image charlet neutral = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
@@ -92,9 +94,10 @@ image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.4, a
 # TODO: use dedicated sprite when ready
 image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
 
-image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.7)
-image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0)
-image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0.5)
+# Spirits place anchors at center
+image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.7, anchor=(0.38, 0.51))
+image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0, anchor=(0.26, 0.41))
+image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0.5, anchor=(0.62, 0.59))
 
 
 # Audio

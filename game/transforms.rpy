@@ -62,13 +62,11 @@ init:
         ypos 1.0
 
     transform companion_warp_to(target_pos):
-        anchor (0.5, 0.5)
         xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
         ypos 0.2
 
     transform companion_move_to(target_pos, duration=1.0):
-        anchor (0.5, 0.5)
         linear duration xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
         ypos 0.2

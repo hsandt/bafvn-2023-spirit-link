@@ -79,7 +79,7 @@ label .look_at_booth:
     "I cringe as he peers down its nozzle."
 
 
-    show makara neutral at character_warp_to("right")
+    show makara neutral at companion_warp_to("middle_right")
 
     makara "Do not worry. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful during these times."
 
@@ -120,11 +120,11 @@ label .after_look:
 
     "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I'd been too busy setting up the booth."
 
-    show charlet neutral at character_warp_to("left")
+    show charlet neutral at character_warp_to("middle_left")
 
     charlet "Maybe I should have focused my studies on food instead of folklore. At least then I’d have an excuse to eat."
 
-    show makara neutral at character_warp_to("right")
+    show makara neutral at companion_warp_to("middle_right")
 
     makara "And what? Bribed your advisor with cake? I could hardly see that working. With how much time she spends reading, one would think she lived off prose and not portions."
 
