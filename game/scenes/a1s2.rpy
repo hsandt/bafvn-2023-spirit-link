@@ -354,7 +354,15 @@ label .fight2:
 
     charlet "Great."
 
-    "I pull the lever, opening the sprinklers and sending sparkles of water to coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
+    "I pull the lever, opening the sprinklers."
+
+    stop music fadeout 2.0
+    # TODO: uncomment when ready
+    # play sound audio.sfx.shower
+    pause 2.0
+
+    "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
+
     "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
 
     scene bg university_inside
@@ -369,6 +377,8 @@ label .fight2:
     charlet "What does that matter?"
 
     "The Assassin ignores my question but doesn’t break eye contact."
+
+    play music mystery
 
     phrarat "How ironic, of course they decided to put a sprinkler in here instead of over there."
 
