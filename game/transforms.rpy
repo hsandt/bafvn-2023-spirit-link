@@ -45,6 +45,7 @@ init:
     transform character_warp_to(target_pos, fade_duration=0.5):
         xpos position_name_to_xpos_value(target_pos)
         ypos 1.0
+        # fade in
         alpha 0.0
         easein fade_duration alpha 1.0
 
@@ -61,10 +62,13 @@ init:
         easeout_elastic duration xpos position_name_to_xpos_value(target_pos)
         ypos 1.0
 
-    transform companion_warp_to(target_pos):
+    transform companion_warp_to(target_pos, fade_duration=0.5):
         xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
         ypos 0.2
+        # fade in
+        alpha 0.0
+        easein fade_duration alpha 1.0
 
     transform companion_move_to(target_pos, duration=1.0):
         linear duration xpos position_name_to_xpos_value(target_pos)

@@ -31,7 +31,7 @@ label .assassin_appears:
 
     pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
 
-    scene bg smoke with Dissolve(0.25)
+    scene bg smoke with bg_dissolve
     show phrarat neutral at character_warp_to("middle")
 
     stop music fadeout 1.0
@@ -45,7 +45,7 @@ label .assassin_appears:
 
     "... and ignites it."
 
-    scene bg university_inside with Dissolve(0.25)
+    scene bg university_inside with bg_dissolve
     show charlet scared at character_warp_to("far_left", 0.5)
     show raegan surprised at character_warp_to("middle_left", 0.5)
     show pichit surprised at character_warp_to("middle_right", 0.5)

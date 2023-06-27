@@ -28,15 +28,18 @@ init python:
 define vpunch_powerful = Move((0, 20), (0, -20), .10, bounce=True, repeat=True, delay=.275)
 define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, delay=.275)
 
+define bg_dissolve = Dissolve(0.25)
+define character_dissolve = Dissolve(0.25)
+
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
 # Main characters
 define charlet = Character("Charlet", color="#b4a9f5", image="charlet")
-define pichit = Character("Pichit", color="#a9d978")
-define raegan = Character("Raegan", color="#e1cc5e")
-define phrarat = Character("Assassin", color="#dd796e")
+define pichit = Character("Pichit", color="#a9d978", image="pichit")
+define raegan = Character("Raegan", color="#e1cc5e", image="raegan")
+define phrarat = Character("Assassin", color="#dd796e", image="phrarat")
 define makara = Character("Makara", color="#6495ed")
 define fan = Character("Fan", color="#89d47d")
 
