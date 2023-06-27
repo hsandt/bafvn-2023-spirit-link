@@ -7,6 +7,9 @@ image underlay white_half_alpha = Solid("#ffffff80")
 
 ## Backgrounds (1080p)
 
+# Black background for scene transitions
+image bg black = Solid("#000000")
+
 image bg university_outside = Solid("#af9750")
 # Replace with asset when ready
 # image bg university_outside = "images/bg/university_outside.jpg"
@@ -35,16 +38,50 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 
 # Charlet
 image charlet neutral = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
+# TODO: use dedicated sprite when ready
+image charlet surprised = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet scared = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet shout = Transform("images/chars/mc_shout.png", zoom=0.4, anchor=(0.53, 0.735))
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
-image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
 image charlet telepathy = Transform("images/chars/mc_telepathy.png", zoom=0.4, anchor=(0.53, 0.735))
 image side charlet telepathy = Transform("images/chars/mc_telepathy_side.png", zoom=1.0)
 
+# Pichit
 image pichit neutral = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit smile = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit surprised = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit battle grimace = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit battle anxious = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit battle shout = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+
+# Raegan
 image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+# TODO: use dedicated sprite when ready
+image raegan smile = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+# TODO: use dedicated sprite when ready
+image raegan think = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+# TODO: use dedicated sprite when ready
+image raegan surprised = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+# TODO: use dedicated sprite when ready
+image raegan anxious = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+
+# Phrarat
 image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+# TODO: use dedicated sprite when ready
+image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+# TODO: use dedicated sprite when ready
+image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+# TODO: use dedicated sprite when ready
+image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+# TODO: use dedicated sprite when ready
+image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.7)
 image fan neutral = Transform("images/chars/guide spirit draft 1.png", zoom=1.0)
 image pen neutral = Transform("images/chars/assassin spirit draft 1.png", zoom=0.5)

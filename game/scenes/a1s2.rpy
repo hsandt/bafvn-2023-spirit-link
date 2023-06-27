@@ -11,10 +11,14 @@ label .assassin_appears:
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
 
-    charlet "Oh, my family was from the island. Studying at the academia made me realize just how little we in Enon know about the island."
+    charlet "My ascendants came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu."
+
+    # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
     charlet "I am hoping this work will help build bridges between our peoples."
 
     show charlet scared
+    show raegan surprised
+    show pichit surprised
     show pichit at reset_brightness
 
     "Raegan opened his mouth to respond but a commotion behind him made all three of us turn."
@@ -27,9 +31,9 @@ label .assassin_appears:
     pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
 
     scene bg smoke
-    show charlet neutral at character_move_to("far_left")
-    show raegan neutral at character_move_to("middle_left")
-    show pichit neutral at character_move_to("middle_right")
+    show charlet neutral at character_warp_to("far_left")
+    show raegan neutral at character_warp_to("middle_left")
+    show pichit neutral at character_warp_to("middle_right")
     show phrarat neutral at character_warp_to("far_right")
 
     "No sooner had the words left Pichit’s mouth that a man covered in a red scarf emerged from the dispersing smoke."
@@ -112,7 +116,8 @@ label .fight1:
 
     phrarat "Neat parlor trick. Too bad your shield will burn to ash long before Vanich has a chance to escape."
 
-    scene bg university_inside
+    scene bg black with CropMove(0.5, "wipeleft")
+    scene bg university_inside with wipeleft
 
     show charlet neutral at character_warp_to("left")
 
