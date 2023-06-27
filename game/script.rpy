@@ -20,6 +20,11 @@ init python:
         config.keymap['button_select'].append('K_SPACE')
 
 
+# Copied and adapted from renpy-sdk/renpy/common/00definitions.rpy
+define vpunch_powerful = Move((0, 20), (0, -20), .10, bounce=True, repeat=True, delay=.275)
+define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, delay=.275)
+
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
@@ -27,7 +32,7 @@ init python:
 define charlet = Character("Charlet", color="#b4a9f5")
 define pichit = Character("Pichit", color="#a9d978")
 define raegan = Character("Raegan", color="#e1cc5e")
-define phrarat = Character("Phrarat", color="#dd796e")
+define phrarat = Character("Assassin", color="#dd796e")
 define makara = Character("Makara", color="#6495ed")
 define fan = Character("Fan", color="#89d47d")
 

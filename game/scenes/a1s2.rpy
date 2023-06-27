@@ -59,7 +59,7 @@ label .assassin_appears:
 
     "Before Raegan or I could react, Pichit's sword thrusts forward, protecting Raegan from the projectile and sending it falling to the pavement."
 
-    "Pichit spun suddenly, with no trace of his earlier, easy humor left in his face."
+    "Pichit spun suddenly, with no trace of his earlier, easy humor left on his face."
 
     show pichit shout
 
@@ -78,12 +78,14 @@ label .assassin_appears:
 
     # "The choice is stolen from me just as I finally make up my mind."
 
-    "Vanich grabs my arm, hauling me backwards into a nearby storage room."
+    "Vanich grabs my arm, hauling me backward into a nearby storage room."
 
     show charlet at character_exit_to_left(0.5)
     show raegan at character_exit_to_left(0.8)
-    show pichit neutral at character_move_to("left")
-    show phrarat neutral at character_move_to("right")
+    show pichit battle serious at character_move_to("left")
+    show phrarat at character_move_to("right")
+
+    pause 1.0
 
     phrarat "Don’t get in my way, I have no quarrel with you."
 
@@ -95,20 +97,53 @@ label .assassin_appears:
 
 label .fight1:
 
-    "The makeshift whip swung toward Pichit’s face. Pichit dances backwards, before slashing back with a stroke of his blade."
-    "Their two blades lock. I feel a hand on my shoulder, tugging me away from the open door."
+    "{i}I don't know what he's talking about, but he seems pretty determined to finish Raegan. I won't let him!{/i}"
 
-    raegan "We can’t stay here. He’ll be fine on his own."
+    show phrarat determined at character_move_to("middle_right", 0.1)
+    pause 0.05
+    show pichit at character_move_to("far_left", 0.1)
 
-    "Silently, I sent out a call to Professor Mara and Bayani. There was no response."
+    "The assassin uses his scarf as a whip and swings it toward my face. I dance backward to dodge..."
 
-    "He was right. Island Security would be here at any moment. Unfortunately, I hadn’t managed to link with them before the festival."
+    show pichit at character_move_to_easein_elastic("middle_left", 0.25)
+    show phrarat at bump_left(0.05, 0.1)
+    pause 0.25
+    show phrarat at character_move_to("middle_right", 0.25)
+    show bg at hpunch_powerful
 
-    # TODO: Switch to Pichit's PoV
-    "The Assassin swings his whip, wrapping it around Pichit’s leg before he could move it, and sending him straight into the ground below."
-    "Pichit doesn’t look hurt but there's definitely enough terror in his eyes to cause concern."
+    "... and slash back with a stroke of my blade, but my opponent blocks it."
+    "We keep crossing each other's blade."
 
-    "If only that whip wasn’t a problem. Come to think of it, how hadn’t the whip burned to ash already?"
+    $ count = 2
+
+    while count > 0:
+
+        show pichit at character_move_to_easein("left", 0.25)
+        show phrarat at character_move_to_easein("right", 0.25)
+        pause 0.25
+
+        show pichit at character_move_to_easein_elastic("middle_left", 0.25)
+        show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
+        show bg at hpunch_powerful
+        pause 0.5
+
+        $ count -= 1
+
+
+    show pichit at character_move_to_easein_elastic("middle_left", 0.25)
+    show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
+    show bg at hpunch_powerful
+
+    "Our two blades lock."
+
+    show phrarat at bump_left(0.05, 0.1)
+    show pichit at fall_left
+
+    "The Assassin wraps his whip around my leg, pulls it to make me lose my balance and tackles me to the ground."
+
+    "If only I could get rid of that whip! Come to think of it, how hadn’t it burned to ash already?"
+
+    # TODO - reformat below
 
     "Pichit continued to attack to no avail."
 
@@ -182,7 +217,7 @@ label .fight1:
 
     mara "There’s no time! Goto the basement. There should be a console there that will lock you in a safe room."
 
-    "Good enough. breaking the connection I head upstairs towards Raegen who's too busy studying the switch, flipping it back and forth."
+    "Good enough. breaking the connection I head upstairs towards Raegan who's too busy studying the switch, flipping it back and forth."
 
     scene bg university_inside
     show charlet neutral at character_warp_to("left")
