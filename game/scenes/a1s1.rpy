@@ -57,7 +57,7 @@ label .look_choice:
 label .look_at_crowd:
     #bg focus on crowd (new bg or zoom in?)
 
-    "A throng of curious passerbys fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
+    "A throng of curious viewers fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
     "Each department has brought their best each aiming to net themselves a rich, sponsor.
     Colorful signboards cry out the merits of their research."
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
@@ -74,13 +74,13 @@ label .look_at_booth:
     drawing representatives from the railroad and mining companies like flies to honey."
     # Understanding issue: faster *and* at 50 paces, or faster *when* at 50 paces? Did range improve from last model?
     "As I watch, a man in a suit examines the engineering team’s latest invention:
-    a long-barreled rifle more accurate than the last, capable of shooting a bird faster at 50 paces."
+    a long-barreled rifle more accurate than the last, capable of shooting a bird faster than 50 paces."
     "I cringe as he peers down its nozzle."
 
 
     show makara neutral at character_warp_to("right")
 
-    makara "Do not worry. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful at these times."
+    makara "Do not worry. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful during these times."
 
     "My companion is right. Though it has been only two days since the attack in Alcatra, the event's security is concerningly lax."
     # When I read this first, I thought she was talking about people protecting the fair. After reading more below and checking the exact definition of
@@ -88,7 +88,7 @@ label .look_at_booth:
     # on the point of view, which may or may not be frightening for a mere citizen. On the other side, maybe "terrorist" would be too strong?
     "The possibility of vigilantes hiding in the crowd, makes me tense."
     "My eyes scan the crowd and lingers on the men scattered throughout amongst them in the brown and green of the hunter’s guild."
-    "Their expressions are friendly, but their eyes are sharp, and their stance gives off an air of purpose."
+    "Their expressions are friendly, but their eyes are sharp, and their stances suggest an air of purpose."
     "Friend or foe? In a sea of strangers it is impossible to know."
 
     "I force levity into my voice."
@@ -102,8 +102,8 @@ label .look_at_booth:
     "A big boast from a little dragon, but the words gave me some comfort."
 
     # Flow issue: need transition?
-    "While the ILF was, for the most part, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
-    the recent, vigilante attacks had cast doubt on the organization."
+    "While the ILF was, by in large, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
+    the recent vigilante attacks had cast doubt on the organization."
     "However much they might claim no association with the rebels, their track record didn't look good."
 
     $ has_looked_at_booth = True
@@ -117,7 +117,7 @@ label .after_look:
 
     pause 1.0
 
-    "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but had been too busy setting up the booth."
+    "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I'd been too busy setting up the booth."
 
     show charlet neutral at character_warp_to("left")
 
@@ -192,7 +192,7 @@ label .after_look:
     pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company."
     "He said he was interested in sponsoring the expedition!"
 
-    pichit "Raegan, this is Dr. Charlet Kasamsun, the brains of behind the expedition."
+    pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
     raegan "A pleasure to meet you, Charlet. I've heard wonderful things about your plans."
 
