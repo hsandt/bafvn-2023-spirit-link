@@ -71,6 +71,8 @@ image pichit battle grimace = Transform("images/chars/guide proto.png", zoom=0.4
 image pichit battle anxious = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 # TODO: use dedicated sprite when ready
 image pichit battle shout = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
+# TODO: use dedicated sprite when ready
+image pichit battle smile = Transform("images/chars/guide proto.png", zoom=0.4, anchor=(0.5, 0.76))
 
 # Raegan
 image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
@@ -145,6 +147,8 @@ init -1:
     # define audio.sfx.shower = "audio/sfx/sfx_shower.opus"
     # TODO: use dedicated SFX when ready
     define audio.sfx.summon = "audio/sfx/sfx_fire.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.vines = "audio/sfx/sfx_fire.opus"
 
     ## SFX mapping (to allow to reuse audio assets for actions with different meanings,
     ## and also so accessibility feature can use short name as dict key rather than filepath)

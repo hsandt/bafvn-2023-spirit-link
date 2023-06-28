@@ -156,7 +156,7 @@ label .fight1:
 
     phrarat smile "Getting distracting already?"
 
-    call .pichit_phrarat_cross_blades(-0.1)
+    call .pichit_phrarat_cross_blades(0.0)
 
     pichit battle anxious "{i}Sorry, but I'm a little busy now...{/i}"
 
@@ -176,10 +176,10 @@ label .fight1:
 
     hide pen with character_dissolve
 
-    "We keep crossing each other's blade."
+    "We keep crossing each other's blade. But I keep losing ground."
 
-    call .pichit_phrarat_cross_blades(0.1)
     call .pichit_phrarat_cross_blades(-0.1)
+    call .pichit_phrarat_cross_blades(-0.2)
 
     "Our two blades lock."
 
@@ -201,28 +201,36 @@ label .fight1:
 
     "I'm interrupted in my thoughts by the assassin jumping at me to tackle me to the ground. He raises his dagger, ready to stab me in the chest."
 
-    pichit "Fan, now!"
+    pichit battle shout "Fan, now!"
 
     play sound audio.sfx.summon
+    # Show pichit in front so companion tail doesn't hide his face
+    show pichit zorder 1
     show fan neutral at companion_warp_to("far_left"), flip
     pause 0.5
 
     "A large bark shield weaves itself into existence around my arm."
 
-    phrarat "Neat parlor trick. Too bad your shield will burn to ash long before Vanich has a chance to escape."
+    phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
 
-    phrarat "Cowering away as usual Pichit Sirawa!"
+    "The assassin flicks his wrist. A rope binds my shield, searing it to pieces."
 
-    pichit "You! H-How do you know my name?"
+    phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
 
-    phrarat "I know the names of all my family. Especially cowards who betray our heritage for the likes of Vanich enterprises."
+    pichit battle smile "You really thought I was just losing ground all that time, uh? Never cared having a break for a minute to appreciate the nature surrounding you?"
 
-    "The assassin flicks his wrist. A rope binds Pichit’s shield searing it to pieces."
-    "Your guide’s spirit is quick enough to blast vines through the ground, blocking the Assassin’s path and allowing Pichit to inch closer to the building."
+    show phrarat surprised
+
+    "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers."
+
+    # TODO: FX vines
+    play sound audio.sfx.vines
+
+    "My spirit blasts numerous vines through this fertile soil, blocking the Assassin’s limbs."
 
     pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
 
-    phrarat "A small price to pay. Their corruption must stop. They are raping our land, stealing our gemstones, murdering our spirits for their own gain."
+    phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to create those fake gemstones."
 
     "The Assassin strikes at the vines but they keep growing back."
 

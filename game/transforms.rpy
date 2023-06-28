@@ -96,5 +96,5 @@ init:
         linear come_back_duration xoffset 0
 
     transform fall_left(hop_backward_duration=0.2, fall_duration=0.1):
-        easein hop_backward_duration offset (-50, -50)
+        easein hop_backward_duration offset (-100, -50)
         easein_elastic fall_duration yoffset 300
