@@ -541,7 +541,7 @@ screen quick_menu():
             use gear_button("log.png", 0.4, 180 , 20 ,  ShowMenu('history'), _isQuick=True)
             use gear_button("skip.png", 0.4, 0 , 120 ,  Skip(), _isQuick=True) # alternate Skip(fast=True, confirm=True))
             use gear_button("auto.png", 0.4, 240 , 120 ,  Preference("auto-forward", "toggle"), _isQuick=True)
-            use gear_button("save.png", 0.4, 60 , 220 ,  ShowMenu('save', _isQuick=True))
+            use gear_button("save.png", 0.4, 60 , 220 ,  ShowMenu('save'), _isQuick=True)
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
             use gear_button("config.png", 0.4, 180 , 220 ,  ShowMenu('preferences'), _isQuick=True)
