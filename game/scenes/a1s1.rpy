@@ -162,9 +162,7 @@ label .after_look:
     charlet "...maybe I should just grab lunch."
     "Just as I make to leave, a voice stops me."
 
-    show pichit at character_warp_to("right")
-    # When asset is ready, replace with:
-    # show pichit happy at character_warp_to("right")
+    show pichit smile at character_warp_to("right")
 
     pichit "Oi! Charlet! Hey!"
 
