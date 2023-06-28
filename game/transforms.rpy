@@ -49,17 +49,17 @@ init:
         alpha 0.0
         easein fade_duration alpha 1.0
 
-    transform character_move_to(target_pos, duration=1.0):
-        linear duration xpos position_name_to_xpos_value(target_pos)
+    transform character_move_to(target_pos, duration=1.0, _xpos_offset=0.0):
+        linear duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         ypos 1.0
-    transform character_move_to_easein(target_pos, duration=1.0):
-        easein duration xpos position_name_to_xpos_value(target_pos)
+    transform character_move_to_easein(target_pos, duration=1.0, _xpos_offset=0.0):
+        easein duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         ypos 1.0
-    transform character_move_to_easein_elastic(target_pos, duration=1.0):
-        easein_elastic duration xpos position_name_to_xpos_value(target_pos)
+    transform character_move_to_easein_elastic(target_pos, duration=1.0, _xpos_offset=0.0):
+        easein_elastic duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         ypos 1.0
-    transform character_move_to_easeout_elastic(target_pos, duration=1.0):
-        easeout_elastic duration xpos position_name_to_xpos_value(target_pos)
+    transform character_move_to_easeout_elastic(target_pos, duration=1.0, _xpos_offset=0.0):
+        easeout_elastic duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         ypos 1.0
 
     transform companion_warp_to(target_pos, fade_duration=0.5):
