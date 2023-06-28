@@ -46,9 +46,9 @@ label .assassin_appears:
     "... and ignites it."
 
     scene bg university_inside with bg_dissolve
-    show charlet scared at character_warp_to("far_left", 0.5)
-    show raegan surprised at character_warp_to("middle_left", 0.5)
-    show pichit surprised at character_warp_to("middle_right", 0.5)
+    show charlet scared at character_warp_to("far_left")
+    show raegan surprised at character_warp_to("middle_left")
+    show pichit surprised at character_warp_to("middle_right")
     show phrarat neutral at character_warp_to("far_right")
 
     pause 0.5
@@ -144,7 +144,7 @@ label .fight1:
 
     phrarat smile "Getting distracting already?"
 
-    call .pichit_phrarat_cross_blades
+    call .pichit_phrarat_cross_blades(-0.1)
 
     pichit battle anxious "{i}Sorry, but I'm a little busy now...{/i}"
 
@@ -166,7 +166,8 @@ label .fight1:
 
     "We keep crossing each other's blade."
 
-    call .pichit_phrarat_cross_blades
+    call .pichit_phrarat_cross_blades(0.1)
+    call .pichit_phrarat_cross_blades(-0.1)
 
     "Our two blades lock."
 
@@ -198,6 +199,28 @@ label .fight1:
 
     phrarat "Neat parlor trick. Too bad your shield will burn to ash long before Vanich has a chance to escape."
 
+    phrarat "Cowering away as usual Pichit Sirawa!"
+
+    pichit "You! H-How do you know my name?"
+
+    phrarat "I know the names of all my family. Especially cowards who betray our heritage for the likes of Vanich enterprises."
+
+    "The assassin flicks his wrist. A rope binds Pichit’s shield searing it to pieces."
+    "Your guide’s spirit is quick enough to blast vines through the ground, blocking the Assassin’s path and allowing Pichit to inch closer to the building."
+
+    pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
+
+    phrarat "A small price to pay. Their corruption must stop. They are raping our land, stealing our gemstones, murdering our spirits for their own gain."
+
+    "The Assassin strikes at the vines but they keep growing back."
+
+    pichit "For someone so concerned with our native culture, I’m surprised you don’t even recognize what type kind of vines these are."
+
+    "Perpetua plants. A smart move. The vines would regenerate faster than he could do damage. Now it was just a matter of how much energy the assassin’s spirit  had left."
+
+    "A snap sounded in my mind. Professor Mara’s voice stirred to life. Finally, using my abilities, I snap both Pichit and Mara together into one connection."
+
+
     scene bg black with wipeleft_fast
     scene bg university_inside with wipeleft_fast
 
@@ -221,26 +244,7 @@ label .fight1:
     show phrarat neutral at character_warp_to("right")
     # show phrarat angry at character_warp_to("right")
 
-    phrarat "Cowering away as usual Pichit Sirawa!"
 
-    pichit "You! H-How do you know my name?"
-
-    phrarat "I know the names of all my family. Especially cowards who betray our heritage for the likes of Vanich enterprises."
-
-    "The assassin flicks his wrist. A rope binds Pichit’s shield searing it to pieces."
-    "Your guide’s spirit is quick enough to blast vines through the ground, blocking the Assassin’s path and allowing Pichit to inch closer to the building."
-
-    pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
-
-    phrarat "A small price to pay. Their corruption must stop. They are raping our land, stealing our gemstones, murdering our spirits for their own gain."
-
-    "The Assassin strikes at the vines but they keep growing back."
-
-    pichit "For someone so concerned with our native culture, I’m surprised you don’t even recognize what type kind of vines these are."
-
-    "Perpetua plants. A smart move. The vines would regenerate faster than he could do damage. Now it was just a matter of how much energy the assassin’s spirit  had left."
-
-    "A snap sounded in my mind. Professor Mara’s voice stirred to life. Finally, using my abilities, I snap both Pichit and Mara together into one connection."
 
     mara "Charlet, are you still at the fair? Security has been sent in, they’re demanding to know if Raegan Vanich is safe."
 
@@ -457,16 +461,16 @@ label .pichit_cut_catching_whip:
 
     return
 
-label .pichit_phrarat_cross_blades:
-    show pichit at character_move_to_easein("left", 0.25)
-    show phrarat at character_move_to_easein("right", 0.25)
+label .pichit_phrarat_cross_blades(_xpos_offset=0.0):
+    show pichit at character_move_to_easein("left", 0.25, _xpos_offset)
+    show phrarat at character_move_to_easein("right", 0.25, _xpos_offset)
 
     pause 0.15
     play sound audio.sfx.slash_impact3
     pause 0.10
 
-    show pichit at character_move_to_easein_elastic("middle_left", 0.25)
-    show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
+    show pichit at character_move_to_easein_elastic("middle_left", 0.25, _xpos_offset)
+    show phrarat at character_move_to_easein_elastic("middle_right", 0.25, _xpos_offset)
     show bg at hpunch_powerful
     pause 0.5
 
