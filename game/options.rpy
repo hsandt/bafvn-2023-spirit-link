@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("bafvn_2023_spirit_link")
+define config.name = _("Spirit Link")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.2"
+define config.version = "0.3"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -151,6 +151,12 @@ define config.save_directory = "bafvn_2023_spirit_link-1686163119"
 ## The icon displayed on the taskbar or dock.
 
 define config.window_icon = "gui/window_icon.png"
+
+
+## More custom options
+
+## Show last statement while displaying menu choices
+define config.choice_empty_window = extend
 
 
 ## Build configuration #########################################################

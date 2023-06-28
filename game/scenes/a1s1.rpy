@@ -15,30 +15,29 @@ label a1s1:
     "At the time, I said ‘I'd do anything’. Now standing under the scorching, summer sun, I was reconsidering."
 
     scene bg university_outside with fade
+    play music mystery
 
     # uncomment when asset is ready
     # play music chill
 
-    show charlet neutral at character_left
+    show charlet exhausted at character_warp_to("left")
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
     #sunlight effect? flash?
-
-    hide charlet
 
     "Today was unmercifully hot. Humidity had made the air oppressive and the colorful umbrellas above me,
     dyed in the traditional patterns of the Mawi tribe, did little to protect from the heat."
     "I dabbed at the sweat on my brow, lamenting the loss of the expensive powder I had applied that morning."
 
-    show charlet neutral at character_left
-    charlet "Great. So much for best impressions."
-
-    hide charlet
+    charlet sad "Great. So much for best impressions."
 
     #maybe show a mirror
 
     "A glance in the mirror revealed uneven patches of skin and smeared rouge. I swiped at it hastily, hoping no one noticed."
     "No one did. Of course not. Tucked in between the history and literature department's booths, my booth remains woefully forgotten."
+
+    show charlet exhausted
+
     "Bored and sweaty I amuse myself by looking around. I..."
 
     jump .look_choice
@@ -57,7 +56,9 @@ label .look_choice:
 label .look_at_crowd:
     #bg focus on crowd (new bg or zoom in?)
 
-    "A throng of curious passerbys fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
+    hide charlet with character_dissolve
+
+    "A throng of curious viewers fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
     "Each department has brought their best each aiming to net themselves a rich, sponsor.
     Colorful signboards cry out the merits of their research."
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
@@ -69,18 +70,24 @@ label .look_at_crowd:
 label .look_at_booth:
     #bg focus on booth
 
+    hide charlet with character_dissolve
+
     "A crowd catches my eye. The engineering and alchemy departments, of course."
     "Their towering displays command attention and their signs boast of life-changing advances in magitech,
     drawing representatives from the railroad and mining companies like flies to honey."
     # Understanding issue: faster *and* at 50 paces, or faster *when* at 50 paces? Did range improve from last model?
     "As I watch, a man in a suit examines the engineering team’s latest invention:
-    a long-barreled rifle more accurate than the last, capable of shooting a bird faster at 50 paces."
+    a long-barreled rifle more accurate than the last, capable of shooting a bird faster than 50 paces."
+
+    show charlet scared at character_warp_to("left")
+
     "I cringe as he peers down its nozzle."
 
+    show makara neutral at companion_warp_to("middle_right")
 
-    show makara neutral at character_right
+    makara "Fear not. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful during these times."
 
-    makara "Do not worry. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful at these times."
+    show charlet neutral
 
     "My companion is right. Though it has been only two days since the attack in Alcatra, the event's security is concerningly lax."
     # When I read this first, I thought she was talking about people protecting the fair. After reading more below and checking the exact definition of
@@ -88,23 +95,27 @@ label .look_at_booth:
     # on the point of view, which may or may not be frightening for a mere citizen. On the other side, maybe "terrorist" would be too strong?
     "The possibility of vigilantes hiding in the crowd, makes me tense."
     "My eyes scan the crowd and lingers on the men scattered throughout amongst them in the brown and green of the hunter’s guild."
-    "Their expressions are friendly, but their eyes are sharp, and their stance gives off an air of purpose."
+    "Their expressions are friendly, but their eyes are sharp, and their stances suggest an air of purpose."
+
+    show charlet intrigued
+
     "Friend or foe? In a sea of strangers it is impossible to know."
+    "While the ILF was, by in large, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
+    the recent vigilante attacks had cast doubt on the organization."
+    "However much they might claim no association with the rebels, their track record didn't look good."
+
+    show charlet neutral
 
     "I force levity into my voice."
 
-    charlet "Well, at least I have you, oh mighty Makara, to save me in spite of my poor, human senses."
+    charlet smile "Well, at least I have you, oh mighty Makara, to save me in spite of my poor, human senses."
 
     makara "Indeed. With me here, you need not fear anything."
-    hide makara neutral
-    hide charlet
 
     "A big boast from a little dragon, but the words gave me some comfort."
 
-    # Flow issue: need transition?
-    "While the ILF was, for the most part, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
-    the recent, vigilante attacks had cast doubt on the organization."
-    "However much they might claim no association with the rebels, their track record didn't look good."
+    show charlet neutral
+    hide makara with character_dissolve
 
     $ has_looked_at_booth = True
     return
@@ -117,13 +128,16 @@ label .after_look:
 
     pause 1.0
 
-    "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but had been too busy setting up the booth."
+    show charlet exhausted at character_warp_to("middle_left")
 
-    show charlet neutral at character_left
+
+    "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I'd been too busy setting up the booth."
+
+    show charlet intrigued
 
     charlet "Maybe I should have focused my studies on food instead of folklore. At least then I’d have an excuse to eat."
 
-    show makara neutral at character_right
+    show makara neutral at companion_warp_to("middle_right")
 
     makara "And what? Bribed your advisor with cake? I could hardly see that working. With how much time she spends reading, one would think she lived off prose and not portions."
 
@@ -148,9 +162,9 @@ label .after_look:
     charlet "...maybe I should just grab lunch."
     "Just as I make to leave, a voice stops me."
 
-    show pichit neutral at character_right
+    show pichit at character_warp_to("right")
     # When asset is ready, replace with:
-    # show pichit happy at character_right
+    # show pichit happy at character_warp_to("right")
 
     pichit "Oi! Charlet! Hey!"
 
@@ -161,11 +175,11 @@ label .after_look:
     "He is also accompanied by a spirit."
 
     # Move characters to far sides to leave space for spirits
-    show charlet at character_far_left
-    show pichit at character_far_right
+    show charlet at character_move_to("far_left")
+    show pichit at character_move_to("far_right")
 
-    show makara neutral at companion_middle_left, flip
-    show fan neutral at companion_middle_right
+    show makara neutral at companion_warp_to("middle_left"), flip
+    show fan neutral at companion_warp_to("middle_right")
 
     makara "We meet again, my fellow. How do you feel today?"
 
@@ -173,31 +187,34 @@ label .after_look:
 
     makara "... I will take this as your greetings."
 
-    "I'm glad that only both of us can see and hear our spirits. Especially as I see man I don't know in the back."
+    "I'm glad that only both of us can see and hear our spirits. Especially as I see a man I don't know in the back."
 
     hide makara
     hide fan
+    with character_dissolve
+
+    show charlet at character_move_to("left")
 
     charlet "Hey Pichit. Who is the gentleman with you?"
 
     # When asset is ready, replace with:
-    show pichit neutral at character_middle
-    # show pichit happy at character_right
-    show raegan neutral at character_right
+    show pichit neutral at character_move_to("middle")
+    show raegan neutral at character_warp_to("right")
 
     "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
     "Instead his collar and cuffs were clean and neat as though freshly laundered.
     Even his hair was impeccable. Meanwhile, my own hair felt matted and itchy."
 
-    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company. He said he was interested in sponsoring the expedition!"
+    pichit smile "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company."
+    "He said he was interested in sponsoring the expedition!"
 
-    pichit "Raegan, this is Dr. Charlet Kasamsun, the brains of behind the expedition."
+    pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
     raegan "A pleasure to meet you, Charlet. I've heard wonderful things about your plans."
 
-    charlet "Likewise, Mr. Vanich. The Vanich company has done so many amazing things, it is a great honor to meet you."
+    charlet smile "Likewise, Mr. Vanich. The Vanich company has done so many amazing things, it is a great honor to meet you."
 
-    raegan "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
+    raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
 
     "His smile is dangerously charming and I find myself flustered by my own reaction to it."
 
@@ -205,13 +222,7 @@ label .after_look:
 
     #more scene tbd
 
-    # End of playtesting
-
-    pause 1.0
-
-    "This is the end of the playtesting section. Thank you for playing!"
-
     # Commented out for playtesting
     # "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
 
-    # jump a1s2
+    jump a1s2

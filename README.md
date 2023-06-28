@@ -12,4 +12,4 @@ Unless otherwise stated, all assets are under copyright of their respective auth
 
 #### Free assets
 
-- Proto cat picture "Mr Fuffington" from https://doublefree.itch.io/mr-fuffington under CC0
+- [Alice Font](https://fonts.google.com/specimen/Alice) by Ksenya Erulevich, Cyreal under SIL Open Font License
