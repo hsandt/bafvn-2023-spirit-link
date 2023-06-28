@@ -91,7 +91,10 @@ init:
         linear move_duration xoffset -50
         linear come_back_duration xoffset 0
 
-    transform fall_left(fall_duration=0.1, partial_come_back_duration=0.2):
-        linear fall_duration xoffset -150
-        linear fall_duration yoffset 350
-        linear partial_come_back_duration yoffset 300
+    transform bump_right(move_duration=0.1, come_back_duration=0.2):
+        linear move_duration xoffset 50
+        linear come_back_duration xoffset 0
+
+    transform fall_left(hop_backward_duration=0.2, fall_duration=0.1):
+        easein hop_backward_duration offset (-50, -50)
+        easein_elastic fall_duration yoffset 300

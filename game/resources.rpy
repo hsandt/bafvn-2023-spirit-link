@@ -143,6 +143,8 @@ init -1:
     # TODO: use dedicated SFX when ready
     define audio.sfx.catch = "audio/sfx/sfx_hit.opus"
     # define audio.sfx.shower = "audio/sfx/sfx_shower.opus"
+    # TODO: use dedicated SFX when ready
+    define audio.sfx.summon = "audio/sfx/sfx_fire.opus"
 
     ## SFX mapping (to allow to reuse audio assets for actions with different meanings,
     ## and also so accessibility feature can use short name as dict key rather than filepath)

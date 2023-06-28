@@ -57,16 +57,17 @@ label .assassin_appears:
 
     "The man grits his teeth before launching a flaming projectile with inhuman speed directly at Raegan."
 
+    play sound audio.sfx.throw
     show phrarat determined at bump_left
     pause 0.1
     show pichit battle serious at character_move_to("middle", 0.25)
     pause 0.25
-    play sound audio.sfx.throw
+    play sound audio.sfx.slash1
     pause 0.5
 
     "Before Raegan or I could react, Pichit's sword thrusts forward, protecting Raegan from the projectile and sending it falling to the pavement."
 
-    "Pichit has zero left on his face."
+    "Pichit's expression has completely changed."
 
     show pichit shout
 
@@ -108,56 +109,80 @@ label .fight1:
 
     play music battle
     pause 1.7
+    show phrarat determined
 
-    show phrarat determined at character_move_to("middle_right", 0.1)
-    pause 0.05
-    show pichit at character_move_to("far_left", 0.1)
-    play sound audio.sfx.scarf
+    call .phrarat_whip_dodged
 
     "The assassin uses his scarf as a whip and swings it toward my face. I dance backward to dodge..."
 
-    play sound audio.sfx.slash_impact3
-    pause 0.15
-
-    show pichit at character_move_to_easein_elastic("middle_left", 0.4)
-    show phrarat at bump_left(0.05, 0.1)
-
-    pause 0.25
-
-    show phrarat at character_move_to("middle_right", 0.25)
-    show bg at hpunch_powerful
+    call .pichit_slash_blocked
 
     "... and slash back with a stroke of my blade, but he blocks it."
+
+    call .phrarat_whip_catch
+
+    "He catches my arm with his whip."
+
+    call .pichit_cut_catching_whip
+
+    "I cut it and release my arm, before slashing back. The assassin dodges and keeps his distance from my long blade."
+    "The process repeats a few times."
+
+    call .phrarat_whip_dodged
+    pause 0.25
+    call .pichit_slash_blocked
+    pause 0.25
+    call .phrarat_whip_catch
+    pause 0.25
+    call .pichit_cut_catching_whip
+
+    "Despite the incessant burning and my repeated cuts, the scarf seems to keep its length. How is it possible?"
+
+    charlet telepathy "Pichit! Can you hear me?"
+
+    pichit battle grimace "{i}What the... Wow, that telepathy thing again?{/i}"
+
+    phrarat smile "Getting distracting already?"
+
+    call .pichit_phrarat_cross_blades
+
+    pichit battle anxious "{i}Sorry, but I'm a little busy now...{/i}"
+
+    charlet "On his shoulder! There’s a spirit reconstructing the cloth faster than it is burning. It is keeping the scarf from burning up!"
+
+    show pen neutral at companion_warp_to("right")
+
+    "{i}I see it! So what?{/i}"
+
+    "Moacu-Laedan warriors have been fighting each other with their companions for ages. First during the unification war, then at regular martial arts tournaments."
+    "However, it is notoriously difficult to hit an opponent's spirit: they are quite elusive, and we are trained to keep them out of immediate danger."
+    "It is already considered impolite, but I couldn't care less in this context. My opponent neither."
+
+    charlet "We're gonna find his weakness. Just hold him back for now!"
+
+    pichit battle grimace "Easy-peasy!"
+
+    hide pen with character_dissolve
+
     "We keep crossing each other's blade."
 
-    $ count = 2
-
-    while count > 0:
-
-        show pichit at character_move_to_easein("left", 0.25)
-        show phrarat at character_move_to_easein("right", 0.25)
-
-        pause 0.15
-        play sound audio.sfx.slash_impact3
-        pause 0.10
-
-        show pichit at character_move_to_easein_elastic("middle_left", 0.25)
-        show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
-        show bg at hpunch_powerful
-        pause 0.5
-
-        $ count -= 1
+    call .pichit_phrarat_cross_blades
 
     "Our two blades lock."
 
-    play sound audio.sfx.scarf
+    call .phrarat_whip_catch
     pause 0.5
-    play sound audio.sfx.catch
-    pause 0.1
-    show phrarat at bump_left(0.05, 0.1)
-    show pichit at fall_left
 
-    "This time, the assassin manages to wrap his fire whip around my leg and scorches it. He then pulls the whip back to make me lose my balance."
+    "This time, the assassin manages to wrap his fire whip around my leg and scorches it."
+
+    play sound audio.sfx.scarf
+    show phrarat at bump_right(0.05, 0.1)
+    show pichit at fall_left
+    pause 0.2
+    play sound audio.sfx.hit
+    pause 0.3
+
+    "He then pulls the whip back to make me lose my balance."
 
     "{i}If only I could get rid of that whip! Come to think of it, how hadn’t it burned to ash already?{/i}"
 
@@ -165,19 +190,16 @@ label .fight1:
 
     pichit "Fan, now!"
 
-    show fan neutral at companion_warp_to("left")
+    play sound audio.sfx.summon
+    show fan neutral at companion_warp_to("far_left"), flip
+    pause 0.5
 
-    "A large bark shield wove itself into existence around Pichit’s arm."
+    "A large bark shield weaves itself into existence around my arm."
 
     phrarat "Neat parlor trick. Too bad your shield will burn to ash long before Vanich has a chance to escape."
 
-    charlet telepathy "Pichit! Can you hear me?"
-
-    pichit "On his shoulder! There’s a spirit on his shoulder. It was reconstructing the cloth faster than it burned. It is keeping the scarf from burning up!"
-
-
-    scene bg black with CropMove(0.5, "wipeleft")
-    scene bg university_inside with wipeleft
+    scene bg black with wipeleft_fast
+    scene bg university_inside with wipeleft_fast
 
     show charlet neutral at character_warp_to("left")
 
@@ -393,6 +415,62 @@ label .fight2:
 
     return
     # jump a1s3
+
+label .phrarat_whip_dodged:
+    show phrarat at character_move_to("middle_right", 0.1)
+    pause 0.05
+    show pichit at character_move_to("far_left", 0.1)
+    play sound audio.sfx.scarf
+
+    return
+
+label .pichit_slash_blocked:
+    play sound audio.sfx.slash_impact3
+    pause 0.15
+
+    show pichit at character_move_to_easein_elastic("middle_left", 0.4)
+    show phrarat at bump_left(0.05, 0.1)
+
+    pause 0.25
+
+    show phrarat at character_move_to("middle_right", 0.25)
+    show bg at hpunch_powerful
+
+    return
+
+label .phrarat_whip_catch:
+    show phrarat at bump_left
+    play sound audio.sfx.scarf
+    pause 0.25
+    show pichit at bump_left
+    play sound audio.sfx.catch
+
+    return
+
+label .pichit_cut_catching_whip:
+    show pichit at bump_left
+    play sound audio.sfx.slash2
+    pause 0.5
+    play sound audio.sfx.slash3
+    pause 0.1
+    show phrarat at character_move_to("right", 0.1)
+
+    return
+
+label .pichit_phrarat_cross_blades:
+    show pichit at character_move_to_easein("left", 0.25)
+    show phrarat at character_move_to_easein("right", 0.25)
+
+    pause 0.15
+    play sound audio.sfx.slash_impact3
+    pause 0.10
+
+    show pichit at character_move_to_easein_elastic("middle_left", 0.25)
+    show phrarat at character_move_to_easein_elastic("middle_right", 0.25)
+    show bg at hpunch_powerful
+    pause 0.5
+
+    return
 
 label .analyze_one_element:
     menu:
