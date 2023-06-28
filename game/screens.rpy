@@ -682,21 +682,43 @@ screen main_menu():
     frame:
         style "main_menu_frame"
 
+    add "gui/logo.png"
+    
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    #if gui.show_name:
+    #
+    #    vbox:
+    #        style "main_menu_vbox"
+    #
+    #        text "[config.name!t]":
+    #            style "main_menu_title"
+    #
+    #        text "[config.version]":
+    #            style "main_menu_version"
 
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
+    frame:
+        background None
+        yoffset 200
+        xoffset -25
+        use menu_gears()
+    frame:
+        background None
+        yoffset -50
+        xoffset 1450
+        use menu_gears2()
+    frame:
+        background None
+        yoffset -50
+        xoffset -25
+        use menu_gears3()
+    frame:
+        background None
+        yoffset 200
+        xoffset 1450
+        use menu_gears4()
     # default_focus doesn't work on button inside screen (gear_button)
     # so we use the manual method: add id to button and set_focus on show
     on "show" action Function(renpy.set_focus, 'main_menu', 'start')
@@ -712,7 +734,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/overlay/game_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -740,7 +762,7 @@ style main_menu_version:
 ## This screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
-screen menu_gears():
+screen menu_gears(): #bottom left
 
         use gear(8, 0.3, 230, 500,1,9)
         use gear(8, 0.3, 350, 580, -1,9)
@@ -752,7 +774,7 @@ screen menu_gears():
         use gear(26, 1.0, 50, 500, -1)
         add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset 15
 
-screen menu_gears2():
+screen menu_gears2(): #top right
 
         use gear(8, 0.3, -10, 250, 1, 9)
         use gear(8, 0.3, 80, 330, -1, 9)
@@ -764,6 +786,29 @@ screen menu_gears2():
         use gear(26, 1.0, 0, 0, -1)
         add "gui/overlay/options_menu_gem.png" yoffset -670 xoffset -35
 
+screen menu_gears3(): #top left
+
+        use gear(8, 0.3, 350, 250, 1, 9)
+        use gear(8, 0.3, 250, 330, -1, 9)
+
+        use gear(11, 0.6, 200, 180, -1, 7)
+        use gear(14, 0.6, 300, 100, 1, 5)
+        use gear(14, 0.6, 100, 250, 1, 5)
+
+        use gear(26, 1.0, 50, 0, -1)
+        add "gui/overlay/options_menu_gem.png" yoffset -670 xoffset 15
+
+screen menu_gears4(): #bottom right
+
+        use gear(8, 0.3, 80, 500,1,9)
+        use gear(8, 0.3, -10, 590, -1,9)
+
+        use gear(11, 0.6, 0, 500, -1,7)
+        use gear(10, 0.6, 100, 450 ,1, 5)
+        use gear(10, 0.6, -50, 600,1, 5)
+
+        use gear(26, 1.0, 0, 500, -1)
+        add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset -35
 screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
