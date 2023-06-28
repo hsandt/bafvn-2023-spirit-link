@@ -100,7 +100,7 @@ label .look_at_booth:
     show charlet intrigued
 
     "Friend or foe? In a sea of strangers it is impossible to know."
-    "While the ILF was, by in large, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
+    "While the ILF was, by in large, peaceful in their efforts to advocate for recognition of Moacu-Laedan as a sovereign nation,
     the recent vigilante attacks had cast doubt on the organization."
     "However much they might claim no association with the rebels, their track record didn't look good."
 
@@ -168,7 +168,7 @@ label .after_look:
 
     pichit "Oi! Charlet! Hey!"
 
-    "It was Pichit wearing his signature, broad grin. He was a born and bred native of Mocau-Laedan, though he had moved to the continent for school."
+    "It was Pichit wearing his signature, broad grin. He was a born and bred native of Moacu-Laedan, though he had moved to the continent for school."
 
     "Bayani, another alumni from Alcatra University, had introduced him to me as a potential guide for my expedition two months ago."
 
