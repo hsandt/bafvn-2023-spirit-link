@@ -26,7 +26,7 @@ label .assassin_appears:
     charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and perserved for future generations. Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
 
     raegan "A worthy endeavour for sure. I look forward to hearing more of your goals and the tourism business proposition."
-    
+
     # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
     charlet "Of course. I have may schedule here would you like to set up time to meet?"
 
@@ -54,10 +54,11 @@ label .assassin_appears:
 # TODO an impact SFX and maybe smoke FX
 
     "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
-    "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him. A glowing shield is the only barrier between his chest and his assailant's knife." 
-    
+    "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him. A glowing shield is the only barrier between his chest and his assailant's knife."
+
     "A vigilante?!?"
-# TODO impact SFX and hit FX
+
+    # TODO impact SFX and hit FX
 
     "Before I can react, Pichit tackles him. The two men go rolling, the pamphlet's I had printed falling with them."
     "For a moment, there is only a mad tangle of limbs. Then Pichit goes flying. The assailant, stands, his knife replaced by a scarf."
@@ -70,9 +71,9 @@ label .assassin_appears:
 
     charlet "Into the school! The wards should stop him."
 
-    "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands. Distantly, I hear Dr. Barouche's booming voice claiming a mechanical failure."" 
+    "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands. Distantly, I hear Dr. Barouche's booming voice claiming a mechanical failure."
 
-# TODO SFX footsteps
+    # TODO SFX footsteps
 
     pause 0.5
 
@@ -81,10 +82,10 @@ label .assassin_appears:
     show raegan surprised at character_warp_to("middle_left")
     show pichit surprised at character_warp_to("middle_right")
     show phrarat neutral at character_warp_to("far_right")
- 
+
     pause 0.5
 
-    "Skidding into a vacant classroom, the three of us catch out breath. Now safe behind the unversity's wards, the realization of what happened hits me."
+    "Skidding into a vacant classroom, the three of us catch out breath. Now safe behind the university's wards, the realization of what happened hits me."
 
     charlet "D-did...did he just try to kill us?!"
 
@@ -92,13 +93,13 @@ label .assassin_appears:
 
     charlet "Why would he be trying to kill you"
 
-    ragan "A man in my position makes many enemies, Dr. Kasmaun. And there are even more that would kill me just to spite my father."
+    raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more that would kill me just to spite my father."
 
     "Raegan's expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
 
     raegan "Are we safe here?"
 
-    pichit "As safe as can be. The univeristy's wards won't allow non-staff into the store rooms. We wouldn't have been able to get in without Charlet."
+    pichit "As safe as can be. The university's wards won't allow non-staff into the store rooms. We wouldn't have been able to get in without Charlet."
 
     "Pichit's explanation was overly simple. The wards had been set to detect the proession of keystones carried by the staff rather than outright forbidding entry."
     "As long as the correct keystone was presented at the door, anyone could get in. Other wards preventing theft and the destruction of property had been added in over time, making the store rooms one of the most private and secure places on campus."
