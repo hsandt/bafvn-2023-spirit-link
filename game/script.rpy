@@ -7,9 +7,9 @@
 define config.autoreload = False
 
 
-# Custom keymap
-
 init python:
+    # Custom keymap
+
     # Add Ctrl+Q => Quit if not already set (a priori it is not set for any OS,
     # although macOS uses Cmd+Q)
     if 'quit' not in config.keymap or 'ctrl_K_q' not in config.keymap['quit']:
@@ -22,6 +22,15 @@ init python:
     def play_delayed_sfx(sfx, delay):
         """Play sfx with delay. You can directly enter sfx alias such as audio.sfx.fire (without quotes) as sfx"""
         ui.timer(delay, Play("sound", sfx))
+
+
+    # Custom audio
+
+    # Extra SFX channels for simultaneous sounds
+    # Usage:
+    # $ renpy.music.play("filename.opus", channel="sfx1")
+    renpy.music.register_channel("sfx1", "sfx")
+    renpy.music.register_channel("sfx2", "sfx")
 
 
 # Copied and adapted from renpy-sdk/renpy/common/00definitions.rpy

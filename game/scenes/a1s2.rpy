@@ -18,12 +18,14 @@ label .assassin_appears:
 
     show charlet intrigued
 
-    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their content contraditory. The few that I had heard had been told to me by my grandfather."
+    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their content contraditory."
+    "The few that I had heard had been told to me by my grandfather."
 
     "According to grandfather's tales, Lalahon was either a benevolent goddess born from the ashes of the great, god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
 
-    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and perserved for future generations. Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
+    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and perserved for future generations."
+    "Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
 
     raegan "A worthy endeavour for sure. I look forward to hearing more of your goals and the tourism business proposition."
 
@@ -31,6 +33,8 @@ label .assassin_appears:
     charlet "Of course. I have may schedule here would you like to set up time to meet?"
 
     show pichit intrigued at reset_brightness
+
+    play sound audio.sfx.smoke
 
     "Before Raegan could respond, a bright flash blinded us. Confused cries sounded out in the crowd and the air grew thick with the scent of smoke."
     "I turned west, watching as smoke poured out from the direction of the alchemy station. Had one of the displays malfunctioned?"
@@ -204,7 +208,8 @@ label .fight1:
 
     charlet "On his shoulder! There’s a spirit reconstructing the cloth faster than it is burning. It is keeping the scarf from burning up!"
 
-    show pen neutral at companion_warp_to("right")
+    show pen neutral at companion_warp_to("right"):
+        alpha 0.5
 
     "{i}I see it! So what?{/i}"
 
@@ -220,8 +225,8 @@ label .fight1:
 
     "We keep crossing each other's blade. But I keep losing ground."
 
-    call .pichit_phrarat_cross_blades(-0.1)
-    call .pichit_phrarat_cross_blades(-0.2)
+    call .pichit_phrarat_cross_blades(-0.1, 2)
+    call .pichit_phrarat_cross_blades(-0.2, 1)
 
     "Our two blades lock."
 
@@ -251,7 +256,10 @@ label .fight1:
     show fan neutral at companion_warp_to("far_left"), flip
     pause 0.5
 
-    "A large bark shield weaves itself into existence around my arm."
+    "A large bark shield weaves itself into existence around my arm, protecting me from the assault."
+
+    play sound audio.sfx.block_shield2
+    pause 1.0
 
     phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
 
@@ -438,8 +446,7 @@ label .fight2:
     "I pull the lever, opening the sprinklers."
 
     stop music fadeout 2.0
-    # TODO: uncomment when ready
-    # play sound audio.sfx.shower
+    play sound audio.sfx.shower
     pause 2.0
 
     "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
@@ -450,6 +457,8 @@ label .fight2:
     show pichit battle serious at character_warp_to("left")
     show charlet neutral at character_warp_to("middle")
     show phrarat neutral at character_warp_to("far_right")
+
+    stop sound fadeout 2.0
 
     phrarat "Of course, the host to Makara is the one who stops me."
 
@@ -487,6 +496,9 @@ label .phrarat_whip_dodged:
     pause 0.05
     show pichit at character_move_to("far_left", 0.1)
     play sound audio.sfx.scarf
+    # interrupt scarf sound before hit for dodge sound (also covers scarf wipe in the air)
+    pause 0.4
+    play sound audio.sfx.swift_move1
 
     return
 
@@ -518,19 +530,26 @@ label .pichit_cut_catching_whip:
     play sound audio.sfx.slash2
     pause 0.5
     play sound audio.sfx.slash3
-    pause 0.1
+    # use different channel to play next sound overlapping the end of the previous one
+    $ renpy.music.play(audio.sfx.swift_move2, channel="sfx1", loop=False)
+
     show phrarat at character_move_to("right", 0.1)
 
     return
 
-label .pichit_phrarat_cross_blades(_xpos_offset=0.0):
+label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
     show pichit at character_move_to_easein("left", 0.25, _xpos_offset)
     show phrarat at character_move_to_easein("right", 0.25, _xpos_offset)
 
     pause 0.15
 
-    call .play_blade_clash_sfx_variant
-    pause 0.10
+    call .play_blade_clash_sfx_variant(sfx_variant_number)
+
+    # Hotfix to adjust timing, as SFX variant impact part is not playing at the same time
+    if sfx_variant_number == 1:
+        pause 0.2
+    else:
+        pause 0.05
 
     show pichit at character_move_to_easein_elastic("middle_left", 0.25, _xpos_offset)
     show phrarat at character_move_to_easein_elastic("middle_right", 0.25, _xpos_offset)
@@ -539,9 +558,14 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0):
 
     return
 
-label .play_blade_clash_sfx_variant:
+label .play_blade_clash_sfx_random_variant:
     $ sfx_variant_number = renpy.random.randint(1, 2)
-    if sfx_variant_number == 1:
+    call .play_blade_clash_sfx_variant(sfx_variant_number)
+
+    return
+
+label .play_blade_clash_sfx_variant(variant_number):
+    if variant_number == 1:
         $ sfx_variant = audio.sfx.blade_clash1
     else:
         $ sfx_variant = audio.sfx.blade_clash2
