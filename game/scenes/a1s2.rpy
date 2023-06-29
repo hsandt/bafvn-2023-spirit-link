@@ -302,8 +302,8 @@ label .fight1:
     "Reaching out to the connection, I tell Pichit the plan, who starts backing up toward the warehouse entrance."
 
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
     # show phrarat angry at character_warp_to("right")
 
 
@@ -340,8 +340,8 @@ label .fight1:
     call .analyze_one_element from _call_a1s2_analyze_one_element
 
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
     pichit "Why Vanich? He's trying to improve our relationship with Enon and the rest of the mainlanders."
 
@@ -373,8 +373,8 @@ label .fight1:
 
 label .fight2:
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
     # show phrarat sad
     # TODO: pen sad
@@ -447,7 +447,7 @@ label .fight2:
     "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
 
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
+    show pichit battle serious at character_warp_to("left")
     show charlet neutral at character_warp_to("middle")
     show phrarat neutral at character_warp_to("far_right")
 
