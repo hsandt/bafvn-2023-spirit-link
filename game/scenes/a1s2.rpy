@@ -1,5 +1,5 @@
 label a1s2:
-    "Act 1: Scene 2 - Gathering Attack"
+    "Act 1: Scene 2 - Attack"
     jump .assassin_appears
 
 label .assassin_appears:
@@ -10,26 +10,40 @@ label .assassin_appears:
     show pichit neutral at character_warp_to("right"), darker
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
+    show raegan intrigued
 
-    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu."
+    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu. It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
 
-    # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
-    charlet "I am hoping this work will help build bridges between our peoples."
+    raegan "Indeed... Pichit mentioned your goal was to catalogue folktales from the island? Did you ever hear any of tales of Lalahon?"
 
     show charlet intrigued
-    show raegan intrigued
+
+    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their content contraditory. The few that I had heard had been told to me by my grandfather."
+
+    "According to grandfather's tales, Lalahon was either a benevolent goddess born from the ashes of the great, god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
+    "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
+
+    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and perserved for future generations. Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
+
+    raegan "A worthy endeavour for sure. I look forward to hearing more of your goals and the tourism business proposition."
+    
+    # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
+    charlet "Of course. I have may schedule here would you like to set up time to meet?"
+
     show pichit intrigued at reset_brightness
 
-    "Before Raegan can respond, a commotion behind him made all three of us turn."
-    "Smoke began pouring out of a few stands to the west; confused mumblings rise from the nearby crowd."
+    "Before Raegan could respond, a bright flash blinded us. Confused cries sounded out in the crowd and the air grew thick with the scent of smoke."
+    "I turned west, watching as smoke poured out from the direction of the alchemy station. Had one of the displays malfunctioned?"
 
-    raegan "My pardons, Pichit, was this planned as part of the event?"
+    raegan "My pardons, Pichit... Was a this part of the event?"
 
     show pichit smile
 
-    "Pichit smiles lazily, waving a hand to dismiss the commotion."
+    "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders he was perturbed."
 
-    pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
+    pichit "Some demonstrations must have malfunctioned. I'm sure it's nothing to be concerned about, sir."
+
+    raegan "Are you sure, that-"
 
     scene bg smoke with bg_dissolve
     show phrarat neutral at character_warp_to("middle")
@@ -37,23 +51,62 @@ label .assassin_appears:
     stop music fadeout 1.0
     pause 0.5
 
-    "Before I can process Pichit's explanation, a man covered in red emerges from the dispersing smoke. A knife glistening on his waist."
+# TODO an impact SFX and maybe smoke FX
 
-    "He tears a piece of his fabric scarf, wads it up in his hand..."
+    "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
+    "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him. A glowing shield is the only barrier between his chest and his assailant's knife." 
+    
+    "A vigilante?!?"
+# TODO impact SFX and hit FX
 
-    play sound audio.sfx.fire
+    "Before I can react, Pichit tackles him. The two men go rolling, the pamphlet's I had printed falling with them."
+    "For a moment, there is only a mad tangle of limbs. Then Pichit goes flying. The assailant, stands, his knife replaced by a scarf."
+    "The incongruity of me strikes me. Why is he balling up a scarf?"
+    "..Then my question is answered. Flames ignite. The simple scarf transformed into a flaming whip."
 
-    "... and ignites it."
+    makara "Don't just sit there! Get inside now!"
+
+    "I scramble to my feet. Pichit ahead of me, is already up and helping a stunned Raegan."
+
+    charlet "Into the school! The wards should stop him."
+
+    "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands. Distantly, I hear Dr. Barouche's booming voice claiming a mechanical failure."" 
+
+# TODO SFX footsteps
+
+    pause 0.5
 
     scene bg university_inside with bg_dissolve
     show charlet scared at character_warp_to("far_left")
     show raegan surprised at character_warp_to("middle_left")
     show pichit surprised at character_warp_to("middle_right")
     show phrarat neutral at character_warp_to("far_right")
-
+ 
     pause 0.5
 
-    charlet "A vigilante?!"
+    "Skidding into a vacant classroom, the three of us catch out breath. Now safe behind the unversity's wards, the realization of what happened hits me."
+
+    charlet "D-did...did he just try to kill us?!"
+
+    raegan "Not us. Me."
+
+    charlet "Why would he be trying to kill you"
+
+    ragan "A man in my position makes many enemies, Dr. Kasmaun. And there are even more that would kill me just to spite my father."
+
+    "Raegan's expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
+
+    raegan "Are we safe here?"
+
+    pichit "As safe as can be. The univeristy's wards won't allow non-staff into the store rooms. We wouldn't have been able to get in without Charlet."
+
+    "Pichit's explanation was overly simple. The wards had been set to detect the proession of keystones carried by the staff rather than outright forbidding entry."
+    "As long as the correct keystone was presented at the door, anyone could get in. Other wards preventing theft and the destruction of property had been added in over time, making the store rooms one of the most private and secure places on campus."
+
+    charlet "We should contact someone. Do you have a telestone?"
+
+    "Telestones were a fairly recent invention courtesy of a collaboration between the alchemy, metallurgy, and charms departments"
+    "The size of a button, the devices used similar frequencies as the telepathy used by the spirit-bonded to allow for short-distance communication. At the moment, the range was only half-a mile or so, but the changes brought by it had been revolutionary."
 
     "The man grits his teeth before launching a flaming projectile with inhuman speed directly at Raegan."
 
