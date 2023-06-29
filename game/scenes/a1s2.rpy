@@ -57,12 +57,6 @@ label .assassin_appears:
 
     "The man grits his teeth before launching a flaming projectile with inhuman speed directly at Raegan."
 
-    # HOTFIX for Skip going too fast and preventing alpha fade in to finish at this point
-    show pichit:
-        alpha 1.0
-    show phrarat:
-        alpha 1.0
-
     play sound audio.sfx.throw
     show phrarat determined at bump_left
     pause 0.1
@@ -93,12 +87,6 @@ label .assassin_appears:
     # "The choice is stolen from me just as I finally make up my mind."
 
     "Vanich grabs my arm, hauling me backward into a nearby storage room. But I continue watching from afar."
-
-    # HOTFIX for Skip going too fast and preventing alpha fade in to finish at this point
-    show charlet:
-        alpha 1.0
-    show raegan:
-        alpha 1.0
 
     show charlet at character_exit_to_left(0.5)
     show raegan at character_exit_to_left(0.8)
