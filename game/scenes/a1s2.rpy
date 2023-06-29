@@ -111,7 +111,7 @@ label .assassin_appears:
 
     "The man grits his teeth before launching a flaming projectile with inhuman speed directly at Raegan."
 
-    play sound audio.sfx.throw
+    play sound audio.sfx.throw_fireball
     show phrarat determined at bump_left
     pause 0.1
     show pichit battle serious at character_move_to("middle", 0.25)
@@ -528,13 +528,24 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0):
     show phrarat at character_move_to_easein("right", 0.25, _xpos_offset)
 
     pause 0.15
-    play sound audio.sfx.slash_impact3
+
+    call .play_blade_clash_sfx_variant
     pause 0.10
 
     show pichit at character_move_to_easein_elastic("middle_left", 0.25, _xpos_offset)
     show phrarat at character_move_to_easein_elastic("middle_right", 0.25, _xpos_offset)
     show bg at hpunch_powerful
     pause 0.5
+
+    return
+
+label .play_blade_clash_sfx_variant:
+    $ sfx_variant_number = renpy.random.randint(1, 2)
+    if sfx_variant_number == 1:
+        $ sfx_variant = audio.sfx.blade_clash1
+    else:
+        $ sfx_variant = audio.sfx.blade_clash2
+    play sound sfx_variant
 
     return
 
