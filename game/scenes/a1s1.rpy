@@ -195,7 +195,6 @@ label .after_look:
 
     charlet "Hey Pichit. Who is the gentleman with you?"
 
-    # When asset is ready, replace with:
     show pichit neutral at character_move_to("middle")
     show raegan neutral at character_warp_to("right")
 

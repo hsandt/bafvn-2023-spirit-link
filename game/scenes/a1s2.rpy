@@ -1,5 +1,5 @@
 label a1s2:
-    "Act 1: Scene 2 - Gathering Attack"
+    "Act 1: Scene 2 - Attack"
     jump .assassin_appears
 
 label .assassin_appears:
@@ -10,26 +10,44 @@ label .assassin_appears:
     show pichit neutral at character_warp_to("right"), darker
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
+    show raegan intrigued
 
-    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu."
+    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu. It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
 
-    # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
-    charlet "I am hoping this work will help build bridges between our peoples."
+    raegan "Indeed... Pichit mentioned your goal was to catalogue folktales from the island? Did you ever hear any of tales of Lalahon?"
 
     show charlet intrigued
-    show raegan intrigued
+
+    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their content contraditory."
+    "The few that I had heard had been told to me by my grandfather."
+
+    "According to grandfather's tales, Lalahon was either a benevolent goddess born from the ashes of the great, god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
+    "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
+
+    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and perserved for future generations."
+    "Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
+
+    raegan "A worthy endeavour for sure. I look forward to hearing more of your goals and the tourism business proposition."
+
+    # TODO Seri: fill discussion on future work, adding details about it (collecting old tales, relationship with spirits)
+    charlet "Of course. I have may schedule here would you like to set up time to meet?"
+
     show pichit intrigued at reset_brightness
 
-    "Before Raegan can respond, a commotion behind him made all three of us turn."
-    "Smoke began pouring out of a few stands to the west; confused mumblings rise from the nearby crowd."
+    play sound audio.sfx.smoke
 
-    raegan "My pardons, Pichit, was this planned as part of the event?"
+    "Before Raegan could respond, a bright flash blinded us. Confused cries sounded out in the crowd and the air grew thick with the scent of smoke."
+    "I turned west, watching as smoke poured out from the direction of the alchemy station. Had one of the displays malfunctioned?"
+
+    raegan "My pardons, Pichit... Was a this part of the event?"
 
     show pichit smile
 
-    "Pichit smiles lazily, waving a hand to dismiss the commotion."
+    "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders he was perturbed."
 
-    pichit "Some demonstrations must have malfunctioned, it's nothing to be concerned about, sir."
+    pichit "Some demonstrations must have malfunctioned. I'm sure it's nothing to be concerned about, sir."
+
+    raegan "Are you sure, that-"
 
     scene bg smoke with bg_dissolve
     show phrarat neutral at character_warp_to("middle")
@@ -37,13 +55,31 @@ label .assassin_appears:
     stop music fadeout 1.0
     pause 0.5
 
-    "Before I can process Pichit's explanation, a man covered in red emerges from the dispersing smoke. A knife glistening on his waist."
+# TODO an impact SFX and maybe smoke FX
 
-    "He tears a piece of his fabric scarf, wads it up in his hand..."
+    "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
+    "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him. A glowing shield is the only barrier between his chest and his assailant's knife."
 
-    play sound audio.sfx.fire
+    "A vigilante?!?"
 
-    "... and ignites it."
+    # TODO impact SFX and hit FX
+
+    "Before I can react, Pichit tackles him. The two men go rolling, the pamphlet's I had printed falling with them."
+    "For a moment, there is only a mad tangle of limbs. Then Pichit goes flying. The assailant, stands, his knife replaced by a scarf."
+    "The incongruity of me strikes me. Why is he balling up a scarf?"
+    "..Then my question is answered. Flames ignite. The simple scarf transformed into a flaming whip."
+
+    makara "Don't just sit there! Get inside now!"
+
+    "I scramble to my feet. Pichit ahead of me, is already up and helping a stunned Raegan."
+
+    charlet "Into the school! The wards should stop him."
+
+    "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands. Distantly, I hear Dr. Barouche's booming voice claiming a mechanical failure."
+
+    # TODO SFX footsteps
+
+    pause 0.5
 
     scene bg university_inside with bg_dissolve
     show charlet scared at character_warp_to("far_left")
@@ -53,17 +89,33 @@ label .assassin_appears:
 
     pause 0.5
 
-    charlet "A vigilante?!"
+    "Skidding into a vacant classroom, the three of us catch out breath. Now safe behind the university's wards, the realization of what happened hits me."
+
+    charlet "D-did...did he just try to kill us?!"
+
+    raegan "Not us. Me."
+
+    charlet "Why would he be trying to kill you"
+
+    raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more that would kill me just to spite my father."
+
+    "Raegan's expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
+
+    raegan "Are we safe here?"
+
+    pichit "As safe as can be. The university's wards won't allow non-staff into the store rooms. We wouldn't have been able to get in without Charlet."
+
+    "Pichit's explanation was overly simple. The wards had been set to detect the proession of keystones carried by the staff rather than outright forbidding entry."
+    "As long as the correct keystone was presented at the door, anyone could get in. Other wards preventing theft and the destruction of property had been added in over time, making the store rooms one of the most private and secure places on campus."
+
+    charlet "We should contact someone. Do you have a telestone?"
+
+    "Telestones were a fairly recent invention courtesy of a collaboration between the alchemy, metallurgy, and charms departments"
+    "The size of a button, the devices used similar frequencies as the telepathy used by the spirit-bonded to allow for short-distance communication. At the moment, the range was only half-a mile or so, but the changes brought by it had been revolutionary."
 
     "The man grits his teeth before launching a flaming projectile with inhuman speed directly at Raegan."
 
-    # HOTFIX for Skip going too fast and preventing alpha fade in to finish at this point
-    show pichit:
-        alpha 1.0
-    show phrarat:
-        alpha 1.0
-
-    play sound audio.sfx.throw
+    play sound audio.sfx.throw_fireball
     show phrarat determined at bump_left
     pause 0.1
     show pichit battle serious at character_move_to("middle", 0.25)
@@ -93,12 +145,6 @@ label .assassin_appears:
     # "The choice is stolen from me just as I finally make up my mind."
 
     "Vanich grabs my arm, hauling me backward into a nearby storage room. But I continue watching from afar."
-
-    # HOTFIX for Skip going too fast and preventing alpha fade in to finish at this point
-    show charlet:
-        alpha 1.0
-    show raegan:
-        alpha 1.0
 
     show charlet at character_exit_to_left(0.5)
     show raegan at character_exit_to_left(0.8)
@@ -156,13 +202,14 @@ label .fight1:
 
     phrarat smile "Getting distracting already?"
 
-    call .pichit_phrarat_cross_blades(-0.1)
+    call .pichit_phrarat_cross_blades(0.0)
 
     pichit battle anxious "{i}Sorry, but I'm a little busy now...{/i}"
 
     charlet "On his shoulder! There’s a spirit reconstructing the cloth faster than it is burning. It is keeping the scarf from burning up!"
 
-    show pen neutral at companion_warp_to("right")
+    show pen neutral at companion_warp_to("right"):
+        alpha 0.5
 
     "{i}I see it! So what?{/i}"
 
@@ -176,10 +223,10 @@ label .fight1:
 
     hide pen with character_dissolve
 
-    "We keep crossing each other's blade."
+    "We keep crossing each other's blade. But I keep losing ground."
 
-    call .pichit_phrarat_cross_blades(0.1)
-    call .pichit_phrarat_cross_blades(-0.1)
+    call .pichit_phrarat_cross_blades(-0.1, 2)
+    call .pichit_phrarat_cross_blades(-0.2, 1)
 
     "Our two blades lock."
 
@@ -201,28 +248,39 @@ label .fight1:
 
     "I'm interrupted in my thoughts by the assassin jumping at me to tackle me to the ground. He raises his dagger, ready to stab me in the chest."
 
-    pichit "Fan, now!"
+    pichit battle shout "Fan, now!"
 
     play sound audio.sfx.summon
+    # Show pichit in front so companion tail doesn't hide his face
+    show pichit zorder 1
     show fan neutral at companion_warp_to("far_left"), flip
     pause 0.5
 
-    "A large bark shield weaves itself into existence around my arm."
+    "A large bark shield weaves itself into existence around my arm, protecting me from the assault."
 
-    phrarat "Neat parlor trick. Too bad your shield will burn to ash long before Vanich has a chance to escape."
+    play sound audio.sfx.block_shield2
+    pause 1.0
 
-    phrarat "Cowering away as usual Pichit Sirawa!"
+    phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
 
-    pichit "You! H-How do you know my name?"
+    "The assassin flicks his wrist. A rope binds my shield, searing it to pieces."
 
-    phrarat "I know the names of all my family. Especially cowards who betray our heritage for the likes of Vanich enterprises."
+    phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
 
-    "The assassin flicks his wrist. A rope binds Pichit’s shield searing it to pieces."
-    "Your guide’s spirit is quick enough to blast vines through the ground, blocking the Assassin’s path and allowing Pichit to inch closer to the building."
+    pichit battle smile "You really thought I was just losing ground all that time, uh? Never cared having a break for a minute to appreciate the nature surrounding you?"
+
+    show phrarat surprised
+
+    "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers."
+
+    # TODO: FX vines
+    play sound audio.sfx.vines
+
+    "My spirit blasts numerous vines through this fertile soil, blocking the Assassin’s limbs."
 
     pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
 
-    phrarat "A small price to pay. Their corruption must stop. They are raping our land, stealing our gemstones, murdering our spirits for their own gain."
+    phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to create those fake gemstones."
 
     "The Assassin strikes at the vines but they keep growing back."
 
@@ -252,8 +310,8 @@ label .fight1:
     "Reaching out to the connection, I tell Pichit the plan, who starts backing up toward the warehouse entrance."
 
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
     # show phrarat angry at character_warp_to("right")
 
 
@@ -290,8 +348,8 @@ label .fight1:
     call .analyze_one_element from _call_a1s2_analyze_one_element
 
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
     pichit "Why Vanich? He's trying to improve our relationship with Enon and the rest of the mainlanders."
 
@@ -323,8 +381,8 @@ label .fight1:
 
 label .fight2:
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
     # show phrarat sad
     # TODO: pen sad
@@ -388,8 +446,7 @@ label .fight2:
     "I pull the lever, opening the sprinklers."
 
     stop music fadeout 2.0
-    # TODO: uncomment when ready
-    # play sound audio.sfx.shower
+    play sound audio.sfx.shower
     pause 2.0
 
     "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
@@ -397,9 +454,11 @@ label .fight2:
     "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
 
     scene bg university_inside
-    show pichit neutral at character_warp_to("left")
+    show pichit battle serious at character_warp_to("left")
     show charlet neutral at character_warp_to("middle")
     show phrarat neutral at character_warp_to("far_right")
+
+    stop sound fadeout 2.0
 
     phrarat "Of course, the host to Makara is the one who stops me."
 
@@ -437,6 +496,9 @@ label .phrarat_whip_dodged:
     pause 0.05
     show pichit at character_move_to("far_left", 0.1)
     play sound audio.sfx.scarf
+    # interrupt scarf sound before hit for dodge sound (also covers scarf wipe in the air)
+    pause 0.4
+    play sound audio.sfx.swift_move1
 
     return
 
@@ -468,23 +530,46 @@ label .pichit_cut_catching_whip:
     play sound audio.sfx.slash2
     pause 0.5
     play sound audio.sfx.slash3
-    pause 0.1
+    # use different channel to play next sound overlapping the end of the previous one
+    $ renpy.music.play(audio.sfx.swift_move2, channel="sfx1", loop=False)
+
     show phrarat at character_move_to("right", 0.1)
 
     return
 
-label .pichit_phrarat_cross_blades(_xpos_offset=0.0):
+label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
     show pichit at character_move_to_easein("left", 0.25, _xpos_offset)
     show phrarat at character_move_to_easein("right", 0.25, _xpos_offset)
 
     pause 0.15
-    play sound audio.sfx.slash_impact3
-    pause 0.10
+
+    call .play_blade_clash_sfx_variant(sfx_variant_number)
+
+    # Hotfix to adjust timing, as SFX variant impact part is not playing at the same time
+    if sfx_variant_number == 1:
+        pause 0.2
+    else:
+        pause 0.05
 
     show pichit at character_move_to_easein_elastic("middle_left", 0.25, _xpos_offset)
     show phrarat at character_move_to_easein_elastic("middle_right", 0.25, _xpos_offset)
     show bg at hpunch_powerful
     pause 0.5
+
+    return
+
+label .play_blade_clash_sfx_random_variant:
+    $ sfx_variant_number = renpy.random.randint(1, 2)
+    call .play_blade_clash_sfx_variant(sfx_variant_number)
+
+    return
+
+label .play_blade_clash_sfx_variant(variant_number):
+    if variant_number == 1:
+        $ sfx_variant = audio.sfx.blade_clash1
+    else:
+        $ sfx_variant = audio.sfx.blade_clash2
+    play sound sfx_variant
 
     return
 
