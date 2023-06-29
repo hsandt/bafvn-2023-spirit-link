@@ -18,13 +18,13 @@ label .assassin_appears:
 
     show charlet intrigued
 
-    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their content contraditory."
+    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their content contradictory."
     "The few that I had heard had been told to me by my grandfather."
 
     "According to grandfather's tales, Lalahon was either a benevolent goddess born from the ashes of the great, god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
 
-    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and perserved for future generations."
+    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
     "Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
 
     raegan "A worthy endeavour for sure. I look forward to hearing more of your goals and the tourism business proposition."
