@@ -1,5 +1,5 @@
 label a1s2:
-    "Act 1: Scene 2 - Gathering Attack"
+    "Act 1: Scene 2 - Attack"
     jump .assassin_appears
 
 label .assassin_appears:
