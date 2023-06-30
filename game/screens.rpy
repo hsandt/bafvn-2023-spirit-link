@@ -1092,7 +1092,7 @@ screen file_slots(title):
                 style_prefix "page"
 
                 xalign 0.5
-                yalign 0.8
+                yalign 0.85
 
                 hbox:
                     xalign 0.5
