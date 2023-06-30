@@ -461,8 +461,11 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
-screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _id = None):
-
+screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _id = None, _isQuick=False, _tooltip=""):
+    
+    $iconoffset = 0#
+    if _isQuick:
+      $iconoffset = -3
 
     $offset = int(5*_size)
     add im.FactorScale("gui/gears/gear_big_b_26.png", _size) at circle_rotate(_xpos+offset, _ypos+offset)
@@ -473,16 +476,22 @@ screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullActi
       at circle_rotate(_xpos, _ypos)
       background im.FactorScale("gui/gears/gear_big_w_26.png", _size)
       hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
-      selected_idle_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
+      selected_idle_background im.FactorScale("gui/gears/gear_big_y2_26.png", _size)
+      selected_hover_background im.FactorScale("gui/gears/gear_big_y2_26.png", _size)
       xpos _xpos
       ypos _ypos
-      action _action
+      hovered Show("qm_tooltip",ttcontent=_tooltip,ttxpos=0,ttypos=0,quick=_isQuick)
+      unhovered Hide("qm_tooltip") 
+      action [Hide("qm_tooltip"), _action]
       xsize int(310 * _size)
       ysize int(310 * _size)
       has vbox:
         yalign 0.5
         xalign 0.5
-        text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
+        if ".png" in _text:
+          add "gui/button/icon_"+_text yoffset iconoffset at circle_rotate_r(0, 0)
+        else:
+          text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
 
     #imagebutton idle im.FactorScale("gui/gears/gear_big_w_26.png", _size) hover im.FactorScale("gui/gears/gear_big_y_26.png", _size)  xpos _xpos  ypos _ypos  action _action
 
@@ -531,14 +540,14 @@ screen quick_menu():
             #use gear_button("Log", 0.4, 180, 20, ShowMenu('history'))
 
 
-            use gear_button("Back", 0.4, 60 , 20 ,  Rollback())
-            use gear_button("Log", 0.4, 180 , 20 ,  ShowMenu('history'))
-            use gear_button("Skip", 0.4, 0 , 120 ,  Skip()) # alternate Skip(fast=True, confirm=True))
-            use gear_button("Auto", 0.4, 240 , 120 ,  Preference("auto-forward", "toggle"))
-            use gear_button("Save", 0.4, 60 , 220 ,  ShowMenu('save'))
+            use gear_button("back.png", 0.4, 60 , 20 ,  Rollback(), _isQuick=True, _tooltip="Back")
+            use gear_button("log.png", 0.4, 180 , 20 ,  ShowMenu('history'), _isQuick=True, _tooltip="Log")
+            use gear_button("skip.png", 0.4, 0 , 120 ,  Skip(), _isQuick=True, _tooltip="Skip") # alternate Skip(fast=True, confirm=True))
+            use gear_button("auto.png", 0.4, 240 , 120 ,  Preference("auto-forward", "toggle"), _isQuick=True, _tooltip="Auto")
+            use gear_button("save.png", 0.4, 60 , 220 ,  ShowMenu('save'), _isQuick=True, _tooltip="Save")
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
-            use gear_button("Prefs", 0.4, 180 , 220 ,  ShowMenu('preferences'))
+            use gear_button("config.png", 0.4, 180 , 220 ,  ShowMenu('preferences'), _isQuick=True, _tooltip="Options")
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -557,6 +566,33 @@ style quick_button:
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
 
+style caption_med:
+    size 34
+    color "#fae688"
+    outlines [ (absolute(2), "#000000", absolute(2), absolute(2)) ]
+    
+screen qm_tooltip(ttcontent,ttxpos,ttypos,quick):
+    zorder 9999
+    $framexalign = 1.0
+    $frameyalign = 0.98
+    $framelength = 300
+    if quick:
+      $frameyalign = 0.6
+      $framelength = 250
+    
+    if renpy.get_screen('main_menu'):
+      $framelength = 550
+      
+    if not ttcontent == "":
+      frame:
+        xsize framelength
+        xalign framexalign
+        yalign frameyalign
+        #background Frame("gui/namebox.png", 
+        background Frame("gui/namebox.png", Borders(5, 5, 5, 5))
+        text ttcontent:
+            style "caption_med"
+            xpos ttxpos ypos ttypos
 
 ################################################################################
 ## Main and Game Menu Screens
@@ -581,13 +617,17 @@ screen navigation():
 
         #spacing gui.navigation_spacing
 
-
-        use gear_button("Return", 0.4, new_xpos , new_yoffset , Return())
+        if not renpy.get_screen('main_menu'):
+            use gear_button("return.png", 0.4, new_xpos , new_yoffset , Return(), _tooltip="Return")
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
+        
         if main_menu:
 
-            use gear_button("Start", 0.4, new_xpos , new_yoffset , Start(), _id="start")
+            if not renpy.get_screen('main_menu'):
+                use gear_button("auto.png", 0.4, new_xpos , new_yoffset , Start(), _id="start", _tooltip="Start")
+            else:
+                use gear_button("auto.png", 0.8, new_xpos-140 , new_yoffset-140 , Start(), _id="start", _tooltip="Start")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
             #textbutton _("Start"):
@@ -596,42 +636,42 @@ screen navigation():
 
         else:
 
-            use gear_button("History", 0.4, new_xpos , new_yoffset ,  ShowMenu("history"))
+            use gear_button("log.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("history"), _tooltip="Log")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
-            use gear_button("Save", 0.4, new_xpos , new_yoffset ,  ShowMenu("save"))
+            use gear_button("save.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("save"), _tooltip="Save")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
-        use gear_button("Load", 0.4, new_xpos , new_yoffset ,  ShowMenu("load"))
+        use gear_button("load.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("load"), _tooltip="Load")
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
-        use gear_button("Config", 0.4, new_xpos , new_yoffset ,  ShowMenu("preferences"))
+        use gear_button("config.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("preferences"), _tooltip="Options")
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
         if _in_replay:
 
-            use gear_button("End Replay", 0.4, new_xpos , new_yoffset ,  EndReplay(confirm=True))
+            use gear_button("End Replay", 0.4, new_xpos , new_yoffset ,  EndReplay(confirm=True), _tooltip="End Replay")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
         elif not main_menu:
 
-            use gear_button("Main Menu", 0.4, new_xpos , new_yoffset ,  MainMenu())
+            use gear_button("home.png", 0.4, new_xpos , new_yoffset ,  MainMenu(), _tooltip="Main Menu")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
-        use gear_button("About", 0.4, new_xpos , new_yoffset ,  ShowMenu("about"))
+        use gear_button("about.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("about"), _tooltip="About")
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            use gear_button("Help", 0.4, new_xpos , new_yoffset ,  ShowMenu("help"))
+            use gear_button("help.png", 0.4, new_xpos , new_yoffset ,  ShowMenu("help"), _tooltip="Help")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
@@ -639,7 +679,7 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            use gear_button("Quit", 0.4, new_xpos , new_yoffset ,  Quit(confirm=not main_menu))
+            use gear_button("quit.png", 0.4, new_xpos , new_yoffset ,  Quit(confirm=not main_menu), _tooltip="Quit")
             $new_yoffset = new_yoffset * -1
             $new_xpos = new_xpos + new_xoffset
 
@@ -672,21 +712,43 @@ screen main_menu():
     frame:
         style "main_menu_frame"
 
+    add "gui/logo.png"
+    
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    #if gui.show_name:
+    #
+    #    vbox:
+    #        style "main_menu_vbox"
+    #
+    #        text "[config.name!t]":
+    #            style "main_menu_title"
+    #
+    #        text "[config.version]":
+    #            style "main_menu_version"
 
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
+    frame:
+        background None
+        yoffset 200
+        xoffset -25
+        use menu_gears()
+    frame:
+        background None
+        yoffset -50
+        xoffset 1450
+        use menu_gears2()
+    frame:
+        background None
+        yoffset -50
+        xoffset -25
+        use menu_gears3()
+    frame:
+        background None
+        yoffset 200
+        xoffset 1450
+        use menu_gears4()
     # default_focus doesn't work on button inside screen (gear_button)
     # so we use the manual method: add id to button and set_focus on show
     on "show" action Function(renpy.set_focus, 'main_menu', 'start')
@@ -702,7 +764,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/overlay/game_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -730,7 +792,7 @@ style main_menu_version:
 ## This screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
-screen menu_gears():
+screen menu_gears(): #bottom left
 
         use gear(8, 0.3, 230, 500,1,9)
         use gear(8, 0.3, 350, 580, -1,9)
@@ -742,7 +804,7 @@ screen menu_gears():
         use gear(26, 1.0, 50, 500, -1)
         add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset 15
 
-screen menu_gears2():
+screen menu_gears2(): #top right
 
         use gear(8, 0.3, -10, 250, 1, 9)
         use gear(8, 0.3, 80, 330, -1, 9)
@@ -754,6 +816,29 @@ screen menu_gears2():
         use gear(26, 1.0, 0, 0, -1)
         add "gui/overlay/options_menu_gem.png" yoffset -670 xoffset -35
 
+screen menu_gears3(): #top left
+
+        use gear(8, 0.3, 350, 250, 1, 9)
+        use gear(8, 0.3, 250, 330, -1, 9)
+
+        use gear(11, 0.6, 200, 180, -1, 7)
+        use gear(14, 0.6, 300, 100, 1, 5)
+        use gear(14, 0.6, 100, 250, 1, 5)
+
+        use gear(26, 1.0, 50, 0, -1)
+        add "gui/overlay/options_menu_gem.png" yoffset -670 xoffset 15
+
+screen menu_gears4(): #bottom right
+
+        use gear(8, 0.3, 80, 500,1,9)
+        use gear(8, 0.3, -10, 590, -1,9)
+
+        use gear(11, 0.6, 0, 500, -1,7)
+        use gear(10, 0.6, 100, 450 ,1, 5)
+        use gear(10, 0.6, -50, 600,1, 5)
+
+        use gear(26, 1.0, 0, 500, -1)
+        add "gui/overlay/options_menu_gem.png" yoffset -170 xoffset -35
 screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"

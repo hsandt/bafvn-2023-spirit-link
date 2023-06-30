@@ -6,13 +6,15 @@ label a1s1:
     # TO REVISE: find a better act name
     "Act 1 - The summer fair" with dissolve
 
+    # TODO komehara: add location to explain player we are on Enon
+
     pause 2.0
 
     "How far would you go to achieve your dreams?"
     # if "to pose a question" very formal? OK in this context?
     # here, "as a green" clear here that it applies to "me" and not "Professor Mara", but is it grammatically correct?
-    "This was a question Professor Mara once posed to me as a green, first year."
-    "At the time, I said ‘I'd do anything’. Now standing under the scorching, summer sun, I was reconsidering."
+    "This was a question Professor Mara once posed to me as a naive, first year."
+    "At the time, I said ‘I'd do anything’. Now, I was reconsidering."
 
     scene bg university_outside with fade
     play music mystery
@@ -61,6 +63,7 @@ label .look_at_crowd:
     "A throng of curious viewers fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
     "Each department has brought their best each aiming to net themselves a rich, sponsor.
     Colorful signboards cry out the merits of their research."
+
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
     from hunters’ and merchant guilds to investors, mingle with students and curious onlookers."
 
@@ -75,6 +78,7 @@ label .look_at_booth:
     "A crowd catches my eye. The engineering and alchemy departments, of course."
     "Their towering displays command attention and their signs boast of life-changing advances in magitech,
     drawing representatives from the railroad and mining companies like flies to honey."
+
     # Understanding issue: faster *and* at 50 paces, or faster *when* at 50 paces? Did range improve from last model?
     "As I watch, a man in a suit examines the engineering team’s latest invention:
     a long-barreled rifle more accurate than the last, capable of shooting a bird faster than 50 paces."
@@ -85,24 +89,24 @@ label .look_at_booth:
 
     show makara neutral at companion_warp_to("middle_right")
 
-    makara "Fear not. Demonstration weapons are generally unloaded. Although it is true that humans should be more careful during these times."
+    makara "Fear not. I can smell the weapon is unloaded. Although it is true that humans should be more cautious. Especially with such weak senses."
 
     show charlet neutral
 
-    "My companion is right. Though it has been only two days since the attack in Alcatra, the event's security is concerningly lax."
-    # When I read this first, I thought she was talking about people protecting the fair. After reading more below and checking the exact definition of
-    # "vigilantes" I now see the double side of this. But I wonder how other people see it. It may sound like "a justice defender" or "a rebel" depending
-    # on the point of view, which may or may not be frightening for a mere citizen. On the other side, maybe "terrorist" would be too strong?
-    "The possibility of vigilantes hiding in the crowd, makes me tense."
-    "My eyes scan the crowd and lingers on the men scattered throughout amongst them in the brown and green of the hunter’s guild."
-    "Their expressions are friendly, but their eyes are sharp, and their stances suggest an air of purpose."
+    "Makara is right. Though it has been only two days since the attack in Alcatra, the event's security is concerningly lax."
+    "Here were some of Enon's most brillant minds and richest merchants all conveniently gathered in one place. A perfect target."
+
+    "The thought left me tense. The possibility of vigilantes and would-be terrorists hiding in the crowd, left my heart in my throat."
+    "I scan the crowd, my eyes lingering on the men scattered throughout them dressed in the brown and green of the hunter’s guild."
+    "Their expressions are friendly, but their eyes are sharp, and their stances suggest an air of purpose. Friend or foe?"
 
     show charlet intrigued
 
-    "Friend or foe? In a sea of strangers it is impossible to know."
-    "While the ILF was, by in large, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
-    the recent vigilante attacks had cast doubt on the organization."
-    "However much they might claim no association with the rebels, their track record didn't look good."
+    # TODO komehara: explain ILF
+    "In a sea of strangers it is impossible to know. The ILF had thousands of followers. Any one here could be a member."
+    "And while the ILF was, generally, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
+    the recent attacks had cast doubt on the organization."
+    "Were the attacks really just the work of independent rebels? Or was the ILF just trying to save face?"
 
     show charlet neutral
 
@@ -112,7 +116,9 @@ label .look_at_booth:
 
     makara "Indeed. With me here, you need not fear anything."
 
-    "A big boast from a little dragon, but the words gave me some comfort."
+    charlet smile "A big boast from a little dragon."
+
+    "Nonetheless, the words gave me some comfort."
 
     show charlet neutral
     hide makara with character_dissolve
@@ -162,13 +168,11 @@ label .after_look:
     charlet "...maybe I should just grab lunch."
     "Just as I make to leave, a voice stops me."
 
-    show pichit at character_warp_to("right")
-    # When asset is ready, replace with:
-    # show pichit happy at character_warp_to("right")
+    show pichit smile at character_warp_to("right")
 
     pichit "Oi! Charlet! Hey!"
 
-    "It was Pichit wearing his signature, broad grin. He was a born and bred native of Mocau-Laedan, though he had moved to the continent for school."
+    "It was Pichit wearing his signature, broad grin. He was a born and bred native of Moacu-Laedan, though he had moved to the continent for school."
 
     "Bayani, another alumni from Alcatra University, had introduced him to me as a potential guide for my expedition two months ago."
 
@@ -197,7 +201,6 @@ label .after_look:
 
     charlet "Hey Pichit. Who is the gentleman with you?"
 
-    # When asset is ready, replace with:
     show pichit neutral at character_move_to("middle")
     show raegan neutral at character_warp_to("right")
 
@@ -212,7 +215,7 @@ label .after_look:
 
     raegan "A pleasure to meet you, Charlet. I've heard wonderful things about your plans."
 
-    charlet smile "Likewise, Mr. Vanich. The Vanich company has done so many amazing things, it is a great honor to meet you."
+    charlet smile "Likewise, Mr. Vanich. The Vanich Trading Company has done so many amazing things, it is a great honor to meet you."
 
     raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
 

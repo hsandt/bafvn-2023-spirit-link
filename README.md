@@ -13,3 +13,4 @@ Unless otherwise stated, all assets are under copyright of their respective auth
 #### Free assets
 
 - [Alice Font](https://fonts.google.com/specimen/Alice) by Ksenya Erulevich, Cyreal under SIL Open Font License
+- Pad Thai Font by Harold's Fonts embedded in logo, Free for Personal and Commercial Use
