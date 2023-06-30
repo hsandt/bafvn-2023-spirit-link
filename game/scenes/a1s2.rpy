@@ -198,11 +198,13 @@ label a1s1run:
 # BATTLE WITH PICHIT
 
     show pichit battle serious at character_warp_to("left")
-    show phrarat neutral at character_warp_to("right")
+    show phrarat determined at character_warp_to("right")
 
     pause 1.0
 
-    phrarat "Don't get in my way! My quarrel is not with you!"
+    phrarat shout "Don't get in my way! My quarrel is not with you!"
+
+    show phrarat determined
 
     pichit "Who are you? Why are you attacking us?"
 
@@ -244,13 +246,18 @@ label .fight1:
     "A jab. Another twist. I rush forward, slashing forward with my blade."
     "He blocks it and puts me on the defensive. Sweat beads on my forehead as I strain to keep away while stopping his attempts to run."
 
-    phrarat "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?"
+    phrarat shout "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?"
+
+    show phrarat determined
 
     pichit "I don't know what you're talking about!"
 
     "I vault over a booth, kicking at its legs. It sags, the canopy falling to obstruct the assassin."
 
-    phrarat "Stop this! Just let me get rid of that worm and I'll leave you be!"
+    phrarat shout "Stop this! Just let me get rid of that worm and I'll leave you be!"
+
+    show phrarat determined
+
 
     "The sword gives me better reach, but this close the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
     "As our blades clash I inch closer to the fountain and the biology team's plant display. The Fan more has to work with, the better."
@@ -287,11 +294,13 @@ label .fight1:
 
     "My thoughts scatter as the assassin lunges at me, whip at ready. I recognize the stance."
 
-    pichit "Fan, now!"
+    pichit shout "Fan, now!"
 
     show fan neutral at companion_warp_to("left")
 
     "A large bark shield weaves halts materializes in time to stop this newest volley."
+
+    show pichit battle serious
 
     phrarat "Neat parlor trick! Too bad it'll be gone before long! How many strikes would it take? Three?"
 
@@ -308,9 +317,13 @@ label .fight1:
 
     "{i}Fan! Focus on his shoulder{/i} My spirit readily complies, vines whipping forward towards the assassin."
 
+    show pichit battle anxious
+
     "It isn't enough. The flames are too hot. The tendrils curl into ash too quickly. What do I do?"
 
     charlet telepathy "Get him inside! Let the sprinklers can take care of the fire!"
+
+    show pichit battle serious
 
     "An idea pops into my head. A crazy idea. The type of idea that would have Charlet yelling and my mother tanning my hide."
 
@@ -319,6 +332,8 @@ label .fight1:
     "The assassin is on me in moments. The flat of his dagger presses into my throat, close enough I know the simplest movement will slice my skin to ribbons."
 
     "I swallow, suddenly realizing just how big a risk I am taking."
+
+    show pichit battle grimace
 
     pichit "You win! I give up! He's in the school! In the faculty room!"
 
@@ -340,7 +355,7 @@ label .fight1:
     scene bg black with wipeleft_fast
     pause 0.5
     scene bg university_inside with wipeleft_fast
-    show charlet scared at character_warp_to("far_left", 0.5)
+    show charlet surprised at character_warp_to("far_left", 0.5)
     show raegan surprised at character_warp_to("middle_left", 0.5)
     show pichit surprised at character_warp_to("middle_right", 0.5)
 
@@ -536,7 +551,7 @@ label .unused:
     phrarat "You really believe that? You think there’s profit in building bridges? They won't wait for spirits to die? Don’t tell me you really believe they offer their gemstones willingly? No!"
     phrarat "He takes them by force just like the rest. He just hides it better than the others."
 
-    # show phrarat angry
+    show phrarat shout
 
     phrarat "Pen, now."
 
