@@ -84,7 +84,7 @@ charlet "Just down the hall and to the right."
 
 "I try to analyze the opponent."
 
-call .analyze_one_element
+call .analyze_one_element from _call_a1s3a_analyze_one_element
 
 scene bg university_inside
 show pichit neutral at character_warp_to("left")
@@ -110,7 +110,7 @@ phrarat "No more plants, no more chances. Choose: move or die."
 
 "I try to analyze the opponent once more."
 
-call .analyze_one_element
+call .analyze_one_element from _call_a1s3a_analyze_one_element_1
 
 scene bg university_inside
 show charlet neutral at character_warp_to("left")
@@ -232,9 +232,9 @@ return
 label .analyze_one_element:
 menu:
     "Analyze weapon" if not has_analyzed_assassin_weapon:
-        call .analyze_weapon
+        call .analyze_weapon from _call_a1s3a_analyze_weapon
     "Analyze stone" if not has_analyzed_assassin_stone:
-        call .analyze_stone
+        call .analyze_stone from _call_a1s3a_analyze_stone
 
 return
 

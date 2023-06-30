@@ -221,23 +221,23 @@ label .fight1:
     show pichit at character_move_to("far_left", 0.1)
     play sound audio.sfx.scarf
 
-    call .phrarat_whip_dodged
+    call .phrarat_whip_dodged from _call_a1s1run_phrarat_whip_dodged
 
     "The assassin lunges at me. His makeswift whip swings towards my face, the heat of leaving my skin hot."
 
-    call .pichit_slash_blocked
+    call .pichit_slash_blocked from _call_a1s1run_pichit_slash_blocked
 
     "Thankfully, Fan blocks the worst of it. Another strike. I dance out of reach, narrowly losing a finger."
 
     "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off...{/i}"
 
     # TODO: change animation calls to match text
-    call .phrarat_whip_catch
+    call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch
     pause 0.25
-    call .pichit_cut_catching_whip
+    call .pichit_cut_catching_whip from _call_a1s1run_pichit_cut_catching_whip
     pause 0.25
 
-    call .pichit_phrarat_cross_blades(0.0)
+    call .pichit_phrarat_cross_blades(0.0) from _call_a1s1run_pichit_phrarat_cross_blades
 
     "A jab. Another twist. I rush forward, slashing forward with my blade."
     "He blocks it and puts me on the defensive. Sweat beads on my forehead as I strain to keep away while stopping his attempts to run."
@@ -253,8 +253,8 @@ label .fight1:
     "The sword gives me better reach, but this close the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
     "As our blades clash I inch closer to the fountain and the biology team's plant display. The Fan more has to work with, the better."
 
-    call .pichit_phrarat_cross_blades(-0.1, 2)
-    call .pichit_phrarat_cross_blades(-0.2, 1)
+    call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s1run_pichit_phrarat_cross_blades_1
+    call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s1run_pichit_phrarat_cross_blades_2
 
     "Our blades lock. A stalemate. I feel my self tiring. At this rate I'll die."
 
@@ -265,7 +265,7 @@ label .fight1:
 
     "{i}Fan! Shield!{/i} I cry as the assassin wrist flicks forward."
 
-    call .phrarat_whip_catch
+    call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch_1
     pause 0.5
 
     "Too late. A length of flame wraps around my left leg. Agony paralyzes me."
@@ -438,7 +438,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
     pause 0.15
 
-    call .play_blade_clash_sfx_variant(sfx_variant_number)
+    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s1run_play_blade_clash_sfx_variant
 
     # Hotfix to adjust timing, as SFX variant impact part is not playing at the same time
     if sfx_variant_number == 1:
@@ -455,7 +455,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
 label .play_blade_clash_sfx_random_variant:
     $ sfx_variant_number = renpy.random.randint(1, 2)
-    call .play_blade_clash_sfx_variant(sfx_variant_number)
+    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s1run_play_blade_clash_sfx_variant_1
 
     return
 
@@ -524,7 +524,7 @@ label .unused:
 
     "I try to analyze the opponent."
 
-    call .analyze_one_element
+    call .analyze_one_element from _call_a1s1run_analyze_one_element
 
     scene bg university_inside
     show pichit battle serious at character_warp_to("left")
@@ -550,7 +550,7 @@ label .unused:
 
     "I try to analyze the opponent once more."
 
-    call .analyze_one_element
+    call .analyze_one_element from _call_a1s1run_analyze_one_element_1
 
     scene bg university_inside
     show charlet neutral at character_warp_to("left")
@@ -675,9 +675,9 @@ label .fight2:
 label .analyze_one_element:
     menu:
         "Analyze weapon" if not has_analyzed_assassin_weapon:
-            call .analyze_weapon
+            call .analyze_weapon from _call_a1s1run_analyze_weapon
         "Analyze stone" if not has_analyzed_assassin_stone:
-            call .analyze_stone
+            call .analyze_stone from _call_a1s1run_analyze_stone
 
     return
 
