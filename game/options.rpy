@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.4"
+define config.version = "0.5"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -32,24 +32,26 @@ define config.version = "0.4"
 define gui.about = _p("""
 This game was developed for {a=https://itch.io/jam/baf-jam-2023}Battle Action Fantasy VN Jam 2023{/a}.
 
-See {a=https://komehara.itch.io/spirit-link}game page{/a} and (TODO) submission page
+See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io/jam/baf-jam-2023/rate/2126602}submission page{/a}
 
 
 {u}Credits{/u}
 
-- Script programming: komehara
+{a=https://komehara.itch.io/}komehara{/a} - Writing, Script programming
 
-- UI design, UI programming: Marionette
+{a=https://sraye.itch.io/}Sraye{/a} - Writing, Promotional text and art, Background art prototype
 
-- Writing: komehara, Relarin, Sraye
+{a=https://relarin.itch.io/}Relarin{/a} - Writing
 
-- Background Art (incoming): jazzy_chanss
+{a=https://marionette.itch.io/}Marionette{/a} - UI design, UI programming, Promotional art
 
-- Character Sprites: Zwaany
+{a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art (incoming)
 
-- BGM: AnAwfulLotOfCups
+{a=https://zwaany.itch.io/}Zwaany{/a}: Art direction, Character art
 
-- Sound Effects: JoJo Worthington
+{a=https://anawfullotofcups.itch.io/}AnAwfulLotOfCups{/a} - BGM
+
+{a=https://itch.io/profile/jojoworthington}JoJo Worthington{/a} - Sound design - {a=http://jojoworthington.com/}http://jojoworthington.com/{/a}
 
 
 {u}License{/u}
