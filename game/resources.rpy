@@ -69,25 +69,29 @@ image pichit battle shout = Transform("images/chars/sc1080p_guide_battle_shout.p
 image pichit battle smile = Transform("images/chars/sc1080p_guide_battle_serious.png", zoom=0.95, anchor=(0.59, 0.67))
 
 # Raegan
-image raegan neutral = Transform("images/chars/sc1080p_lobbyist_neutral.png", zoom=0.95, anchor=(0.45, 0.75))
-image raegan smile = Transform("images/chars/sc1080p_lobbyist_smile.png", zoom=0.95, anchor=(0.45, 0.75))
-image raegan intrigued = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.75))
-image raegan thinking = Transform("images/chars/sc1080p_lobbyist_thinking.png", zoom=0.95, anchor=(0.45, 0.75))
-image raegan surprised = Transform("images/chars/sc1080p_lobbyist_surprised.png", zoom=0.95, anchor=(0.45, 0.75))
-image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zoom=0.95, anchor=(0.45, 0.75))
+# Hack: official bottom screen line should be at 0.75 according to artwork scale, but we set 0.7
+# So Raegan doesn't look too tall compared to Charlet and Pichit
+image raegan neutral = Transform("images/chars/sc1080p_lobbyist_neutral.png", zoom=0.95, anchor=(0.45, 0.7))
+image raegan smile = Transform("images/chars/sc1080p_lobbyist_smile.png", zoom=0.95, anchor=(0.45, 0.7))
+image raegan intrigued = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
+image raegan thinking = Transform("images/chars/sc1080p_lobbyist_thinking.png", zoom=0.95, anchor=(0.45, 0.7))
+image raegan surprised = Transform("images/chars/sc1080p_lobbyist_surprised.png", zoom=0.95, anchor=(0.45, 0.7))
+image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zoom=0.95, anchor=(0.45, 0.7))
 
 # Phrarat
-image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
+# Hack: official bottom screen line should be at 0.70 but for some reason (zoom?) character still looks too big
+# so got to set anchor Y to 0.65
+image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
 # TODO: use dedicated sprite when ready
-image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
+image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
 # TODO: use dedicated sprite when ready
-image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
+image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
 # TODO: use dedicated sprite when ready
-image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
+image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
 # TODO: use dedicated sprite when ready
-image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
+image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
 # TODO: use dedicated sprite when ready
-image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
+image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
 
 # Spirits place anchors at center
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.6, anchor=(0.7, 0.51))
@@ -117,8 +121,6 @@ init -1:
     define audio.sfx.block_punch = "audio/sfx/sfx_block_punch.opus"
     define audio.sfx.block_shield1 = "audio/sfx/sfx_block_shield1.opus"
     define audio.sfx.block_shield2 = "audio/sfx/sfx_block_shield2.opus"
-    # TODO: use dedicated asset when ready
-    define audio.sfx.catch = "audio/sfx/sfx_hit.opus"
     define audio.sfx.fire = "audio/sfx/sfx_fire.opus"
     define audio.sfx.fire_blast = "audio/sfx/sfx_fire_blast.opus"
     define audio.sfx.hit = "audio/sfx/sfx_hit.opus"
