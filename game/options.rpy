@@ -32,7 +32,7 @@ define config.version = "0.4"
 define gui.about = _p("""
 This game was developed for {a=https://itch.io/jam/baf-jam-2023}Battle Action Fantasy VN Jam 2023{/a}.
 
-See {a=https://komehara.itch.io/spirit-link}game page{/a} and (TODO) submission page
+See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io/jam/baf-jam-2023/rate/2126602}submission page{/a}
 
 
 {u}Credits{/u}
