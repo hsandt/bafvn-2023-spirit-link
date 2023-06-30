@@ -30,6 +30,38 @@ define config.version = "0.4"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+This game was developed for {a=https://itch.io/jam/baf-jam-2023}Battle Action Fantasy VN Jam 2023{/a}.
+
+See {a=https://komehara.itch.io/spirit-link}game page{/a} and (TODO) submission page
+
+
+{u}Credits{/u}
+
+- Script programming: komehara
+
+- UI design, UI programming: Marionette
+
+- Writing: komehara, Relarin, Sraye
+
+- Background Art (incoming): jazzy_chanss
+
+- Character Sprites: Zwaany
+
+- BGM: AnAwfulLotOfCups
+
+- Sound Effects: JoJo Worthington
+
+
+{u}License{/u}
+
+Unless otherwise stated, all assets are under copyright of their respective authors.
+
+Fonts:
+
+- {a=https://fonts.google.com/specimen/Alice}Alice Font{/a} by Ksenya Erulevich, Cyreal under SIL Open Font License
+- Pad Thai Font by Harold's Fonts embedded in logo, Free for Personal and Commercial Use
+
+Source code available on the {a=https://github.com/hsandt/bafvn-2023-spirit-link}GitHub repository{/a}
 """)
 
 
