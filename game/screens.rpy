@@ -897,7 +897,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     use navigation
     if title == "Options":
       add "gui/overlay/options_menu_powerlines2.png" xoffset 4 yoffset 2
-    if not title == "History" and not title == "Help":
+    if not title == "History" and not title == "Help" and not title == "About":
       frame:
           background None
           yoffset 200
