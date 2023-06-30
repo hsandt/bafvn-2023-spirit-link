@@ -47,7 +47,9 @@ label .assassin_appears:
 
     raegan "Are you sure, that-"
 
-    scene bg smoke with bg_dissolve
+    # no smoke asset yet, so just reuse outside
+    # scene bg smoke with bg_dissolve
+    scene bg university_outside with bg_dissolve
     show phrarat neutral at character_warp_to("middle")
 
     stop music fadeout 1.0
@@ -55,7 +57,7 @@ label .assassin_appears:
 
     "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
 
-    scene bg university_inside with bg_dissolve
+    scene bg university_outside with bg_dissolve
     show charlet scared at character_warp_to("far_left")
     show raegan surprised at character_warp_to("middle_left")
     show pichit surprised at character_warp_to("middle_right")
@@ -187,9 +189,9 @@ label a1s1run:
 
     "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply. Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
 
-    scene bg black with CropMove(0.5, "wipeleft")
+    scene bg black with wipeleft_fast
     pause 0.1
-    scene bg university_outside
+    scene bg university_outside with wipeleft_fast
 
 # TODO Switch to Pichit POV, fade screen, maybe new BG angle or zoom in?
 
@@ -332,13 +334,12 @@ label .fight1:
 
     # pichit telepathy "He's coming your way. Get ready!"
 
-    scene bg black with CropMove(0.5, "wipeleft")
 
 # CHARLET POV SWITCH
 
+    scene bg black with wipeleft_fast
     pause 0.5
-
-    scene bg university_inside with bg_dissolve
+    scene bg university_inside with wipeleft_fast
     show charlet scared at character_warp_to("far_left", 0.5)
     show raegan surprised at character_warp_to("middle_left", 0.5)
     show pichit surprised at character_warp_to("middle_right", 0.5)
