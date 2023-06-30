@@ -83,17 +83,12 @@ image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zo
 # Phrarat
 # Hack: official bottom screen line should be at 0.70 but for some reason (zoom?) character still looks too big
 # so got to set anchor Y to 0.65
-image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
-# TODO: use dedicated sprite when ready
-image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
-# TODO: use dedicated sprite when ready
-image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
-# TODO: use dedicated sprite when ready
-image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
-# TODO: use dedicated sprite when ready
-image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
-# TODO: use dedicated sprite when ready
-image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.65))
+image phrarat neutral = Transform("images/chars/sc1080p_assassin_neutral.png", zoom=0.95, anchor=(0.46, 0.65))
+image phrarat smile = Transform("images/chars/sc1080p_assassin_smile.png", zoom=0.95, anchor=(0.46, 0.65))
+image phrarat determined = Transform("images/chars/sc1080p_assassin_determined.png", zoom=0.95, anchor=(0.46, 0.65))
+image phrarat surprised = Transform("images/chars/sc1080p_assassin_surprised.png", zoom=0.95, anchor=(0.46, 0.65))
+image phrarat anxious = Transform("images/chars/sc1080p_assassin_anxious.png", zoom=0.95, anchor=(0.46, 0.65))
+image phrarat shout = Transform("images/chars/sc1080p_assassin_shout.png", zoom=0.95, anchor=(0.46, 0.65))
 
 # Spirits place anchors at center
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.6, anchor=(0.7, 0.51))
