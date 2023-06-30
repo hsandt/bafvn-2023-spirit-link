@@ -46,10 +46,10 @@ label .look_choice:
     while not (has_looked_at_crowd and has_looked_at_booth):
         menu:
             "Look at the crowd." if not has_looked_at_crowd:
-                call .look_at_crowd from _call_a1s1_look_at_crowd
+                call .look_at_crowd
 
             "Observe the booths." if not has_looked_at_booth:
-                call .look_at_booth from _call_a1s1_look_at_booth
+                call .look_at_booth
 
     jump .after_look
 
@@ -113,7 +113,7 @@ label .look_at_booth:
 
     makara "Indeed. With me here, you need not fear anything."
 
-    charlet smile "A big boast from a little dragon".
+    charlet smile "A big boast from a little dragon."
 
     "Nonetheless, the words gave me some comfort."
 

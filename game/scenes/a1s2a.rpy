@@ -116,7 +116,7 @@ label .assassin_appears:
 
 
 
-label a1s1run
+label a1s1run:
 
     "The choice is stolen from me just as I make up my mind."
 
