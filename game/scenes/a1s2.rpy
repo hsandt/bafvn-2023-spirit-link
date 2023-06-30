@@ -416,7 +416,7 @@ label .phrarat_whip_catch:
     play sound audio.sfx.scarf
     pause 0.25
     show pichit at bump_left
-    play sound audio.sfx.catch
+    play sound audio.sfx.impact_catch
 
     return
 
@@ -566,6 +566,8 @@ label .fight2:
     # show phrarat sad
     # TODO: pen sad
     show pen neutral at companion_warp_to("far_right")
+
+    play sound audio.sfx.impact_glass
 
     "Before I’m able to get a good look, a dagger skewers out of the shadows and toward Pichit, who barely dodges it but is sent careening into one of the exhibits. A glass case full of exquisite vases."
 

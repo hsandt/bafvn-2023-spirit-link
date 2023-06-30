@@ -125,6 +125,8 @@ init -1:
     define audio.sfx.impact1 = "audio/sfx/sfx_impact1.opus"
     define audio.sfx.impact2 = "audio/sfx/sfx_impact2.opus"
     define audio.sfx.impact3 = "audio/sfx/sfx_impact3.opus"
+    define audio.sfx.impact_catch = "audio/sfx/sfx_impact_catch.opus"
+    define audio.sfx.impact_glass = "audio/sfx/sfx_impact_glass.opus"
     define audio.sfx.running = "audio/sfx/sfx_running.opus" # unused, but kept for longer running with breath
     define audio.sfx.running2 = "audio/sfx/sfx_running2.opus"
     define audio.sfx.scarf = "audio/sfx/sfx_scarf.opus"
