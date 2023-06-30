@@ -10,13 +10,15 @@ image underlay white_half_alpha = Solid("#ffffff80")
 # Black background for scene transitions
 image bg black = Solid("#000000")
 
-image bg university_outside = Solid("#af9750")
+# Proto Solid
+# image bg university_outside = Solid("#af9750")
 # Replace with asset when ready
-# image bg university_outside = "images/bg/university_outside.jpg"
+image bg university_outside = "images/bg/BG_Fair3.webp"
 
-image bg university_inside = Solid("#6d5e32")
+# Proto Solid
+# image bg university_inside = Solid("#6d5e32")
 # Replace with asset when ready
-# image bg university_inside = "images/bg/university_inside.jpg"
+image bg university_inside = "images/bg/BG_Hall.webp"
 
 image bg smoke = Solid("#9f9f9f")
 # Replace with asset when ready
