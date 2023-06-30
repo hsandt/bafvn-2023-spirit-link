@@ -75,6 +75,8 @@ label .assassin_appears:
 
     charlet "Into the school! The wards should stop him."
 
+    play sound audio.sfx.running2
+
     "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands. Distantly, I hear Dr. Barouche's booming voice claiming a mechanical failure."
 
     # TODO SFX footsteps
@@ -445,7 +447,7 @@ label .fight2:
     "I pull the lever, opening the sprinklers."
 
     stop music fadeout 2.0
-    play sound audio.sfx.shower
+    play sound audio.sfx.shower2
     pause 2.0
 
     "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
@@ -457,11 +459,11 @@ label .fight2:
     show charlet neutral at character_warp_to("middle")
     show phrarat neutral at character_warp_to("far_right")
 
-    stop sound fadeout 2.0
-
     phrarat "Of course, the host to Makara is the one who stops me."
 
     "How did he know Makara, the spirit wasn’t even visible!?!? I don’t know but there is a pure and unadulterated hatred simmering in his eyes."
+
+    stop sound fadeout 2.0
 
     charlet "What does that matter?"
 
