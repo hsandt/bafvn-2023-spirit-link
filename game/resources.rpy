@@ -39,60 +39,55 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 # Humans place anchors at leg center, where screen bottom cuts them
 
 # Charlet
-image charlet neutral = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
-image charlet smile = Transform("images/chars/mc_smile.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet neutral = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
+image charlet smile = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
-image charlet exhausted = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet exhausted = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
-image charlet sad = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet sad = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
-image charlet surprised = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet surprised = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
-image charlet intrigued = Transform("images/chars/mc_neutral.png", zoom=0.4, anchor=(0.53, 0.735))
-image charlet scared = Transform("images/chars/mc_scared.png", zoom=0.4, anchor=(0.53, 0.735))
-image charlet shout = Transform("images/chars/mc_shout.png", zoom=0.4, anchor=(0.53, 0.735))
+image charlet intrigued = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
+image charlet scared = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+image charlet shout = Transform("images/chars/sc1080p_mc_shout.png", zoom=0.95, anchor=(0.53, 0.67))
+image charlet telepathy = Transform("images/chars/sc1080p_mc_telepathy.png", zoom=0.95, anchor=(0.53, 0.67))
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
-image charlet telepathy = Transform("images/chars/mc_telepathy.png", zoom=0.4, anchor=(0.53, 0.735))
 image side charlet telepathy = Transform("images/chars/mc_telepathy_side.png", zoom=1.0)
 
 # Pichit
-image pichit neutral = Transform("images/chars/guide_neutral.png", zoom=0.5, anchor=(0.46, 0.74))
-image pichit smile = Transform("images/chars/guide_smile.png", zoom=0.5, anchor=(0.46, 0.74))
-image pichit intrigued = Transform("images/chars/guide_intrigued.png", zoom=0.5, anchor=(0.46, 0.74))
+image pichit neutral = Transform("images/chars/sc1080p_guide_neutral.png", zoom=0.95, anchor=(0.46, 0.67))
+image pichit smile = Transform("images/chars/sc1080p_guide_smile.png", zoom=0.95, anchor=(0.46, 0.67))
+image pichit intrigued = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
 # TODO: use dedicated sprite when ready
-image pichit surprised = Transform("images/chars/guide_intrigued.png", zoom=0.5, anchor=(0.46, 0.74))
-image pichit battle serious = Transform("images/chars/guide_battle_serious.png", zoom=0.5, anchor=(0.59, 0.74))
-image pichit battle grimace = Transform("images/chars/guide_battle_grimace.png", zoom=0.5, anchor=(0.59, 0.74))
-image pichit battle anxious = Transform("images/chars/guide_battle_anxious.png", zoom=0.5, anchor=(0.59, 0.74))
-image pichit battle shout = Transform("images/chars/guide_battle_shout.png", zoom=0.5, anchor=(0.59, 0.74))
+image pichit surprised = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
+image pichit battle serious = Transform("images/chars/sc1080p_guide_battle_serious.png", zoom=0.95, anchor=(0.59, 0.67))
+image pichit battle grimace = Transform("images/chars/sc1080p_guide_battle_grimace.png", zoom=0.95, anchor=(0.59, 0.67))
+image pichit battle anxious = Transform("images/chars/sc1080p_guide_battle_anxious.png", zoom=0.95, anchor=(0.59, 0.67))
+image pichit battle shout = Transform("images/chars/sc1080p_guide_battle_shout.png", zoom=0.95, anchor=(0.59, 0.67))
 # TODO: use dedicated sprite when ready
-image pichit battle smile = Transform("images/chars/guide_battle_serious.png", zoom=0.5, anchor=(0.59, 0.74))
+image pichit battle smile = Transform("images/chars/sc1080p_guide_battle_serious.png", zoom=0.95, anchor=(0.59, 0.67))
 
 # Raegan
-image raegan neutral = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
-# TODO: use dedicated sprite when ready
-image raegan smile = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
-# TODO: use dedicated sprite when ready
-image raegan intrigued = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
-# TODO: use dedicated sprite when ready
-image raegan think = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
-# TODO: use dedicated sprite when ready
-image raegan surprised = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
-# TODO: use dedicated sprite when ready
-image raegan anxious = Transform("images/chars/lobbyist proto.png", zoom=0.4, anchor=(0.45, 0.75))
+image raegan neutral = Transform("images/chars/sc1080p_lobbyist_neutral.png", zoom=0.95, anchor=(0.45, 0.75))
+image raegan smile = Transform("images/chars/sc1080p_lobbyist_smile.png", zoom=0.95, anchor=(0.45, 0.75))
+image raegan intrigued = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.75))
+image raegan thinking = Transform("images/chars/sc1080p_lobbyist_thinking.png", zoom=0.95, anchor=(0.45, 0.75))
+image raegan surprised = Transform("images/chars/sc1080p_lobbyist_surprised.png", zoom=0.95, anchor=(0.45, 0.75))
+image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zoom=0.95, anchor=(0.45, 0.75))
 
 # Phrarat
-image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+image phrarat neutral = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
 # TODO: use dedicated sprite when ready
-image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+image phrarat smile = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
 # TODO: use dedicated sprite when ready
-image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+image phrarat determined = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
 # TODO: use dedicated sprite when ready
-image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+image phrarat surprised = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
 # TODO: use dedicated sprite when ready
-image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+image phrarat anxious = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
 # TODO: use dedicated sprite when ready
-image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.4, anchor=(0.46, 0.71))
+image phrarat shout = Transform("images/chars/assassin proto.png", zoom=0.42, anchor=(0.46, 0.70))
 
 # Spirits place anchors at center
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.6, anchor=(0.7, 0.51))
