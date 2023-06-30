@@ -9,11 +9,11 @@ label a1s3a:
     show pichit surprised at character_warp_to("middle_right", 0.5)
     show phrarat angry at character_warp_to("far_right")
 
-assassin "You curr! I should have killed you earlier, Pichit Sirawa!"
+phrarat "You curr! I should have killed you earlier, Pichit Sirawa!"
 
 pichit "You! H-How do you know my name?"
 
-assassin "I know the names of our people. Especially cowards who betray our heritage for promises of infidels!"
+phrarat "I know the names of our people. Especially cowards who betray our heritage for promises of infidels!"
 
 pichit "Infidels? What infidels?"
 
@@ -29,19 +29,19 @@ pichit "Got you."
 
 "Through the haze, the assassin fixates his gaze on me, fury on his face. Spinning back, I notice, with relief, that Raegan is gone."
 
-assassin "Traitors! Both of you! Rahu curse on you!"
+phrarat "Traitors! Both of you! Rahu curse on you!"
 
 pichit "Ironic coming from someone who keeps burning his own gringsing! What would your ancestors say?"
 
-assassin "A small price to pay to stop the corruption! Don't you see? These vermin are raping our lands, stealing our people, and murdering our spirits for their own gain!"
+phrarat "A small price to pay to stop the corruption! Don't you see? These vermin have invaded our land, and now they are exploiting spirits to create those fake gemstones."
 
 "There is little time to talk then. Pichit and the assassin go on the offensive."
 
-pichit telepathy "Find Raegan and head to the green house!"
+pichit "Find Raegan and head to the green house!"
 
 charlet telepathy "The greenhouse? Why?"
 
-pichit telepathy "There are sprinklers there!"
+pichit "There are sprinklers there!"
 
 "Of course! Though wickedly expensive, the university had spared no expense in installing the new technology. With luck, the assassin wouldn't know what they were."
 
@@ -55,9 +55,9 @@ raegan "You're here! What about the assassin?"
 
 charlet "Pichit is holding him off! Follow me!"
 
-raegan suspicious "But where are we going? And why should I follow you?"
+raegan intrigued "But where are we going? And why should I follow you?"
 
-ragean suspicious "I thought you said that room was accessible only to staff?"
+raegan "I thought you said that room was accessible only to staff?"
 
 charlet "I did! It is! He shouldn't have been able to get in!"
 
@@ -65,7 +65,7 @@ raegan "And yet he did. Forgive me if I must begin to suspect your motives."
 
 "Frustration fills me. From start to finish, today has been too much. I have no more energy to argue."
 
-charlet angry "Go! Stay! Do as you like! Just don't blame me if something happens to you!"
+charlet shout "Go! Stay! Do as you like! Just don't blame me if something happens to you!"
 
 "I run down the hall, my heart racing with each inch distance growing between us."
 
@@ -84,7 +84,7 @@ charlet "Just down the hall and to the right."
 
 "I try to analyze the opponent."
 
-call .analyze_one_element
+call .analyze_one_element from _call_a1s3a_analyze_one_element
 
 scene bg university_inside
 show pichit neutral at character_warp_to("left")
@@ -110,7 +110,7 @@ phrarat "No more plants, no more chances. Choose: move or die."
 
 "I try to analyze the opponent once more."
 
-call .analyze_one_element
+call .analyze_one_element from _call_a1s3a_analyze_one_element_1
 
 scene bg university_inside
 show charlet neutral at character_warp_to("left")
@@ -232,9 +232,9 @@ return
 label .analyze_one_element:
 menu:
     "Analyze weapon" if not has_analyzed_assassin_weapon:
-        call .analyze_weapon
+        call .analyze_weapon from _call_a1s3a_analyze_weapon
     "Analyze stone" if not has_analyzed_assassin_stone:
-        call .analyze_stone
+        call .analyze_stone from _call_a1s3a_analyze_stone
 
 return
 
