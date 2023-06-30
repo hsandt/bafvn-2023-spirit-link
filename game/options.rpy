@@ -37,19 +37,21 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 {u}Credits{/u}
 
-- Script programming: komehara
+{a=https://komehara.itch.io/}komehara{/a} - Writing, Script programming
 
-- UI design, UI programming: Marionette
+{a=https://sraye.itch.io/}Sraye{/a} - Writing, Promotional text and art, Background art prototype
 
-- Writing: komehara, Relarin, Sraye
+{a=https://relarin.itch.io/}Relarin{/a} - Writing
 
-- Background Art (incoming): jazzy_chanss
+{a=https://marionette.itch.io/}Marionette{/a} - UI design, UI programming, Promotional art
 
-- Character Sprites: Zwaany
+{a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art (incoming)
 
-- BGM: AnAwfulLotOfCups
+{a=https://zwaany.itch.io/}Zwaany{/a}: Art direction, Character art
 
-- Sound Effects: JoJo Worthington
+{a=https://anawfullotofcups.itch.io/}AnAwfulLotOfCups{/a} - BGM
+
+{a=https://itch.io/profile/jojoworthington}JoJo Worthington{/a} - Sound design - {a=http://jojoworthington.com/}http://jojoworthington.com/{/a}
 
 
 {u}License{/u}
