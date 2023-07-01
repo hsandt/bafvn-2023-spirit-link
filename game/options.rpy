@@ -45,7 +45,7 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 {a=https://marionette.itch.io/}Marionette{/a} - UI design, UI programming, Promotional art
 
-{a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art (incoming)
+{a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art
 
 {a=https://zwaany.itch.io/}Zwaany{/a}: Art direction, Character art
 
