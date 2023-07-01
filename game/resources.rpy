@@ -42,7 +42,7 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 
 # Charlet
 image charlet neutral = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
-image charlet smile = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+image charlet smile = Transform("images/chars/sc1080p_mc_neutral_smile.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
 image charlet exhausted = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
