@@ -51,8 +51,14 @@ image charlet sad = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, 
 # TODO: use dedicated sprite when ready
 image charlet surprised = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
+image charlet serious = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
+# TODO: use dedicated sprite when ready
 image charlet intrigued = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet scared = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+# TODO: use dedicated sprite when ready
+image charlet anxious = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+# TODO: use dedicated sprite when ready
+image charlet relieved = Transform("images/chars/sc1080p_mc_neutral_smile.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet shout = Transform("images/chars/sc1080p_mc_shout.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet telepathy = Transform("images/chars/sc1080p_mc_telepathy.png", zoom=0.95, anchor=(0.53, 0.67))
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
@@ -64,6 +70,8 @@ image pichit smile = Transform("images/chars/sc1080p_guide_smile.png", zoom=0.95
 image pichit intrigued = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
 # TODO: use dedicated sprite when ready
 image pichit surprised = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
+# TODO: use dedicated sprite when ready
+image pichit exhausted = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
 image pichit battle serious = Transform("images/chars/sc1080p_guide_battle_serious.png", zoom=0.95, anchor=(0.59, 0.67))
 image pichit battle grimace = Transform("images/chars/sc1080p_guide_battle_grimace.png", zoom=0.95, anchor=(0.59, 0.67))
 image pichit battle anxious = Transform("images/chars/sc1080p_guide_battle_anxious.png", zoom=0.95, anchor=(0.59, 0.67))
@@ -77,6 +85,8 @@ image pichit battle smile = Transform("images/chars/sc1080p_guide_battle_serious
 image raegan neutral = Transform("images/chars/sc1080p_lobbyist_neutral.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan smile = Transform("images/chars/sc1080p_lobbyist_smile.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan intrigued = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
+# TODO: use dedicated sprite when ready (currently, intrigued look more like sad than intrigued)
+image raegan sad = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan thinking = Transform("images/chars/sc1080p_lobbyist_thinking.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan surprised = Transform("images/chars/sc1080p_lobbyist_surprised.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zoom=0.95, anchor=(0.45, 0.7))
