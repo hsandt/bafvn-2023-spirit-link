@@ -338,7 +338,9 @@ screen say(who, what):
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
-    if not renpy.variant("small"):
+    ## When you need to show side image, set should_show_side_image to True just the time you need it
+    ## It is defaulted to False in script.rpy
+    if not renpy.variant("small") and should_show_side_image:
         add SideImage() xalign 0.0 yalign 1.0
 
 

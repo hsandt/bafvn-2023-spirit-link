@@ -58,6 +58,10 @@ define mara = Character("Professor Mara")
 define man_with_rifle = Character("Man")
 
 
+# Visual flags
+
+default should_show_side_image = False
+
 # Story event flags
 
 # A1S1
