@@ -9,13 +9,13 @@ transform circle_rotate_0(_xpos=0, _ypos=0, _depth=0):
     xpos _xpos
     ypos _ypos
     rotate 0
-    
+
 transform circle_rotate(_xpos=0, _ypos=0, _depth=0):
     matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
     ypos _ypos
     rotate 0
-    
+
 transform circle_rotate_r(_xpos=0, _ypos=0, _depth=0):
     matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
@@ -107,8 +107,8 @@ transform circle_rotate_old(_xpos=0, _ypos=0, _depth=0):
       linear 0.1 rotate 360
       linear 1.0 rotate 360
       repeat
-      
-      
+
+
 transform circle_rotate_r_old(_xpos=0, _ypos=0, _depth=0):
     matrixcolor TintMatrix(str("#000"+str(_depth)))
     xpos _xpos
@@ -462,7 +462,7 @@ style choice_button_text is default:
 ## menus.
 
 screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullAction(), _id = None, _isQuick=False, _tooltip=""):
-    
+
     $iconoffset = 0#
     if _isQuick:
       $iconoffset = -3
@@ -481,7 +481,7 @@ screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullActi
       xpos _xpos
       ypos _ypos
       hovered Show("qm_tooltip",ttcontent=_tooltip,ttxpos=0,ttypos=0,quick=_isQuick)
-      unhovered Hide("qm_tooltip") 
+      unhovered Hide("qm_tooltip")
       action [Hide("qm_tooltip"), _action]
       xsize int(310 * _size)
       ysize int(310 * _size)
@@ -570,7 +570,7 @@ style caption_med:
     size 34
     color "#fae688"
     outlines [ (absolute(2), "#000000", absolute(2), absolute(2)) ]
-    
+
 screen qm_tooltip(ttcontent,ttxpos,ttypos,quick):
     zorder 9999
     $framexalign = 1.0
@@ -579,16 +579,16 @@ screen qm_tooltip(ttcontent,ttxpos,ttypos,quick):
     if quick:
       $frameyalign = 0.6
       $framelength = 250
-    
+
     if renpy.get_screen('main_menu'):
       $framelength = 550
-      
+
     if not ttcontent == "":
       frame:
         xsize framelength
         xalign framexalign
         yalign frameyalign
-        #background Frame("gui/namebox.png", 
+        #background Frame("gui/namebox.png",
         background Frame("gui/namebox.png", Borders(5, 5, 5, 5))
         text ttcontent:
             style "caption_med"
@@ -621,7 +621,7 @@ screen navigation():
             use gear_button("return.png", 0.4, new_xpos , new_yoffset , Return(), _tooltip="Return")
         $new_yoffset = new_yoffset * -1
         $new_xpos = new_xpos + new_xoffset
-        
+
         if main_menu:
 
             if not renpy.get_screen('main_menu'):
@@ -713,7 +713,7 @@ screen main_menu():
         style "main_menu_frame"
 
     add "gui/logo.png"
-    
+
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
@@ -1459,12 +1459,8 @@ screen help():
 screen keyboard_help():
 
     hbox:
-        label _("Enter")
+        label _("Enter / Space")
         text _("Advances dialogue and activates the interface.")
-
-    hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
 
     hbox:
         label _("Arrow Keys")
@@ -1610,7 +1606,7 @@ screen confirm(message, yes_action, no_action):
     frame:
         xsize 725
         ysize 265
-        
+
         vbox:
             xalign .5
             yalign .5
