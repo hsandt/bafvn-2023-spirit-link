@@ -2,23 +2,27 @@
 	"build_systems":
 	[
 		{
+			"name": "Play",
 			"cmd":
 			[
 				"renpy.sh",
 				"${project_path}"
 			],
-			"name": "Play",
+			"env": {
+				// Obviously works only if you setup your custom editors path this way
+				"RENPY_EDIT_PY": "$HOME/Projects/Renpy/Custom Editors/Sublime Text.edit.py",
+			},
 			"variants":
 			[
 				{
+					"name": "Warp: a1s2",
 					"cmd":
 					[
 						"renpy.sh",
 						"${project_path}",
 						"--warp",
 						"scenes/a1s2.rpy:5"
-					],
-					"name": "Warp: a1s2"
+					]
 				}
 			]
 		}
