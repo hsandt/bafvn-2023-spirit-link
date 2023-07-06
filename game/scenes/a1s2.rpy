@@ -278,7 +278,7 @@ label .fight1:
 
     "A jab. Another twist. I rush forward, slashing forward with my blade."
     # FIXME CLARITY: attempts to run for what?
-    "He blocks it and puts me on the defensive. Sweat beads on my forehead as I strain to keep away while stopping his attempts to run."
+    "He blocks it and puts me on the defensive. Sweat beads on my forehead as I strain to keep away while stopping his attempts to run past me toward Raegan."
 
     phrarat shout "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?"
 
