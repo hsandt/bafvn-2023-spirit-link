@@ -45,6 +45,9 @@ define wipeleft_fast = CropMove(0.25, "wipeleft")
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# System (centered text for intro, to be continued, credits, etc.)
+define system = Character(None, window_background=None, what_xalign=0.5, what_text_align=0.5, window_yalign=0.5, what_color="#ffffff")
+
 # Main characters
 define charlet = Character("Charlet", color="#b4a9f5", image="charlet")
 define pichit = Character("Pichit", color="#a9d978", image="pichit")

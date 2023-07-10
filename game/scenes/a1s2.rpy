@@ -178,11 +178,16 @@ label a1s1run:
 
     pause 0.5
 
+    $ quick_menu = False
+
+
     scene bg university_inside with bg_dissolve
     show charlet serious at character_warp_to("far_left", 0.5)
     show raegan anxious at character_warp_to("middle_left", 0.5)
 
     pause 0.5
+
+    $ quick_menu = True
 
     "Now safe behind the university's wards, the realization of what happened hits me."
 
@@ -222,6 +227,8 @@ label a1s1run:
 
     "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply. Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
 
+    $ quick_menu = False
+
     scene bg black with wipeleft_fast
     pause 0.1
     scene bg university_outside with wipeleft_fast
@@ -234,6 +241,8 @@ label a1s1run:
     show phrarat determined at character_warp_to("right")
 
     pause 1.0
+
+    $ quick_menu = True
 
     phrarat shout "Don't get in my way! My quarrel is not with you!"
 
@@ -251,6 +260,8 @@ label a1s1run:
 
 label .fight1:
 
+    $ quick_menu = False
+
     play music battle
     pause 1.7
     show phrarat determined at character_move_to("middle_right", 0.1)
@@ -260,6 +271,8 @@ label .fight1:
 
     call .phrarat_whip_dodged from _call_a1s1run_phrarat_whip_dodged
 
+    $ quick_menu = True
+
     "The assassin lunges at me. His makeshift whip swings towards my face, its heat leaving my skin hot."
 
     call .pichit_slash_blocked from _call_a1s1run_pichit_slash_blocked
@@ -268,11 +281,15 @@ label .fight1:
 
     "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off...{/i}"
 
+    $ quick_menu = False
+
     # TODO: change animation calls to match text
     call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch
     pause 0.25
     call .pichit_cut_catching_whip from _call_a1s1run_pichit_cut_catching_whip
     pause 0.25
+
+    $ quick_menu = True
 
     call .pichit_phrarat_cross_blades(0.0) from _call_a1s1run_pichit_phrarat_cross_blades
 
@@ -298,8 +315,12 @@ label .fight1:
     "The sword gives me better reach, but this close, the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
     "As our blades clash, I inch closer to the fountain and the biology team's plant display. The more Fan has to work with, the better."
 
+    $ quick_menu = False
+
     call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s1run_pichit_phrarat_cross_blades_1
     call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s1run_pichit_phrarat_cross_blades_2
+
+    $ quick_menu = True
 
     "Our blades lock. A stalemate. I feel myself tiring. At this rate, I'll die."
 
@@ -310,8 +331,12 @@ label .fight1:
 
     "{i}‘Fan! Shield!’{/i} I cry as the assassin's wrist flicks forward."
 
+    $ quick_menu = False
+
     call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch_1
     pause 0.5
+
+    $ quick_menu = True
 
     "Too late. A length of flame wraps around my left leg. Agony paralyzes me."
 
@@ -428,11 +453,22 @@ label .fight1:
 
     pause 0.5
     play sound audio.sfx.impact1
+    show charlet surprised
+    show raegan surprised
+    show pichit surprised
     pause 1.0
 
     raegan "What was that?"
 
+    show charlet anxious
+    show raegan thinking
+    show pichit intrigued
+
     pichit "I don't know. It sounded like–"
+
+    show charlet scared
+    show raegan surprised
+    show pichit surprised
 
     "To my horror, the door swung open. My heart dropped. The assassin!"
 
@@ -440,9 +476,34 @@ label .fight1:
 
     # End of playtesting
 
+    # Hack to hide textbox window, which oddly shows for a moment
+    # just before system text appears, and after it disappears
+    window hide
+
+    # Hide quick menu for final cinematics
+    $ quick_menu = False
+
+    scene bg university_inside with bg_dissolve
+
+    pause 0.5
+
+    show phrarat determined at character_warp_to("middle")
+    pause 0.5
+    play sound audio.sfx.fire
+
+    pause 2.5
+
+    scene bg black with Dissolve(1.0)
+
     pause 1.0
 
-    "This is the end of the playtesting section. Thank you for playing!"
+    system "{cps=15}TO BE CONTINUED...{/cps}{w=3.0}{nw}"
+
+    # TODO: dissolve / fade out text
+
+    stop music fadeout 2.0
+
+    pause 2.0
 
     return
 

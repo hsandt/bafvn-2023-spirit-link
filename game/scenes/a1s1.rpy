@@ -16,6 +16,8 @@ label a1s1:
     "This was a question Professor Mara once posed to me as a naive, first year."
     "At the time, I said ‘I'd do anything’. Now, I was reconsidering."
 
+    $ quick_menu = False
+
     scene bg university_outside with fade
     play music mystery
 
@@ -23,6 +25,9 @@ label a1s1:
     # play music chill
 
     show charlet exhausted at character_warp_to("middle_left")
+
+    $ quick_menu = True
+
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
     #sunlight effect? flash?
@@ -70,8 +75,6 @@ label .look_at_crowd:
 
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
     from hunter’s and merchant guilds to investors, mingled with students and curious onlookers."
-
-    show charlet neutral at character_warp_to("middle_left")
 
     $ has_looked_at_crowd = True
     return
