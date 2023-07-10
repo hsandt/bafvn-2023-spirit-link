@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.5"
+define config.version = "1.0"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -45,7 +45,7 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 {a=https://marionette.itch.io/}Marionette{/a} - UI design, UI programming, Promotional art
 
-{a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art (incoming)
+{a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art
 
 {a=https://zwaany.itch.io/}Zwaany{/a}: Art direction, Character art
 
@@ -140,7 +140,7 @@ define config.end_game_transition = None
 ## After the game has started, this can be changed with the "window show",
 ## "window hide", and "window auto" statements.
 
-define config.window = "hide"
+define config.window = "auto"
 
 
 ## Transitions used to show and hide the dialogue window

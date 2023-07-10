@@ -118,7 +118,15 @@ init:
         xzoom -1.0
 
     transform darker:
-        linear 0.1 matrixcolor TintMatrix("#888888")
+        # Assume we start at normal color so init to that value to allow transition
+        # ` * SaturationMatrix(1.0)` is only to allow future saturation transition
+        # See https://www.renpy.org/doc/html/matrixcolor.html#structural-similarity
+        matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
+        linear 1.0 matrixcolor TintMatrix("#888888") * SaturationMatrix(1.0)
 
     transform reset_brightness:
-        linear 0.1 matrixcolor TintMatrix("#ffffff")
+        linear 1.0 matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
+
+    transform sepia:
+        matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
+        linear 0.5 matrixcolor SepiaMatrix()

@@ -16,13 +16,18 @@ label a1s1:
     "This was a question Professor Mara once posed to me as a naive, first year."
     "At the time, I said ‘I'd do anything’. Now, I was reconsidering."
 
+    $ quick_menu = False
+
     scene bg university_outside with fade
     play music mystery
 
     # uncomment when asset is ready
     # play music chill
 
-    show charlet exhausted at character_warp_to("left")
+    show charlet exhausted at character_warp_to("middle_left")
+
+    $ quick_menu = True
+
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
     #sunlight effect? flash?
@@ -36,21 +41,24 @@ label a1s1:
     #maybe show a mirror
 
     "A glance in the mirror revealed uneven patches of skin and smeared rouge. I swiped at it hastily, hoping no one noticed."
-    "No one did. Of course not. Tucked in between the history and literature department's booths, my booth remains woefully forgotten."
+    "No one did. Of course not. Tucked in between the history and literature department's booths, my own remains woefully forgotten."
 
     show charlet exhausted
 
-    "Bored and sweaty I amuse myself by looking around. I..."
+    "Bored and sweaty, I amuse myself by looking around."
 
     jump .look_choice
 
 label .look_choice:
     while not (has_looked_at_crowd and has_looked_at_booth):
+        if has_looked_at_crowd or has_looked_at_booth:
+            "I look around a bit more."
+
         menu:
-            "Look at the crowd." if not has_looked_at_crowd:
+            "I look at the crowd." if not has_looked_at_crowd:
                 call .look_at_crowd from _call_a1s1_look_at_crowd
 
-            "Observe the booths." if not has_looked_at_booth:
+            "I observe the booths." if not has_looked_at_booth:
                 call .look_at_booth from _call_a1s1_look_at_booth
 
     jump .after_look
@@ -60,12 +68,13 @@ label .look_at_crowd:
 
     hide charlet with character_dissolve
 
+    # FIXME: Panha-Kam vs Alcatra University
     "A throng of curious viewers fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
-    "Each department has brought their best each aiming to net themselves a rich, sponsor.
+    "Each department has brought their best, each aiming to net themselves a rich sponsor.
     Colorful signboards cry out the merits of their research."
 
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
-    from hunters’ and merchant guilds to investors, mingle with students and curious onlookers."
+    from hunter’s and merchant guilds to investors, mingled with students and curious onlookers."
 
     $ has_looked_at_crowd = True
     return
@@ -83,7 +92,8 @@ label .look_at_booth:
     "As I watch, a man in a suit examines the engineering team’s latest invention:
     a long-barreled rifle more accurate than the last, capable of shooting a bird faster than 50 paces."
 
-    show charlet scared at character_warp_to("left")
+    # Show above companion
+    show charlet scared at character_warp_to("middle_left") zorder 1
 
     "I cringe as he peers down its nozzle."
 
@@ -94,16 +104,16 @@ label .look_at_booth:
     show charlet neutral
 
     "Makara is right. Though it has been only two days since the attack in Alcatra, the event's security is concerningly lax."
-    "Here were some of Enon's most brillant minds and richest merchants all conveniently gathered in one place. A perfect target."
+    "Here were some of Enon's most brilliant minds and richest merchants, all conveniently gathered in one place. A perfect target."
 
-    "The thought left me tense. The possibility of vigilantes and would-be terrorists hiding in the crowd, left my heart in my throat."
-    "I scan the crowd, my eyes lingering on the men scattered throughout them dressed in the brown and green of the hunter’s guild."
+    "The thought left me tense. The possibility of vigilantes and would-be terrorists hiding in the crowd left my heart in my throat."
+    "I scan the crowd, my eyes lingering on the scattered men dressed in the brown and green of the hunter’s guild."
     "Their expressions are friendly, but their eyes are sharp, and their stances suggest an air of purpose. Friend or foe?"
 
     show charlet intrigued
 
     # TODO komehara: explain ILF
-    "In a sea of strangers it is impossible to know. The ILF had thousands of followers. Any one here could be a member."
+    "In a sea of strangers, it is impossible to know. The ILF had thousands of followers. Any one here could be a member."
     "And while the ILF was, generally, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
     the recent attacks had cast doubt on the organization."
     "Were the attacks really just the work of independent rebels? Or was the ILF just trying to save face?"
@@ -112,13 +122,14 @@ label .look_at_booth:
 
     "I force levity into my voice."
 
-    charlet smile "Well, at least I have you, oh mighty Makara, to save me in spite of my poor, human senses."
+    charlet smile "Well, at least I have you, {i}oh mighty Makara{/i}, to save me in spite of my poor, human senses."
 
     makara "Indeed. With me here, you need not fear anything."
 
-    charlet smile "A big boast from a little dragon."
+    show charlet smile
 
-    "Nonetheless, the words gave me some comfort."
+    "A big boast from a little dragon.\n"
+    extend "Nonetheless, the words gave me some comfort."
 
     show charlet neutral
     hide makara with character_dissolve
@@ -134,16 +145,18 @@ label .after_look:
 
     pause 1.0
 
-    show charlet exhausted at character_warp_to("middle_left")
-
+    # Show above companion
+    show charlet exhausted at character_warp_to("middle_left") zorder 1
 
     "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I'd been too busy setting up the booth."
 
     show charlet intrigued
 
-    charlet "Maybe I should have focused my studies on food instead of folklore. At least then I’d have an excuse to eat."
+    charlet "Maybe I should have focused my studies on food instead of folklore. At least I’d have an excuse to eat."
 
     show makara neutral at companion_warp_to("middle_right")
+
+    # FIXME logic: if she changed field of studies, she would also have a different advisor
 
     makara "And what? Bribed your advisor with cake? I could hardly see that working. With how much time she spends reading, one would think she lived off prose and not portions."
 
@@ -151,36 +164,41 @@ label .after_look:
 
     # show coffee or a view of the professor buried in books?
 
-    charlet "Okay. You're right. But maybe I should have brought something edible. It doesn’t look like anyone is coming anytime soon."
+    charlet "Okay. You're right. But maybe I should have brought something edible."
 
-    hide makara neutral
+    hide makara neutral with character_dissolve
+
+    pause 0.5
 
     "This event was my chance. I had to secure a sponsor."
     "Otherwise, my dreams of preserving the island's rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
 
-    # odd transition, may need transitional sentence
-    "The booth, pamphlets with their colorful photographs showcasing the island’s rich history seemed to mock me.
+    "The booth's pamphlets, with their colorful photographs showcasing the island’s rich history, seemed to mock me.
     I had spent months researching the island and stayed up all night printing pamphlets."
     "But for what? To hand out six to a handful of students who took them out of pity?"
 
     #stomach growling noise again
 
-    charlet "...maybe I should just grab lunch."
-    "Just as I make to leave, a voice stops me."
+    charlet "... maybe I should just grab lunch. It doesn’t look like anyone is coming anytime soon."
+    "Just as I prepare to leave, a voice stops me."
 
-    show pichit smile at character_warp_to("right")
+    # Show above companion
+    show pichit smile at character_warp_to("right") zorder 1
 
     pichit "Oi! Charlet! Hey!"
 
+    show pichit at character_move_to("middle_right")
+
     "It was Pichit wearing his signature, broad grin. He was a born and bred native of Moacu-Laedan, though he had moved to the continent for school."
 
+    # FIXME: Panha-Kam vs Alcatra University
     "Bayani, another alumni from Alcatra University, had introduced him to me as a potential guide for my expedition two months ago."
 
     "He is also accompanied by a spirit."
 
     # Move characters to far sides to leave space for spirits
-    show charlet at character_move_to("far_left")
-    show pichit at character_move_to("far_right")
+    show charlet at character_move_to("left")
+    show pichit at character_move_to("right")
 
     show makara neutral at companion_warp_to("middle_left"), flip
     show fan neutral at companion_warp_to("middle_right")

@@ -13,12 +13,13 @@ image bg black = Solid("#000000")
 # Proto Solid
 # image bg university_outside = Solid("#af9750")
 # Replace with asset when ready
-image bg university_outside = "images/bg/BG_Fair3.webp"
+image bg university_outside = "images/bg/university_outside.webp"
 
 # Proto Solid
 # image bg university_inside = Solid("#6d5e32")
 # Replace with asset when ready
 image bg university_inside = "images/bg/BG_Hall.webp"
+# image bg university_inside = "images/bg/university_inside.webp"
 
 image bg smoke = Solid("#9f9f9f")
 # Replace with asset when ready
@@ -33,8 +34,8 @@ image bg assassin_cloth = Solid("#bf4040")
 # image bg assassin_cloth = "images/bg/assassin_cloth.jpg"
 
 # Useful if force showing standard overlays at some point (e.g. during credits)
-image bg main_menu_overlay = "gui/overlay/main_menu.jpg"
-image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
+image bg main_menu_overlay = "gui/overlay/main_menu.png"
+image bg game_menu_overlay = "gui/overlay/game_menu.png"
 
 ## Characters
 
@@ -42,7 +43,7 @@ image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
 
 # Charlet
 image charlet neutral = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
-image charlet smile = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+image charlet smile = Transform("images/chars/sc1080p_mc_neutral_smile.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
 image charlet exhausted = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
@@ -50,8 +51,14 @@ image charlet sad = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, 
 # TODO: use dedicated sprite when ready
 image charlet surprised = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
 # TODO: use dedicated sprite when ready
+image charlet serious = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
+# TODO: use dedicated sprite when ready
 image charlet intrigued = Transform("images/chars/sc1080p_mc_neutral.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet scared = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+# TODO: use dedicated sprite when ready
+image charlet anxious = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.95, anchor=(0.53, 0.67))
+# TODO: use dedicated sprite when ready
+image charlet relieved = Transform("images/chars/sc1080p_mc_neutral_smile.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet shout = Transform("images/chars/sc1080p_mc_shout.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet telepathy = Transform("images/chars/sc1080p_mc_telepathy.png", zoom=0.95, anchor=(0.53, 0.67))
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
@@ -63,6 +70,8 @@ image pichit smile = Transform("images/chars/sc1080p_guide_smile.png", zoom=0.95
 image pichit intrigued = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
 # TODO: use dedicated sprite when ready
 image pichit surprised = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
+# TODO: use dedicated sprite when ready
+image pichit exhausted = Transform("images/chars/sc1080p_guide_intrigued.png", zoom=0.95, anchor=(0.46, 0.67))
 image pichit battle serious = Transform("images/chars/sc1080p_guide_battle_serious.png", zoom=0.95, anchor=(0.59, 0.67))
 image pichit battle grimace = Transform("images/chars/sc1080p_guide_battle_grimace.png", zoom=0.95, anchor=(0.59, 0.67))
 image pichit battle anxious = Transform("images/chars/sc1080p_guide_battle_anxious.png", zoom=0.95, anchor=(0.59, 0.67))
@@ -76,6 +85,8 @@ image pichit battle smile = Transform("images/chars/sc1080p_guide_battle_serious
 image raegan neutral = Transform("images/chars/sc1080p_lobbyist_neutral.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan smile = Transform("images/chars/sc1080p_lobbyist_smile.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan intrigued = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
+# TODO: use dedicated sprite when ready (currently, intrigued look more like sad than intrigued)
+image raegan sad = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan thinking = Transform("images/chars/sc1080p_lobbyist_thinking.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan surprised = Transform("images/chars/sc1080p_lobbyist_surprised.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zoom=0.95, anchor=(0.45, 0.7))
@@ -104,6 +115,7 @@ init -1:
     # define audio.title_theme = "<loop 19.2>audio/bgm/Title.ogg"
     define audio.battle = "<loop 1.807 to 72.289>audio/bgm/Storm Soul.ogg"
     define audio.mystery = "<loop 8.000 to 80.000>audio/bgm/Lore Forgotten.ogg"
+    define audio.to_be_continued = "audio/bgm/Premonition_v0.1.opus"
 
     ## BGM mapping (so accessibility feature can get BGM notification text from core name
     ## instead of filepath, which contains the <loop> pattern and is not very convenient)
