@@ -504,7 +504,7 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu and not renpy.get_screen('choice'):
+    if quick_menu:
 
         use gear(10, 1.4, 1388, 600, 0, 3)
 
