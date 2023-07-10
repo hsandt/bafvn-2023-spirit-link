@@ -115,6 +115,7 @@ init -1:
     # define audio.title_theme = "<loop 19.2>audio/bgm/Title.ogg"
     define audio.battle = "<loop 1.807 to 72.289>audio/bgm/Storm Soul.ogg"
     define audio.mystery = "<loop 8.000 to 80.000>audio/bgm/Lore Forgotten.ogg"
+    define audio.to_be_continued = "audio/bgm/Premonition_v0.1.opus"
 
     ## BGM mapping (so accessibility feature can get BGM notification text from core name
     ## instead of filepath, which contains the <loop> pattern and is not very convenient)

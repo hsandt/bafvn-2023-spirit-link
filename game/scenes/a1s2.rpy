@@ -466,11 +466,12 @@ label .fight1:
 
     pichit "I don't know. It sounded like–"
 
+    play sound audio.sfx.hit
     show charlet scared
     show raegan surprised
     show pichit surprised
 
-    "To my horror, the door swung open. My heart dropped. The assassin!"
+    "To my horror, the door swung open. My heart dropped."
 
     # we could potentially stop here is we don't have time.
 
@@ -480,7 +481,6 @@ label .fight1:
     # just before system text appears, and after it disappears
     window hide
 
-    # Hide quick menu for final cinematics
     $ quick_menu = False
 
     scene bg university_inside with bg_dissolve
@@ -488,22 +488,50 @@ label .fight1:
     pause 0.5
 
     show phrarat determined at character_warp_to("middle")
-    pause 0.5
+    pause 0.7
     play sound audio.sfx.fire
+    pause 0.2
 
-    pause 2.5
+    stop music fadeout 5.0
 
-    scene bg black with Dissolve(1.0)
+    $ quick_menu = True
+
+    "The assassin!"
+
+    $ quick_menu = False
+
+    pause 0.5
+
+    play music to_be_continued noloop
+
+    # Couldn't find a way to convert full screen at once, so doing it for each part
+    # Eventually we'll probably have CG for this anyway
+    show bg at sepia
+    show phrarat at sepia
 
     pause 1.0
 
-    system "{cps=15}TO BE CONTINUED...{/cps}{w=3.0}{nw}"
+    image to_be_continued = Text("TO BE CONTINUED...", outlines=[ (absolute(2), "#000", absolute(0), absolute(0)) ], slow_cps=20)
 
-    # TODO: dissolve / fade out text
+    # zorder 1 to remain on top of black "midlay"
+    show to_be_continued zorder 1 with dissolve:
+        xalign 0.5
+        yalign 0.5
 
-    stop music fadeout 2.0
+    pause 1.9
+
+    # Show black "midlay" as image, not scene bg, so to_be_continued text remains on top
+    show black with Dissolve(1.0)
+
+    pause 3.8
+
+    hide to_be_continued with dissolve
 
     pause 2.0
+
+    stop music fadeout 8.0
+
+    pause 5.0
 
     return
 
