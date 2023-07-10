@@ -34,8 +34,8 @@ image bg assassin_cloth = Solid("#bf4040")
 # image bg assassin_cloth = "images/bg/assassin_cloth.jpg"
 
 # Useful if force showing standard overlays at some point (e.g. during credits)
-image bg main_menu_overlay = "gui/overlay/main_menu.jpg"
-image bg game_menu_overlay = "gui/overlay/game_menu.jpg"
+image bg main_menu_overlay = "gui/overlay/main_menu.png"
+image bg game_menu_overlay = "gui/overlay/game_menu.png"
 
 ## Characters
 
