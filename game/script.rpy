@@ -76,6 +76,12 @@ default has_analyzed_assassin_weapon = False
 default has_analyzed_assassin_stone = False
 
 
+# Temp variables (just to avoid lint error)
+# Even if not used, you need to set a path to a fil that exists to avoid
+# "is not loadable" Lint error
+default sfx_variant = 'audio/sfx/sfx_blade_clash1.opus'
+
+
 # The game starts here.
 
 label start:
