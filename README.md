@@ -2,6 +2,8 @@
 
 This is our entry for [Battle Action Fantasy VN Jam 2023](https://itch.io/jam/baf-jam-2023).
 
+Play the game on the [itch.io page](https://komehara.itch.io/spirit-link).
+
 ## License
 
 For code, see [CODE_LICENSE](CODE_LICENSE).
