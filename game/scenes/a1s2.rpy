@@ -36,11 +36,28 @@ label .assassin_appears:
 
     charlet "Of course. I have may a schedule here, would you like to set up a time to meet?"
 
+    # Start flash
+    # Dict transition plays while further statements are applied, allowing us to show the flash
+    # without delay while also updating character expressions and hiding UI
+    show overlay flash with { "master": Dissolve(0.15) }
+
+    $ quick_menu = False
+    window hide
+
     show charlet intrigued
     show raegan surprised
     show pichit intrigued at reset_brightness
 
     play sound audio.sfx.smoke
+
+    # Hold flash
+    pause 0.25
+
+    # End flash
+    hide overlay with Dissolve(0.15)
+
+    $ quick_menu = True
+    window show
 
     "Before Raegan could respond, a bright flash blinded us. Confused cries sounded out in the crowd and the air grew thick with the scent of smoke."
     "I turned west, watching as smoke poured out from the direction of the alchemy station. Had one of the displays malfunctioned?"

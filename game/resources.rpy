@@ -3,6 +3,8 @@
 ## Overlay
 
 image overlay black = Solid("#000000")
+# Flash overlay - combine with flash transition for a full flash effect
+image overlay flash = Solid("#ffffffd2")
 image underlay white_half_alpha = Solid("#ffffff80")
 
 ## Backgrounds (1080p)
