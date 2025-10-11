@@ -133,3 +133,9 @@ CubismSdkForNative-4-*.zip
 
 # Sublime Text
 *.sublime-workspace
+
+# VS Code extension: Ren'Py Launch and Sync
+renpy_warp_*.rpe*
+
+# Word Counter + (https://kigyo.itch.io/renpy-word-counter) since it is premium
+/game/wordcounter+.rpy
