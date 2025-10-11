@@ -39,6 +39,24 @@ image bg assassin_cloth = Solid("#bf4040")
 image bg main_menu_overlay = "gui/overlay/main_menu.png"
 image bg game_menu_overlay = "gui/overlay/game_menu.png"
 
+## FX
+
+# Smoke
+
+transform smoke_particle_transform:
+    # zpos 10
+    zoom renpy.random.uniform(0.5, 1.0)
+    rotate renpy.random.uniform(0.0, 360.0)
+    pause 5.0
+    easein 5.0 alpha 0.0
+
+image fx smoke = SnowBlossom(At("images/fx/fx_smoke_particle.webp", smoke_particle_transform), count=500,
+    xspeed=(-60, -10), yspeed=(-100, -50), start=10.0)
+
+# Hack to make smoke appear above characters who appear later
+screen smoke():
+    add "fx smoke"
+
 ## Characters
 
 # Humans place anchors at leg center, where screen bottom cuts them

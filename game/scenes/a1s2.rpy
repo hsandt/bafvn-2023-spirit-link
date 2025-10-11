@@ -41,6 +41,20 @@ label .assassin_appears:
     # without delay while also updating character expressions and hiding UI
     show overlay flash with { "master": Dissolve(0.15) }
 
+    # Start showing smoke as soon as possible to give it some time to appear (but not enough, would need prewarm,
+    # see more below)
+    #
+    # Normally we should `show fx smoke onlayer fx` with `fx` added to custom config.layers
+    # but this currently doesn't work, see https://lemmasoft.renai.us/forums/viewtopic.php?p=574874#p574874
+    # so we must use a trick from https://lemmasoft.renai.us/forums/viewtopic.php?p=571461
+    # to show particles on a separate screen
+    #
+    # Other known issues:
+    # - first batch of particles sometimes appears in wave and then disappears, despite `start` parameter
+    # - no way to prewarm particles, so they take time to appear on screen
+    #   see https://lemmasoft.renai.us/forums/viewtopic.php?t=70172
+    show screen smoke
+
     $ quick_menu = False
     window hide
 
@@ -74,15 +88,19 @@ label .assassin_appears:
 
     raegan "Are you sure, that–"
 
-    # no smoke asset yet, so just reuse outside
-    # scene bg smoke with bg_dissolve
-    scene bg university_outside with bg_dissolve
+    hide charlet
+    hide raegan
+    hide pichit
+    with character_dissolve
     show phrarat neutral at character_warp_to("middle")
 
     stop music fadeout 1.0
     pause 0.5
 
     "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
+
+    # when using screen smoke trick, we need to hide it manually even when changing scene
+    hide screen smoke
 
     scene bg university_outside with bg_dissolve
     show charlet scared at character_warp_to("far_left")
