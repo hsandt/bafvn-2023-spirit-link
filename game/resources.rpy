@@ -12,10 +12,14 @@ image underlay white_half_alpha = Solid("#ffffff80")
 # Black background for scene transitions
 image bg black = Solid("#000000")
 
+# White background
+image bg white = Solid("#ffffff")
+
 # Proto Solid
 # image bg university_outside = Solid("#af9750")
 # Replace with asset when ready
 image bg university_outside = "images/bg/university_outside.webp"
+image bg university_outside_with_characters_for_zoom = "images/bg/university_outside_with_characters_for_zoom.webp"
 
 # Proto Solid
 # image bg university_inside = Solid("#6d5e32")
@@ -23,7 +27,7 @@ image bg university_outside = "images/bg/university_outside.webp"
 image bg university_inside = "images/bg/BG_Hall.webp"
 # image bg university_inside = "images/bg/university_inside.webp"
 
-image bg smoke = Solid("#9f9f9f")
+image bg smoke = Solid("#d3d3d3")
 # Replace with asset when ready
 # image bg smoke = "images/bg/smoke.jpg"
 
@@ -120,6 +124,7 @@ image phrarat determined = Transform("images/chars/sc1080p_assassin_determined.p
 image phrarat surprised = Transform("images/chars/sc1080p_assassin_surprised.png", zoom=0.95, anchor=(0.46, 0.65))
 image phrarat anxious = Transform("images/chars/sc1080p_assassin_anxious.png", zoom=0.95, anchor=(0.46, 0.65))
 image phrarat shout = Transform("images/chars/sc1080p_assassin_shout.png", zoom=0.95, anchor=(0.46, 0.65))
+image phrarat silhouette = Transform("images/chars/sc1080p_assassin_silhouette.webp", zoom=0.95, anchor=(0.46, 0.65))
 
 # Spirits place anchors at center
 image makara neutral = Transform("images/chars/mc spirit draft 1.png", zoom=0.6, anchor=(0.7, 0.51))
@@ -181,3 +186,28 @@ init -1:
     define sfx_to_assets = dict(
         # slash = audio.slash,
     )
+
+init python:
+    # Shaders
+
+    renpy.register_shader("camera_zoom", variables="""
+        attribute vec4 a_position;
+        uniform sampler2D tex0;
+        uniform vec2 u_model_size;
+        uniform float u_zoom_out_power;
+        varying vec2 v_uv_rel;
+    """, vertex_300="""
+        v_uv_rel = a_position.xy / u_model_size - 0.5;
+    """, fragment_300="""
+        vec2 v_edge_projected;
+        float v_squared_ratio_to_edge;
+        vec2 v_transformed_uv;
+        v_edge_projected = 0.5 * vec2(
+            clamp(v_uv_rel.x / abs(v_uv_rel.y), -1.0, 1.0),
+            clamp(v_uv_rel.y / abs(v_uv_rel.x), -1.0, 1.0)
+        );
+        v_squared_ratio_to_edge = dot(v_uv_rel, v_uv_rel) / dot(v_edge_projected, v_edge_projected);
+        v_transformed_uv = 0.5 + pow(v_squared_ratio_to_edge, 0.5 * (1.0 / u_zoom_out_power - 1.0)) * v_uv_rel;
+
+        gl_FragColor = texture2D(tex0, v_transformed_uv);
+    """)

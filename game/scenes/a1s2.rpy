@@ -92,20 +92,45 @@ label .assassin_appears:
 
     "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders he was perturbed."
 
-    pichit "Some demonstrations must have malfunctioned. I'm sure it's nothing to be concerned about, sir."
+    pichit "Some demonstrations must have malfunctioned. Let me just have a look over there..."
 
-    raegan "Are you sure, that–"
+    $ quick_menu = False
+    window hide
+
+    show pichit neutral at character_exit_to_right_easeout(1.2)
+
+    pause 1.5
+
+    stop music fadeout 1.0
+
+    scene bg smoke with Dissolve(0.7)
+    pause 0.25
+    show phrarat silhouette at character_warp_to("middle") with Dissolve(1.0)
+    pause 0.5
+
+    # Quick flash transition
+    # show overlay flash onlayer overlay with { "overlay": Dissolve(0.15) }
+    scene bg white with Dissolve(0.15)
+    pause 0.5
+    play sound audio.sfx.swift_move2
+    scene bg university_outside_with_characters_for_zoom at camera_zoom_in_from_far(1.0/5, 1.0, 0.4)
+    with Dissolve(0.2)
+
+    pause 1.0
+    hide overlay with Dissolve(0.15)
+
+    $ quick_menu = True
+    window show
+
+    "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
+
+    play sound audio.sfx.impact_catch
 
     hide charlet
     hide raegan
     hide pichit
     with character_dissolve
     show phrarat neutral at character_warp_to("middle")
-
-    stop music fadeout 1.0
-    pause 0.5
-
-    "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
 
     # when using screen smoke trick, we need to hide it manually even when changing scene
     hide screen smoke

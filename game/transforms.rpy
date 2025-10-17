@@ -130,3 +130,11 @@ init:
     transform sepia:
         matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
         linear 0.5 matrixcolor SepiaMatrix()
+
+    # Shader transforms
+
+    transform camera_zoom_in_from_far(from_factor, to_factor, duration):
+        shader "camera_zoom"
+        # inverse since we want zoom out but from_factor means zoom in when greater than 1
+        u_zoom_out_power 1/from_factor
+        linear duration u_zoom_out_power 1/to_factor
