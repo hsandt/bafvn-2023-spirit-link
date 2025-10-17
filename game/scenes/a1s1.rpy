@@ -112,8 +112,7 @@ label .look_at_booth:
 
     show charlet intrigued
 
-    # TODO komehara: explain ILF
-    "In a sea of strangers, it is impossible to know. The ILF had thousands of followers. Any one here could be a member."
+    "In a sea of strangers, it is impossible to know. The Island Liberation Front, or 'ILF', had thousands of followers. Any one here could be a member."
     "And while the ILF was, generally, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
     the recent attacks had cast doubt on the organization."
     "Were the attacks really just the work of independent rebels? Or was the ILF just trying to save face?"
