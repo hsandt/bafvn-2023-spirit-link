@@ -51,10 +51,10 @@ init:
     # unless you make it reenter soon
     transform character_exit_to_right(duration=1.0):
         alpha 1.0
-        linear duration xpos -0.5
+        linear duration xpos 1.5
     transform character_exit_to_right_easeout(duration=1.0):
         alpha 1.0
-        easeout duration xpos -0.5
+        easeout duration xpos 1.5
 
     # Move character from outside left to target position
     transform character_enter_from_left_to(target_pos, duration=1.0):
