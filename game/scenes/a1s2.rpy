@@ -73,9 +73,17 @@ label .assassin_appears:
     $ quick_menu = True
     window show
 
-    "Before Raegan could respond, a bright flash blinded us. Confused cries sounded out in the crowd and the air grew thick with the scent of smoke."
+    "Before Raegan could respond, a bright flash blinded us. The air grew thick with the scent of smoke."
     "I turned west, watching as smoke poured out from the direction of the alchemy station. Had one of the displays malfunctioned?"
 
+    "Confused cries sounded out in the crowd. People started running through the alleys, some toward the exit and others taking refuge in the main building."
+
+    show charlet anxious
+
+    "{i}With the recent fire in Alcatra, people are more likely to fear an attack in such a crowded place...{/i}"
+    "{i}Should we run away too?{/i}"
+
+    show charlet intrigued
     show raegan thinking
 
     raegan "My pardons, Pichit... Was this part of the event?"
