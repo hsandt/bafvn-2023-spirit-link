@@ -3,15 +3,35 @@ label a1s2:
     jump .assassin_appears
 
 label .assassin_appears:
-    scene bg university_outside
+    # Setup statements: when adding a debug scene hub, create some flag "debug_jump"
+    # and if true, execute them
+    #
+    # scene bg university_outside
+    # show charlet smile at character_warp_to("left")
 
-    show charlet smile at character_warp_to("left")
-    show raegan smile at character_warp_to("middle")
-    show pichit neutral at character_warp_to("right"), darker
+    show raegan smile zorder 1 at character_move_to("middle")
+
+    # Currently, chaining transforms with comma `,` will not play them in parallel,
+    # so we need to play both in sequence with pause
+    # (or in parallel but that'd need a dedicated transform)
+    # See https://github.com/renpy/renpy/issues/6681
+    # show pichit neutral at character_move_to("right"), darker
+
+    show pichit neutral at character_move_to("right")
+
+    # Wait for previous animation to finish
+    pause 1.0
+
+    # Quick fix: if player skipped, force finish previous animation now
+    # as darker will interrupt it immediately
+    show pichit neutral at character_move_to("right", 0.0)
+
+    show pichit at darker
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
 
-    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu. It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
+    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu-Laedan."
+    charlet "It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
 
     show raegan neutral
 
@@ -19,7 +39,8 @@ label .assassin_appears:
 
     show charlet intrigued
 
-    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising. Stories about Lalahon were rare and their contents contradictory. The few that I had heard had been told to me by my grandfather."
+    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising."
+    "Stories about Lalahon were rare and their contents contradictory. The few that I had heard had been told to me by my grandfather."
 
     "According to grandfather's tales, Lalahon was either a benevolent goddess born from the ashes of great god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
@@ -34,7 +55,7 @@ label .assassin_appears:
 
     raegan "A worthy endeavor for sure. I look forward to hearing more of your goals and the tourism business proposition."
 
-    charlet "Of course. I have may a schedule here, would you like to set up a time to meet?"
+    charlet "Of course. I have a schedule here, would you like to set up a time to meet?"
 
     # Start flash
     # Dict transition plays while further statements are applied, allowing us to show the flash
@@ -74,16 +95,10 @@ label .assassin_appears:
     window show
 
     "Before Raegan could respond, a bright flash blinded us. The air grew thick with the scent of smoke."
-    "I turned west, watching as smoke poured out from the direction of the alchemy station. Had one of the displays malfunctioned?"
-
     "Confused cries sounded out in the crowd. People started running through the alleys, some toward the exit and others taking refuge in the main building."
 
-    show charlet anxious
+    "I turned west, watching as smoke poured out from the direction of the alchemy station."
 
-    "{i}With the recent fire in Alcatra, people are more likely to fear an attack in such a crowded place...{/i}"
-    "{i}Should we run away too?{/i}"
-
-    show charlet intrigued
     show raegan thinking
 
     raegan "My pardons, Pichit... Was this part of the event?"
@@ -92,12 +107,30 @@ label .assassin_appears:
 
     "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders he was perturbed."
 
-    pichit "Some demonstrations must have malfunctioned. Let me just have a look over there..."
+    pichit "Some demonstrations must have malfunctioned. I'll just have a look over there..."
 
     $ quick_menu = False
     window hide
 
     show pichit neutral at character_exit_to_right_easeout(1.2)
+
+    pause 1.5
+
+    show charlet anxious
+
+    $ quick_menu = True
+    window show
+
+    show makara neutral at companion_warp_to("far_left"), flip
+
+    makara "hey"
+
+    charlet "The smoke is not going away..."
+
+    raegan "It looks like we'll have to "
+
+    $ quick_menu = False
+    window hide
 
     pause 1.5
 

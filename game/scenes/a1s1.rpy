@@ -216,10 +216,10 @@ label .after_look:
     with character_dissolve
 
     show charlet at character_move_to("left")
+    show pichit neutral at character_move_to("middle", 0.75)
 
     charlet "Hey Pichit. Who is the gentleman with you?"
 
-    show pichit neutral at character_move_to("middle")
     show raegan neutral at character_warp_to("right")
 
     "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
@@ -240,10 +240,5 @@ label .after_look:
     "His smile is dangerously charming and I find myself flustered by my own reaction to it."
 
     charlet "Raegan, then."
-
-    #more scene tbd
-
-    # Commented out for playtesting
-    # "3. As MC and Raegan begin making arrangements to meet up, the group the area begins to fill with smoke"
 
     jump a1s2
