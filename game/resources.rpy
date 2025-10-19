@@ -61,6 +61,30 @@ image fx smoke = SnowBlossom(At("images/fx/fx_smoke_particle.webp", smoke_partic
 screen smoke():
     add "fx smoke"
 
+# We didn't use random rotation in the end since the animation was so short, but kept code
+# for reference
+
+init -1 python:
+    def apply_random_rotation(transform, time_since_start, time_since_tag, /):
+        transform.rotate = renpy.random.uniform(-5.0, 5.0)
+        # Return interval (s) between calls to this function
+        return 0.2
+
+transform loop_random_rotation:
+    xalign 0.5
+    yalign 0.5
+
+    function apply_random_rotation
+    repeat
+
+# Speed lines showing that camera is moving forward
+# image fx speed_lines_forward = At("images/fx/speed_lines_forward_1080p.webp", loop_random_rotation)
+image fx speed_lines_forward = "images/fx/speed_lines_forward_1080p.webp"
+
+# Hack to make speed lines appear across scene bg change with camera zoom in shader effect
+screen speed_lines_forward():
+    add "fx speed_lines_forward"
+
 ## Characters
 
 # Humans place anchors at leg center, where screen bottom cuts them

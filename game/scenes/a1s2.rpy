@@ -111,6 +111,11 @@ label .assassin_appears:
     # Quick flash transition
     # show overlay flash onlayer overlay with { "overlay": Dissolve(0.15) }
     scene bg white with Dissolve(0.15)
+
+    # when using screen smoke trick, we need to hide it manually even when changing scene
+    hide screen smoke
+    show screen speed_lines_forward
+
     pause 0.5
     play sound audio.sfx.swift_move2
     scene bg university_outside_with_characters_for_zoom at camera_zoom_in_from_far(1.0/5, 1.0, 0.4)
@@ -123,6 +128,7 @@ label .assassin_appears:
     window show
 
     "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
+    hide screen speed_lines_forward
 
     play sound audio.sfx.impact_catch
 
@@ -131,9 +137,6 @@ label .assassin_appears:
     hide pichit
     with character_dissolve
     show phrarat neutral at character_warp_to("middle")
-
-    # when using screen smoke trick, we need to hide it manually even when changing scene
-    hide screen smoke
 
     scene bg university_outside with bg_dissolve
     show charlet scared at character_warp_to("far_left")
