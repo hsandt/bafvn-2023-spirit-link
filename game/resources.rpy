@@ -85,15 +85,9 @@ transform loop_random_rotation:
 
 # Speed lines showing that camera is moving forward
 # image fx speed_lines_forward = At("images/fx/speed_lines_forward_1080p.webp", loop_random_rotation)
-image fx speed_lines_forward = "images/fx/speed_lines_forward_1080p.webp"
+image fx_speed_lines_forward = "images/fx/speed_lines_forward_1080p.webp"
 
-# Hack to make speed lines appear across scene bg change with camera zoom in shader effect
-screen fire_with_speed_lines_forward():
-    layer "fx"
-    add "fx fire_forward" xalign 0.5 yanchor 0.0 ypos 0.7
-    add "fx speed_lines_forward"
-
-image fx fire_forward = "images/fx/fx_fire_forward.webp"
+image fx_fire_forward = "images/fx/fx_fire_forward.webp"
 
 ## Characters
 

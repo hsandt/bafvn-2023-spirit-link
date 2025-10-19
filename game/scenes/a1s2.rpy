@@ -113,21 +113,35 @@ label .assassin_appears:
 
     # when using screen smoke trick, we need to hide it manually even when changing scene
     hide screen smoke
-    show screen fire_with_speed_lines_forward
 
     scene bg university_outside_with_characters_for_zoom at camera_zoom_in_from_far(1.0/5, 1.0, 0.4)
+
+    show fx_speed_lines_forward:
+        xalign 0.5 yalign 0.5
+    show fx_fire_forward:
+        xalign 0.5 yanchor 0.0 ypos 0.7
 
     play sound audio.sfx.swift_move2
 
     hide screen white_overlay with Dissolve(0.15)
 
-    pause 1.0
+    # Make sure to wait at least camera_zoom_in_from_far duration - hide screen transition above
+    # (0.4-0.15=0.25), or the new effect will stop the zoom in
+    # shader progression
+    pause 0.25
+    # Force reset in case player skipped pause above, to avoid getting stuck in the middle of
+    # zoom in effect
+    show bg at reset
+    show bg at sepia(0.1)
+    show fx_speed_lines_forward at sepia(0.1)
+    show fx_fire_forward at sepia(0.1)
+
+    pause
 
     $ quick_menu = True
     window show
 
     "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
-    hide screen speed_lines_forward
 
     play sound audio.sfx.impact_catch
 
@@ -576,6 +590,8 @@ label .fight1:
 
     # Couldn't find a way to convert full screen at once, so doing it for each part
     # Eventually we'll probably have CG for this anyway
+    # In the meantime, I found ways to apply shader to each item (still individually, but not a problem
+    # for uniform transformations like sepia, unlike gradient), but for this simple effect, that's enough
     show bg at sepia
     show phrarat at sepia
 

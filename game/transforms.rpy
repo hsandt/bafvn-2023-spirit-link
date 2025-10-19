@@ -127,9 +127,9 @@ init:
     transform reset_brightness:
         linear 1.0 matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
 
-    transform sepia:
+    transform sepia(duration=0.5):
         matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
-        linear 0.5 matrixcolor SepiaMatrix()
+        linear duration matrixcolor SepiaMatrix()
 
     # Shader transforms
 
