@@ -109,20 +109,19 @@ label .assassin_appears:
     pause 0.5
 
     # Quick flash transition
-    # show overlay flash onlayer overlay with { "overlay": Dissolve(0.15) }
-    scene bg white with Dissolve(0.15)
+    show screen white_overlay with Dissolve(0.15)
 
     # when using screen smoke trick, we need to hide it manually even when changing scene
     hide screen smoke
-    show screen speed_lines_forward
+    show screen fire_with_speed_lines_forward
 
-    pause 0.5
-    play sound audio.sfx.swift_move2
     scene bg university_outside_with_characters_for_zoom at camera_zoom_in_from_far(1.0/5, 1.0, 0.4)
-    with Dissolve(0.2)
+
+    play sound audio.sfx.swift_move2
+
+    hide screen white_overlay with Dissolve(0.15)
 
     pause 1.0
-    hide overlay with Dissolve(0.15)
 
     $ quick_menu = True
     window show

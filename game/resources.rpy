@@ -15,6 +15,11 @@ image bg black = Solid("#000000")
 # White background
 image bg white = Solid("#ffffff")
 
+screen white_overlay():
+    # don't put on layer "overlay", that would make it disappear on scene change, so keep default
+    # (layer "screens")
+    add "bg white"
+
 # Proto Solid
 # image bg university_outside = Solid("#af9750")
 # Replace with asset when ready
@@ -59,6 +64,7 @@ image fx smoke = SnowBlossom(At("images/fx/fx_smoke_particle.webp", smoke_partic
 
 # Hack to make smoke appear above characters who appear later
 screen smoke():
+    layer "fx"
     add "fx smoke"
 
 # We didn't use random rotation in the end since the animation was so short, but kept code
@@ -82,8 +88,12 @@ transform loop_random_rotation:
 image fx speed_lines_forward = "images/fx/speed_lines_forward_1080p.webp"
 
 # Hack to make speed lines appear across scene bg change with camera zoom in shader effect
-screen speed_lines_forward():
+screen fire_with_speed_lines_forward():
+    layer "fx"
+    add "fx fire_forward" xalign 0.5 yanchor 0.0 ypos 0.7
     add "fx speed_lines_forward"
+
+image fx fire_forward = "images/fx/fx_fire_forward.webp"
 
 ## Characters
 

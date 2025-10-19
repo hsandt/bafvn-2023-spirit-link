@@ -6,6 +6,8 @@
 # See https://github.com/renpy/renpy/issues/4762
 # define config.autoreload = False
 
+define config.layers = [ 'master', 'fx', 'transient', 'screens', 'overlay' ]
+
 
 init python:
     # Custom keymap
