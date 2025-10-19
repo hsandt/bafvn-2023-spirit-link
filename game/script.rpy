@@ -84,6 +84,18 @@ default has_analyzed_assassin_stone = False
 default sfx_variant = 'audio/sfx/sfx_blade_clash1.opus'
 
 
+# call this label on cinematic start to hide both dialogue window and quick menu
+label start_cinematic:
+    $ quick_menu = False
+    window hide
+    return
+
+# call this label on cinematic end to show both dialogue window and quick menu again
+label end_cinematic:
+    $ quick_menu = True
+    window show
+    return
+
 # The game starts here.
 
 label start:

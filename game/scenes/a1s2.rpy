@@ -76,8 +76,7 @@ label .assassin_appears:
     #   see https://lemmasoft.renai.us/forums/viewtopic.php?t=70172
     show screen smoke
 
-    $ quick_menu = False
-    window hide
+    call start_cinematic
 
     show charlet intrigued
     show raegan surprised
@@ -91,8 +90,7 @@ label .assassin_appears:
     # End flash
     hide overlay with Dissolve(0.15)
 
-    $ quick_menu = True
-    window show
+    call end_cinematic
 
     "Before Raegan could respond, a bright flash blinded us. The air grew thick with the scent of smoke."
     "Confused cries sounded out in the crowd. People started running through the alleys, some toward the exit and others taking refuge in the main building."
@@ -109,8 +107,7 @@ label .assassin_appears:
 
     pichit "Some demonstrations must have malfunctioned. I'll just have a look over there..."
 
-    $ quick_menu = False
-    window hide
+    call start_cinematic
 
     show pichit neutral at character_exit_to_right_easeout(1.2)
 
@@ -118,8 +115,7 @@ label .assassin_appears:
 
     show charlet anxious
 
-    $ quick_menu = True
-    window show
+    call end_cinematic
 
     show makara neutral at companion_warp_to("far_left"), flip
 
@@ -129,8 +125,7 @@ label .assassin_appears:
 
     raegan "It looks like we'll have to "
 
-    $ quick_menu = False
-    window hide
+    call start_cinematic
 
     pause 1.5
 
@@ -171,8 +166,7 @@ label .assassin_appears:
 
     pause
 
-    $ quick_menu = True
-    window show
+    call end_cinematic
 
     "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
 
@@ -295,8 +289,7 @@ label a1s1run:
 
     pause 0.5
 
-    $ quick_menu = False
-
+    call start_cinematic
 
     scene bg university_inside with bg_dissolve
     show charlet serious at character_warp_to("far_left", 0.5)
@@ -304,7 +297,7 @@ label a1s1run:
 
     pause 0.5
 
-    $ quick_menu = True
+    call end_cinematic
 
     "Now safe behind the university's wards, the realization of what happened hits me."
 
@@ -344,7 +337,7 @@ label a1s1run:
 
     "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply. Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
 
-    $ quick_menu = False
+    call start_cinematic
 
     scene bg black with wipeleft_fast
     pause 0.1
@@ -359,7 +352,7 @@ label a1s1run:
 
     pause 1.0
 
-    $ quick_menu = True
+    call end_cinematic
 
     phrarat shout "Don't get in my way! My quarrel is not with you!"
 
@@ -377,7 +370,7 @@ label a1s1run:
 
 label .fight1:
 
-    $ quick_menu = False
+    call start_cinematic
 
     play music battle
     pause 1.7
@@ -388,7 +381,7 @@ label .fight1:
 
     call .phrarat_whip_dodged from _call_a1s1run_phrarat_whip_dodged
 
-    $ quick_menu = True
+    call end_cinematic
 
     "The assassin lunges at me. His makeshift whip swings towards my face, its heat leaving my skin hot."
 
@@ -398,7 +391,7 @@ label .fight1:
 
     "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off...{/i}"
 
-    $ quick_menu = False
+    call start_cinematic
 
     # TODO: change animation calls to match text
     call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch
@@ -406,7 +399,7 @@ label .fight1:
     call .pichit_cut_catching_whip from _call_a1s1run_pichit_cut_catching_whip
     pause 0.25
 
-    $ quick_menu = True
+    call end_cinematic
 
     call .pichit_phrarat_cross_blades(0.0) from _call_a1s1run_pichit_phrarat_cross_blades
 
@@ -428,16 +421,15 @@ label .fight1:
 
     show phrarat determined
 
-
     "The sword gives me better reach, but this close, the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
     "As our blades clash, I inch closer to the fountain and the biology team's plant display. The more Fan has to work with, the better."
 
-    $ quick_menu = False
+    call start_cinematic
 
     call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s1run_pichit_phrarat_cross_blades_1
     call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s1run_pichit_phrarat_cross_blades_2
 
-    $ quick_menu = True
+    call end_cinematic
 
     "Our blades lock. A stalemate. I feel myself tiring. At this rate, I'll die."
 
@@ -448,12 +440,12 @@ label .fight1:
 
     "{i}‘Fan! Shield!’{/i} I cry as the assassin's wrist flicks forward."
 
-    $ quick_menu = False
+    call start_cinematic
 
     call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch_1
     pause 0.5
 
-    $ quick_menu = True
+    call end_cinematic
 
     "Too late. A length of flame wraps around my left leg. Agony paralyzes me."
 
@@ -598,7 +590,7 @@ label .fight1:
     # just before system text appears, and after it disappears
     window hide
 
-    $ quick_menu = False
+    call start_cinematic
 
     scene bg university_inside with bg_dissolve
 
@@ -611,11 +603,11 @@ label .fight1:
 
     stop music fadeout 5.0
 
-    $ quick_menu = True
+    call end_cinematic
 
     "The assassin!"
 
-    $ quick_menu = False
+    call start_cinematic
 
     pause 0.5
 

@@ -16,7 +16,7 @@ label a1s1:
     "This was a question Professor Mara once posed to me as a naive, first year."
     "At the time, I said ‘I'd do anything’. Now, I was reconsidering."
 
-    $ quick_menu = False
+    call start_cinematic
 
     scene bg university_outside with fade
     play music mystery
@@ -26,7 +26,7 @@ label a1s1:
 
     show charlet exhausted at character_warp_to("middle_left")
 
-    $ quick_menu = True
+    call end_cinematic
 
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
