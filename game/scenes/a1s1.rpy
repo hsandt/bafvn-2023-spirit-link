@@ -196,11 +196,12 @@ label .after_look:
     "He is also accompanied by a spirit."
 
     # Move characters to far sides to leave space for spirits
-    show charlet at character_move_to("left")
-    show pichit at character_move_to("right")
+    show charlet at character_move_to("left", 0.5)
+    show pichit at character_move_to("right", 0.5)
+    pause 0.5
 
     show makara neutral at companion_warp_to("middle_left"), flip
-    show fan neutral at companion_warp_to("middle_right")
+    show fan neutral at companion_warp_to("right", _xpos_offset=-0.03)
 
     makara "We meet again, my fellow. How do you feel today?"
 

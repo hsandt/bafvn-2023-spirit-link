@@ -16,17 +16,17 @@ init python:
             raise ValueError(f"Invalid position_name: {position_name}")
 
 init:
-    transform character_warp_to(target_pos, fade_duration=0.5):
-        xpos position_name_to_xpos_value(target_pos)
+    transform character_warp_to(target_pos, fade_duration=0.5, _xpos_offset=0.0):
+        xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         ypos 1.0
         # fade in
         alpha 0.0
         easein fade_duration alpha 1.0
 
-    transform companion_warp_to(target_pos, fade_duration=0.5):
-        xpos position_name_to_xpos_value(target_pos)
+    transform companion_warp_to(target_pos, fade_duration=0.5, _xpos_offset=0.0):
+        xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         # companion flies or is on shoulder
-        ypos 0.2
+        ypos 0.3
         # fade in
         alpha 0.0
         easein fade_duration alpha 1.0
@@ -90,7 +90,7 @@ init:
         alpha 1.0
         linear duration xpos position_name_to_xpos_value(target_pos)
         # companion flies or is on shoulder
-        ypos 0.2
+        ypos 0.3
 
     # Short moves
 
