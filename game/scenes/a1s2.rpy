@@ -119,11 +119,17 @@ label .assassin_appears:
 
     show makara neutral at companion_warp_to("far_left"), flip
 
-    makara "hey"
+    makara "I sense ill intent behind this screen of smoke. We had better leave this place quickly."
 
-    charlet "The smoke is not going away..."
+    show charlet serious
 
-    raegan "It looks like we'll have to "
+    charlet "{i}Understood.{/i}"
+
+    hide makara with character_dissolve
+
+    charlet "Mr. Van... Raegan, we should go."
+
+    raegan surprised "But Pichit is still..."
 
     call start_cinematic
 

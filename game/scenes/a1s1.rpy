@@ -165,7 +165,7 @@ label .after_look:
 
     charlet "Okay. You're right. But maybe I should have brought something edible."
 
-    hide makara neutral with character_dissolve
+    hide makara with character_dissolve
 
     pause 0.5
 
