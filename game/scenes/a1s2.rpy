@@ -93,17 +93,17 @@ label .assassin_appears:
     call end_cinematic
 
     "Before Raegan could respond, a bright flash blinded us. The air grew thick with the scent of smoke."
-    "Confused cries sounded out in the crowd. People started running through the alleys, some toward the exit and others taking refuge in the main building."
-
-    "I turned west, watching as smoke poured out from the direction of the alchemy station."
+    "Coughs sound out in the alleys as confusion spreads among the crowd. Some guests start covering their mouths and noses, or those of the children they accompany."
+    "Some people started running toward the exit while others were taking refuge in the main building."
+    "I myself cover my nose and turn west, watching as smoke poured out from the direction of Dr. Barouche's alchemy station."
 
     show raegan thinking
 
-    raegan "My pardons, Pichit... Was this part of the event?"
+    raegan "My pardons, Pichit... Do you know what's happening?"
 
     show pichit smile
 
-    "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders he was perturbed."
+    "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders that he was perturbed."
 
     pichit "Some demonstrations must have malfunctioned. I'll just have a look over there..."
 
@@ -162,7 +162,7 @@ label .assassin_appears:
     # Make sure to wait at least camera_zoom_in_from_far duration - hide screen transition above
     # (0.4-0.15=0.25), or the new effect will stop the zoom in
     # shader progression
-    pause 0.25
+    pause 0.5
     # Force reset in case player skipped pause above, to avoid getting stuck in the middle of
     # zoom in effect
     show bg at reset
@@ -170,7 +170,8 @@ label .assassin_appears:
     show fx_speed_lines_forward at sepia(0.1)
     show fx_fire_forward at sepia(0.1)
 
-    pause
+    # change BG and show Pichit in fighting stance blocking the fire
+    # more cinematic: show the fire being blocked, then reveal it was Pichit
 
     call end_cinematic
 
