@@ -97,6 +97,7 @@ label .assassin_appears:
     "Some people started running toward the exit while others were taking refuge in the main building."
     "I myself cover my nose and turn west, watching as smoke poured out from the direction of Dr. Barouche's alchemy station."
 
+    show charlet at darker
     show raegan thinking
 
     raegan "My pardons, Pichit... Do you know what's happening?"
@@ -105,21 +106,38 @@ label .assassin_appears:
 
     "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders that he was perturbed."
 
-    pichit "Some demonstrations must have malfunctioned. I'll just have a look over there..."
+    pichit "Some demonstrations must have malfunctioned. I'm sure it's nothing to be concerned about, sir."
 
-    call start_cinematic
+    show pichit neutral
+    show charlet at reset_brightness
 
-    show pichit neutral at character_exit_to_right_easeout(1.2)
+    charlet "..."
 
-    pause 1.5
+    show bg at invert(0.2)
+    show charlet at invert(0.2)
+    show pichit at invert(0.2)
+    show raegan at invert(0.2)
 
+    pause 0.35
+
+    show bg at reset_invert(0.2)
+    show charlet at reset_invert(0.2)
+    show pichit at reset_invert(0.2)
+    show raegan at reset_invert(0.2)
+
+    pause 0.1
+
+    show pichit at darker
+    show raegan at darker
     show charlet anxious
 
-    call end_cinematic
+    "I feel a sudden unease."
 
     show makara neutral at companion_warp_to("far_left"), flip
 
-    makara "I sense ill intent behind this screen of smoke. We had better leave this place quickly."
+    pause 0.5
+
+    makara "I sense ill intent behind this screen of smoke. We had better quickly leave this place."
 
     show charlet serious
 

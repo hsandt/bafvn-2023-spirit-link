@@ -131,6 +131,14 @@ init:
         matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
         linear duration matrixcolor SepiaMatrix()
 
+    transform invert(duration=0.5, from_value=0.0, to_value=1.0):
+        matrixcolor InvertMatrix(from_value) * SaturationMatrix(1.0)
+        linear duration matrixcolor InvertMatrix(to_value) * SaturationMatrix(1.0)
+
+    transform reset_invert(duration=0.5, from_value=1.0):
+        matrixcolor InvertMatrix(from_value) * SaturationMatrix(1.0)
+        linear duration matrixcolor InvertMatrix(0.0) * SaturationMatrix(1.0)
+
     # Shader transforms
 
     transform camera_zoom_in_from_far(from_factor, to_factor, duration):
