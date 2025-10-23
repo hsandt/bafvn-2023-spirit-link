@@ -137,7 +137,7 @@ init:
     transform flip:
         xzoom -1.0
 
-    transform darker(duration=1.0):
+    transform darker(duration=0.2):
         # Assume we start at normal color so init to that value to allow transition
         # ` * SaturationMatrix(1.0)` is only to allow future saturation transition
         # Generally speaking, we must keep the same matrix structure to allow transitions
@@ -145,7 +145,7 @@ init:
         matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
         linear duration matrixcolor TintMatrix("#888888") * SaturationMatrix(1.0)
 
-    transform reset_brightness(duration=1.0):
+    transform reset_brightness(duration=0.2):
         linear duration matrixcolor TintMatrix("#ffffff") * SaturationMatrix(1.0)
 
     transform sepia(duration=0.5):
