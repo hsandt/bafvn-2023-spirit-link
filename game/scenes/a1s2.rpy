@@ -145,9 +145,12 @@ label .assassin_appears:
 
     hide makara with character_dissolve
 
-    charlet "Mr. Van... Raegan, we should go."
+    show raegan at reset_brightness
+    show pichit at reset_brightness
 
-    raegan surprised "But Pichit is still..."
+    charlet "Everyone, we should go."
+
+    raegan "Yes, that's probably best."
 
     call start_cinematic
 
@@ -193,7 +196,9 @@ label .assassin_appears:
 
     call end_cinematic
 
-    "A sudden impact steals the rest of his words. A swath of red cuts through the smoke too quick to catch. Belatedly I realize that Pichit has shoved me to the floor."
+    "As we're moving away, a red shape emerges from the smoke."
+
+    scene bg university_outside with bg_dissolve
 
     play sound audio.sfx.impact_catch
 
