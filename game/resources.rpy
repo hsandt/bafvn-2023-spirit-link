@@ -113,6 +113,7 @@ image charlet anxious = Transform("images/chars/sc1080p_mc_scared.png", zoom=0.9
 image charlet relieved = Transform("images/chars/sc1080p_mc_neutral_smile.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet shout = Transform("images/chars/sc1080p_mc_shout.png", zoom=0.95, anchor=(0.53, 0.67))
 image charlet telepathy = Transform("images/chars/sc1080p_mc_telepathy.png", zoom=0.95, anchor=(0.53, 0.67))
+image side charlet scared = Transform("images/chars/mc_scared_side.png", zoom=1.0)
 image side charlet shout = Transform("images/chars/mc_shout_side.png", zoom=1.0)
 image side charlet telepathy = Transform("images/chars/mc_telepathy_side.png", zoom=1.0)
 
