@@ -280,7 +280,7 @@ label .assassin_appears:
 
     #TODO Sword SFX and FX
 
-    call .pichit_slash_blocked
+    call .pichit_phrarat_cross_blades(0.2)
 
     "The assassin, enraged, lunges. Blade meets blade. The two seem evenly matched, but I can see Pichit tiring."
 
@@ -307,19 +307,19 @@ label .assassin_appears:
 
     "Taking in a shaky breath, I..."
 
-    menu choice1:
+    menu .choice1:
         "decide to stay.":
             "I can’t let Pichit face the assassin alone. Makara is strong. I can do this!"
-            jump a1s1run
+            jump .a1s2run
 
 
         "go.":
             "Pichit can handle himself. I need to have faith in him and ensure Raegan's safety. Then I could contact someone via telestone."
-            jump a1s1run
+            jump .a1s2run
 
 
 
-label a1s1run:
+label .a1s2run:
 
     "The choice is stolen from me just as I make up my mind."
 
@@ -380,13 +380,13 @@ label .fight1:
     show pichit at character_move_to("far_left", 0.1)
     play sound audio.sfx.scarf
 
-    call .phrarat_whip_dodged from _call_a1s1run_phrarat_whip_dodged
+    call .phrarat_whip_dodged from _call_a1s2run_phrarat_whip_dodged
 
     call end_cinematic
 
     "The assassin lunges at me. His makeshift whip swings towards my face, its heat leaving my skin hot."
 
-    call .pichit_slash_blocked from _call_a1s1run_pichit_slash_blocked
+    call .pichit_slash_blocked from _call_a1s2run_pichit_slash_blocked
 
     "Thankfully, Fan blocks the worst of it. Another strike. I dance out of reach, narrowly losing a finger."
 
@@ -395,14 +395,14 @@ label .fight1:
     call start_cinematic
 
     # TODO: change animation calls to match text
-    call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch
+    call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch
     pause 0.25
-    call .pichit_cut_catching_whip from _call_a1s1run_pichit_cut_catching_whip
+    call .pichit_cut_catching_whip from _call_a1s2run_pichit_cut_catching_whip
     pause 0.25
 
     call end_cinematic
 
-    call .pichit_phrarat_cross_blades(0.0) from _call_a1s1run_pichit_phrarat_cross_blades
+    call .pichit_phrarat_cross_blades(0.0) from _call_a1s2run_pichit_phrarat_cross_blades
 
     "A jab. Another twist. I rush forward, slashing forward with my blade."
     # FIXME CLARITY: attempts to run for what?
@@ -427,8 +427,8 @@ label .fight1:
 
     call start_cinematic
 
-    call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s1run_pichit_phrarat_cross_blades_1
-    call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s1run_pichit_phrarat_cross_blades_2
+    call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s2run_pichit_phrarat_cross_blades_1
+    call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s2run_pichit_phrarat_cross_blades_2
 
     call end_cinematic
 
@@ -443,7 +443,7 @@ label .fight1:
 
     call start_cinematic
 
-    call .phrarat_whip_catch from _call_a1s1run_phrarat_whip_catch_1
+    call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch_1
     pause 0.5
 
     call end_cinematic
@@ -701,7 +701,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
     pause 0.15
 
-    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s1run_play_blade_clash_sfx_variant
+    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2run_play_blade_clash_sfx_variant
 
     # Hotfix to adjust timing, as SFX variant impact part is not playing at the same time
     if sfx_variant_number == 1:
@@ -718,7 +718,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
 label .play_blade_clash_sfx_random_variant:
     $ sfx_variant_number = renpy.random.randint(1, 2)
-    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s1run_play_blade_clash_sfx_variant_1
+    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2run_play_blade_clash_sfx_variant_1
 
     return
 
@@ -787,7 +787,7 @@ label .play_blade_clash_sfx_variant(variant_number):
 
 #     "I try to analyze the opponent."
 
-#     call .analyze_one_element from _call_a1s1run_analyze_one_element
+#     call .analyze_one_element from _call_a1s2run_analyze_one_element
 
 #     scene bg university_inside
 #     show pichit battle serious at character_warp_to("left")
@@ -813,7 +813,7 @@ label .play_blade_clash_sfx_variant(variant_number):
 
 #     "I try to analyze the opponent once more."
 
-#     call .analyze_one_element from _call_a1s1run_analyze_one_element_1
+#     call .analyze_one_element from _call_a1s2run_analyze_one_element_1
 
 #     scene bg university_inside
 #     show charlet neutral at character_warp_to("left")
@@ -938,9 +938,9 @@ label .play_blade_clash_sfx_variant(variant_number):
 # label .analyze_one_element:
 #     menu:
 #         "Analyze weapon" if not has_analyzed_assassin_weapon:
-#             call .analyze_weapon from _call_a1s1run_analyze_weapon
+#             call .analyze_weapon from _call_a1s2run_analyze_weapon
 #         "Analyze stone" if not has_analyzed_assassin_stone:
-#             call .analyze_stone from _call_a1s1run_analyze_stone
+#             call .analyze_stone from _call_a1s2run_analyze_stone
 
 #     return
 
