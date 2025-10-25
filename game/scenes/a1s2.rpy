@@ -584,10 +584,15 @@ label .fight1:
 
     call start_cinematic
 
+    show pichit battle serious
+    hide fan with character_dissolve
+
     call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch_1
     pause 0.5
 
     call end_cinematic
+
+    show pichit battle grimace
 
     "Too late. A length of flame wraps around my left leg. Agony paralyzes me."
 
