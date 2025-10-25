@@ -389,6 +389,8 @@ label .refuging_in_building:
 
     raegan "We should contact someone. Do you have a telestone? Can you reach the guard?"
 
+    # TODO: add choice to tell Raegan the truth or not: her telestone is fake
+
     show charlet smile
 
     charlet "A telestone? I don't need that. I have much better."
@@ -427,17 +429,23 @@ label .refuging_in_building:
     show charlet neutral with character_dissolve
     call end_cinematic
 
-    charlet "I got someone. They'll send security guards to Pichit's location as soon as they can."
+    charlet "I got someone. They'll send a squad to Pichit's location as soon as they can."
+    charlet "There have been several outbreaks of fire in the university's district, so most firefighters and security guards have their hands full."
 
-    "{i}That could mean minutes. Or hours...{/i}"
+    show raegan anxious
 
-    show raegan thinking
+    raegan "A coordinated attack..."
 
     raegan "Let's hope that Pichit will withstand that fight until then..."
 
-    "Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
+    charlet "..."
+    charlet "I will check on him."
 
     call start_cinematic
+    show charlet telepathy with character_dissolve
+    pause 0.5
+
+    # BETTER FX: zoom on Charlet's head and dissolve to Pichit, ARMS manga transition style
 
     scene bg university_outside with wipeleft_medium
 
