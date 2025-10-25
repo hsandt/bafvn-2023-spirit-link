@@ -156,8 +156,8 @@ init:
         matrixcolor InvertMatrix(from_value) * SaturationMatrix(1.0)
         linear duration matrixcolor InvertMatrix(to_value) * SaturationMatrix(1.0)
 
-    transform reset_invert(duration=0.5, from_value=1.0):
-        invert(duration, from_value, 0.0)
+    transform reset_invert(duration=0.5):
+        linear duration matrixcolor InvertMatrix(0.0) * SaturationMatrix(1.0)
 
     # Shader transforms
 
