@@ -384,19 +384,56 @@ label .refuging_in_building:
 
     "Or my keystone rather. Setting up wards to recognize specific people was impossible."
 
+    show raegan thinking
+
     raegan "We should contact someone. Do you have a telestone? Can you reach the guard?"
 
-    show charlet sad
+    show charlet smile
 
-    "I shook my head. The telestone I had was a prototype, courtesy of the charms department. The range was a few hundred meters at best."
+    charlet "A telestone? I don't need that. I have much better."
 
-    charlet "No. But there should be guards somewhere on the campus."
+    call start_cinematic
 
-    "Focusing, I tried to reach out to Jamil, the head of security. Our conversation was brief and to the point. Unsurprisingly given the chaos, he was being inundated with telecalls."
+    show makara neutral at companion_warp_to("left"), flip
+    pause 0.5
 
-    charlet "I got someone. They'll be there as soon as they can. Everything will be okay."
+    call end_cinematic
 
-    "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply."
+    show raegan surprised
+
+    # visually, Charlet presents Makara with her arm bent in V with open hand like someone on an ad poster
+    "Raegan cannot hide his perplexity as I present my companion flying in the air."
+
+    charlet "You cannot see my spirit, right?"
+
+    raegan "So you have one, like Pichit?"
+
+    charlet "Of course! My family has preserved the tradition of spirit binding for generations."
+
+    show charlet serious
+    show raegan neutral
+
+    charlet "Anyway, Makara will help me reaching other people's minds."
+
+    call start_cinematic
+    show charlet telepathy with character_dissolve
+    call end_cinematic
+
+    "Focusing, I tried to reach out to Jamil, the head of security."
+    "Our conversation was brief and to the point. Unsurprisingly given the chaos, he was being inundated with telecalls."
+
+    call start_cinematic
+    show charlet neutral with character_dissolve
+    call end_cinematic
+
+    charlet "I got someone. They'll send security guards to Pichit's location as soon as they can."
+
+    "{i}That could mean minutes. Or hours...{/i}"
+
+    show raegan thinking
+
+    raegan "Let's hope that Pichit will withstand that fight until then..."
+
     "Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
 
     call start_cinematic
