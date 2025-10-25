@@ -41,6 +41,8 @@ define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, 
 
 define bg_dissolve = Dissolve(0.25)
 define character_dissolve = Dissolve(0.25)
+define wipeleft_medium = CropMove(0.5, "wipeleft")
+define wiperight_medium = CropMove(0.5, "wiperight")
 define wipeleft_fast = CropMove(0.25, "wipeleft")
 define wiperight_fast = CropMove(0.25, "wiperight")
 

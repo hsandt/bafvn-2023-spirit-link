@@ -350,11 +350,12 @@ label .assassin_appears:
     jump .refuging_in_building
 
 label .refuging_in_building:
+
     call start_cinematic
 
-    scene bg university_inside with wiperight_fast
-    show charlet serious at character_warp_to("far_left", 0.5)
-    show raegan anxious at character_warp_to("middle_left", 0.5)
+    scene bg university_inside with wiperight_medium
+    show charlet serious at character_warp_to("middle_left")
+    show raegan anxious at character_warp_to("middle_right")
 
     pause 0.5
 
@@ -438,7 +439,7 @@ label .refuging_in_building:
 
     call start_cinematic
 
-    scene bg university_outside with wipeleft_fast
+    scene bg university_outside with wipeleft_medium
 
     jump .fight_intro
 
