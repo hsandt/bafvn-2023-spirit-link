@@ -244,16 +244,16 @@ label .assassin_appears:
     show charlet scared at character_warp_to("far_left")
     show raegan surprised at character_warp_to("left")
 
-    "For a moment, there is only a mad tangle of limbs."
+    "For a moment, there is only a mad tangle of limbs. Then Pichit goes flying."
 
-    show pichit battle serious at character_enter_from_right_to_easein("middle", 0.4)
-    pause 0.3
     show phrarat determined at character_enter_from_right_to_easein("far_right", 0.5)
+    show pichit battle serious at character_warp_to("middle", 0.4)
 
-    "Then Pichit goes flying. The assailant stands, his knife replaced by a scarf."
-    "The incongruity strikes me. Why is he balling up a scarf?"
+    "As he stands up before the assassin, he holds a sword is in his hand. Vaguely, I recognize it as a replica from the history booth."
 
-    "... Then my question is answered. Flames ignite. The simple scarf transformed into a fiery projectile. I brace myself..."
+    "The assassin, now holding a crimson scarf, tears a part of it with his knife and balls it up."
+
+    "As the ball spontaneously ignites, he throws the fiery projectile at us. I brace myself..."
 
     play sound audio.sfx.throw_fireball
     pause 0.2
@@ -269,10 +269,7 @@ label .assassin_appears:
 
     show pichit battle serious
 
-    # TODO EXPLAIN: sword is similar or taken from booth to fight?
-    "As the shield dematerializes, I see Pichit, standing before the assassin. A sword is in his hand. Vaguely, I recognize it as a replica from the history booth."
-
-#TODO Sword SFX and FX
+    #TODO Sword SFX and FX
 
     show pichit at character_move_to_easein("middle", 0.2)
 
@@ -290,40 +287,14 @@ label .assassin_appears:
 
     pichit "What are you doing here? Go!"
 
-    #TODO Sword SFX
+    charlet shout "But we can't let you... !"
 
-    show charlet anxious
-
-    "What do I do?!? What do I do?!?"
-
-    "If I leave now, what if Pichit dies? Even with his spirit beast, how could a tour guide face off against an assassin?"
-
-    "But what was the alternative? If Raegan was hurt, or – Garuda help us – died, what would happen to us?"
-
-    "The proverbial death of both our careers would be the best case scenario. At worse we'd be pegged as accomplices and cast in prison, proof or no proof."
-    "Panic left me paralyzed. But I had to move. Time was ticking."
-
-    show charlet serious
-
-    "Taking in a shaky breath, I..."
-
-    menu .choice1:
-        "decide to stay.":
-            "I can’t let Pichit face the assassin alone. Makara is strong. I can do this!"
-            jump .a1s2run
-
-
-        "go.":
-            "Pichit can handle himself. I need to have faith in him and ensure Raegan's safety. Then I could contact someone via telestone."
-            jump .a1s2run
-
-
+    jump .a1s2run
 
 label .a1s2run:
 
-    "The choice is stolen from me just as I make up my mind."
-
     show raegan anxious
+    show charlet anxious
 
     "Vanich grabs my arm, hauling me backward."
 
@@ -333,7 +304,7 @@ label .a1s2run:
 
     "My gaze flicks between Pichit and Vanich. Then I nod."
 
-    charlet shout "Into the school! I know somewhere we'll be safe!"
+    charlet shout "I know somewhere we'll be safe!"
 
     show charlet serious
 
