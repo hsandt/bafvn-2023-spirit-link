@@ -42,6 +42,7 @@ define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, 
 define bg_dissolve = Dissolve(0.25)
 define character_dissolve = Dissolve(0.25)
 define wipeleft_fast = CropMove(0.25, "wipeleft")
+define wiperight_fast = CropMove(0.25, "wiperight")
 
 
 # Declare characters used by this game. The color argument colorizes the

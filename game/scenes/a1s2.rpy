@@ -352,7 +352,7 @@ label .assassin_appears:
 label .refuging_in_building:
     call start_cinematic
 
-    scene bg university_inside with bg_dissolve
+    scene bg university_inside with wiperight_fast
     show charlet serious at character_warp_to("far_left", 0.5)
     show raegan anxious at character_warp_to("middle_left", 0.5)
 
@@ -396,12 +396,11 @@ label .refuging_in_building:
 
     charlet "I got someone. They'll be there as soon as they can. Everything will be okay."
 
-    "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply. Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
+    "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply."
+    "Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
 
     call start_cinematic
 
-    scene bg black with wipeleft_fast
-    pause 0.1
     scene bg university_outside with wipeleft_fast
 
     jump .fight_intro
@@ -468,9 +467,9 @@ label .fight1:
     call .pichit_cut_catching_whip from _call_a1s2run_pichit_cut_catching_whip
     pause 0.25
 
-    call end_cinematic
-
     call .pichit_phrarat_cross_blades(0.0) from _call_a1s2run_pichit_phrarat_cross_blades
+
+    call end_cinematic
 
     "A jab. Another twist. I rush forward, slashing forward with my blade."
     # FIXME CLARITY: attempts to run for what?
@@ -629,12 +628,16 @@ label .fight1:
 #"Pichit had a point, but I wasn't a fighter. I'd only barely passed archery and while Makara was stronger than the average spirit, we hadn't ever had to fight anything stronger than an imp."
 #"Though...the greenhouse would have plants and water. Both Fan and Makara would be at an advantage..."
 
+    call start_cinematic
+
     pause 0.5
     play sound audio.sfx.impact1
     show charlet surprised
     show raegan surprised
     show pichit surprised
     pause 1.0
+
+    call end_cinematic
 
     raegan "What was that?"
 
