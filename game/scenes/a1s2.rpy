@@ -454,8 +454,9 @@ label .refuging_in_building:
 # BATTLE WITH PICHIT
 label .fight_intro:
 
-    show pichit battle serious at character_warp_to("left")
-    show phrarat determined at character_warp_to("right")
+    # Place fights at zorder 1 so we can easily draw spirit sprites behind them later
+    show pichit battle serious zorder 1 at character_warp_to("left")
+    show phrarat determined zorder 1 at character_warp_to("right")
 
     pause 1.0
 
@@ -469,16 +470,28 @@ label .fight_intro:
     pichit "Who are you? Why are you attacking us?"
 
     show pichit battle serious
+    show phrarat smile
 
-    phrarat "A hero here to save you from {i}them{/i}."
+    "The assassin scoffed at me."
 
-    "{i}I don't know what he's talking about, but he seems pretty determined to finish Raegan. I won't let him!{/i}"
+    # VA: voice the scoff "Humph!" at the beginning of this line
+    phrarat "Can't you guess? You're from Moacu-Laedan, right?"
 
-    show pichit battle shout
+    show phrarat determined
 
-    pichit "Fan! Block him!"
+    phrarat "Haven't you seen what Vanich did to our nation?"
 
-    show pichit battle serious
+    pichit "I know... But I need him. Alive."
+
+    show phrarat smile
+
+    phrarat "Yeah, I overheard your conversation... For that little tour?"
+
+    show phrarat shout
+
+    phrarat "I have no time playing around!"
+
+    show phrarat determined
 
     jump .fight1
 
@@ -518,20 +531,31 @@ label .fight1:
     call end_cinematic
 
     "A jab. Another twist. I rush forward, slashing forward with my blade."
-    # FIXME CLARITY: attempts to run for what?
+
+    show pichit battle anxious
+
     "He blocks it and puts me on the defensive. Sweat beads on my forehead as I strain to keep away while stopping his attempts to run past me toward Raegan."
 
-    phrarat shout "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?"
+    show phrarat shout
 
-    show phrarat determined
+    phrarat "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?"
 
-    pichit battle shout "I don't know what you're talking about!"
-
-    show pichit battle serious
+    show pichit battle serious zorder 2
+    show phrarat anxious
 
     "I vault over a booth, kicking at its legs. It sags, the canopy falling to obstruct the assassin."
 
-    phrarat shout "Stop this! Just let me get rid of that worm and I'll leave you be!"
+    show phrarat shout
+
+    phrarat "Stop this! Just let me get rid of that worm and I'll leave you be!"
+
+    show phrarat determined
+
+    pichit "Sorry, but Raegan may be our last hope to lead Vanich Industries toward the right path."
+
+    show phrarat shout
+
+    phrarat "You really think that? He'll be just like his father! Just like everyone else!"
 
     show phrarat determined
 
@@ -547,12 +571,16 @@ label .fight1:
 
     "Our blades lock. A stalemate. I feel myself tiring. At this rate, I'll die."
 
-#todo show fan
+    show fan neutral at companion_warp_to("far_left"), flip
+
     fan "To your right!"
 
     "I jump back. A blade slices down. It narrowly misses me. Without Fan's warning, I would have died."
+    "The assassin's wrist flicks forward."
 
-    "{i}‘Fan! Shield!’{/i} I cry as the assassin's wrist flicks forward."
+    show pichit battle shout
+
+    pichit "Fan! Shield!"
 
     call start_cinematic
 
