@@ -289,10 +289,6 @@ label .assassin_appears:
 
     charlet shout "But we can't let you... !"
 
-    jump .a1s2run
-
-label .a1s2run:
-
     show raegan anxious
     show charlet anxious
 
@@ -315,12 +311,15 @@ label .a1s2run:
 
     "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands."
 
-    pause 0.5
+    pause 0.2
 
-    # BATTLE WITH PICHIT
+    jump .fight_intro
 
-    show pichit battle serious at character_warp_to("left")
-    show phrarat determined at character_warp_to("right")
+# BATTLE WITH PICHIT
+label .fight_intro:
+
+    show pichit battle serious at character_move_to("left", 0.4)
+    show phrarat determined at character_move_to("right", 0.2)
 
     pause 1.0
 
@@ -329,14 +328,21 @@ label .a1s2run:
     phrarat shout "Don't get in my way! My quarrel is not with you!"
 
     show phrarat determined
+    show pichit battle shout
 
     pichit "Who are you? Why are you attacking us?"
+
+    show pichit battle serious
 
     phrarat "A hero here to save you from {i}them{/i}."
 
     "{i}I don't know what he's talking about, but he seems pretty determined to finish Raegan. I won't let him!{/i}"
 
+    show pichit battle shout
+
     pichit "Fan! Block him!"
+
+    show pichit battle serious
 
     jump .fight1
 
