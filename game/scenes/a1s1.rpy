@@ -68,8 +68,7 @@ label .look_at_crowd:
 
     hide charlet with character_dissolve
 
-    # FIXME: Panha-Kam vs Alcatra University
-    "A throng of curious viewers fills Panha-Kam's courtyard, lured by the colorful booths lining the square."
+    "A throng of curious viewers fills Panha-Kam University's courtyard, lured by the colorful booths lining the square."
     "Each department has brought their best, each aiming to net themselves a rich sponsor.
     Colorful signboards cry out the merits of their research."
 
@@ -194,8 +193,7 @@ label .pichit_arrives:
 
     "It was Pichit wearing his signature, broad grin. He was a born and bred native of Moacu-Laedan, though he had moved to the continent for school."
 
-    # FIXME: Panha-Kam vs Alcatra University
-    "Bayani, another alumni from Alcatra University, had introduced him to me as a potential guide for my expedition two months ago."
+    "Bayani, another alumni from Panha-Kam University, had introduced him to me as a potential guide for my expedition two months ago."
 
     "He is also accompanied by a spirit."
 
