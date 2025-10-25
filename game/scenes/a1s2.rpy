@@ -1,8 +1,34 @@
 label a1s2:
     # "Act 1: Scene 2 - Attack"
-    jump .assassin_appears
+    jump .raegan_arrives
 
-label .assassin_appears:
+label .raegan_arrives:
+
+    show raegan neutral at character_warp_to("right")
+
+    "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
+    "Instead his collar and cuffs were clean and neat as though freshly laundered.
+    Even his hair was impeccable. Meanwhile, my own hair felt matted and itchy."
+
+    pichit smile "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company."
+    "He said he was interested in sponsoring the expedition!"
+
+    pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
+
+    raegan "A pleasure to meet you, Charlet. I've heard wonderful things about your plans."
+
+    charlet smile "Likewise, Mr. Vanich. The Vanich Trading Company has done so many amazing things, it is a great honor to meet you."
+
+    raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
+
+    "His smile is dangerously charming and I find myself flustered by my own reaction to it."
+
+    charlet "Raegan, then."
+
+    jump .raegan_conversation
+
+label .raegan_conversation:
+
     # Setup statements: when adding a debug scene hub, create some flag "debug_jump"
     # and if true, execute them
     #
@@ -56,6 +82,10 @@ label .assassin_appears:
     raegan "A worthy endeavor for sure. I look forward to hearing more of your goals and the tourism business proposition."
 
     charlet "Of course. I have a schedule here, would you like to set up a time to meet?"
+
+    jump .smoke
+
+label .smoke:
 
     # Start flash
     # Dict transition plays while further statements are applied, allowing us to show the flash
@@ -161,6 +191,10 @@ label .assassin_appears:
     pause 0.25
 
     stop music fadeout 1.0
+
+    jump .assassin_appears
+
+label .assassin_appears:
 
     scene bg smoke with Dissolve(0.7)
     pause 0.25
@@ -313,13 +347,70 @@ label .assassin_appears:
 
     pause 0.2
 
+    jump .refuging_in_building
+
+label .refuging_in_building:
+    call start_cinematic
+
+    scene bg university_inside with bg_dissolve
+    show charlet serious at character_warp_to("far_left", 0.5)
+    show raegan anxious at character_warp_to("middle_left", 0.5)
+
+    pause 0.5
+
+    call end_cinematic
+
+    "Now safe behind the university's wards, the realization of what happened hits me."
+
+    show charlet scared
+
+    charlet "D–did... did he just try to kill us?!"
+
+    raegan "Not us. Me."
+
+    show charlet intrigued
+
+    charlet "Why would he be trying to kill you?"
+
+    show raegan sad
+
+    raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more that would kill me just to spite my father."
+
+    "Raegan's expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
+
+    raegan "Are we safe here?"
+
+    charlet "As safe as can be. The university's wards won't allow non-staff into the store rooms. You wouldn't have been able to get in without me."
+
+    "Or my keystone rather. Setting up wards to recognize specific people was impossible."
+
+    raegan "We should contact someone. Do you have a telestone? Can you reach the guard?"
+
+    show charlet sad
+
+    "I shook my head. The telestone I had was a prototype, courtesy of the charms department. The range was a few hundred meters at best."
+
+    charlet "No. But there should be guards somewhere on the campus."
+
+    "Focusing, I tried to reach out to Jamil, the head of security. Our conversation was brief and to the point. Unsurprisingly given the chaos, he was being inundated with telecalls."
+
+    charlet "I got someone. They'll be there as soon as they can. Everything will be okay."
+
+    "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply. Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
+
+    call start_cinematic
+
+    scene bg black with wipeleft_fast
+    pause 0.1
+    scene bg university_outside with wipeleft_fast
+
     jump .fight_intro
 
 # BATTLE WITH PICHIT
 label .fight_intro:
 
-    show pichit battle serious at character_move_to("left", 0.4)
-    show phrarat determined at character_move_to("right", 0.2)
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
     pause 1.0
 
@@ -938,58 +1029,3 @@ label .play_blade_clash_sfx_variant(variant_number):
 #     "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
 #     $ has_analyzed_assassin_stone = True
 #     return
-
-label .unused_refuge:
-    call start_cinematic
-
-    scene bg university_inside with bg_dissolve
-    show charlet serious at character_warp_to("far_left", 0.5)
-    show raegan anxious at character_warp_to("middle_left", 0.5)
-
-    pause 0.5
-
-    call end_cinematic
-
-    "Now safe behind the university's wards, the realization of what happened hits me."
-
-    show charlet scared
-
-    charlet "D–did... did he just try to kill us?!"
-
-    raegan "Not us. Me."
-
-    show charlet intrigued
-
-    charlet "Why would he be trying to kill you?"
-
-    show raegan sad
-
-    raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more that would kill me just to spite my father."
-
-    "Raegan's expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
-
-    raegan "Are we safe here?"
-
-    charlet "As safe as can be. The university's wards won't allow non-staff into the store rooms. You wouldn't have been able to get in without me."
-
-    "Or my keystone rather. Setting up wards to recognize specific people was impossible."
-
-    raegan "We should contact someone. Do you have a telestone? Can you reach the guard?"
-
-    show charlet sad
-
-    "I shook my head. The telestone I had was a prototype, courtesy of the charms department. The range was a few hundred meters at best."
-
-    charlet "No. But there should be guards somewhere on the campus."
-
-    "Focusing, I tried to reach out to Jamil, the head of security. Our conversation was brief and to the point. Unsurprisingly given the chaos, he was being inundated with telecalls."
-
-    charlet "I got someone. They'll be there as soon as they can. Everything will be okay."
-
-    "Or so I hoped. It could be minutes or hours before they came. Worry for Pichit left me deaf to Raegan's reply. Though it was risky, I couldn't help but activate the telestone again, this time reaching out for Pichit..."
-
-    call start_cinematic
-
-    scene bg black with wipeleft_fast
-    pause 0.1
-    scene bg university_outside with wipeleft_fast
