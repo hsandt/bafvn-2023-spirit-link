@@ -90,14 +90,16 @@ default sfx_variant = 'audio/sfx/sfx_blade_clash1.opus'
 
 # call this label on cinematic start to hide both dialogue window and quick menu
 label start_cinematic:
-    $ quick_menu = False
+    # no argument, this will automatically use config.window_hide_transition
     window hide
+    $ quick_menu = False
     return
 
 # call this label on cinematic end to show both dialogue window and quick menu again
 label end_cinematic:
-    $ quick_menu = True
+    # no argument, this will automatically use config.window_show_transition
     window show
+    $ quick_menu = True
     return
 
 # The game starts here.
