@@ -1108,214 +1108,216 @@ label .play_blade_clash_sfx_variant(variant_number):
     return
 
 
-## BATTLE SEQUENCE DRAFT
+# BATTLE SEQUENCE DRAFT
 
-# label .unused:
+label .unused:
 
-#     phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
+    phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
 
-#     "The assassin flicks his wrist. A rope binds my shield, searing it to pieces."
+    "The assassin flicks his wrist. A rope binds my shield, searing it to pieces."
 
-#     phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
+    phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
 
-#     pichit battle smile "You really thought I was just losing ground all that time, uh? Never cared having a break for a minute to appreciate the nature surrounding you?"
+    pichit battle smile "You really thought I was just losing ground all that time, uh? Never cared having a break for a minute to appreciate the nature surrounding you?"
 
-#     show phrarat surprised
+    show phrarat surprised
 
-#     "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers."
+    "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers."
 
-#     # TODO: FX vines
-#     play sound audio.sfx.vines
+    # TODO: FX vines
+    play sound audio.sfx.vines
 
-#     "My spirit blasts numerous vines through this fertile soil, blocking the Assassin’s limbs."
+    "My spirit blasts numerous vines through this fertile soil, blocking the Assassin’s limbs."
 
-#     pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
+    pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
 
-#     phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to create those fake gemstones."
+    phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to create those fake gemstones."
 
-#     "The Assassin strikes at the vines but they keep growing back."
+    "The Assassin strikes at the vines but they keep growing back."
 
-#     pichit "For someone so concerned with our native culture, I’m surprised you don’t even recognize what type kind of vines these are."
+    pichit "For someone so concerned with our native culture, I’m surprised you don’t even recognize what type kind of vines these are."
 
-#     "Perpetua plants. A smart move. The vines would regenerate faster than he could do damage. Now it was just a matter of how much energy the assassin’s spirit  had left."
+    "Perpetua plants. A smart move. The vines would regenerate faster than he could do damage. Now it was just a matter of how much energy the assassin’s spirit  had left."
 
-#     "A snap sounded in my mind. Professor Mara’s voice stirred to life. Finally, using my abilities, I snap both Pichit and Mara together into one connection."
+    "A snap sounded in my mind. Professor Mara’s voice stirred to life. Finally, using my abilities, I snap both Pichit and Mara together into one connection."
 
-#     ## Analyze and more fight
+    ## Analyze and more fight
 
-#     "I try to analyze the opponent."
+    "I try to analyze the opponent."
 
-#     call .analyze_one_element from _call_a1s2run_analyze_one_element
+    call .analyze_one_element from _call_a1s2run_analyze_one_element
 
-#     scene bg university_inside
-#     show pichit battle serious at character_warp_to("left")
-#     show phrarat determined at character_warp_to("right")
+    #SCENE CHANGE TO GREEN HOUSE
 
-#     pichit "Why Vanich? He's trying to improve our relationship with Enon and the rest of the mainlanders."
+    scene bg university_inside
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
-#     phrarat "You really believe that? You think there’s profit in building bridges? They won't wait for spirits to die? Don’t tell me you really believe they offer their gemstones willingly? No!"
-#     phrarat "He takes them by force just like the rest. He just hides it better than the others."
+    pichit "Why Vanich? He's trying to improve our relationship with Enon and the rest of the mainlanders."
 
-#     show phrarat shout
+    phrarat "You really believe that? You think there’s profit in building bridges? They won't wait for spirits to die? Don’t tell me you really believe they offer their gemstones willingly? No!"
+    phrarat "He takes them by force just like the rest. He just hides it better than the others."
 
-#     phrarat "Pen, now."
+    show phrarat shout
 
-#     "The telepathic connection with Pichit goes numb for a moment before the entryway erupts, caving in, my guide along with it, caked in dirt."
+    phrarat "Pen, now."
 
-#     pichit "That worked better than expected."
+    "The telepathic connection with Pichit goes numb for a moment before the entryway erupts, caving in, my guide along with it, caked in dirt."
 
-#     "Smoke begins to ooze into the warehouse, Pichit wouldn’t see an attack coming before it was too late!"
-#     "I call upon Makara for assistance but he refused, the smoke would only render him useless."
+    pichit "That worked better than expected."
 
-#     phrarat "No more plants, no more chances. Choose: move or die."
+    "Smoke begins to ooze into the warehouse, Pichit wouldn’t see an attack coming before it was too late!"
+    "I call upon Makara for assistance but he refused, the smoke would only render him useless."
 
-#     "I try to analyze the opponent once more."
+    phrarat "No more plants, no more chances. Choose: move or die."
 
-#     call .analyze_one_element from _call_a1s2run_analyze_one_element_1
+    "I try to analyze the opponent once more."
 
-#     scene bg university_inside
-#     show charlet neutral at character_warp_to("left")
-#     show raegan neutral at character_warp_to("right")
+    call .analyze_one_element from _call_a1s2run_analyze_one_element_1
 
-#     jump .fight2
+    scene bg university_inside
+    show charlet neutral at character_warp_to("left")
+    show raegan neutral at character_warp_to("right")
 
-# label .fight2:
-#     scene bg university_inside
-#     show pichit battle serious at character_warp_to("left")
-#     show phrarat determined at character_warp_to("right")
+    jump .fight2
 
-#     # show phrarat sad
-#     # TODO: pen sad
-#     show pen neutral at companion_warp_to("far_right")
+label .fight2:
+    scene bg university_inside
+    show pichit battle serious at character_warp_to("left")
+    show phrarat determined at character_warp_to("right")
 
-#     play sound audio.sfx.impact_glass
+    # show phrarat sad
+    # TODO: pen sad
+    show pen neutral at companion_warp_to("far_right")
 
-#     "Before I’m able to get a good look, a dagger skewers out of the shadows and toward Pichit, who barely dodges it but is sent careening into one of the exhibits. A glass case full of exquisite vases."
+    play sound audio.sfx.impact_glass
 
-#     phrarat "What a waste."
+    "Before I’m able to get a good look, a dagger skewers out of the shadows and toward Pichit, who barely dodges it but is sent careening into one of the exhibits. A glass case full of exquisite vases."
 
-#     # This raises guide's sympathy
-#     "Entirely focused on the shattered remains of the exhibit, vases shattered, dirt and seeds that had been hidden in the vases scattered across the floor. Such history, wasted."
+    phrarat "What a waste."
 
-#     "Without hesitation, the Assassin flips his dagger and sends it hurling for Pichit’s head."
-#     "Pichit expected it, using the dirt and seeds on the floor, he springs forth spiked vines that envelop the dagger, only for them to smash whatever is left of the exhibit vases in the process."
+    # This raises guide's sympathy
+    "Entirely focused on the shattered remains of the exhibit, vases shattered, dirt and seeds that had been hidden in the vases scattered across the floor. Such history, wasted."
 
-#     hide pen
+    "Without hesitation, the Assassin flips his dagger and sends it hurling for Pichit’s head."
+    "Pichit expected it, using the dirt and seeds on the floor, he springs forth spiked vines that envelop the dagger, only for them to smash whatever is left of the exhibit vases in the process."
 
-#     phrarat "You destroy our culture without hesitation."
+    hide pen
 
-#     "Before Pichit can respond, the man from the military booth emerges from the open doorway behind the Assassin. His rifle aimed for the Assassin’s head."
+    phrarat "You destroy our culture without hesitation."
 
-#     man_with_rifle "Freeze!!!"
+    "Before Pichit can respond, the man from the military booth emerges from the open doorway behind the Assassin. His rifle aimed for the Assassin’s head."
 
-#     "A smirk widens across the Assassin's face and the showman pulls the trigger, but nothing happens."
-#     "The Assassin begins to laugh, turning away from the man who’s still fiddling with the rifle."
+    man_with_rifle "Freeze!!!"
 
-#     phrarat "The idiot can't even shoot his rifle. Proof that even the universe wants me to succeed."
+    "A smirk widens across the Assassin's face and the showman pulls the trigger, but nothing happens."
+    "The Assassin begins to laugh, turning away from the man who’s still fiddling with the rifle."
 
-#     "After knocking the gun around  enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough for Pichit to strike."
-#     "Bringing the vines upward from the discarded dagger, Pichit slashes them across the Assassins arm who stumbles to the ground almost immediately, his spirit tossed off his shoulder in the process."
+    phrarat "The idiot can't even shoot his rifle. Proof that even the universe wants me to succeed."
 
-#     pichit "Poison in the spikes."
+    "After knocking the gun around  enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough for Pichit to strike."
+    "Bringing the vines upward from the discarded dagger, Pichit slashes them across the Assassins arm who stumbles to the ground almost immediately, his spirit tossed off his shoulder in the process."
 
-#     "The Assassin grips at the ground, trying to grapple his way toward his Spirit only who isn’t even moving from where it landed. It’s panting relentlessly, trying to catch its breath."
+    pichit "Poison in the spikes."
 
-#     pichit "This is over. I know your cause is a noble one, please, let me help you. I can explain everything to you."
+    "The Assassin grips at the ground, trying to grapple his way toward his Spirit only who isn’t even moving from where it landed. It’s panting relentlessly, trying to catch its breath."
 
-#     "The Assassin bares his teeth and with a sudden screech of his shoes, rolls upward, snatching his spirit into his arms and landing on his feet."
-#     "Immediately he brings his dagger close, cutting another piece of his scarf, putting it to the spirits mouth."
+    pichit "This is over. I know your cause is a noble one, please, let me help you. I can explain everything to you."
 
-#     phrarat "Please, make more, I need another whip."
+    "The Assassin bares his teeth and with a sudden screech of his shoes, rolls upward, snatching his spirit into his arms and landing on his feet."
+    "Immediately he brings his dagger close, cutting another piece of his scarf, putting it to the spirits mouth."
 
-#     "The spirit doesn’t move, doesn’t start weaving, it’s too tired from constantly weaving pattern after pattern for its master to use."
-#     "Pichit, assured that there’s no fight left in the spirit, finally lets the vines fall to the ground for good this time."
+    phrarat "Please, make more, I need another whip."
 
-#     # show phrarat angry
+    "The spirit doesn’t move, doesn’t start weaving, it’s too tired from constantly weaving pattern after pattern for its master to use."
+    "Pichit, assured that there’s no fight left in the spirit, finally lets the vines fall to the ground for good this time."
 
-#     "No, no, please, we need to burn it! All of it!!!"
+    # show phrarat angry
 
-#     "The Assassin lights a solitary flame in his hand and shakily brings it to his scarf. He’s going to ignite his actual scarf, and use that as his last ditch effort."
-#     "Fortunately I feel Raegan’s presence as he finally links up with my gemstone."
+    "No, no, please, we need to burn it! All of it!!!"
 
-#     scene bg university_inside
-#     show charlet neutral at character_warp_to("left")
-#     show raegan neutral at character_warp_to("right")
+    "The Assassin lights a solitary flame in his hand and shakily brings it to his scarf. He’s going to ignite his actual scarf, and use that as his last ditch effort."
+    "Fortunately I feel Raegan’s presence as he finally links up with my gemstone."
 
-#     raegan "I do hope I’m not late, the power should be back on."
+    scene bg university_inside
+    show charlet neutral at character_warp_to("left")
+    show raegan neutral at character_warp_to("right")
 
-#     charlet "Great."
+    raegan "I do hope I’m not late, the power should be back on."
 
-#     "I pull the lever, opening the sprinklers."
+    charlet "Great."
 
-#     stop music fadeout 2.0
-#     play sound audio.sfx.shower2
-#     pause 2.0
+    "I pull the lever, opening the sprinklers."
 
-#     "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
+    stop music fadeout 2.0
+    play sound audio.sfx.shower2
+    pause 2.0
 
-#     "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
+    "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
 
-#     scene bg university_inside
-#     show pichit battle serious at character_warp_to("left")
-#     show charlet neutral at character_warp_to("middle")
-#     show phrarat neutral at character_warp_to("far_right")
+    "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
 
-#     phrarat "Of course, the host to Makara is the one who stops me."
+    scene bg university_inside
+    show pichit battle serious at character_warp_to("left")
+    show charlet neutral at character_warp_to("middle")
+    show phrarat neutral at character_warp_to("far_right")
 
-#     "How did he know Makara, the spirit wasn’t even visible!?!? I don’t know but there is a pure and unadulterated hatred simmering in his eyes."
+    phrarat "Of course, the host to Makara is the one who stops me."
 
-#     stop sound fadeout 2.0
+    "How did he know Makara, the spirit wasn’t even visible!?!? I don’t know but there is a pure and unadulterated hatred simmering in his eyes."
 
-#     charlet "What does that matter?"
+    stop sound fadeout 2.0
 
-#     "The Assassin ignores my question but doesn’t break eye contact."
+    charlet "What does that matter?"
 
-#     play music mystery
+    "The Assassin ignores my question but doesn’t break eye contact."
 
-#     phrarat "How ironic, of course they decided to put a sprinkler in here instead of over there."
+    play music mystery
 
-#     pichit "Over where?"
+    phrarat "How ironic, of course they decided to put a sprinkler in here instead of over there."
 
-#     phrarat "Vanich enterprises let my father burn alive in a factory because they weren’t willing to spend the money in a poorer district to ensure it was well protected."
+    pichit "Over where?"
 
-#     "I don't know what to say to that, Pichit doesn’t know what to say to that and Raegan is dead silent over the shared link."
-#     "The sounds of hooves and shuffling boots, sound at the entrance to the warehouse where the Military showman must have slinked off to."
-#     "The Assassin hears it too and in an instant, procures a circular pouch from his belt, slamming it onto the ground below, by the time the smoke clears, he and his Spirit are gone."
+    phrarat "Vanich enterprises let my father burn alive in a factory because they weren’t willing to spend the money in a poorer district to ensure it was well protected."
 
-#     hide phrarat
+    "I don't know what to say to that, Pichit doesn’t know what to say to that and Raegan is dead silent over the shared link."
+    "The sounds of hooves and shuffling boots, sound at the entrance to the warehouse where the Military showman must have slinked off to."
+    "The Assassin hears it too and in an instant, procures a circular pouch from his belt, slamming it onto the ground below, by the time the smoke clears, he and his Spirit are gone."
 
-#     # End of playtesting
+    hide phrarat
 
-#     pause 1.0
+    # End of playtesting
 
-#     "This is the end of the playtesting section. Thank you for playing!"
+    pause 1.0
 
-#     return
-#     # jump a1s3
+    "This is the end of the playtesting section. Thank you for playing!"
 
-# label .analyze_one_element:
-#     menu:
-#         "Analyze weapon" if not has_analyzed_assassin_weapon:
-#             call .analyze_weapon from _call_a1s2run_analyze_weapon
-#         "Analyze stone" if not has_analyzed_assassin_stone:
-#             call .analyze_stone from _call_a1s2run_analyze_stone
+    return
+    # jump a1s3
 
-#     return
+label .analyze_one_element:
+    menu:
+        "Analyze weapon" if not has_analyzed_assassin_weapon:
+            call .analyze_weapon from _call_a1s2run_analyze_weapon
+        "Analyze stone" if not has_analyzed_assassin_stone:
+            call .analyze_stone from _call_a1s2run_analyze_stone
 
-# label .analyze_weapon:
-#     # TODO: new text
-#     "Clothes have traditional patterns of Moacu, but are written roughly."
-#     "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
-#     "Pichit could take advantage of this, or try to slow him down."
-#     $ has_analyzed_assassin_weapon = True
-#     return
+    return
 
-# label .analyze_stone:
-#     "Normally people and esp. Moacu natives wear one color, symbolic of their aptitude for an art. A few experts master and show two colors."
-#     "In his case, the creature is clearly Green and handles cloth creation and patterns."
-#     "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
+label .analyze_weapon:
+    # TODO: new text
+    "Clothes have traditional patterns of Moacu, but are written roughly."
+    "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
+    "Pichit could take advantage of this, or try to slow him down."
+    $ has_analyzed_assassin_weapon = True
+    return
 
-#     "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
-#     "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
-#     $ has_analyzed_assassin_stone = True
-#     return
+label .analyze_stone:
+    "Normally people and esp. Moacu natives wear one color, symbolic of their aptitude for an art. A few experts master and show two colors."
+    "In his case, the creature is clearly Green and handles cloth creation and patterns."
+    "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
+
+    "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
+    "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
+    $ has_analyzed_assassin_stone = True
+    return
