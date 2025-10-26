@@ -134,6 +134,9 @@ init:
         easein hop_backward_duration offset (-100, -50)
         easein_elastic fall_duration yoffset 300
 
+    transform reset_fall(duration=0.0):
+        easein duration yoffset duration
+
     # Misc utilities
 
     transform half_size:
