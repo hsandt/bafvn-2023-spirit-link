@@ -572,7 +572,7 @@ label .fight1:
     show phrarat determined
 
     "The sword gives me better reach, but this close, the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
-    "As our blades clash, I inch closer to the fountain and the biology booth's plant display. The more Fan has to work with, the better."
+    "As our blades clash, I inch closer to the fountain and the biology team's plant display. The more Fan has to work with, the better."
 
     call start_cinematic
 
@@ -615,22 +615,63 @@ label .fight1:
 
     "{i}That damn whip. If only I could get rid of it!{/i}"
 
-    "{i}... Wait a minute, why hadn’t it burned to ash already? How much fabric does this guy have?!{/i}"
+    "{i}How come it hasn't already been consumed by the flames? How much fabric does this guy have?!{/i}"
 
     "My thoughts scatter as the assassin lunges at me, his whip ready to strike. I recognize the stance."
 
     pichit shout "Fan, now!"
 
-    show fan neutral at companion_warp_to("left")
+    show fan neutral at companion_warp_to("far_left", _ypos_offset=0.25), flip
 
     "A large bark shield materializes in time to stop the new volley of hits."
 
     show pichit battle serious
 
-    phrarat "Neat parlor trick! Too bad it'll be gone before long! How many strikes would it take? Three?"
+    phrarat "Wood? In this case..."
 
-    "I grit my teeth. He's right. Even aided by the natural flora behind me, I can feel Fan struggling to keep up."
-    "As though sensing my weakness, the assassin abandons his dagger for the whip. The scent of burnt wood fills the air."
+    show pichit battle anxious
+
+    "The assassin wraps his burning scarf around my shield. The scent of burnt wood fills the air. It won't take long before it burns to ashes."
+
+    show pichit battle grimace
+    hide fan with character_dissolve
+
+    phrarat "You're done..."
+
+    call start_cinematic
+
+    show pichit battle serious
+
+    # FX: vines
+    pause 0.5
+
+    call end_cinematic
+
+    show phrarat surprised
+
+    phrarat "What?!"
+
+    call start_cinematic
+
+    show fan neutral at companion_warp_to("right"), reset_flip
+    pause 0.5
+
+    call end_cinematic
+
+    show pichit battle shout
+
+    pichit "Good job, Fan!"
+
+    "While the assassin was busy burning my shield, I asked Fan to grow vines from the fertile ground setup by the biology lab."
+    "With his limbs immobilized, I get the upper hand. Time to counter attack."
+
+    phrarat "More plants, really? I'll just burn them like the rest..."
+
+    "With a snap of fingers, he spawns flames at each of the vines restraining him. But they refuse to yield, simply emitting puffs of steam and smoke instead."
+
+    phrarat "Why are they resisting?!"
+
+    pichit "Can't recognize wisteria, from our homeland? Perennial plants growing on well hydrated soil can stand that much fire for a while."
 
     $ should_show_side_image = True
     charlet telepathy "Pichit! Can you hear me?"
