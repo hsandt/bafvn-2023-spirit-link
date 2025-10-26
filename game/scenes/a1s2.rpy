@@ -708,14 +708,14 @@ label .fight1:
 
     "{i}He can still wield that scarf with mere movements of the wrist, and my vines are not strong enough to paralyze his every articulation.{/i}"
 
-    "{i}How should I approach him?{/i}"
+    "{i}How should I approach him? If only I knew the source of his power...{/i}"
 
     $ should_show_side_image = True
     charlet telepathy "Pichit! Can you hear me?"
 
     show pichit battle anxious
 
-    "I startle at her voice. It's not the first time we try telepathy with Charlet, but it always makes an impression."
+    "I startle at her voice echoing in my head. It's not the first time we try telepathy with Charlet, but it always makes an impression."
 
     show pichit battle serious
 
@@ -727,7 +727,7 @@ label .fight1:
 
     show pen neutral at companion_warp_to("middle", _xpos_offset=0.1)
 
-    "There I saw it! I had mistaken it for the heat!"
+    "There I saw it. I had mistaken it for the heat!"
 
     "It's weaving red cloth produced directly from its own body. This must be why our assassin's scarf never ends."
 
@@ -760,17 +760,27 @@ label .fight1:
 
     "It isn't enough. The flames are too hot. The tendrils curl into ash too quickly..."
 
+    hide fan with character_dissolve
+
     "{i}Charlet, I can't reach it!{/i}"
 
     $ should_show_side_image = True
+
     charlet telepathy "Get him inside! Let the sprinklers take care of the fire!"
+
+    pichit "What? No way I'm bringing that killer to where you are!"
+
+    charlet telepathy "We're in the conference building! Just lure him anywhere else and we'll be fine!"
+
     $ should_show_side_image = False
 
     show pichit battle serious
 
+    window hide
     pause 0.5
+    window show
 
-    phrarat "So you finally noticed my spirit, uh? It took you time..."
+    phrarat "So, you finally noticed my spirit, uh? It took you time..."
 
     show phrarat smile
 
@@ -782,15 +792,68 @@ label .fight1:
 
     show phrarat determined
 
-    pichit "What are you talking about? We're in the middle of a battle, and you attacked us!"
+    pichit "What are you talking about? We're in the middle of a fight, and {i}you{/i} attacked us!"
 
     pichit "Besides, who's betraying our traditions? Your fire comes from a gemstone, right?"
 
-    show phrarat determined
-
     phrarat "..."
 
-    ""
+    phrarat "A necessary evil to put an end to this craziness."
+
+    show phrarat shout
+
+    phrarat "Pen!"
+
+    show phrarat determined
+
+    "My opponent's spirit flies away from his shoulder to get closer to the ground I'm growing the vines from."
+
+    "This time, it spins thick threads, moving from place to place among the plants like a spider. It's so fast that my eyes can barely follow."
+
+    "The small garden is soon covered by a web of viscous fibers, trapping the wisteria sprouts inside."
+
+    show phrarat smile
+
+    "With now new vines coming at him, it's not long before the assassin gets rid of the last remnants of them."
+
+    show pichit battle anxious
+
+    show pichit at character_exit_to_left_easeout(0.45)
+
+    "As I sense my demise is close, I run toward the greenhouse."
+
+    show phrarat determined
+
+    phrarat "You're not my target, but you may lead me to Vanich..."
+    phrarat "Besides, you proved to be too dangerous to be left alone."
+    phrarat shout "Pen!"
+
+    "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin's arm."
+
+    hide phrarat
+    hide pen
+    with character_dissolve
+
+    "The spirit rewinds the thread as fast as it spun it, launching its companion at high speed toward my position."
+
+    show pichit battle grimace at character_warp_to("left")
+
+    pichit "Uh-oh..."
+
+    "Keeping the momentum of his thrust, the assassin takes an offensive stance."
+
+    show phrarat shout at character_enter_from_right_to_easein("middle", 0.3)
+
+    phrarat "Phoenix Dance!"
+
+    # CG: Phoenix Dance
+
+    "He twirls around, his blazing dagger in one hand and a solidified scarf in the other."
+
+    "I get hit with full force."
+
+    show pichit at character_exit_to_left(0.3)
+
 
     "An idea pops into my head. A crazy idea. The type of idea that would have Charlet yelling and my mother tanning my hide."
 
