@@ -4,26 +4,33 @@ label a1s2:
 
 label .raegan_arrives:
 
+    show charlet neutral at character_move_to("left")
+    show pichit neutral at character_move_to("middle", 0.75)
+    pause 0.2
     show raegan neutral at character_warp_to("right")
 
-    "Behind him is a stranger, tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
-    "Instead his collar and cuffs were clean and neat as though freshly laundered.
+    "The stranger is tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
+    "Instead, his collar and cuffs were clean and neat as though freshly laundered.
     Even his hair was impeccable. Meanwhile, my own hair felt matted and itchy."
 
-    pichit smile "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third son of Lord Vanich, founder of the Vanich Trading Company."
+    pichit smile "Oh, you're back."
+
+    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third child of Lord Vanich, founder of Vanich Corporation."
     "He said he was interested in sponsoring the expedition!"
 
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
     raegan "A pleasure to meet you, Charlet. I've heard wonderful things about your plans."
 
-    charlet smile "Likewise, Mr. Vanich. The Vanich Trading Company has done so many amazing things, it is a great honor to meet you."
+    charlet smile "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
 
     raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
 
+    show charlet neutral
+
     "His smile is dangerously charming and I find myself flustered by my own reaction to it."
 
-    charlet "Raegan, then."
+    charlet smile "Raegan, then."
 
     jump .raegan_conversation
 

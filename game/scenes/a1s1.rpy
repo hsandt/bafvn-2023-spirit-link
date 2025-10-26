@@ -199,6 +199,9 @@ label .after_look:
 label .pichit_arrives:
 
     # Show above companion
+    # KNOWN ISSUE: ideally Pichit would be looking left but because he wasn't drawn with flipping in mind,
+    # he looks a bit odd when flipped, so we keep him looking to the right even if it's weird that he's
+    # not looking at Charlet
     show pichit smile at character_warp_to("right") zorder 1
 
     pichit "Oi! Charlet! Hey!"
@@ -209,7 +212,13 @@ label .pichit_arrives:
 
     "Bayani, another alumni from Panha-Kam University, had introduced him to me as a potential guide for my expedition two months ago."
 
+    show charlet smile
+
+    charlet "Hey, Pichit! Thanks for coming today."
+
     "He is also accompanied by a spirit."
+
+    call start_cinematic
 
     # Move characters to far sides to leave space for spirits
     show charlet at character_move_to("left", 0.5)
@@ -219,21 +228,36 @@ label .pichit_arrives:
     show makara neutral at companion_warp_to("middle_left"), flip
     show fan neutral at companion_warp_to("right", _xpos_offset=-0.03)
 
+    pause 0.5
+
+    call end_cinematic
+
     makara "We meet again, my fellow. How do you feel today?"
+
+    window hide
+    pause 1.0
+    window show
 
     fan "The flowers here are healthy despite the sun of summer... The gardeners must be playing close attention."
 
-    makara "... I will take this as your greetings."
+    makara "... I suppose this means you are fine."
 
-    "I'm glad that only both of us can see and hear our spirits. Especially as I see a man I don't know in the back."
+    window hide
+    pause 0.2
+    window show
+
+    "Fan is Pichit's forest spirit. Like many companions, it has a very different personality than its human counterpart. But it definitely shares his love of nature."
+
+    "I let our spirits hold their whimsical conversation while I chitchat with Pichit."
+
+    window hide
+    pause 0.5
+    window show
+
+    "As we discuss the impact of industrial progress of the fauna and flora, a man I don't know approaches from behind Pichit."
 
     hide makara
     hide fan
     with character_dissolve
-
-    show charlet at character_move_to("left")
-    show pichit neutral at character_move_to("middle", 0.75)
-
-    charlet "Hey Pichit. Who is the gentleman with you?"
 
     jump a1s2
