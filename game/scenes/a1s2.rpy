@@ -79,7 +79,7 @@ label .raegan_conversation:
     "My eyes widened. That Raegan had heard of Lalahon at all, was surprising."
     "Stories about Lalahon were rare and their contents contradictory. The few that I had heard had been told to me by my grandfather."
 
-    "According to grandfather's tales, Lalahon was either a benevolent goddess born from the ashes of great god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
+    "According to his tales, Lalahon was either a benevolent goddess born from the ashes of great god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
 
     charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
@@ -563,7 +563,7 @@ label .fight1:
 
     show phrarat determined
 
-    pichit "Sorry, but Raegan may be our last hope to lead Vanich Industries toward the right path."
+    pichit "Sorry, but Raegan is our last hope to lead Vanich Industries toward the right path."
 
     show phrarat shout
 
@@ -572,7 +572,7 @@ label .fight1:
     show phrarat determined
 
     "The sword gives me better reach, but this close, the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
-    "As our blades clash, I inch closer to the fountain and the biology team's plant display. The more Fan has to work with, the better."
+    "As our blades clash, I inch closer to the fountain and the biology booth's plant display. The more Fan has to work with, the better."
 
     call start_cinematic
 
@@ -744,10 +744,6 @@ label .fight1:
     # we could potentially stop here is we don't have time.
 
     # End of playtesting
-
-    # Hack to hide textbox window, which oddly shows for a moment
-    # just before system text appears, and after it disappears
-    window hide
 
     call start_cinematic
 
