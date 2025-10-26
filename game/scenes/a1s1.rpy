@@ -3,12 +3,24 @@ label a1s1:
     # Renpy needs to be told to stop Main Menu BGM (Title Theme)
     stop music fadeout 2.0
 
-    # TO REVISE: find a better act name
-    "Act 1 - The summer fair" with dissolve
+    call start_cinematic
 
-    # TODO komehara: add location to explain player we are on Enon
+    pause 1.0
+
+    image act_title = Text("{color=[gui.idle_color]}{size=80}Act 1 - The Summer Fair{/size}{/color}")
+
+    show act_title:
+        yalign 0.5
+        xalign 0.5
+    with dissolve
 
     pause 2.0
+
+    hide act_title with dissolve
+
+    call end_cinematic
+
+    # TODO komehara: add location to explain player we are on Enon
 
     "How far would you go to achieve your dreams?"
     # if "to pose a question" very formal? OK in this context?
