@@ -648,11 +648,12 @@ label .fight1:
     show pichit battle serious
 
     # FX: vines
+    pause 0.2
+
+    show phrarat surprised at character_move_to_easein_elastic("middle")
     pause 0.5
 
     call end_cinematic
-
-    show phrarat surprised
 
     phrarat "What?!"
 
@@ -667,38 +668,129 @@ label .fight1:
 
     pichit "Good job, Fan!"
 
+    show pichit battle serious
+
     "While the assassin was busy burning my shield, I asked Fan to grow vines from the fertile ground setup by the biology lab."
-    "With his limbs immobilized, I get the upper hand. Time to counter attack."
+
+    show pichit at reset_fall(0.2)
+
+    "With his limbs immobilized, I get the upper hand."
+
+    show phrarat anxious
 
     phrarat "More plants, really? I'll just burn them like the rest..."
 
     "With a snap of fingers, he spawns flames at each of the vines restraining him. But they refuse to yield, simply emitting puffs of steam and smoke instead."
 
+    show phrarat shout
+
     phrarat "Why are they resisting?!"
 
+    show phrarat anxious
+
     pichit "Can't recognize wisteria, from our homeland? Perennial plants growing on well hydrated soil can stand that much fire for a while."
+
+    hide fan with character_dissolve
+
+    "{i}Now's my chance!{/i}"
+
+    call start_cinematic
+
+    show pichit at character_move_to_easein("middle_left", 0.2)
+    pause 0.3
+    show pichit at character_move_to_easein("left", 0.2)
+
+    call end_cinematic
+
+    "I step forward to strike my opponent, but he uses his whip to keep me at bay."
+
+    "{i}I can't get too close...{/i}"
+
+    "{i}He can still wield that scarf with mere movements of the wrist, and my vines are not strong enough to paralyze his every articulation.{/i}"
+
+    "{i}How should I approach him?{/i}"
 
     $ should_show_side_image = True
     charlet telepathy "Pichit! Can you hear me?"
 
-    "I startle at her voice. I had forgotten the telestone. Stupid! So stupid! I should have called for help! Too late now."
+    show pichit battle anxious
 
-    charlet telepathy "Look at his shoulder! There’s a spirit on his shoulder!"
+    "I startle at her voice. It's not the first time we try telepathy with Charlet, but it always makes an impression."
 
-    "My eyes narrowed, seeking the faint shimmer of a spirit in hiding. There I saw it! I had mistaken it for the heat!"
+    show pichit battle serious
+
+    charlet telepathy "I see it! His spirit is on his left shoulder!"
+
+    # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet's vision power
+
+    "My eyes narrowed, seeking the faint shimmer of a spirit in hiding."
+
+    show pen neutral at companion_warp_to("middle", _xpos_offset=0.1)
+
+    "There I saw it! I had mistaken it for the heat!"
+
+    "It's weaving red cloth produced directly from its own body. This must be why our assassin's scarf never ends."
+
+    show pichit battle anxious
+
+    "{i}Wait a minute. If his spirit's power is related to cloth, where does his fire come from?{/i}"
+
+    show phrarat shout
+
+    phrarat "Graaah!!"
+
+    "Unable to burn the vines, the assassin took his dagger with his free hand and started cutting the vines."
+
+    show phrarat determined
+    show pichit battle serious
+
+    "I reinforce my connection with Fan to spawn new ones faster than he can cut them. But even aided by the natural flora behind me, I can feel Fan struggling to keep up."
+
+    "{i}I need to finish this quick!{/i}"
+
+    show fan neutral at companion_warp_to("far_right")
 
     "{i}Fan! Focus on his shoulder!{/i}"
+
+    # FX: vines
 
     "My spirit readily complies, vines whipping forward towards the assassin."
 
     show pichit battle anxious
 
-    "It isn't enough. The flames are too hot. The tendrils curl into ash too quickly. What do I do?"
+    "It isn't enough. The flames are too hot. The tendrils curl into ash too quickly..."
 
+    "{i}Charlet, I can't reach it!{/i}"
+
+    $ should_show_side_image = True
     charlet telepathy "Get him inside! Let the sprinklers take care of the fire!"
     $ should_show_side_image = False
 
     show pichit battle serious
+
+    pause 0.5
+
+    phrarat "So you finally noticed my spirit, uh? It took you time..."
+
+    show phrarat smile
+
+    phrarat "Maybe you forgot your ancestral values after spending time with those Enonians for too long?"
+
+    show phrarat shout
+
+    phrarat "Even lowering yourself to attacking someone else's spirit!"
+
+    show phrarat determined
+
+    pichit "What are you talking about? We're in the middle of a battle, and you attacked us!"
+
+    pichit "Besides, who's betraying our traditions? Your fire comes from a gemstone, right?"
+
+    show phrarat determined
+
+    phrarat "..."
+
+    ""
 
     "An idea pops into my head. A crazy idea. The type of idea that would have Charlet yelling and my mother tanning my hide."
 
