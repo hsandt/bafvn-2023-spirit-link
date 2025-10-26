@@ -42,6 +42,8 @@ label .raegan_conversation:
     # scene bg university_outside
     # show charlet smile at character_warp_to("left")
 
+    call start_cinematic
+
     show raegan smile zorder 1 at character_move_to("middle")
 
     # Currently, chaining transforms with comma `,` will not play them in parallel,
@@ -60,6 +62,8 @@ label .raegan_conversation:
     show pichit neutral at character_move_to("right", 0.0)
 
     show pichit at darker
+
+    call end_cinematic
 
     raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
 
@@ -97,7 +101,7 @@ label .smoke:
     # Start flash
     # Dict transition plays while further statements are applied, allowing us to show the flash
     # without delay while also updating character expressions and hiding UI
-    show overlay flash with { "master": Dissolve(0.15) }
+    show overlay flash zorder 2 with { "master": Dissolve(0.15) }
 
     # Start showing smoke as soon as possible to give it some time to appear (but not enough, would need prewarm,
     # see more below)
