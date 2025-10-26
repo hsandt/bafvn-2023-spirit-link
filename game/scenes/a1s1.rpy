@@ -160,27 +160,29 @@ label .after_look:
 
     "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I'd been too busy setting up the booth."
 
-    show charlet intrigued
+    show charlet sad
 
-    charlet "Maybe I should have focused my studies on food instead of folklore. At least I’d have an excuse to eat."
+    charlet "I should have brought some traditional dishes from Moacu. That would be on topic, and I’d have an excuse to eat."
 
     show makara neutral at companion_warp_to("middle_right")
 
-    # FIXME logic: if she changed field of studies, she would also have a different advisor
+    makara "An interest idea. Whom would you ask to cook them?"
 
-    makara "And what? Bribed your advisor with cake? I could hardly see that working. With how much time she spends reading, one would think she lived off prose and not portions."
+    charlet "Sorry? I can handle a few son-in-law eggs on my own."
 
-    charlet "Hey, Professor Mara isn’t that bad! Even she eats. Sometimes..."
+    makara "Yet, I do remember that your experiments from last year did not lead to the expected color. While I do not eat human food, my keen sense of smell suggested that–"
 
-    # show coffee or a view of the professor buried in books?
+    charlet "Okay, okay. I'll just ask Aunt Urai next time."
 
-    charlet "Okay. You're right. But maybe I should have brought something edible."
+    "Usually, I would avoid talking that much with Makara in a public space. Most Enonians cannot see nor hear spirits and would give me a funny look every time they see me speak alone."
+    "But since few people are coming by my booth and my neighbors are well-versed in island culture, it shouldn't be an issue."
+    "Besides, the recent invention of telestones, although still reserved to the higher classes who can afford them, help people imagine that I may be talking to someone remotely."
 
     hide makara with character_dissolve
 
     pause 0.5
 
-    "This event was my chance. I had to secure a sponsor."
+    "Anyway, this event was my chance. I had to secure a sponsor."
     "Otherwise, my dreams of preserving the island's rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
 
     "The booth's pamphlets, with their colorful photographs showcasing the island’s rich history, seemed to mock me.
@@ -189,7 +191,7 @@ label .after_look:
 
     #stomach growling noise again
 
-    charlet "... maybe I should just grab lunch. It doesn’t look like anyone is coming anytime soon."
+    charlet "... Maybe I should just grab lunch. It doesn’t look like anyone is coming anytime soon."
     "Just as I prepare to leave, a voice stops me."
 
     jump .pichit_arrives
