@@ -821,11 +821,10 @@ label .phrarat_whip_dodged_duck:
 
 label .phrarat_blade_dodged_backward:
     show phrarat at character_move_to("middle_right", 0.1)
-    pause 0.05
-    show pichit at character_move_to("far_left", 0.1)
     play sound audio.sfx.slash3
-    pause 0.5
-    play sound audio.sfx.swift_move1
+    pause 0.2
+    play sfx1 audio.sfx.swift_move1
+    show pichit at character_move_to("far_left", 0.1)
 
     return
 
