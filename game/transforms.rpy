@@ -124,6 +124,11 @@ init:
         linear move_duration xoffset 50
         linear come_back_duration xoffset 0
 
+    transform bump_down(move_duration=0.1, come_back_duration=0.2, abs_yoffset=50):
+        alpha 1.0
+        linear move_duration yoffset abs_yoffset
+        linear come_back_duration yoffset 0
+
     transform fall_left(hop_backward_duration=0.2, fall_duration=0.1):
         alpha 1.0
         easein hop_backward_duration offset (-100, -50)

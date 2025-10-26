@@ -205,7 +205,7 @@ init -1:
     define audio.sfx.slash_impact3 = "audio/sfx/sfx_slash_impact3.opus"
     define audio.sfx.smoke = "audio/sfx/sfx_smoke.opus"
     define audio.sfx.summon = "audio/sfx/sfx_summon.opus"
-    define audio.sfx.swift_move1 = "audio/sfx/sfx_swift_move1.opus"
+    define audio.sfx.swift_move1 = "audio/sfx/sfx_swift_move1_no_lag.opus"
     define audio.sfx.swift_move2 = "audio/sfx/sfx_swift_move2.opus"
     define audio.sfx.throw_fireball = "audio/sfx/sfx_throw_fireball.opus"
     define audio.sfx.vines = "audio/sfx/sfx_vines.opus"

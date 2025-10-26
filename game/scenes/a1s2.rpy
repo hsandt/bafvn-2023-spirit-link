@@ -501,20 +501,21 @@ label .fight1:
 
     play music battle
     pause 1.7
-    show phrarat determined at character_move_to("middle_right", 0.1)
-    pause 0.05
-    show pichit at character_move_to("far_left", 0.1)
-    play sound audio.sfx.scarf
 
-    call .phrarat_whip_dodged from _call_a1s2run_phrarat_whip_dodged
+    call .phrarat_whip_dodged_duck from _call_a1s2run_phrarat_whip_dodged
 
     call end_cinematic
 
-    "The assassin lunges at me. His makeshift whip swings towards my face, its heat leaving my skin hot."
+    show pichit battle anxious
 
-    call .pichit_slash_blocked from _call_a1s2run_pichit_slash_blocked
+    "The assassin ignites his scarf and swings it like a whip towards my head. I duck in time to dodge it, but I can feel the surrounding heat on my face."
 
-    "Thankfully, Fan blocks the worst of it. Another strike. I dance out of reach, narrowly losing a finger."
+    show pichit battle serious
+
+    call .phrarat_blade_dodged_backward
+    # call .pichit_slash_blocked from _call_a1s2run_pichit_slash_blocked
+
+    "Another sword strike. I dance out of reach, narrowly losing a finger."
 
     "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off...{/i}"
 
@@ -578,10 +579,6 @@ label .fight1:
     "I jump back. A blade slices down. It narrowly misses me. Without Fan's warning, I would have died."
     "The assassin's wrist flicks forward."
 
-    show pichit battle shout
-
-    pichit "Fan! Shield!"
-
     call start_cinematic
 
     show pichit battle serious
@@ -594,7 +591,7 @@ label .fight1:
 
     show pichit battle grimace
 
-    "Too late. A length of flame wraps around my left leg. Agony paralyzes me."
+    "His scarf wraps like a whip around my left leg. Agony paralyzes me."
 
     play sound audio.sfx.scarf
     show phrarat at bump_right(0.05, 0.1)
@@ -799,13 +796,35 @@ label .fight1:
 
 # Battle sequences
 
-label .phrarat_whip_dodged:
+# UNUSED
+label .phrarat_whip_dodged_backward:
     show phrarat at character_move_to("middle_right", 0.1)
     pause 0.05
     show pichit at character_move_to("far_left", 0.1)
     play sound audio.sfx.scarf
     # interrupt scarf sound before hit for dodge sound (also covers scarf wipe in the air)
-    pause 0.4
+    pause 0.45
+    play sound audio.sfx.swift_move1
+
+    return
+
+label .phrarat_whip_dodged_duck:
+    show phrarat at character_move_to("middle_right", 0.1)
+    pause 0.05
+    show pichit at bump_down(abs_yoffset=100)
+    play sound audio.sfx.scarf
+    # interrupt scarf sound before hit for dodge sound (also covers scarf wipe in the air)
+    pause 0.45
+    play sound audio.sfx.swift_move1
+
+    return
+
+label .phrarat_blade_dodged_backward:
+    show phrarat at character_move_to("middle_right", 0.1)
+    pause 0.05
+    show pichit at character_move_to("far_left", 0.1)
+    play sound audio.sfx.slash3
+    pause 0.5
     play sound audio.sfx.swift_move1
 
     return
