@@ -602,7 +602,7 @@ label .fight1:
 
     show pichit battle grimace
 
-    "His scarf wraps like a whip around my left leg. Agony paralyzes me."
+    "His burning scarf wraps like a whip around my left leg. Agony paralyzes me."
 
     play sound audio.sfx.scarf
     show phrarat at bump_right(0.05, 0.1)
@@ -611,19 +611,24 @@ label .fight1:
     play sound audio.sfx.hit
     pause 0.3
 
-    "Only a second. It is enough. My feet fly out from beneath me. My back slams into a nearby crate, the wind knocked out of me."
+    "He pulls the whip back to make me lose my balance. My back slams into a nearby crate, the wind knocked out of me."
 
     "{i}That damn whip. If only I could get rid of it!{/i}"
 
     "{i}How come it hasn't already been consumed by the flames? How much fabric does this guy have?!{/i}"
 
-    "My thoughts scatter as the assassin lunges at me, his whip ready to strike. I recognize the stance."
+    "My thoughts scatter as the assassin lunges at me. He raises his dagger, ready to stab me in the chest."
 
-    pichit shout "Fan, now!"
+    show pichit battle shout
 
+    pichit "Fan, now!"
+
+    play sound audio.sfx.summon
     show fan neutral at companion_warp_to("far_left", _ypos_offset=0.25), flip
+    pause 0.5
 
-    "A large bark shield materializes in time to stop the new volley of hits."
+    play sound audio.sfx.block_shield2
+    "A large bark shield materializes around my arm, just in time to protect me from the assault."
 
     show pichit battle serious
 
@@ -951,24 +956,6 @@ label .play_blade_clash_sfx_variant(variant_number):
 ## BATTLE SEQUENCE DRAFT
 
 # label .unused:
-#     "He then pulls the whip back to make me lose my balance."
-
-#     "{i}If only I could get rid of that whip! Come to think of it, how hadn’t it burned to ash already?{/i}"
-
-#     "I'm interrupted in my thoughts by the assassin jumping at me to tackle me to the ground. He raises his dagger, ready to stab me in the chest."
-
-#     pichit battle shout "Fan, now!"
-
-#     play sound audio.sfx.summon
-#     # Show pichit in front so companion tail doesn't hide his face
-#     show pichit zorder 1
-#     show fan neutral at companion_warp_to("far_left"), flip
-#     pause 0.5
-
-#     "A large bark shield weaves itself into existence around my arm, protecting me from the assault."
-
-#     play sound audio.sfx.block_shield2
-#     pause 1.0
 
 #     phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
 
