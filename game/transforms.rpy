@@ -23,10 +23,10 @@ init:
         alpha 0.0
         easein fade_duration alpha 1.0
 
-    transform companion_warp_to(target_pos, fade_duration=0.5, _xpos_offset=0.0):
+    transform companion_warp_to(target_pos, fade_duration=0.5, _xpos_offset=0.0, _ypos_offset=0.0):
         xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         # companion flies or is on shoulder
-        ypos 0.3
+        ypos 0.3 + _ypos_offset
         # fade in
         alpha 0.0
         easein fade_duration alpha 1.0
@@ -141,6 +141,9 @@ init:
 
     transform flip:
         xzoom -1.0
+
+    transform reset_flip:
+        xzoom 1.0
 
     transform darker(duration=0.2):
         # Assume we start at normal color so init to that value to allow transition
