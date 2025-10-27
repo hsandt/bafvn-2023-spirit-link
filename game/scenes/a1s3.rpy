@@ -1,5 +1,35 @@
 label a1s3:
-    "Act 1: Scene 3"
+    scene bg university_inside with wipeleft_medium
+    show pichit battle grimace at character_enter_from_right_to_easein("far_left", 0.3)
+    pause 0.6
+
+    pichit "Urg!"
+
+    show fan neutral at companion_warp_to("middle_left")
+
+    "Fortunately, Fan created soft beech bark behind my back to cushion the impact, so I didn't break anything."
+
+    fan "This reminds me of your childhood... I would always protect you from bad falls when you were playing outdoors."
+
+    show pichit battle anxious
+
+    pichit "Aha... Yeah... Thanks for having my back."
+
+    $ should_show_side_image = True
+    charlet scared "{i}Pichit! Are you alright?{/i}"
+
+    show pichit battle serious
+
+    pichit "{i}Yeah... I'm fine.{/i}"
+
+    show pichit battle anxious
+
+    show phrarat determined at character_enter_from_right_to_easein("right")
+
+    pichit "{i}I... managed to get him into the building.{/i}"
+
+    $ should_show_side_image = False
+
     "END"
     return
 
