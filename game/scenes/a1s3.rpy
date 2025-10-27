@@ -15,8 +15,12 @@ label a1s3:
 
     pichit "Aha... Yeah... Thanks for having my back."
 
+    hide fan with character_dissolve
+
     $ should_show_side_image = True
-    charlet scared "{i}Pichit! Are you alright?{/i}"
+    # technically we should show telepathy shared but we don't have such a variant,
+    # so let's just show scared without blue effect
+    charlet scared "Pichit! Are you alright?"
 
     show pichit battle serious
 
@@ -27,54 +31,77 @@ label a1s3:
     show phrarat determined at character_enter_from_right_to_easein("right")
 
     pichit "{i}I... managed to get him into the building.{/i}"
+    pichit "{i}What should I do now?{/i}"
+
+    charlet telepathy "Just keep fighting. As soon as he starts using intense fire, it will trigger the sprinkler system and you'll be able to get the edge."
+
+    # Cut for now to get started with Raise your Voice jam 2025
+    # charlet telepathy "I will help you as much as I can with my remote vision. Just tell me what you need to know."
+
+    # Known issue: a weird bug causes Pichit to quickly move to the left before moving
+    show pichit at character_move_to_easein("left", 0.5, 0.05)
+
+    show pichit battle serious
+
+    pichit "{i}Understood.{/i}"
 
     $ should_show_side_image = False
 
-    "END"
-    return
+    call start_cinematic
 
-# DRAFT
+    # Known issue: a weird bug causes Phrarat to insta move right to prepare attack,
+    # instead of tweening
+    call a1s2.pichit_phrarat_cross_blades
 
-label .draft_charlet_analyzes_assassin:
+    show pichit at character_move_to_easein("left", 0.5)
+    show phrarat at character_move_to_easein("right", 0.5)
 
-    "A snap sounded in my mind. Professor Mara’s voice stirred to life. Finally, using my abilities, I snap both Pichit and Mara together into one connection."
+    call end_cinematic
 
-    ## Analyze and more fight
+    jump .fight2
 
-    "I try to analyze the opponent."
+# label .unused_pichit_asks_for_analyzes:
 
-    call .analyze_one_element from _call_a1s2run_analyze_one_element
+#     pichit "{i}Okay, Charlet, tell me about...{/i}"
 
-    #SCENE CHANGE TO GREEN HOUSE
+#     call .unused_analyze_one_element
 
-    scene bg university_inside
-    show pichit battle serious at character_warp_to("left")
-    show phrarat determined at character_warp_to("right")
+#     # Insert some fight here...
 
-    show phrarat shout
+#     "I try to analyze the opponent once more."
 
-    phrarat "Pen, now."
+#     call .unused_analyze_one_element
 
-    "The telepathic connection with Pichit goes numb for a moment before the entryway erupts, caving in, my guide along with it, caked in dirt."
+#     jump .fight2
 
-    pichit "That worked better than expected."
+# label .unused_analyze_one_element:
+#     menu:
+#         "his weapons" if not has_analyzed_assassin_weapon:
+#             call .unused_analyze_weapon
+#         "his gemstone" if not has_analyzed_assassin_stone:
+#             call .unused_analyze_stone
 
-    "Smoke begins to ooze into the warehouse, Pichit wouldn’t see an attack coming before it was too late!"
-    "I call upon Makara for assistance but he refused, the smoke would only render him useless."
+#     return
 
-    phrarat "No more plants, no more chances. Choose: move or die."
+# label .unused_analyze_weapon:
+#     # TODO: new text
+#     "Clothes have traditional patterns of Moacu, but are written roughly."
+#     "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
+#     "Pichit could take advantage of this, or try to slow him down."
+#     $ has_analyzed_assassin_weapon = True
+#     return
 
-    "I try to analyze the opponent once more."
+# label .unused_analyze_stone:
+#     "Normally people and esp. Moacu natives wear one color, symbolic of their aptitude for an art. A few experts master and show two colors."
+#     "In his case, the creature is clearly Green and handles cloth creation and patterns."
+#     "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
 
-    call .analyze_one_element from _call_a1s2run_analyze_one_element_1
+#     "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
+#     "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
+#     $ has_analyzed_assassin_stone = True
+#     return
 
-    scene bg university_inside
-    show charlet neutral at character_warp_to("left")
-    show raegan neutral at character_warp_to("right")
-
-    jump .draft_fight2
-
-label .draft_fight2:
+label .fight2:
     scene bg university_inside
     show pichit battle serious at character_warp_to("left")
     show phrarat determined at character_warp_to("right")
@@ -85,21 +112,21 @@ label .draft_fight2:
 
     play sound audio.sfx.impact_glass
 
-    "Before I’m able to get a good look, a dagger skewers out of the shadows and toward Pichit, who barely dodges it but is sent careening into one of the exhibits. A glass case full of exquisite vases."
+    "A dagger skewers out of the shadows and toward me. I barely dodge it and I'm sent careening into one of the exhibits. A glass case full of exquisite vases."
 
     phrarat "What a waste."
 
     # This raises guide's sympathy
     "Entirely focused on the shattered remains of the exhibit, vases shattered, dirt and seeds that had been hidden in the vases scattered across the floor. Such history, wasted."
 
-    "Without hesitation, the Assassin flips his dagger and sends it hurling for Pichit’s head."
-    "Pichit expected it, using the dirt and seeds on the floor, he springs forth spiked vines that envelop the dagger, only for them to smash whatever is left of the exhibit vases in the process."
+    "Without hesitation, the Assassin flips his dagger and sends it hurling for my head."
+    "I expected it, using the dirt and seeds on the floor, I spring forth spiked vines that envelop the dagger, only for them to smash whatever is left of the exhibit vases in the process."
 
     hide pen
 
     phrarat "You destroy our culture without hesitation."
 
-    "Before Pichit can respond, the man from the military booth emerges from the open doorway behind the Assassin. His rifle aimed for the Assassin’s head."
+    "Before I can respond, the man from the military booth emerges from the open doorway behind the Assassin. His rifle aimed for the Assassin’s head."
 
     man_with_rifle "Freeze!!!"
 
@@ -108,8 +135,8 @@ label .draft_fight2:
 
     phrarat "The idiot can't even shoot his rifle. Proof that even the universe wants me to succeed."
 
-    "After knocking the gun around  enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough for Pichit to strike."
-    "Bringing the vines upward from the discarded dagger, Pichit slashes them across the Assassins arm who stumbles to the ground almost immediately, his spirit tossed off his shoulder in the process."
+    "After knocking the gun around  enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough to allow me to strike."
+    "Bringing the vines upward from the discarded dagger, I slash them across the Assassins arm who stumbles to the ground almost immediately, his spirit tossed off his shoulder in the process."
 
     pichit "Poison in the spikes."
 
@@ -123,7 +150,7 @@ label .draft_fight2:
     phrarat "Please, make more, I need another whip."
 
     "The spirit doesn’t move, doesn’t start weaving, it’s too tired from constantly weaving pattern after pattern for its master to use."
-    "Pichit, assured that there’s no fight left in the spirit, finally lets the vines fall to the ground for good this time."
+    "Assured that there’s no fight left in the spirit, I finally lets the vines fall to the ground for good this time."
 
     # show phrarat angry
 
@@ -140,6 +167,7 @@ label .draft_fight2:
 
     charlet "Great."
 
+    # Back to Charlet PoV
     "I pull the lever, opening the sprinklers."
 
     stop music fadeout 2.0
@@ -187,30 +215,3 @@ label .draft_fight2:
 
     return
     # jump a1s3
-
-label .analyze_one_element:
-    menu:
-        "Analyze weapon" if not has_analyzed_assassin_weapon:
-            call .analyze_weapon from _call_a1s2run_analyze_weapon
-        "Analyze stone" if not has_analyzed_assassin_stone:
-            call .analyze_stone from _call_a1s2run_analyze_stone
-
-    return
-
-label .analyze_weapon:
-    # TODO: new text
-    "Clothes have traditional patterns of Moacu, but are written roughly."
-    "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
-    "Pichit could take advantage of this, or try to slow him down."
-    $ has_analyzed_assassin_weapon = True
-    return
-
-label .analyze_stone:
-    "Normally people and esp. Moacu natives wear one color, symbolic of their aptitude for an art. A few experts master and show two colors."
-    "In his case, the creature is clearly Green and handles cloth creation and patterns."
-    "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
-
-    "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
-    "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
-    $ has_analyzed_assassin_stone = True
-    return
