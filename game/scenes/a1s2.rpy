@@ -255,15 +255,22 @@ label .assassin_appears:
 
     "Belatedly I realize that Pichit has shoved me to the floor."
 
-    show phrarat neutral at character_warp_to("middle")
+    show phrarat determined at character_warp_to("middle")
 
-    "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him. A glowing shield is the only barrier between his chest and his assailant's knife."
+    "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him."
+    "A glowing shield is the only barrier between his chest and his assailant's knife. As I suspected, the jewel on Raegan's collar is not simply decorative."
+
+    show phrarat shout
+
+    phrarat "That damn gemstone... !"
+
+    show phrarat determined
 
     $ should_show_side_image = True
     charlet scared "{i}A vigilante?!{/i}"
     $ should_show_side_image = False
 
-# TODO impact SFX and hit FX
+    # TODO impact SFX and hit FX
 
     show pichit battle shout:
         alpha 0.0
@@ -492,17 +499,14 @@ label .fight_intro:
 
     phrarat "Haven't you seen what Vanich did to our nation?"
 
-    pichit "I know... But I need him. Alive."
+    pichit "But Raegan's different. He's trying to improve our relationship with Enon and the rest of the mainlanders."
 
-    show phrarat smile
+    phrarat "Yeah, I overheard your conversation... But you really think he'll be satisfied just building bridges?"
+    phrarat "He'll want more and more... Just like the continentals are seizing more and more from our lands... and our spirits."
 
-    phrarat "Yeah, I overheard your conversation... For that little tour?"
+    pichit "Maybe... But for now, I need him. Alive."
 
-    show phrarat shout
-
-    phrarat "I have no time playing around!"
-
-    show phrarat determined
+    phrarat "Then I have no choice but to crush you on my way."
 
     jump .fight1
 
@@ -572,7 +576,7 @@ label .fight1:
     show phrarat determined
 
     "The sword gives me better reach, but this close, the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
-    "As our blades clash, I inch closer to the fountain and the biology team's plant display. The more Fan has to work with, the better."
+    "As our blades clash, I inch closer to the fountain at the center of the university yard."
 
     call start_cinematic
 
@@ -585,7 +589,7 @@ label .fight1:
 
     show fan neutral at companion_warp_to("far_left"), flip
 
-    fan "To your right!"
+    fan "To your right..."
 
     "I jump back. A blade slices down. It narrowly misses me. Without Fan's warning, I would have died."
     "The assassin's wrist flicks forward."
@@ -632,7 +636,17 @@ label .fight1:
 
     show pichit battle serious
 
-    phrarat "Wood? In this case..."
+    phrarat "So, you finally showed your spirit."
+
+    show phrarat shout
+
+    phrarat "But you betray our heritage by using your power for the likes of Vanich!"
+
+    show phrarat determined
+
+    pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
+
+    phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to claim their powers for themselves."
 
     show pichit battle anxious
 
@@ -641,13 +655,14 @@ label .fight1:
     show pichit battle grimace
     hide fan with character_dissolve
 
-    phrarat "You're done..."
+    phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
 
     call start_cinematic
 
     show pichit battle serious
 
-    # FX: vines
+    # TODO: FX vines
+    play sound audio.sfx.vines
     pause 0.2
 
     show phrarat surprised at character_move_to_easein_elastic("middle")
@@ -670,11 +685,16 @@ label .fight1:
 
     show pichit battle serious
 
-    "While the assassin was busy burning my shield, I asked Fan to grow vines from the fertile ground setup by the biology lab."
+    pichit "You really thought I was just losing ground all that time, uh?"
+    pichit "Never cared having a break for a minute to appreciate the nature surrounding you?"
+
+    "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers. A nearby fountain keeps them hydrated."
+
+    "While the assassin was busy burning my shield, Fan blasted numerous vines from this fertile soil to block the assassin’s limbs."
 
     show pichit at reset_fall(0.2)
 
-    "With his limbs immobilized, I get the upper hand."
+    "I stand up, throwing away the remains of my carbonized shield. Now, I have the upper hand."
 
     show phrarat anxious
 
@@ -688,7 +708,7 @@ label .fight1:
 
     show phrarat anxious
 
-    pichit "Can't recognize wisteria, from our homeland? Perennial plants growing on well hydrated soil can stand that much fire for a while."
+    pichit "Can't recognize the perpetuas that grow in our homeland? Sturdy and quick to absorb water, they will resist your fire for a while."
 
     hide fan with character_dissolve
 
@@ -855,6 +875,8 @@ label .fight1:
     show pichit at character_exit_to_left(0.3)
 
 
+label .unused_jam_end:
+
     "An idea pops into my head. A crazy idea. The type of idea that would have Charlet yelling and my mother tanning my hide."
 
     "I do it anyway. Allowing my exhaustion to show, I ask Fan to make another attempt. As the assasin blocks it, I begin to cough and sway."
@@ -882,7 +904,7 @@ label .fight1:
     # $ should_show_side_image = False
 
 
-# CHARLET POV SWITCH
+    # CHARLET POV SWITCH
 
     scene bg black with wipeleft_fast
     pause 0.5
@@ -907,14 +929,14 @@ label .fight1:
 
     "It was a clever idea. The faculty room was in the opposite wing. It would buy us time."
 
-#pichit "Go fight him, of course?"
+    #pichit "Go fight him, of course?"
 
-#charlet "Fight? What about the guards? They'll be coming soon!"
+    #charlet "Fight? What about the guards? They'll be coming soon!"
 
-#pichit "Not fast enough to stop him! How long do you think he'll stay once he finds out he's been duped? We need to catch him while his guard is down!"
+    #pichit "Not fast enough to stop him! How long do you think he'll stay once he finds out he's been duped? We need to catch him while his guard is down!"
 
-#"Pichit had a point, but I wasn't a fighter. I'd only barely passed archery and while Makara was stronger than the average spirit, we hadn't ever had to fight anything stronger than an imp."
-#"Though...the greenhouse would have plants and water. Both Fan and Makara would be at an advantage..."
+    #"Pichit had a point, but I wasn't a fighter. I'd only barely passed archery and while Makara was stronger than the average spirit, we hadn't ever had to fight anything stronger than an imp."
+    #"Though...the greenhouse would have plants and water. Both Fan and Makara would be at an advantage..."
 
     call start_cinematic
 
@@ -1002,7 +1024,8 @@ label .fight1:
 
     return
 
-# Battle sequences
+
+# Reusable battle sequences
 
 # UNUSED
 label .phrarat_whip_dodged_backward:
@@ -1112,33 +1135,6 @@ label .play_blade_clash_sfx_variant(variant_number):
 
 label .unused:
 
-    phrarat shout "So, you finally showed your spirit. But you betray our heritage by using your power for the likes of Vanich Enterprises!"
-
-    "The assassin flicks his wrist. A rope binds my shield, searing it to pieces."
-
-    phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
-
-    pichit battle smile "You really thought I was just losing ground all that time, uh? Never cared having a break for a minute to appreciate the nature surrounding you?"
-
-    show phrarat surprised
-
-    "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers."
-
-    # TODO: FX vines
-    play sound audio.sfx.vines
-
-    "My spirit blasts numerous vines through this fertile soil, blocking the Assassin’s limbs."
-
-    pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
-
-    phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to create those fake gemstones."
-
-    "The Assassin strikes at the vines but they keep growing back."
-
-    pichit "For someone so concerned with our native culture, I’m surprised you don’t even recognize what type kind of vines these are."
-
-    "Perpetua plants. A smart move. The vines would regenerate faster than he could do damage. Now it was just a matter of how much energy the assassin’s spirit  had left."
-
     "A snap sounded in my mind. Professor Mara’s voice stirred to life. Finally, using my abilities, I snap both Pichit and Mara together into one connection."
 
     ## Analyze and more fight
@@ -1152,11 +1148,6 @@ label .unused:
     scene bg university_inside
     show pichit battle serious at character_warp_to("left")
     show phrarat determined at character_warp_to("right")
-
-    pichit "Why Vanich? He's trying to improve our relationship with Enon and the rest of the mainlanders."
-
-    phrarat "You really believe that? You think there’s profit in building bridges? They won't wait for spirits to die? Don’t tell me you really believe they offer their gemstones willingly? No!"
-    phrarat "He takes them by force just like the rest. He just hides it better than the others."
 
     show phrarat shout
 
