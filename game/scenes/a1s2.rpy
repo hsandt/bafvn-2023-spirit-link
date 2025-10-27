@@ -786,11 +786,13 @@ label .fight1:
 
     $ should_show_side_image = True
 
-    charlet telepathy "Get him inside! Let the sprinklers take care of the fire!"
+    charlet telepathy "Try to lure him to the greenhouse! The fire sprinklers there will prevent him from using his flames!"
 
-    pichit "What? No way I'm bringing that killer to where you are!"
+    pichit "{i}I see... It won't be that easy to lead such an aggressive guy, though.{/i}"
 
-    charlet telepathy "We're in the conference building! Just lure him anywhere else and we'll be fine!"
+    charlet telepathy "I'm sorry... I wish I could help you with my spirit, but my mastery of water is not as good as my mind abilities..."
+
+    pichit battle serious "{i}It's okay... I'll find a way.{/i}"
 
     $ should_show_side_image = False
 
