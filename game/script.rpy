@@ -61,6 +61,7 @@ define raegan = Character("Raegan", color="#e1cc5e", image="raegan")
 define phrarat = Character("Assassin", color="#dd796e", image="phrarat")
 define makara = Character("Makara", color="#6495ed")
 define fan = Character("Fan", color="#89d47d")
+define pen = Character("Pen", color="#ffdc18")
 
 # Secondary characters
 define mara = Character("Professor Mara")

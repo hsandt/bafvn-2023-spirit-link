@@ -33,7 +33,7 @@ label a1s3:
     pichit "{i}I... managed to get him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
 
-    charlet telepathy "Just keep fighting. As soon as he starts using intense fire, it will trigger the sprinkler system and you'll be able to get the edge."
+    charlet telepathy "Just keep fighting to drive him into a corner. When he starts using intense fire, it will trigger the sprinkler system and you'll be able to get the edge."
 
     # Cut for now to get started with Raise your Voice jam 2025
     # charlet telepathy "I will help you as much as I can with my remote vision. Just tell me what you need to know."
@@ -53,14 +53,14 @@ label a1s3:
     # instead of tweening
     call a1s2.pichit_phrarat_cross_blades
 
-    show pichit at character_move_to_easein("left", 0.5)
-    show phrarat at character_move_to_easein("right", 0.5)
-
     call end_cinematic
 
     jump .fight2
 
 # label .unused_pichit_asks_for_analyzes:
+
+#     show pichit at character_move_to_easein("middle_left", 0.5)
+#     show phrarat at character_move_to_easein("middle_right", 0.5)
 
 #     pichit "{i}Okay, Charlet, tell me about...{/i}"
 
@@ -102,16 +102,107 @@ label a1s3:
 #     return
 
 label .fight2:
-    scene bg university_inside
-    show pichit battle serious at character_warp_to("left")
-    show phrarat determined at character_warp_to("right")
+    # setup for debug warp
+    # scene bg university_inside
+    # show pichit battle serious at character_warp_to("middle_left")
+    # show phrarat determined at character_warp_to("middle_right")
 
-    # show phrarat sad
-    # TODO: pen sad
-    show pen neutral at companion_warp_to("far_right")
+    "While I distract him with my sword, I let Fan can grow vines from the plant with striking red leaves behind him."
+
+    show pen neutral at companion_warp_to("right")
+
+    pen "I'll cover your back!"
+
+    "This time, his spirit takes control of the scarf, splitting it into multiple, thinner strips to intercept the vines."
+
+    "It acted even faster than usual, but it's clear that this quick action spent a lot of its energy."
+
+    show phrarat smile
+
+    phrarat "Humph. You thought that would work twice?"
+
+    hide pen with character_dissolve
+    show phrarat determined
+
+    "He touches the scarf at the intersection of the strips with his free hand to kindle it. The fire quickly spreads in all directions, before reaching the vines."
+
+    "They emit a purple smoke as they are consumed by the flames."
+
+    phrarat "Already gone? Looks like interior plants won't help you much."
+
+    "The assassin deals a strong blow, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
+
+    phrarat shout "Phoenix..."
+
+    phrarat surprised "Ugh... !"
+
+    "The fighter interrupts his move, grabbing his chest and coughing."
+
+    phrarat "What did you... ?"
+
+    pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhalted, your body won't stand for long."
+
+    pichit "First, your vision will become blurry. Then, you will lose control of your muscles. And your spirit doesn't have enough strength left to protect you."
+
+    "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
+
+    pichit battle anxious "This is over. But I know your cause is a noble one... So please, let me help you..."
+
+    phrarat "No..."
+
+    phrarat shout "It won't end here!!"
+
+    show pichit battle serious
+
+    "My opponent gathers his last ounce of strength to stand up."
+
+    "This time, he tears off not only his scarf, but also his tunic and hood before setting them on fire. A blazing whirl surrounds him."
+
+    show pichit battle grimace
+
+    show pichit at character_move_to_easein("far_left", 0.3)
+
+    "I leap back to avoid being engulfed by the flames."
+
+    show pichit battle anxious
+
+    phrarat "If I can't make it out alive... at least I'll bring you down with this whole place! With Vanich!"
+
+    show pen neutral at companion_warp_to("middle")
+
+    pen "Phrarat, wait... !"
+    pen "Your body won't stand it if you use all of the gem's power at once!"
+
+    phrarat "Graaah!!"
+
+    "The assassin ignores his companion, intensifying the whirl of fire, which gains in radius and height."
+
+    "It ends up hitting the spirit, who was flying too close, projecting it backward."
+
+    show pen:
+        parallel:
+            linear 0.3 rotate -360
+        parallel:
+            easein 0.3 xpos 0.2
+        parallel:
+            easeout 0.3 ypos 0.6
+
+    pen "Aw!!"
+
+    "I catch it mid-air to prevent it from crashing on the ground."
+
+    pichit "Hey! Are you alright?"
+
+    pen "..."
+    pen "It's too late... I can't stop him now."
 
     play sound audio.sfx.impact_glass
 
+    "The assassin's flames spiral toward the ceiling. The glass panels break under the heat, leaving nothing but glittering dust suspended in the air."
+
+    return
+
+label .unused_museum:
     "A dagger skewers out of the shadows and toward me. I barely dodge it and I'm sent careening into one of the exhibits. A glass case full of exquisite vases."
 
     phrarat "What a waste."
@@ -126,6 +217,7 @@ label .fight2:
 
     phrarat "You destroy our culture without hesitation."
 
+label .unused_man_with_rifle:
     "Before I can respond, the man from the military booth emerges from the open doorway behind the Assassin. His rifle aimed for the Assassin’s head."
 
     man_with_rifle "Freeze!!!"
@@ -135,15 +227,9 @@ label .fight2:
 
     phrarat "The idiot can't even shoot his rifle. Proof that even the universe wants me to succeed."
 
-    "After knocking the gun around  enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough to allow me to strike."
-    "Bringing the vines upward from the discarded dagger, I slash them across the Assassins arm who stumbles to the ground almost immediately, his spirit tossed off his shoulder in the process."
+    "After knocking the gun around enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough to allow me to strike."
 
-    pichit "Poison in the spikes."
-
-    "The Assassin grips at the ground, trying to grapple his way toward his Spirit only who isn’t even moving from where it landed. It’s panting relentlessly, trying to catch its breath."
-
-    pichit "This is over. I know your cause is a noble one, please, let me help you. I can explain everything to you."
-
+label .unused_alternative_tired_pen:
     "The Assassin bares his teeth and with a sudden screech of his shoes, rolls upward, snatching his spirit into his arms and landing on his feet."
     "Immediately he brings his dagger close, cutting another piece of his scarf, putting it to the spirits mouth."
 
@@ -157,6 +243,9 @@ label .fight2:
     "No, no, please, we need to burn it! All of it!!!"
 
     "The Assassin lights a solitary flame in his hand and shakily brings it to his scarf. He’s going to ignite his actual scarf, and use that as his last ditch effort."
+
+label .unused_alternative_sprinkler:
+
     "Fortunately I feel Raegan’s presence as he finally links up with my gemstone."
 
     scene bg university_inside

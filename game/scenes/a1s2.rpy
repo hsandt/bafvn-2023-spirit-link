@@ -749,7 +749,7 @@ label .fight1:
 
     "There I saw it. I had mistaken it for the heat!"
 
-    "It's weaving red cloth produced directly from its own body. This must be why our assassin's scarf never ends."
+    "It's producing red cloth from its own body and weaving it at the same time, at a faster pace than assassin consumes it."
 
     show pichit battle anxious
 
