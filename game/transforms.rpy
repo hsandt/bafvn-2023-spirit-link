@@ -64,8 +64,16 @@ init:
         ypos 1.0
         linear duration xanchor 0.5 xpos position_name_to_xpos_value(target_pos)
 
-    # Move character from outside left to target position, easing on arrival
+    # Move character from outside left to target position
     transform character_enter_from_left_to(target_pos, duration=1.0):
+        alpha 1.0
+        xanchor 1.0
+        xpos 0.0
+        ypos 1.0
+        linear duration xanchor 0.5 xpos position_name_to_xpos_value(target_pos)
+
+    # Move character from outside left to target position, easing on arrival
+    transform character_enter_from_left_to_easein(target_pos, duration=1.0):
         alpha 1.0
         xanchor 1.0
         xpos 0.0
