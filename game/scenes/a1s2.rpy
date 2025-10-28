@@ -13,14 +13,14 @@ label .raegan_arrives:
     "Instead, his collar and cuffs are clean and neat as though freshly laundered.
     Even his hair is impeccable. Meanwhile, my own hair feels matted and itchy."
 
-    pichit smile "Oh, you're back."
+    pichit smile "Oh, you’re back."
 
-    pichit "Charlet, I'd like to introduce you to Mr. Raegan Vanich! He is the third child of Lord Vanich, founder of Vanich Corporation."
+    pichit "Charlet, I’d like to introduce you to Mr. Raegan Vanich! He is the third child of Lord Vanich, founder of Vanich Corporation."
     "He said he was interested in sponsoring the expedition!"
 
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
-    raegan "A pleasure to meet you, Charlet. I've heard wonderful things about your plans."
+    raegan "A pleasure to meet you, Charlet. I’ve heard wonderful things about your plans."
 
     charlet smile "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
 
@@ -65,7 +65,7 @@ label .raegan_conversation:
 
     call end_cinematic
 
-    raegan "It's always a pleasure to meet someone who can appreciate the island's unique charm. What drove your interest?"
+    raegan "It’s always a pleasure to meet someone who can appreciate the island’s unique charm. What drove your interest?"
 
     charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu-Laedan."
     charlet "It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
@@ -79,14 +79,14 @@ label .raegan_conversation:
     "My eyes widen. That Raegan has heard of Lalahon at all, is surprising."
     "Stories about Lalahon are rare and their contents contradictory. The few that I have heard have been told to me by my grandfather."
 
-    "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala's heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
+    "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala’s heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon is powerful."
 
     charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
 
     show charlet smile
 
-    charlet "Who knows, maybe we'll even discover the secret behind the mist that covered the island!"
+    charlet "Who knows, maybe we’ll even discover the secret behind the mist that covered the island!"
 
     show raegan smile
 
@@ -136,18 +136,18 @@ label .smoke:
     "Before Raegan can respond, a bright flash blinds us. The air grows thick with the scent of smoke."
     "Coughs sound out in the alleys as confusion spreads among the crowd. People cover their mouths and noses, or those of the children they accompany."
     "Some start running toward the exit while others take refuge in the main building."
-    "As I look for the origin of the smoke, I see it pour out from Dr. Barouche's alchemy station."
+    "As I look for the origin of the smoke, I see it pour out from Dr. Barouche’s alchemy station."
 
     show charlet at darker
     show raegan thinking
 
-    raegan "My pardons, Pichit… Do you know what's happening?"
+    raegan "My pardons, Pichit… Do you know what’s happening?"
 
     show pichit smile
 
     "Pichit smiles, nonchalantly waving a hand to dismiss the commotion, but I can see tension in his shoulders."
 
-    pichit "Some demonstrations must have malfunctioned. I'm sure it's nothing to be concerned about, sir."
+    pichit "Some demonstrations must have malfunctioned. I’m sure it’s nothing to be concerned about, sir."
 
     show pichit neutral
     show charlet at reset_brightness
@@ -191,7 +191,7 @@ label .smoke:
 
     charlet "Everyone, we should go."
 
-    raegan "Yes, that's probably best."
+    raegan "Yes, that’s probably best."
 
     call start_cinematic
 
@@ -247,7 +247,7 @@ label .assassin_appears:
 
     call end_cinematic
 
-    "As we're moving away, a red shape emerges from the smoke."
+    "As we’re moving away, a red shape emerges from the smoke."
 
     scene bg university_outside with bg_dissolve
 
@@ -258,7 +258,7 @@ label .assassin_appears:
     show phrarat determined at character_warp_to("middle")
 
     "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him."
-    "A glowing shield is the only barrier between his chest and his assailant's knife. As I suspected, the jewel on Raegan's collar is not simply decorative."
+    "A glowing shield is the only barrier between his chest and his assailant’s knife. As I suspected, the jewel on Raegan’s collar is not simply decorative."
 
     show phrarat shout
 
@@ -314,11 +314,11 @@ label .assassin_appears:
     show pichit at character_move_to_easein("middle_left", 0.2)
     pause 0.2
 
-    "… But I'm not hurt. A wooden shield looms above me."
+    "… But I’m not hurt. A wooden shield looms above me."
 
     show pichit battle shout
 
-    pichit "Don't just sit there! Get inside! Now!"
+    pichit "Don’t just sit there! Get inside! Now!"
 
     show pichit battle serious
 
@@ -326,7 +326,7 @@ label .assassin_appears:
 
     show pichit at character_move_to_easein("middle", 0.2)
 
-    "Pichit's blade thrusts forward with surprising skill. Swaths of red cloth flutter to the ground."
+    "Pichit’s blade thrusts forward with surprising skill. Swaths of red cloth flutter to the ground."
 
     #TODO Sword SFX and FX
 
@@ -336,13 +336,13 @@ label .assassin_appears:
 
     "I look around for help, but people are even more panicked than before. Not only the visitors, but even hunters, are running away from the battle scene."
 
-    "I can't blame them: they are trained to kill animals, not humans."
+    "I can’t blame them: they are trained to kill animals, not humans."
 
     show pichit battle shout
 
     pichit "What are you doing here? Go!"
 
-    charlet shout "But we can't let you… !"
+    charlet shout "But we can’t let you… !"
 
     show raegan anxious
     show charlet anxious
@@ -355,7 +355,7 @@ label .assassin_appears:
 
     "My gaze flicks between Pichit and Vanich. Then I nod."
 
-    charlet shout "I know somewhere we'll be safe!"
+    charlet shout "I know somewhere we’ll be safe!"
 
     show charlet serious
 
@@ -382,7 +382,7 @@ label .refuging_in_building:
 
     call end_cinematic
 
-    "Now safe behind the university's wards, the realization of what happened hits me."
+    "Now safe behind the university’s wards, the realization of what happened hits me."
 
     show charlet scared
 
@@ -398,11 +398,11 @@ label .refuging_in_building:
 
     raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more that would kill me just to spite my father."
 
-    "Raegan's expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
+    "Raegan’s expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
 
     raegan "Are we safe here?"
 
-    charlet "As safe as can be. The university's wards won't allow non-staff into the store rooms. You wouldn't have been able to get in without me."
+    charlet "As safe as can be. The university’s wards won’t allow non-staff into the store rooms. You wouldn’t have been able to get in without me."
 
     "Or my keystone rather. Setting up wards to recognize specific people was impossible."
 
@@ -414,7 +414,7 @@ label .refuging_in_building:
 
     show charlet smile
 
-    charlet "A telestone? I don't need that. I have much better."
+    charlet "A telestone? I don’t need that. I have much better."
 
     call start_cinematic
 
@@ -437,7 +437,7 @@ label .refuging_in_building:
     show charlet serious
     show raegan neutral
 
-    charlet "Anyway, Makara will help me reach other people's minds."
+    charlet "Anyway, Makara will help me reach other people’s minds."
 
     call start_cinematic
     show charlet telepathy with character_dissolve
@@ -450,14 +450,14 @@ label .refuging_in_building:
     show charlet neutral with character_dissolve
     call end_cinematic
 
-    charlet "I got someone. They'll send a squad to Pichit's location as soon as they can."
-    charlet "There have been several outbreaks of fire in the university's district, so most firefighters and security guards have their hands full."
+    charlet "I got someone. They’ll send a squad to Pichit’s location as soon as they can."
+    charlet "There have been several outbreaks of fire in the university’s district, so most firefighters and security guards have their hands full."
 
     show raegan anxious
 
     raegan "A coordinated attack…"
 
-    raegan "Let's hope that Pichit will withstand that fight until then…"
+    raegan "Let’s hope that Pichit will withstand that fight until then…"
 
     charlet "…"
     charlet "I will check on him."
@@ -483,7 +483,7 @@ label .fight_intro:
 
     call end_cinematic
 
-    phrarat shout "Don't get in my way! My quarrel is not with you!"
+    phrarat shout "Don’t get in my way! My quarrel is not with you!"
 
     show phrarat determined
     show pichit battle shout
@@ -496,16 +496,16 @@ label .fight_intro:
     "The assassin scoffs at me."
 
     # Voice acting: voice the scoff "Humph!" at the beginning of this line
-    phrarat "Can't you guess? You're from Moacu-Laedan, right?"
+    phrarat "Can’t you guess? You’re from Moacu-Laedan, right?"
 
     show phrarat determined
 
-    phrarat "Haven't you seen what Vanich did to our nation?"
+    phrarat "Haven’t you seen what Vanich did to our nation?"
 
-    pichit "But Raegan's different. He's trying to improve our relationship with Enon and the rest of the mainlanders."
+    pichit "But Raegan’s different. He’s trying to improve our relationship with Enon and the rest of the mainlanders."
 
-    phrarat "Yeah, I overheard your little conversation… But you really think he'll be satisfied just building bridges?"
-    phrarat "He'll want more and more… Just like the continentals are seizing more and more from our lands… and our spirits."
+    phrarat "Yeah, I overheard your little conversation… But you really think he’ll be satisfied just building bridges?"
+    phrarat "He’ll want more and more… Just like the continentals are seizing more and more from our lands… and our spirits."
 
     pichit "Maybe… But for now, I need him. Alive."
 
@@ -566,7 +566,7 @@ label .fight1:
 
     show phrarat shout
 
-    phrarat "Stop this! Just let me get rid of that worm and I'll leave you be!"
+    phrarat "Stop this! Just let me get rid of that worm and I’ll leave you be!"
 
     show phrarat determined
 
@@ -574,7 +574,7 @@ label .fight1:
 
     show phrarat shout
 
-    phrarat "You really think that? He'll be just like his father! Just like everyone else!"
+    phrarat "You really think that? He’ll be just like his father! Just like everyone else!"
 
     show phrarat determined
 
@@ -588,14 +588,14 @@ label .fight1:
 
     call end_cinematic
 
-    "Our blades lock. A stalemate. I feel myself tiring. At this rate, I'll die."
+    "Our blades lock. A stalemate. I feel myself tiring. At this rate, I’ll die."
 
     show fan neutral at companion_warp_to("far_left"), flip
 
     fan "To your right…"
 
-    "I jump back. A blade slices down. It narrowly misses me. Without Fan's warning, I would have died."
-    "The assassin's wrist flicks forward."
+    "I jump back. A blade slices down. It narrowly misses me. Without Fan’s warning, I would have died."
+    "The assassin’s wrist flicks forward."
 
     call start_cinematic
 
@@ -622,7 +622,7 @@ label .fight1:
 
     "{i}That damn whip. If only I could get rid of it!{/i}"
 
-    "{i}How come it hasn't already been consumed by the flames? How much fabric does this guy have?!{/i}"
+    "{i}How come it hasn’t already been consumed by the flames? How much fabric does this guy have?!{/i}"
 
     "My thoughts scatter as the assassin lunges at me. He raises his dagger, ready to stab me in the chest."
 
@@ -653,12 +653,12 @@ label .fight1:
 
     show pichit battle anxious
 
-    "The assassin wraps his burning scarf around my shield. The scent of burnt wood fills the air. It won't take long before it burns to ashes."
+    "The assassin wraps his burning scarf around my shield. The scent of burnt wood fills the air. It won’t take long before it burns to ashes."
 
     show pichit battle grimace
     hide fan with character_dissolve
 
-    phrarat "Your dry wood stands no chance against my flames. Let's put an end to this."
+    phrarat "Your dry wood stands no chance against my flames. Let’s put an end to this."
 
     call start_cinematic
 
@@ -701,7 +701,7 @@ label .fight1:
 
     show phrarat anxious
 
-    phrarat "More plants, really? I'll just burn them like the rest…"
+    phrarat "More plants, really? I’ll just burn them like the rest…"
 
     "With a snap of fingers, he spawns flames at each of the vines restraining him. But they refuse to yield, simply emitting puffs of steam and smoke instead."
 
@@ -711,11 +711,11 @@ label .fight1:
 
     show phrarat anxious
 
-    pichit "Can't recognize the perpetuas that grow in our homeland? Sturdy and quick to absorb water, they will resist your fire for a while."
+    pichit "Can’t recognize the perpetuas that grow in our homeland? Sturdy and quick to absorb water, they will resist your fire for a while."
 
     hide fan with character_dissolve
 
-    "{i}Now's my chance!{/i}"
+    "{i}Now’s my chance!{/i}"
 
     call start_cinematic
 
@@ -727,7 +727,7 @@ label .fight1:
 
     "I step forward to strike my opponent, but he uses his whip to keep me at bay."
 
-    "{i}I can't get too close…{/i}"
+    "{i}I can’t get too close…{/i}"
 
     "{i}He can still wield that scarf with mere movements of the wrist, and my vines are not strong enough to paralyze his every articulation.{/i}"
 
@@ -738,7 +738,7 @@ label .fight1:
 
     show pichit battle anxious
 
-    "I startle at her voice echoing in my head. It's not the first time we try telepathy with Charlet, but it always makes an impression."
+    "I startle at her voice echoing in my head. It’s not the first time we try telepathy with Charlet, but it always makes an impression."
 
     show pichit battle serious
 
@@ -752,11 +752,11 @@ label .fight1:
 
     "Then I see it. I mistook it for the heat!"
 
-    "It's producing red cloth from its own body and weaving it at the same time, at a faster pace than the assassin consumes it."
+    "It’s producing red cloth from its own body and weaving it at the same time, at a faster pace than the assassin consumes it."
 
     show pichit battle anxious
 
-    pichit "{i}Wait a minute. If his spirit's power is related to cloth, where does his fire come from?{/i}"
+    pichit "{i}Wait a minute. If his spirit’s power is related to cloth, where does his fire come from?{/i}"
 
     show phrarat shout
 
@@ -781,21 +781,21 @@ label .fight1:
 
     show pichit battle anxious
 
-    "But it isn't enough. The flames are too hot. The tendrils curl into ash too quickly…"
+    "But it isn’t enough. The flames are too hot. The tendrils curl into ash too quickly…"
 
     hide fan with character_dissolve
 
-    "{i}Charlet, I can't reach it!{/i}"
+    "{i}Charlet, I can’t reach it!{/i}"
 
     $ should_show_side_image = True
 
     charlet telepathy "Try to lure him to the greenhouse! The fire sprinklers there will prevent him from using his flames!"
 
-    pichit "{i}I see… It won't be that easy to lead such an aggressive guy, though.{/i}"
+    pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
-    charlet telepathy "I'm sorry… I wish I could help you with my spirit, but my mastery of water is not as good as my mind abilities…"
+    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water is not as good as my mind abilities…"
 
-    pichit battle serious "{i}It's okay… I'll find a way.{/i}"
+    pichit battle serious "{i}It’s okay… I’ll find a way.{/i}"
 
     $ should_show_side_image = False
 
@@ -813,13 +813,13 @@ label .fight1:
 
     show phrarat shout
 
-    phrarat "Even lowering yourself to attacking someone else's spirit!"
+    phrarat "Even lowering yourself to attacking someone else’s spirit!"
 
     show phrarat determined
 
-    pichit "What are you talking about? We're in the middle of a fight, and {i}you{/i} attacked us!"
+    pichit "What are you talking about? We’re in the middle of a fight, and {i}you{/i} attacked us!"
 
-    pichit "Besides, who's betraying our traditions? Your fire comes from a gemstone, right?"
+    pichit "Besides, who’s betraying our traditions? Your fire comes from a gemstone, right?"
 
     phrarat "…"
 
@@ -831,15 +831,15 @@ label .fight1:
 
     show phrarat determined
 
-    "My opponent's spirit flies away from his shoulder to get closer to the ground I'm growing the vines from."
+    "My opponent’s spirit flies away from his shoulder to get closer to the ground I’m growing the vines from."
 
-    "This time, it spins thick threads, moving from place to place among the plants like a spider. It's so fast that my eyes can barely follow."
+    "This time, it spins thick threads, moving from place to place among the plants like a spider. It’s so fast that my eyes can barely follow."
 
     "The small garden is soon covered by a web of viscous fibers, trapping the wisteria sprouts inside."
 
     show phrarat smile
 
-    "With now new vines coming at him, it's not long before the assassin gets rid of the last remnants of them."
+    "With now new vines coming at him, it’s not long before the assassin gets rid of the last remnants of them."
 
     show pichit battle anxious
 
@@ -849,11 +849,11 @@ label .fight1:
 
     show phrarat determined
 
-    phrarat "You're not my target, but you may lead me to Vanich…"
+    phrarat "You’re not my target, but you may lead me to Vanich…"
     phrarat "Besides, you proved to be too dangerous to be left alone."
     phrarat shout "Pen!"
 
-    "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin's arm."
+    "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin’s arm."
 
     hide phrarat
     hide pen
@@ -894,20 +894,20 @@ label .unused_jam_end:
 
     show pichit battle grimace
 
-    pichit "You win! I give up! He's in the school! In the faculty room!"
+    pichit "You win! I give up! He’s in the school! In the faculty room!"
 
     phrarat "How do you know that?"
 
     pichit "My friend. She told me!"
 
-    "The assassin's eyes narrow with suspicion. My heart races in my throat as the seconds pass. Then the pressure of the knife eases."
+    "The assassin’s eyes narrow with suspicion. My heart races in my throat as the seconds pass. Then the pressure of the knife eases."
 
     phrarat "Thank you… friend."
 
     "Then the assassin turns, disappearing neatly into the crowd."
 
     # $ should_show_side_image = True
-    # pichit telepathy "He's coming your way. Get ready!"
+    # pichit telepathy "He’s coming your way. Get ready!"
     # $ should_show_side_image = False
 
 
@@ -922,9 +922,9 @@ label .unused_jam_end:
 
     pause 0.5
 
-    "I wait, my pulse racing, as Pichit's voice fades. It feels like an eternity before I hear Pichit skids into the store room."
+    "I wait, my pulse racing, as Pichit’s voice fades. It feels like an eternity before I hear Pichit skids into the store room."
 
-    charlet relieved "Pichit! You're alright!"
+    charlet relieved "Pichit! You’re alright!"
 
     pichit "Barely. I swear I just lost a few years of my life."
 
@@ -938,11 +938,11 @@ label .unused_jam_end:
 
     #pichit "Go fight him, of course?"
 
-    #charlet "Fight? What about the guards? They'll be coming soon!"
+    #charlet "Fight? What about the guards? They’ll be coming soon!"
 
-    #pichit "Not fast enough to stop him! How long do you think he'll stay once he finds out he's been duped? We need to catch him while his guard is down!"
+    #pichit "Not fast enough to stop him! How long do you think he’ll stay once he finds out he’s been duped? We need to catch him while his guard is down!"
 
-    #"Pichit had a point, but I wasn't a fighter. I'd only barely passed archery and while Makara was stronger than the average spirit, we hadn't ever had to fight anything stronger than an imp."
+    #"Pichit had a point, but I wasn’t a fighter. I’d only barely passed archery and while Makara was stronger than the average spirit, we hadn’t ever had to fight anything stronger than an imp."
     #"Though…the greenhouse would have plants and water. Both Fan and Makara would be at an advantage…"
 
     call start_cinematic
@@ -962,7 +962,7 @@ label .unused_jam_end:
     show raegan thinking
     show pichit intrigued
 
-    pichit "I don't know. It sounded like–"
+    pichit "I don’t know. It sounded like–"
 
     play sound audio.sfx.hit
     show charlet scared

@@ -7,7 +7,7 @@ label a1s3:
 
     show fan neutral at companion_warp_to("middle_left")
 
-    "Fortunately, Fan created soft beech bark behind my back to cushion the impact, so I didn't break anything."
+    "Fortunately, Fan created soft beech bark behind my back to cushion the impact, so I didn’t break anything."
 
     fan "This reminds me of your childhood… I would always protect you from bad falls when you were playing outdoors."
 
@@ -24,7 +24,7 @@ label a1s3:
 
     show pichit battle serious
 
-    pichit "{i}Yeah… I'm fine.{/i}"
+    pichit "{i}Yeah… I’m fine.{/i}"
 
     show pichit battle anxious
 
@@ -33,7 +33,7 @@ label a1s3:
     pichit "{i}I… managed to get him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
 
-    charlet telepathy "Just keep fighting to drive him into a corner. When he starts using intense fire, it will trigger the sprinkler system and you'll be able to get the edge."
+    charlet telepathy "Just keep fighting to drive him into a corner. When he starts using intense fire, it will trigger the sprinkler system and you’ll be able to get the edge."
 
     # Cut for now to get started with Raise your Voice jam 2025
     # charlet telepathy "I will help you as much as I can with my remote vision. Just tell me what you need to know."
@@ -86,7 +86,7 @@ label a1s3:
 # label .unused_analyze_weapon:
 #     # TODO: new text
 #     "Clothes have traditional Moacu patterns, but are written roughly."
-#     "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
+#     "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn’t care about his environment enough."
 #     "Pichit could take advantage of this, or try to slow him down."
 #     $ has_analyzed_assassin_weapon = True
 #     return
@@ -97,7 +97,7 @@ label a1s3:
 #     "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
 
 #     "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
-#     "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon…"
+#     "His spirit also seems exhausted, weaving cloth over and over again as it’s burning. Maybe it will reach its limit soon…"
 #     $ has_analyzed_assassin_stone = True
 #     return
 
@@ -111,7 +111,7 @@ label .fight2:
 
     show pen neutral at companion_warp_to("right")
 
-    pen "I'll cover your back!"
+    pen "I’ll cover your back!"
 
     "This time, his spirit takes control of the scarf, splitting it into multiple, thinner strips to intercept the vines."
 
@@ -126,7 +126,7 @@ label .fight2:
 
     "They emit a purple smoke as they are consumed by the flames."
 
-    phrarat "Already gone? Looks like interior plants won't help you much."
+    phrarat "Already gone? Looks like interior plants won’t help you much."
 
     "The assassin deals a strong blow, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
 
@@ -138,7 +138,7 @@ label .fight2:
 
     phrarat "What did you… ?"
 
-    pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhaled, you won't be able to breathe normally for a while."
+    pichit "It is not wise to burn plants without knowing what they’re made of. With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
@@ -146,7 +146,7 @@ label .fight2:
 
     phrarat "No…"
 
-    phrarat shout "It won't end here!!"
+    phrarat shout "It won’t end here!!"
 
     show pichit battle serious
 
@@ -165,12 +165,12 @@ label .fight2:
 
     show pichit battle anxious
 
-    phrarat "If I can't make it out alive… at least I'll bring you down with this whole place! With Vanich!"
+    phrarat "If I can’t make it out alive… at least I’ll bring you down with this whole place! With Vanich!"
 
     show pen neutral at companion_warp_to("middle")
 
     pen "Phrarat, wait… !"
-    pen "Your body won't stand it if you use all of the gem's power at once!"
+    pen "Your body won’t stand it if you use all of the gem’s power at once!"
 
     phrarat "Graaah!!"
 
@@ -199,7 +199,7 @@ label .fight2:
     pichit "Hey! Are you alright?"
 
     pen "…"
-    pen "It's too late… I can't stop him now."
+    pen "It’s too late… I can’t stop him now."
 
     play sound audio.sfx.impact_glass
 
@@ -222,7 +222,7 @@ label .sprinkler:
 
     call end_cinematic
 
-    "Sparkles of water coat everything in the greenhouse. Soon, even the assassin's desperate flames are extinguished."
+    "Sparkles of water coat everything in the greenhouse. Soon, even the assassin’s desperate flames are extinguished."
 
     show phrarat anxious
 
@@ -254,7 +254,7 @@ label .sprinkler:
 
     phrarat "After Enon brought advanced industry to Moacu-Laedan, traditional cloth making stopped being profitable and my father had to close the family business."
 
-    phrarat "He joined one of Vanich's factories in search for a more stable source of income."
+    phrarat "He joined one of Vanich’s factories in search for a more stable source of income."
 
     show phrarat determined
 
@@ -296,11 +296,11 @@ label .sprinkler:
     "I hear a voice from above."
 
     # Voice acting: post-process: shout from far, echo
-    phrarat "You really think the Vanich son is better than his father? That he'll help you for the sake of Moacu-Laedan?"
+    phrarat "You really think the Vanich son is better than his father? That he’ll help you for the sake of Moacu-Laedan?"
 
     show pichit battle serious
 
-    "I look upward, just like the guards now scattered across the greenhouse's alleys."
+    "I look upward, just like the guards now scattered across the greenhouse’s alleys."
 
     "The assassin is standing on the roof frame, now completely devoid of glass. He looks down at me one last time, before running away on the tangle of beams."
 
@@ -332,7 +332,7 @@ label .aftermath:
 
     "My wound stings as she rubs a swab on it. Multiple cuts and small burns cover my body and my clothes. My muscles still ache from the past fight."
 
-    "Even then, I haven't suffered any major damage. I thank Fan for his support."
+    "Even then, I haven’t suffered any major damage. I thank Fan for his support."
 
     show charlet anxious at character_enter_from_left_to_easein("left", 0.5)
     pause 0.2
@@ -348,23 +348,23 @@ label .aftermath:
 
     show raegan intrigued at character_enter_from_right_to_easein("right", 0.5)
 
-    "Raegan also enters the infirmary, but he has difficulties getting past the guards, who keep checking that Vanich's son is unharmed."
+    "Raegan also enters the infirmary, but he has difficulties getting past the guards, who keep checking that Vanich’s son is unharmed."
 
-    "After assuring them that he's fine, he finally joins us."
+    "After assuring them that he’s fine, he finally joins us."
 
     show raegan smile
 
     raegan "Thank you for protecting me, both of you."
 
-    pichit "Sure… You're welcome."
+    pichit "Sure… You’re welcome."
 
     pichit "{i}I hope… it was worth it…{/i}"
 
     show raegan neutral
 
-    raegan "I will report this incident to my company. We don't know when there will be new attacks, so I will ask for a closer protection for myself – and the expedition."
+    raegan "I will report this incident to my company. We don’t know when there will be new attacks, so I will ask for a closer protection for myself – and the expedition."
 
-    raegan "The militia should also come back later to ask you for more information. The more they know, the faster they'll be able to identify the culprit."
+    raegan "The militia should also come back later to ask you for more information. The more they know, the faster they’ll be able to identify the culprit."
 
     raegan "Enon keeps a registry of all the islanders who moved to the continent, so it should be a matter of time."
 
@@ -374,8 +374,8 @@ label .aftermath:
 
     raegan "But for now, you two should rest."
 
-    charlet "You're right. We'll meet again later."
-    pichit "I don't need to be asked twice!"
+    charlet "You’re right. We’ll meet again later."
+    pichit "I don’t need to be asked twice!"
 
     show charlet at character_exit_to_right_easeout
     show pichit at character_exit_to_right_easeout
@@ -385,7 +385,7 @@ label .aftermath:
     stop music fadeout 5.0
 
     raegan "…"
-    raegan "Looks like it won't be that easy…"
+    raegan "Looks like it won’t be that easy…"
 
     jump .prologue_ending
 
@@ -442,7 +442,7 @@ label .prologue_ending:
 
 
 label .unused_museum:
-    "A dagger skewers out of the shadows and toward me. I barely dodge it and I'm sent careening into one of the exhibits. A glass case full of exquisite vases."
+    "A dagger skewers out of the shadows and toward me. I barely dodge it and I’m sent careening into one of the exhibits. A glass case full of exquisite vases."
 
     phrarat "What a waste."
 
@@ -461,10 +461,10 @@ label .unused_man_with_rifle:
 
     man_with_rifle "Freeze!!!"
 
-    "A smirk widens across the Assassin's face and the showman pulls the trigger, but nothing happens."
+    "A smirk widens across the Assassin’s face and the showman pulls the trigger, but nothing happens."
     "The Assassin begins to laugh, turning away from the man who’s still fiddling with the rifle."
 
-    phrarat "The idiot can't even shoot his rifle. Proof that even the universe wants me to succeed."
+    phrarat "The idiot can’t even shoot his rifle. Proof that even the universe wants me to succeed."
 
     "After knocking the gun around enough times, the rifle erupts, knocking the man back into concrete and distracting the Assassin long enough to allow me to strike."
 
