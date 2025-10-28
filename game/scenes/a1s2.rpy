@@ -408,7 +408,7 @@ label .refuging_in_building:
 
     show raegan thinking
 
-    raegan "We should contact someone. Do you have a telestone? Can you reach the guard?"
+    raegan "We should contact someone. Do you have a telestone? Can you reach the guards?"
 
     # TODO: add choice to tell Raegan the truth or not: her telestone is fake
 
@@ -535,7 +535,7 @@ label .fight1:
 
     "Another sword strike. I dance out of reach, narrowly losing a finger."
 
-    "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off…{/i}"
+    pichit "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off…{/i}"
 
     call start_cinematic
 
@@ -557,7 +557,7 @@ label .fight1:
 
     show phrarat shout
 
-    phrarat "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?"
+    phrarat "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?!"
 
     show pichit battle serious zorder 2
     show phrarat anxious

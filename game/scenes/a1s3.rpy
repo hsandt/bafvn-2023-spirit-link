@@ -75,7 +75,7 @@ label .fight2:
 
     show phrarat surprised at character_move_to_easein("right", 0.3)
 
-    phrarat "!!"
+    phrarat "… !!"
 
     show phrarat neutral
 
@@ -140,7 +140,7 @@ label .fight2:
 
     show pichit battle anxious
 
-    pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use for the deceased."
+    pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use to honor the deceased."
 
     pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
 
@@ -361,7 +361,7 @@ label .aftermath:
 
     show raegan smile
 
-    raegan "Thank you for protecting me, both of you."
+    raegan "Thank you both for protecting me."
 
     pichit "Sure… You’re welcome."
 
