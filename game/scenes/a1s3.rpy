@@ -200,7 +200,52 @@ label .fight2:
 
     "The assassin's flames spiral toward the ceiling. The glass panels break under the heat, leaving nothing but glittering dust suspended in the air."
 
-    return
+    "The heat eventually reaches the fire sprinklers, causing their bubbles to break."
+
+    jump .sprinkler
+
+label .sprinkler:
+    stop music fadeout 2.0
+    play sound audio.sfx.shower2
+    pause 2.0
+
+    "Sparkles of water coat everything in the greenhouse. Soon, even the assassin's desperate flames are extinguished."
+
+    "He looks up, searching for the source of the sudden indoor rain and sees the sprinklers. He falls to his knees."
+
+    show pichit battle anxious at character_move_to_easein("middle", 0.5)
+    show charlet anxious zorder 1 at character_enter_from_left_to_easein("left", 0.5)
+    show raegan anxious at character_enter_from_left_to_easein("far_left", 0.5)
+
+    "After I confirm the situation with Charlet, she joins me in case I need support until the militia arrives."
+
+    "Raegan stays a bit behind, in case the assassin still has cards in his hands."
+
+    charlet "Pichit!"
+
+    # phrarat "Of course, the host to Makara is the one who stops me."
+
+    # "How did he know Makara, the spirit wasn’t even visible!?!? I don’t know but there is a pure and unadulterated hatred simmering in his eyes."
+
+    # stop sound fadeout 2.0
+
+    # charlet "What does that matter?"
+
+    # "The Assassin ignores my question but doesn’t break eye contact."
+
+    play music mystery
+
+    phrarat "How ironic that this was what stopped me."
+
+    phrarat "Vanich Industries let my father burn alive in a factory because they weren’t willing to spend money on safety in a poorer district like ours."
+
+    "I don't know what to say to that, Pichit doesn’t know what to say to that and Raegan is dead silent over the shared link."
+
+    "The sounds of hooves and shuffling boots, sound at the entrance to the warehouse where the Military showman must have slinked off to."
+
+    "The Assassin hears it too and in an instant, procures a circular pouch from his belt, slamming it onto the ground below, by the time the smoke clears, he and his Spirit are gone."
+
+    hide phrarat
 
 label .unused_museum:
     "A dagger skewers out of the shadows and toward me. I barely dodge it and I'm sent careening into one of the exhibits. A glass case full of exquisite vases."
@@ -244,7 +289,7 @@ label .unused_alternative_tired_pen:
 
     "The Assassin lights a solitary flame in his hand and shakily brings it to his scarf. He’s going to ignite his actual scarf, and use that as his last ditch effort."
 
-label .unused_alternative_sprinkler:
+label .unused_alternative_sprinkler_start:
 
     "Fortunately I feel Raegan’s presence as he finally links up with my gemstone."
 
@@ -258,43 +303,6 @@ label .unused_alternative_sprinkler:
 
     # Back to Charlet PoV
     "I pull the lever, opening the sprinklers."
-
-    stop music fadeout 2.0
-    play sound audio.sfx.shower2
-    pause 2.0
-
-    "Sparkles of water coat everything in the warehouse, including the Assassin's flame which sputters out in his hand."
-
-    "He looks up, searching for the source of the sudden indoor rain and sees the lever I just pulled. He falls to his knees."
-
-    scene bg university_inside
-    show pichit battle serious at character_warp_to("left")
-    show charlet neutral at character_warp_to("middle")
-    show phrarat neutral at character_warp_to("far_right")
-
-    phrarat "Of course, the host to Makara is the one who stops me."
-
-    "How did he know Makara, the spirit wasn’t even visible!?!? I don’t know but there is a pure and unadulterated hatred simmering in his eyes."
-
-    stop sound fadeout 2.0
-
-    charlet "What does that matter?"
-
-    "The Assassin ignores my question but doesn’t break eye contact."
-
-    play music mystery
-
-    phrarat "How ironic, of course they decided to put a sprinkler in here instead of over there."
-
-    pichit "Over where?"
-
-    phrarat "Vanich enterprises let my father burn alive in a factory because they weren’t willing to spend the money in a poorer district to ensure it was well protected."
-
-    "I don't know what to say to that, Pichit doesn’t know what to say to that and Raegan is dead silent over the shared link."
-    "The sounds of hooves and shuffling boots, sound at the entrance to the warehouse where the Military showman must have slinked off to."
-    "The Assassin hears it too and in an instant, procures a circular pouch from his belt, slamming it onto the ground below, by the time the smoke clears, he and his Spirit are gone."
-
-    hide phrarat
 
     # End of playtesting
 
