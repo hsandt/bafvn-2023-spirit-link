@@ -238,45 +238,29 @@ label .sprinkler:
     call start_cinematic
 
     hide pen with character_dissolve
+    pause 0.2
+    show pichit at character_move_to_ease("middle_left", 1.2)
     pause 1.0
 
     call end_cinematic
 
-    # TODO: maybe have them come later, it's not safe for Vanich. Need to explain shared link earlier to hear Vanich say nothing.
-
-    show pichit battle anxious at character_move_to_easein("middle", 0.5)
-    show charlet anxious zorder 1 at character_enter_from_left_to_easein("left", 0.5)
-    show raegan anxious at character_enter_from_left_to_easein("far_left", 0.5)
-
-    "After I confirm the situation with Charlet, she joins me in case I need support until the militia arrives."
-
-    "Raegan stays a bit behind, in case the assassin still has cards in his hands."
-
-    charlet "Pichit!"
-
-    show charlet neutral
-
-    # phrarat "Of course, the host to Makara is the one who stops me."
-
-    # "How did he know Makara, the spirit wasn’t even visible!?!? I don’t know but there is a pure and unadulterated hatred simmering in his eyes."
-
-    # stop sound fadeout 2.0
-
-    # charlet "What does that matter?"
-
-    # "The Assassin ignores my question but doesn’t break eye contact."
-
     play music mystery
 
-    phrarat "How ironic that this was what stopped me."
+    show phrarat determined
 
-    show charlet anxious
+    phrarat "How ironic that I was stopped by that safety system."
 
-    phrarat "Vanich Industries let my father burn alive in a factory because they weren’t willing to spend money on safety in a poorer district like ours."
+    show phrarat neutral
 
-    "I don't know what to say. A leftover of my mind link with Charlet lets me perceive her disarray. Raegan is dead silent."
+    phrarat "After Enon brought advanced industry to Moacu-Laedan, traditional cloth making stopped being profitable and my father had to close the family business."
 
-    show charlet neutral
+    phrarat "He joined one of Vanich's factories in search for a more stable source of income."
+
+    show phrarat determined
+
+    phrarat "Then, they let him burn alive during a night overtime because they weren’t willing to spend money on safety in a poorer district like ours."
+
+    pichit "..."
 
     call start_cinematic
 
@@ -287,7 +271,7 @@ label .sprinkler:
 
     "Hooves and shuffling boots resound at the entrance to the greenhouse."
 
-    "The assassin is soon surrounded by security guards, armed with tonfas and muskets."
+    "The assassin is soon surrounded by a dozen security guards, armed with tonfas and muskets."
 
     guard "Drop your weapons!"
 
@@ -324,7 +308,7 @@ label .sprinkler:
 
     play sound audio.sfx.running2
 
-    "Most of the guards leave the building to chase after him. Only a few remain to check on us and patrol the area in case new attackers appear."
+    "Most of the guards leave the building to chase after him. Only a few remain to check on me and patrol the area in case new attackers appear."
 
     "However, they spot no other signs of danger. It seems that the man in red – Phrarat – was an independent actor indeed."
 
@@ -332,29 +316,49 @@ label .sprinkler:
 
 label .aftermath:
 
-    "The guards accompany us to a safer place. A nurse comes to administer me first aid."
+    scene bg black with wipeleft_fast
+    pause 0.5
+    scene bg university_inside with wipeleft_fast
 
-    pichit battle grimace "Ouch!"
+    show pichit exhausted at character_warp_to("middle")
+
+    "The guards accompany us to the infirmary. A nurse comes to administer me first aid."
+
+    # TODO: reconstruct Pichit non-battle pose with grimace sprite from normal pose + battle grimace
+
+    pichit "Ouch!"
 
     # TODO: describe cuts and injuries during the fight
 
-    "My wound stings as she rubs a swab on it. Multiple cuts and small burns cover my body and my clothes. My muscles ache from all the efforts I've made."
-
-    show pichit battle anxious
+    "My wound stings as she rubs a swab on it. Multiple cuts and small burns cover my body and my clothes. My muscles still ache from the past fight."
 
     "Even then, I haven't suffered any major damage. I thank Fan for his support."
 
+    show charlet anxious at character_enter_from_left_to_easein("left", 0.5)
+    pause 0.2
+
     charlet "Pichit! Are you alright?"
+
+    show pichit smile
 
     pichit "Yeah... Thanks for helping me get through this."
 
-    "I look at Raegan, still standing in a corner."
+    show charlet neutral
+    show pichit neutral
 
-    pichit "{i}I hope it was worth it...{/i}"
+    show raegan intrigued at character_enter_from_right_to_easein("right", 0.5)
+
+    "Raegan also enters the infirmary, but he has difficulties getting past the guards, who keep checking that Vanich's son is unharmed."
+
+    "After assuring them that he's fine, he finally joins us."
 
     show raegan smile
 
     raegan "Thank you for protecting me, both of you."
+
+    pichit "Sure... You're welcome."
+
+    pichit "{i}I hope... it was worth it...{/i}"
 
     show raegan neutral
 
