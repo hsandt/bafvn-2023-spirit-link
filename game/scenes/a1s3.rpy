@@ -370,12 +370,66 @@ label .aftermath:
     show charlet at character_exit_to_right_easeout
     show pichit at character_exit_to_right_easeout
 
-    show raegan anxious at character_move_to_easein("middle")
+    show raegan thinking at character_move_to_easein("middle")
+
+    stop music fadeout 5.0
 
     raegan "..."
     raegan "Looks like it won't be that easy..."
 
+    jump .prologue_ending
+
     return
+
+label .prologue_ending:
+
+    # adapt cinematic effect from jam ending in a1s2
+
+    call start_cinematic
+
+    pause 1.0
+
+    play music to_be_continued noloop
+
+    show bg at sepia
+    show raegan at sepia
+
+    pause 2.8
+
+    scene bg black with Dissolve(1.0)
+
+    pause 1.78
+
+    image end_text1 = Text("Spirit Link - Prologue", textalign=0.5, slow_cps=20)
+
+    show end_text1 with dissolve:
+        xalign 0.5
+        yalign 0.5
+        yoffset -30
+
+    pause 2.29
+
+    image end_text2 = Text("End", textalign=0.5, slow_cps=10)
+
+    show end_text2 with dissolve:
+        xalign 0.5
+        yalign 0.5
+        yoffset 30
+
+    pause 2.45
+
+    hide end_text1
+    hide end_text2
+    with dissolve
+
+    pause 10.7
+
+    stop music fadeout 8.0
+
+    pause 5.0
+
+    return
+
 
 label .unused_museum:
     "A dagger skewers out of the shadows and toward me. I barely dodge it and I'm sent careening into one of the exhibits. A glass case full of exquisite vases."
