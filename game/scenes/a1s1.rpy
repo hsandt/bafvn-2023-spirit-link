@@ -20,13 +20,9 @@ label a1s1:
 
     call end_cinematic
 
-    # TODO komehara: add location to explain player we are on Enon
-
     "How far would you go to achieve your dreams?"
-    # if "to pose a question" very formal? OK in this context?
-    # here, "as a green" clear here that it applies to "me" and not "Professor Mara", but is it grammatically correct?
     "This was a question Professor Mara once posed to me as a naive, first year."
-    "At the time, I said ‘I'd do anything’. Now, I was reconsidering."
+    "At the time, I said “I’d do anything”. Now, I am reconsidering."
 
     call start_cinematic
 
@@ -44,16 +40,16 @@ label a1s1:
 
     #sunlight effect? flash?
 
-    "Today was unmercifully hot. Humidity had made the air oppressive and the colorful umbrellas above me,
+    "Today is unmercifully hot. Humidity has made the air oppressive and the colorful umbrellas above me,
     dyed in the traditional patterns of the Mawi tribe, did little to protect from the heat."
-    "I dabbed at the sweat on my brow, lamenting the loss of the expensive powder I had applied that morning."
+    "I dab at the sweat on my brow, lamenting the loss of the expensive powder I applied that morning."
 
     charlet sad "Great. So much for best impressions."
 
     #maybe show a mirror
 
-    "A glance in the mirror revealed uneven patches of skin and smeared rouge. I swiped at it hastily, hoping no one noticed."
-    "No one did. Of course not. Tucked in between the history and literature department's booths, my own remains woefully forgotten."
+    "A glance in the mirror reveals uneven patches of skin and smeared rouge. I swipe at it hastily, hoping no one noticed."
+    "No one did. Of course not. Tucked in between the history and literature department’s booths, my own remains woefully forgotten."
 
     show charlet exhausted
 
@@ -80,7 +76,7 @@ label .look_at_crowd:
 
     hide charlet with character_dissolve
 
-    "A throng of curious viewers fills Panha-Kam University's courtyard, lured by the colorful booths lining the square."
+    "A throng of curious viewers fills Panha-Kam University’s courtyard, lured by the colorful booths lining the square."
     "Each department has brought their best, each aiming to net themselves a rich sponsor.
     Colorful signboards cry out the merits of their research."
 
@@ -113,18 +109,18 @@ label .look_at_booth:
 
     show charlet neutral
 
-    "Makara is right. Though it has been only two days since the attack in Alcatra, the event's security is concerningly lax."
-    "Here were some of Enon's most brilliant minds and richest merchants, all conveniently gathered in one place. A perfect target."
+    "Makara is right. Though it has been only two days since the attack in Alcatra, the event’s security is concerningly lax."
+    "Here were some of Enon’s most brilliant minds and richest merchants, all conveniently gathered in one place. A perfect target."
 
-    "The thought left me tense. The possibility of vigilantes and would-be terrorists hiding in the crowd left my heart in my throat."
+    "The possibility of vigilantes and would-be terrorists hiding in the crowd leaves my heart in my throat."
     "I scan the crowd, my eyes lingering on the scattered men dressed in the brown and green of the hunter’s guild."
-    "Their expressions are friendly, but their eyes are sharp, and their stances suggest an air of purpose. Friend or foe?"
+    "Their gestures are friendly, but their eyes are sharp, and their stances suggest an air of purpose. Friend or foe?"
 
     show charlet intrigued
 
-    "In a sea of strangers, it is impossible to know. The Island Liberation Front, or 'ILF', had thousands of followers. Any one here could be a member."
+    "In a sea of strangers, it is impossible to know. The Island Liberation Front, or {i}ILF{/i}, had thousands of followers. Any one here could be a member."
     "And while the ILF was, generally, peaceful in their efforts to advocate for recognition of Mocau-Laedan as a sovereign nation,
-    the recent attacks had cast doubt on the organization."
+    the recent attacks have cast doubt on the organization."
     "Were the attacks really just the work of independent rebels? Or was the ILF just trying to save face?"
 
     show charlet neutral
@@ -138,7 +134,7 @@ label .look_at_booth:
     show charlet smile
 
     "A big boast from a little dragon.\n"
-    extend "Nonetheless, the words gave me some comfort."
+    extend "Nonetheless, the words give me some comfort."
 
     show charlet neutral
     hide makara with character_dissolve
@@ -157,7 +153,7 @@ label .after_look:
     # Show above companion
     show charlet exhausted at character_warp_to("middle_left") zorder 1
 
-    "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I'd been too busy setting up the booth."
+    "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I’d been too busy setting up the booth."
 
     show charlet sad
 
@@ -171,21 +167,21 @@ label .after_look:
 
     makara "Yet, I do remember that your experiments from last year did not lead to the expected color. While I do not eat human food, my keen sense of smell suggested that–"
 
-    charlet "Okay, okay. I'll just ask Aunt Urai next time."
+    charlet "Okay, okay. I’ll just ask Aunt Urai next time."
 
     "Usually, I would avoid talking that much with Makara in a public space. Most Enonians cannot see nor hear spirits and would give me a funny look every time they see me speak alone."
-    "But since few people are coming by my booth and my neighbors are well-versed in island culture, it shouldn't be an issue."
+    "But since few people are coming by my booth and my neighbors are well-versed in island culture, it shouldn’t be an issue."
     "Besides, the recent invention of telestones, although still reserved to the higher classes who can afford them, help people imagine that I may be talking to someone remotely."
 
     hide makara with character_dissolve
 
     pause 0.5
 
-    "Anyway, this event was my chance. I had to secure a sponsor."
-    "Otherwise, my dreams of preserving the island's rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
+    "Anyway, this event is my chance. I have to secure a sponsor."
+    "Otherwise, my dreams of preserving the island’s rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
 
-    "The booth's pamphlets, with their colorful photographs showcasing the island’s rich history, seemed to mock me.
-    I had spent months researching the island and stayed up all night printing pamphlets."
+    "The booth’s pamphlets, with their colorful photographs showcasing the island’s rich history, seem to mock me.
+    I have spent months researching the island and stayed up all night printing pamphlets."
     "But for what? To hand out six to a handful of students who took them out of pity?"
 
     #stomach growling noise again
@@ -207,9 +203,9 @@ label .pichit_arrives:
 
     show pichit at character_move_to("middle_right")
 
-    "It was Pichit wearing his signature, broad grin. He was a born and bred native of Moacu-Laedan, though he had moved to the continent for school."
+    "It is Pichit wearing his signature, broad grin. He was a born and bred native of Moacu-Laedan, though he moved to the continent for school."
 
-    "Bayani, another alumni from Panha-Kam University, had introduced him to me as a potential guide for my expedition two months ago."
+    "Bayani, another alumni from Panha-Kam University, introduced him to me as a potential guide for my expedition two months ago."
 
     show charlet smile
 
@@ -245,7 +241,7 @@ label .pichit_arrives:
     pause 0.2
     window show
 
-    "Fan is Pichit's forest spirit. Like many companions, it has a very different personality than its human counterpart. But it definitely shares his love of nature."
+    "Fan is Pichit’s forest spirit. Like many companions, it has a very different personality than its human counterpart. But it definitely shares his love of nature."
 
     "I let our spirits hold their whimsical conversation while I chitchat with Pichit."
 
@@ -253,7 +249,7 @@ label .pichit_arrives:
     pause 0.5
     window show
 
-    "As we discuss the impact of industrial progress of the fauna and flora, a man I don't know approaches from behind Pichit."
+    "As we discuss the impact of industrial progress of the fauna and flora, a man I don’t know approaches from behind Pichit."
 
     hide makara
     hide fan

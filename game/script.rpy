@@ -110,3 +110,7 @@ label end_cinematic:
 
 label start:
     jump a1s1
+
+# Typographical characters for easy copy
+# I’m single quote used as apostrophe
+# “double quote”
