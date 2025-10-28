@@ -293,8 +293,9 @@ label .assassin_appears:
 
     "The two men go rolling, the pamphlets I had printed falling with them."
 
-    show charlet scared at character_warp_to("far_left")
+    # show charlet on top since she's shorter and on the edge
     show raegan surprised at character_warp_to("left")
+    show charlet scared at character_warp_to("far_left")
 
     "For a moment, there is only a mad tangle of limbs. Then Pichit goes flying."
 
@@ -333,7 +334,9 @@ label .assassin_appears:
 
     "The assassin, enraged, lunges. Blade meets blade. The two seem evenly matched, but I can see Pichit tiring."
 
-    #TODO Sword SFX and FX 3x
+    "I look around for help, but people are even more panicked than before. Not only the visitors, but even hunters, are running away from the battle scene."
+
+    "I can't blame them: they are trained to kill animals, not humans."
 
     show pichit battle shout
 
