@@ -138,11 +138,11 @@ image pichit battle smile = Transform("images/chars/sc1080p_guide_battle_serious
 image raegan neutral = Transform("images/chars/sc1080p_lobbyist_neutral.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan smile = Transform("images/chars/sc1080p_lobbyist_smile.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan intrigued = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
-# TODO: use dedicated sprite when ready (currently, intrigued look more like sad than intrigued)
-image raegan sad = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan thinking = Transform("images/chars/sc1080p_lobbyist_thinking.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan surprised = Transform("images/chars/sc1080p_lobbyist_surprised.png", zoom=0.95, anchor=(0.45, 0.7))
 image raegan anxious = Transform("images/chars/sc1080p_lobbyist_anxious.png", zoom=0.95, anchor=(0.45, 0.7))
+# TODO: use dedicated sprite when ready (currently, intrigued look more like sad than intrigued)
+image raegan sad = Transform("images/chars/sc1080p_lobbyist_intrigued.png", zoom=0.95, anchor=(0.45, 0.7))
 
 # Phrarat
 # Hack: official bottom screen line should be at 0.70 but for some reason (zoom?) character still looks too big

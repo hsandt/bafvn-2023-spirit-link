@@ -104,6 +104,10 @@ init:
         alpha 1.0
         easein duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
         ypos 1.0
+    transform character_move_to_ease(target_pos, duration=1.0, _xpos_offset=0.0):
+        alpha 1.0
+        ease duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
+        ypos 1.0
     transform character_move_to_easein_elastic(target_pos, duration=1.0, _xpos_offset=0.0):
         alpha 1.0
         easein_elastic duration xpos position_name_to_xpos_value(target_pos) + _xpos_offset
