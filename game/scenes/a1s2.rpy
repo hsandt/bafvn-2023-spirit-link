@@ -9,9 +9,9 @@ label .raegan_arrives:
     pause 0.2
     show raegan neutral at character_warp_to("right")
 
-    "The stranger is tall and elegantly dressed in a three-piece suit, despite the heat. He should have been drenched in sweat."
-    "Instead, his collar and cuffs were clean and neat as though freshly laundered.
-    Even his hair was impeccable. Meanwhile, my own hair felt matted and itchy."
+    "The stranger is tall and elegantly dressed in a three-piece suit, despite the heat. He should be drenched in sweat."
+    "Instead, his collar and cuffs are clean and neat as though freshly laundered.
+    Even his hair is impeccable. Meanwhile, my own hair feels matted and itchy."
 
     pichit smile "Oh, you're back."
 
@@ -76,11 +76,11 @@ label .raegan_conversation:
 
     show charlet intrigued
 
-    "My eyes widened. That Raegan had heard of Lalahon at all, was surprising."
-    "Stories about Lalahon were rare and their contents contradictory. The few that I had heard had been told to me by my grandfather."
+    "My eyes widen. That Raegan has heard of Lalahon at all, is surprising."
+    "Stories about Lalahon are rare and their contents contradictory. The few that I have heard have been told to me by my grandfather."
 
-    "According to his tales, Lalahon was either a benevolent goddess born from the ashes of great god Bathala's heart, or an evil beast that had killed Bathala and used his fire to destroy the forests."
-    "Which version of the tale was true, had been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
+    "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala's heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
+    "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon is powerful."
 
     charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
 
@@ -133,10 +133,10 @@ label .smoke:
 
     call end_cinematic
 
-    "Before Raegan could respond, a bright flash blinded us. The air grew thick with the scent of smoke."
-    "Coughs sound out in the alleys as confusion spreads among the crowd. Some guests start covering their mouths and noses, or those of the children they accompany."
-    "Some people started running toward the exit while others were taking refuge in the main building."
-    "I myself cover my nose and turn west, watching as smoke poured out from the direction of Dr. Barouche's alchemy station."
+    "Before Raegan can respond, a bright flash blinds us. The air grows thick with the scent of smoke."
+    "Coughs sound out in the alleys as confusion spreads among the crowd. People cover their mouths and noses, or those of the children they accompany."
+    "Some start running toward the exit while others take refuge in the main building."
+    "As I look for the origin of the smoke, I see it pour out from Dr. Barouche's alchemy station."
 
     show charlet at darker
     show raegan thinking
@@ -145,7 +145,7 @@ label .smoke:
 
     show pichit smile
 
-    "Pichit smiled, nonchalantly waving a hand to dismiss the commotion, but I could see from the tension in his shoulders that he was perturbed."
+    "Pichit smiles, nonchalantly waving a hand to dismiss the commotion, but I can see tension in his shoulders."
 
     pichit "Some demonstrations must have malfunctioned. I'm sure it's nothing to be concerned about, sir."
 
@@ -253,7 +253,7 @@ label .assassin_appears:
 
     play sound audio.sfx.impact_catch
 
-    "Belatedly I realize that Pichit has shoved me to the floor."
+    "I realize belatedly that Pichit has shoved me to the floor."
 
     show phrarat determined at character_warp_to("middle")
 
@@ -301,7 +301,7 @@ label .assassin_appears:
     show phrarat determined at character_enter_from_right_to_easein("far_right", 0.5)
     show pichit battle serious at character_warp_to("middle", 0.4)
 
-    "As he stands up before the assassin, he holds a sword is in his hand. Vaguely, I recognize it as a replica from the history booth."
+    "As he stands up before the assassin, he holds a sword is in his hand. I vaguely recognize it as a replica from the history booth."
 
     "The assassin, now holding a crimson scarf, tears a part of it with his knife and balls it up."
 
@@ -313,7 +313,7 @@ label .assassin_appears:
     show pichit at character_move_to_easein("middle_left", 0.2)
     pause 0.2
 
-    "... Only to find myself safe. A wooden shield looms above me."
+    "... But I'm not hurt. A wooden shield looms above me."
 
     show pichit battle shout
 
@@ -440,8 +440,8 @@ label .refuging_in_building:
     show charlet telepathy with character_dissolve
     call end_cinematic
 
-    "Focusing, I tried to reach out to Jamil, the head of security."
-    "Our conversation was brief and to the point. Unsurprisingly given the chaos, he was being inundated with telecalls."
+    "I focus to try and reach out to Jamil, the head of security."
+    "Our conversation is brief and to the point. Unsurprisingly given the chaos, he is being inundated with telecalls."
 
     call start_cinematic
     show charlet neutral with character_dissolve
@@ -490,9 +490,9 @@ label .fight_intro:
     show pichit battle serious
     show phrarat smile
 
-    "The assassin scoffed at me."
+    "The assassin scoffs at me."
 
-    # VA: voice the scoff "Humph!" at the beginning of this line
+    # Voice acting: voice the scoff "Humph!" at the beginning of this line
     phrarat "Can't you guess? You're from Moacu-Laedan, right?"
 
     show phrarat determined
@@ -501,7 +501,7 @@ label .fight_intro:
 
     pichit "But Raegan's different. He's trying to improve our relationship with Enon and the rest of the mainlanders."
 
-    phrarat "Yeah, I overheard your conversation... But you really think he'll be satisfied just building bridges?"
+    phrarat "Yeah, I overheard your little conversation... But you really think he'll be satisfied just building bridges?"
     phrarat "He'll want more and more... Just like the continentals are seizing more and more from our lands... and our spirits."
 
     pichit "Maybe... But for now, I need him. Alive."
@@ -743,34 +743,34 @@ label .fight1:
 
     # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet's vision power
 
-    "My eyes narrowed, seeking the faint shimmer of a spirit in hiding."
+    "My eyes narrows, seeking the faint shimmer of a spirit in hiding."
 
     show pen neutral at companion_warp_to("middle", _xpos_offset=0.1)
 
-    "There I saw it. I had mistaken it for the heat!"
+    "Then I see it. I mistook it for the heat!"
 
     "It's producing red cloth from its own body and weaving it at the same time, at a faster pace than assassin consumes it."
 
     show pichit battle anxious
 
-    "{i}Wait a minute. If his spirit's power is related to cloth, where does his fire come from?{/i}"
+    pichit "{i}Wait a minute. If his spirit's power is related to cloth, where does his fire come from?{/i}"
 
     show phrarat shout
 
     phrarat "Graaah!!"
 
-    "Unable to burn the vines, the assassin took his dagger with his free hand and started cutting the vines."
+    "Unable to burn the vines, the assassin takes his dagger with his free hand and starts cutting the vines."
 
     show phrarat determined
     show pichit battle serious
 
     "I reinforce my connection with Fan to spawn new ones faster than he can cut them. But even aided by the natural flora behind me, I can feel Fan struggling to keep up."
 
-    "{i}I need to finish this quick!{/i}"
+    pichit "{i}I need to finish this quick!{/i}"
 
     show fan neutral at companion_warp_to("far_right")
 
-    "{i}Fan! Focus on his shoulder!{/i}"
+    pichit "{i}Fan! Focus on his shoulder!{/i}"
 
     # FX: vines
 
@@ -778,7 +778,7 @@ label .fight1:
 
     show pichit battle anxious
 
-    "It isn't enough. The flames are too hot. The tendrils curl into ash too quickly..."
+    "But it isn't enough. The flames are too hot. The tendrils curl into ash too quickly..."
 
     hide fan with character_dissolve
 
