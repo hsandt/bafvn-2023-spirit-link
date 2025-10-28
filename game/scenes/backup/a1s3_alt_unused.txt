@@ -1,4 +1,4 @@
-label a1s3a:
+label a1s3_alt:
     "Act 1: Scene 3 ALTERNATIVE"
 
     pause 0.5
