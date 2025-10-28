@@ -72,7 +72,7 @@ label .raegan_conversation:
 
     show raegan neutral
 
-    raegan "Indeed... Pichit mentioned your goal was to catalogue folktales from the island? Did you ever hear any of tales of Lalahon?"
+    raegan "Indeed... Pichit mentioned your goal was to catalogue folktales from the island? Have you ever heard any tales of Lalahon?"
 
     show charlet intrigued
 
@@ -301,7 +301,7 @@ label .assassin_appears:
     show phrarat determined at character_enter_from_right_to_easein("far_right", 0.5)
     show pichit battle serious at character_warp_to("middle", 0.4)
 
-    "As he stands up before the assassin, he holds a sword is in his hand. I vaguely recognize it as a replica from the history booth."
+    "As he stands up before the assassin, he holds a sword in his hand. I vaguely recognize it as a replica from the history booth."
 
     "The assassin, now holding a crimson scarf, tears a part of it with his knife and balls it up."
 
@@ -434,13 +434,13 @@ label .refuging_in_building:
     show charlet serious
     show raegan neutral
 
-    charlet "Anyway, Makara will help me reaching other people's minds."
+    charlet "Anyway, Makara will help me reach other people's minds."
 
     call start_cinematic
     show charlet telepathy with character_dissolve
     call end_cinematic
 
-    "I focus to try and reach out to Jamil, the head of security."
+    "I focus, trying to reach out to Jamil, the head of security."
     "Our conversation is brief and to the point. Unsurprisingly given the chaos, he is being inundated with telecalls."
 
     call start_cinematic
@@ -743,13 +743,13 @@ label .fight1:
 
     # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet's vision power
 
-    "My eyes narrows, seeking the faint shimmer of a spirit in hiding."
+    "My eyes narrow, seeking the faint shimmer of a spirit in hiding."
 
     show pen neutral at companion_warp_to("middle", _xpos_offset=0.1)
 
     "Then I see it. I mistook it for the heat!"
 
-    "It's producing red cloth from its own body and weaving it at the same time, at a faster pace than assassin consumes it."
+    "It's producing red cloth from its own body and weaving it at the same time, at a faster pace than the assassin consumes it."
 
     show pichit battle anxious
 
@@ -883,7 +883,7 @@ label .unused_jam_end:
 
     "An idea pops into my head. A crazy idea. The type of idea that would have Charlet yelling and my mother tanning my hide."
 
-    "I do it anyway. Allowing my exhaustion to show, I ask Fan to make another attempt. As the assasin blocks it, I begin to cough and sway."
+    "I do it anyway. Allowing my exhaustion to show, I ask Fan to make another attempt. As the assassin blocks it, I begin to cough and sway."
 
     "The assassin is on me in moments. The flat of his dagger presses into my throat, close enough that the simplest movement would slice my skin to ribbons."
 
