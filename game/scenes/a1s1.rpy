@@ -99,9 +99,8 @@ label .look_at_booth:
     "Their towering displays command attention and their signs boast of life-changing advances in magitech,
     drawing representatives from the railroad and mining companies like flies to honey."
 
-    # Understanding issue: faster *and* at 50 paces, or faster *when* at 50 paces? Did range improve from last model?
     "As I watch, a man in a suit examines the engineering team’s latest invention:
-    a long-barreled rifle more accurate than the last, capable of shooting a bird faster than 50 paces."
+    a long-barreled rifle more accurate than the last, capable of shooting a bird at 50 paces."
 
     # Show above companion
     show charlet scared at character_warp_to("middle_left") zorder 1
