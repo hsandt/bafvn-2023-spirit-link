@@ -188,6 +188,12 @@ label .fight2:
 
     pen "Aw!!"
 
+    # Safety on skip: terminate previous animation
+    show pen:
+        rotate 0
+        xpos 0.2
+        ypos 0.6
+
     "I catch it mid-air to prevent it from crashing on the ground."
 
     pichit "Hey! Are you alright?"
