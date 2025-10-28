@@ -107,6 +107,37 @@ label .fight2:
     # show pichit battle serious at character_warp_to("middle_left")
     # show phrarat determined at character_warp_to("middle_right")
 
+    "I get back into the fight."
+
+    "This time, the numerous shrubs and trees displayed in the greenhouse allow me to vary my moves: cutting leaves for offense, proliferating roots for defense…"
+
+    "Unfortunately, plants under greenhouse are not are robust and their roots are not as deep. The assassin quickly dispatches my attack with a combination of slashes and fire projectiles."
+
+    show screen smoke
+
+    "One spark hits the Aquilaria tree at the center of the installation. It catches fire and starts spreading white smoke."
+
+    show phrarat surprised at character_move_to_easein("right", 0.3)
+
+    phrarat "!!"
+
+    show phrarat neutral
+
+    "The assassin suddenly stops attacking, his angry expression replaced with sadness."
+
+    show pichit anxious
+
+    pichit "{i}Why the sudden change of attitude? Is it my chance to counter attack? No, wait. I recognize this scent...{/i}"
+
+    hide screen smoke with bg_dissolve
+
+    "We both wait for the smoke to disappear, then resume fighting."
+
+    show pichit battle serious
+    show phrarat determined
+
+    call a1s2.pichit_phrarat_cross_blades
+
     "While I distract him with my sword, I let Fan grow vines from the plant with striking red leaves behind him."
 
     show pen neutral at companion_warp_to("right")
@@ -142,18 +173,38 @@ label .fight2:
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
-    pichit battle anxious "This is over. But I know your cause is a noble one… So please, let me help you…"
+    pichit "This is over."
 
-    phrarat "No…"
-
-    phrarat shout "It won’t end here!!"
-
-    show pichit battle serious
-
-    "My opponent gathers his last ounce of strength to stand up. He talks with difficulty."
+    window hide
+    pause 1.0
+    window show
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    phrarat "... Is that so? Then why don't you finish me then?"
+
+    show pichit battle anxious
+
+    pichit "... Earlier, when that tree burnt... I recognized the scent of oud incense. The one we use for the deceased."
+
+    pichit "You stopped fighting because you remembered someone dear who passed away, didn't you?"
+
+    phrarat "..."
+
+    # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    phrarat "I... don't need your pity."
+
+    show pichit battle serious
+    show phrarat determined
+
+    "My opponent gathers his last ounce of strength to stand up."
+
+    pichit "Stop. You'll just waste what's left of your life force."
+
+    show phrarat shout
+
     phrarat "My family has been working with toxic dyes for years! You think a little poison is gonna stop me?!"
+
+    phrarat "Dragon Tornado!!"
 
     "This time, he tears off not only his scarf, but also his tunic and hood before setting them on fire. A blazing whirl surrounds him."
 
@@ -174,7 +225,7 @@ label .fight2:
 
     phrarat "Graaah!!"
 
-    "The assassin ignores his companion, intensifying the whirl of fire, which gains in radius and height."
+    "The assassin ignores his companion and makes the whirlwind accelerate. It flows higher and farther."
 
     "It ends up hitting the spirit, who was flying too close, projecting it backward."
 
