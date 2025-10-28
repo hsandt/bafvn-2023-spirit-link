@@ -160,9 +160,25 @@ label .fight2:
 
     phrarat "My family has been working with toxic dyes for years! You think a little poison is gonna stop me?!"
 
-    phrarat "Dragon Tornado!!"
+    show pen neutral at companion_warp_to("far_right"), flip
 
-    "This time, he tears off not only his scarf, but also his tunic and hood before setting them on fire. A blazing whirl surrounds him."
+    phrarat "Pen! I need more cloth!"
+
+    show phrarat determined
+
+    pen "…"
+
+    "His spirit looks exhausted. Was it the relentless weaving that drained its energy, or did the poison affect it via the assassin's body?"
+
+    hide pen with character_dissolve
+
+    phrarat "Tsk… I have no choice then."
+
+    "In the blink of an eye, he sets his own tunic on fire, along with the rest of scarf he still holds. A blazing whirl surrounds him."
+
+    show phrarat shout
+
+    phrarat "Dragon Tornado!!"
 
     show pichit battle grimace
 

@@ -64,9 +64,11 @@ define fan = Character("Fan", color="#89d47d")
 define pen = Character("Pen", color="#ffdc18")
 
 # Secondary characters
-define mara = Character("Professor Mara")
-define man_with_rifle = Character("Man")
 define guard = Character("Guard")
+
+# UNUSED
+# define mara = Character("Professor Mara")
+# define man_with_rifle = Character("Man")
 
 
 # Visual flags
