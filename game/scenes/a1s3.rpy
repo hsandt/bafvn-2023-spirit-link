@@ -213,6 +213,8 @@ label .sprinkler:
 
     "He looks up, searching for the source of the sudden indoor rain and sees the sprinklers. He falls to his knees."
 
+    # TODO: maybe have them come later, it's not safe for Vanich. Need to explain shared link earlier to hear Vanich say nothing.
+
     show pichit battle anxious at character_move_to_easein("middle", 0.5)
     show charlet anxious zorder 1 at character_enter_from_left_to_easein("left", 0.5)
     show raegan anxious at character_enter_from_left_to_easein("far_left", 0.5)
@@ -222,6 +224,8 @@ label .sprinkler:
     "Raegan stays a bit behind, in case the assassin still has cards in his hands."
 
     charlet "Pichit!"
+
+    show charlet neutral
 
     # phrarat "Of course, the host to Makara is the one who stops me."
 
@@ -237,15 +241,38 @@ label .sprinkler:
 
     phrarat "How ironic that this was what stopped me."
 
+    show charlet anxious
+
     phrarat "Vanich Industries let my father burn alive in a factory because they weren’t willing to spend money on safety in a poorer district like ours."
 
-    "I don't know what to say to that, Pichit doesn’t know what to say to that and Raegan is dead silent over the shared link."
+    "I don't know what to say. A leftover of my mind link with Charlet lets me perceive her disarray. Raegan is dead silent."
 
-    "The sounds of hooves and shuffling boots, sound at the entrance to the warehouse where the Military showman must have slinked off to."
+    show charlet neutral
 
-    "The Assassin hears it too and in an instant, procures a circular pouch from his belt, slamming it onto the ground below, by the time the smoke clears, he and his Spirit are gone."
+    call start_cinematic
+
+    play sound audio.sfx.running2
+    pause 1.0
+
+    call end_cinematic
+
+    "Hooves and shuffling boots resound at the entrance to the greenhouse."
+
+    show screen smoke
+
+    "The Assassin grabs a circular pouch from his belt and slams it onto the ground. The room is covered by a cloud of smoke. Fearing another surprise attack, I brace myself, but nothing happens."
 
     hide phrarat
+    hide screen smoke
+    with bg_dissolve
+
+    "By the time the smoke clears, he and his spirit are gone."
+
+    hide phrarat
+
+    # TODO: alternative end where guards arrive first, then he hookshot the ceiling and escapes anyway, leaving a last message. Or can combine with smoke. Need to explain why he has enough strength left to escape.
+
+    return
 
 label .unused_museum:
     "A dagger skewers out of the shadows and toward me. I barely dodge it and I'm sent careening into one of the exhibits. A glass case full of exquisite vases."
