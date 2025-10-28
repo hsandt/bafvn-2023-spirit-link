@@ -115,8 +115,6 @@ label .fight2:
 
     "This time, his spirit takes control of the scarf, splitting it into multiple, thinner strips to intercept the vines."
 
-    "It acted even faster than usual, but it's clear that this quick action spent a lot of its energy."
-
     show phrarat smile
 
     phrarat "Humph. You thought that would work twice?"
@@ -140,9 +138,7 @@ label .fight2:
 
     phrarat "What did you... ?"
 
-    pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhalted, your body won't stand for long."
-
-    pichit "First, your vision will become blurry. Then, you will lose control of your muscles. And your spirit doesn't have enough strength left to protect you."
+    pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhalted, you won't be able to breathe normally for a while."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
@@ -154,7 +150,10 @@ label .fight2:
 
     show pichit battle serious
 
-    "My opponent gathers his last ounce of strength to stand up."
+    "My opponent gathers his last ounce of strength to stand up. He talks with difficulty."
+
+    # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    phrarat "My family has been working with toxic dyes for years! You think a little poison is gonna stop me?!"
 
     "This time, he tears off not only his scarf, but also his tunic and hood before setting them on fire. A blazing whirl surrounds him."
 
@@ -198,20 +197,44 @@ label .fight2:
 
     play sound audio.sfx.impact_glass
 
-    "The assassin's flames spiral toward the ceiling. The glass panels break under the heat, leaving nothing but glittering dust suspended in the air."
+    "The flames spread in the greenhouse, burning half of the plants. Fan muster its energy to protect me, and the other spirit, from the destructive force."
+
+    "The blaze then spirals toward the ceiling. The glass panels break under the heat, leaving nothing but glittering dust suspended in the air."
 
     "The heat eventually reaches the fire sprinklers, causing their bubbles to break."
 
     jump .sprinkler
 
 label .sprinkler:
+    call start_cinematic
+
     stop music fadeout 2.0
     play sound audio.sfx.shower2
-    pause 2.0
+    pause 1.0
+    show phrarat surprised
+    pause 1.0
+
+    call end_cinematic
 
     "Sparkles of water coat everything in the greenhouse. Soon, even the assassin's desperate flames are extinguished."
 
+    show phrarat anxious
+
     "He looks up, searching for the source of the sudden indoor rain and sees the sprinklers. He falls to his knees."
+
+    show pen:
+        ease 1.0 xpos 0.5
+
+    "His spirit joins him."
+
+    pen "Phrarat..."
+
+    call start_cinematic
+
+    hide pen with character_dissolve
+    pause 1.0
+
+    call end_cinematic
 
     # TODO: maybe have them come later, it's not safe for Vanich. Need to explain shared link earlier to hear Vanich say nothing.
 
@@ -258,19 +281,99 @@ label .sprinkler:
 
     "Hooves and shuffling boots resound at the entrance to the greenhouse."
 
+    "The assassin is soon surrounded by security guards, armed with tonfas and muskets."
+
+    guard "Drop your weapons!"
+
+    show phrarat determined
+
     show screen smoke
 
-    "The Assassin grabs a circular pouch from his belt and slams it onto the ground. The room is covered by a cloud of smoke. Fearing another surprise attack, I brace myself, but nothing happens."
+    "The criminal grabs a circular pouch from his belt and slams it onto the ground. A cloud of smoke covers the room."
+
+    "Fearing another surprise attack, I brace myself, but nothing happens."
 
     hide phrarat
     hide screen smoke
     with bg_dissolve
 
-    "By the time the smoke clears, he and his spirit are gone."
+    show pichit battle serious
 
-    hide phrarat
+    "By the time the smoke clears, he and his spirit are gone. The confused guards look around for the culprit, but he is nowhere on this floor."
 
-    # TODO: alternative end where guards arrive first, then he hookshot the ceiling and escapes anyway, leaving a last message. Or can combine with smoke. Need to explain why he has enough strength left to escape.
+    show pichit battle anxious
+
+    "I hear a voice from above."
+
+    # Voice acting: post-process: shout from far, echo
+    phrarat "You really think the Vanich son is better than his father? That he'll help you for the sake of Moacu-Laedan?"
+
+    show pichit battle serious
+
+    "I look upward, just like the guards now scattered across the greenhouse's alleys."
+
+    "The assassin is standing on the roof frame, now completely devoid of glass. He looks down at me one last time, before running away on the tangle of beams."
+
+    guard "Go after him! Quick!"
+
+    play sound audio.sfx.running2
+
+    "Most of the guards leave the building to chase after him. Only a few remain to check on us and patrol the area in case new attackers appear."
+
+    "However, they spot no other signs of danger. It seems that the man in red – Phrarat – was an independent actor indeed."
+
+    jump .aftermath
+
+label .aftermath:
+
+    "The guards accompany us to a safer place. A nurse come to administer me first aid."
+
+    pichit battle grimace "Ouch!"
+
+    # TODO: describe cuts and injuries during the fight
+
+    "My wound stings as she rubs a swab on it. Multiple cuts and small burns cover my body and my clothes. My muscles ache from all the efforts I've made."
+
+    show pichit battle anxious
+
+    "Even then, I haven't suffered any major damage. I thank Fan for his support."
+
+    charlet "Pichit! Are you alright?"
+
+    pichit "Yeah... Thanks for helping me get through this."
+
+    "I look at Raegan, still standing in a corner."
+
+    pichit "{i}I hope it was worth it...{/i}"
+
+    show raegan smile
+
+    raegan "Thank you for protecting me, both of you."
+
+    show raegan neutral
+
+    raegan "I will report this incident to my company. We don't know when there will be new attacks, so I will ask for a closer protection for myself – and the expedition."
+
+    raegan "The militia should also come back later to ask you for more information. The more they know, the faster they'll be able to identify the culprit."
+
+    raegan "Enon keeps a registry of all the islanders who moved to the continent, so it should be a matter of time."
+
+    # TODO: did you hear anything about him? Name or family situation? => player choice
+    # in this case it's better NOT to have Raegan listen to the father story, so Pichit can hide information or not
+    # on purpose, depending on trust
+
+    raegan "But for now, you two should rest."
+
+    charlet "You're right. We'll meet again later."
+    pichit "I don't need to be asked twice!"
+
+    show charlet at character_exit_to_right_easeout
+    show pichit at character_exit_to_right_easeout
+
+    show raegan anxious at character_move_to_easein("middle")
+
+    raegan "..."
+    raegan "Looks like it won't be that easy..."
 
     return
 

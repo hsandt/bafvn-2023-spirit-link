@@ -66,6 +66,7 @@ define pen = Character("Pen", color="#ffdc18")
 # Secondary characters
 define mara = Character("Professor Mara")
 define man_with_rifle = Character("Man")
+define guard = Character("Guard")
 
 
 # Visual flags
