@@ -81,7 +81,7 @@ label .look_at_crowd:
     Colorful signboards cry out the merits of their research."
 
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
-    from hunter’s and merchant guilds to investors, mingled with students and curious onlookers."
+    from hunter’s and merchant’s guilds to investors, mingled with students and curious onlookers."
 
     $ has_looked_at_crowd = True
     return
@@ -161,7 +161,7 @@ label .after_look:
 
     show makara neutral at companion_warp_to("middle_right")
 
-    makara "An interest idea. Whom would you ask to cook them?"
+    makara "An interesting idea. Whom would you ask to cook them?"
 
     charlet "Sorry? I can handle a few son-in-law eggs on my own."
 
@@ -233,7 +233,7 @@ label .pichit_arrives:
     pause 1.0
     window show
 
-    fan "The flowers here are healthy despite the sun of summer... The gardeners must be playing close attention."
+    fan "The flowers here are healthy despite the summer sun... The gardeners must be paying close attention."
 
     makara "... I suppose this means you are fine."
 
