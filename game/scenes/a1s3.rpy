@@ -67,7 +67,7 @@ label .fight2:
 
     "This time, the numerous shrubs and trees displayed in the greenhouse allow me to vary my moves: cutting leaves for offense, proliferating roots for defense…"
 
-    "Unfortunately, plants under greenhouse are not are robust and their roots are not as deep. The assassin quickly dispatches my attack with a combination of slashes and fire projectiles."
+    "Unfortunately, plants under glass are not as robust and their roots are not as deep. The assassin quickly dispatches my attack with a combination of slashes and fire projectiles."
 
     show screen smoke
 
@@ -83,7 +83,7 @@ label .fight2:
 
     show pichit anxious
 
-    pichit "{i}Why the sudden change of attitude? Is it my chance to counter attack? No, wait. I recognize this scent...{/i}"
+    pichit "{i}Why the sudden change of attitude? Is it my chance to counter attack? No, wait. I recognize this scent…{/i}"
 
     hide screen smoke with bg_dissolve
 
@@ -136,25 +136,25 @@ label .fight2:
     window show
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
-    phrarat "... Is that so? Then why don't you finish me then?"
+    phrarat "… Is that so? Then why don’t you finish me then?"
 
     show pichit battle anxious
 
-    pichit "... Earlier, when that tree burnt... I recognized the scent of oud incense. The one we use for the deceased."
+    pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use for the deceased."
 
-    pichit "You stopped fighting because you remembered someone dear who passed away, didn't you?"
+    pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
 
-    phrarat "..."
+    phrarat "…"
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
-    phrarat "I... don't need your pity."
+    phrarat "I… don’t need your pity."
 
     show pichit battle serious
     show phrarat determined
 
     "My opponent gathers his last ounce of strength to stand up."
 
-    pichit "Stop. You'll just waste what's left of your life force."
+    pichit "Stop. You’ll just waste what’s left of your life force."
 
     show phrarat shout
 
