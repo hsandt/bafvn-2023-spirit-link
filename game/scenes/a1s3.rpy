@@ -9,11 +9,11 @@ label a1s3:
 
     "Fortunately, Fan created soft beech bark behind my back to cushion the impact, so I didn't break anything."
 
-    fan "This reminds me of your childhood... I would always protect you from bad falls when you were playing outdoors."
+    fan "This reminds me of your childhood… I would always protect you from bad falls when you were playing outdoors."
 
     show pichit battle anxious
 
-    pichit "Aha... Yeah... Thanks for having my back."
+    pichit "Aha… Yeah… Thanks for having my back."
 
     hide fan with character_dissolve
 
@@ -24,13 +24,13 @@ label a1s3:
 
     show pichit battle serious
 
-    pichit "{i}Yeah... I'm fine.{/i}"
+    pichit "{i}Yeah… I'm fine.{/i}"
 
     show pichit battle anxious
 
     show phrarat determined at character_enter_from_right_to_easein("right")
 
-    pichit "{i}I... managed to get him into the building.{/i}"
+    pichit "{i}I… managed to get him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
 
     charlet telepathy "Just keep fighting to drive him into a corner. When he starts using intense fire, it will trigger the sprinkler system and you'll be able to get the edge."
@@ -62,11 +62,11 @@ label a1s3:
 #     show pichit at character_move_to_easein("middle_left", 0.5)
 #     show phrarat at character_move_to_easein("middle_right", 0.5)
 
-#     pichit "{i}Okay, Charlet, tell me about...{/i}"
+#     pichit "{i}Okay, Charlet, tell me about…{/i}"
 
 #     call .unused_analyze_one_element
 
-#     # Insert some fight here...
+#     # Insert some fight here…
 
 #     "I try to analyze the opponent once more."
 
@@ -97,7 +97,7 @@ label a1s3:
 #     "So Red Fire must be produced by a stone, maybe stolen from the previous attack."
 
 #     "He seems to be mastering Fire because his attacks are quite eruptive and uncontrolled. Pichit could take advantage of this."
-#     "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon..."
+#     "His spirit also seems exhausted, weaving cloth over and over again as it's burning. Maybe it will reach its limit soon…"
 #     $ has_analyzed_assassin_stone = True
 #     return
 
@@ -130,21 +130,21 @@ label .fight2:
 
     "The assassin deals a strong blow, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
 
-    phrarat shout "Phoenix..."
+    phrarat shout "Phoenix…"
 
-    phrarat surprised "Ugh... !"
+    phrarat surprised "Ugh… !"
 
     "The fighter interrupts his move, grabbing his chest and coughing."
 
-    phrarat "What did you... ?"
+    phrarat "What did you… ?"
 
     pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhaled, you won't be able to breathe normally for a while."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
-    pichit battle anxious "This is over. But I know your cause is a noble one... So please, let me help you..."
+    pichit battle anxious "This is over. But I know your cause is a noble one… So please, let me help you…"
 
-    phrarat "No..."
+    phrarat "No…"
 
     phrarat shout "It won't end here!!"
 
@@ -165,11 +165,11 @@ label .fight2:
 
     show pichit battle anxious
 
-    phrarat "If I can't make it out alive... at least I'll bring you down with this whole place! With Vanich!"
+    phrarat "If I can't make it out alive… at least I'll bring you down with this whole place! With Vanich!"
 
     show pen neutral at companion_warp_to("middle")
 
-    pen "Phrarat, wait... !"
+    pen "Phrarat, wait… !"
     pen "Your body won't stand it if you use all of the gem's power at once!"
 
     phrarat "Graaah!!"
@@ -198,8 +198,8 @@ label .fight2:
 
     pichit "Hey! Are you alright?"
 
-    pen "..."
-    pen "It's too late... I can't stop him now."
+    pen "…"
+    pen "It's too late… I can't stop him now."
 
     play sound audio.sfx.impact_glass
 
@@ -233,7 +233,7 @@ label .sprinkler:
 
     "His spirit joins him."
 
-    pen "Phrarat..."
+    pen "Phrarat…"
 
     call start_cinematic
 
@@ -260,7 +260,7 @@ label .sprinkler:
 
     phrarat "Then, they let him burn alive during a night overtime because they weren’t willing to spend money on safety in a poorer district like ours."
 
-    pichit "..."
+    pichit "…"
 
     call start_cinematic
 
@@ -341,7 +341,7 @@ label .aftermath:
 
     show pichit smile
 
-    pichit "Yeah... Thanks for helping me get through this."
+    pichit "Yeah… Thanks for helping me get through this."
 
     show charlet neutral
     show pichit neutral
@@ -356,9 +356,9 @@ label .aftermath:
 
     raegan "Thank you for protecting me, both of you."
 
-    pichit "Sure... You're welcome."
+    pichit "Sure… You're welcome."
 
-    pichit "{i}I hope... it was worth it...{/i}"
+    pichit "{i}I hope… it was worth it…{/i}"
 
     show raegan neutral
 
@@ -384,8 +384,8 @@ label .aftermath:
 
     stop music fadeout 5.0
 
-    raegan "..."
-    raegan "Looks like it won't be that easy..."
+    raegan "…"
+    raegan "Looks like it won't be that easy…"
 
     jump .prologue_ending
 
