@@ -186,7 +186,7 @@ label .after_look:
 
     #stomach growling noise again
 
-    charlet "... Maybe I should just grab lunch. It doesn’t look like anyone is coming anytime soon."
+    charlet "… Maybe I should just grab lunch. It doesn’t look like anyone is coming anytime soon."
     "Just as I prepare to leave, a voice stops me."
 
     jump .pichit_arrives
@@ -233,9 +233,9 @@ label .pichit_arrives:
     pause 1.0
     window show
 
-    fan "The flowers here are healthy despite the summer sun... The gardeners must be paying close attention."
+    fan "The flowers here are healthy despite the summer sun… The gardeners must be paying close attention."
 
-    makara "... I suppose this means you are fine."
+    makara "… I suppose this means you are fine."
 
     window hide
     pause 0.2
