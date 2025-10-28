@@ -85,7 +85,7 @@ label a1s3:
 
 # label .unused_analyze_weapon:
 #     # TODO: new text
-#     "Clothes have traditional patterns of Moacu, but are written roughly."
+#     "Clothes have traditional Moacu patterns, but are written roughly."
 #     "Ink mixed with blood. Shows pride but also anger and hastiness. He doesn't care about his environment enough."
 #     "Pichit could take advantage of this, or try to slow him down."
 #     $ has_analyzed_assassin_weapon = True
@@ -107,7 +107,7 @@ label .fight2:
     # show pichit battle serious at character_warp_to("middle_left")
     # show phrarat determined at character_warp_to("middle_right")
 
-    "While I distract him with my sword, I let Fan can grow vines from the plant with striking red leaves behind him."
+    "While I distract him with my sword, I let Fan grow vines from the plant with striking red leaves behind him."
 
     show pen neutral at companion_warp_to("right")
 
@@ -138,7 +138,7 @@ label .fight2:
 
     phrarat "What did you... ?"
 
-    pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhalted, you won't be able to breathe normally for a while."
+    pichit "It is not wise to burn plants without knowing what they're made of. With the amount of toxic particles you've inhaled, you won't be able to breathe normally for a while."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
@@ -326,7 +326,7 @@ label .sprinkler:
 
 label .aftermath:
 
-    "The guards accompany us to a safer place. A nurse come to administer me first aid."
+    "The guards accompany us to a safer place. A nurse comes to administer me first aid."
 
     pichit battle grimace "Ouch!"
 
@@ -465,7 +465,7 @@ label .unused_alternative_tired_pen:
     phrarat "Please, make more, I need another whip."
 
     "The spirit doesn’t move, doesn’t start weaving, it’s too tired from constantly weaving pattern after pattern for its master to use."
-    "Assured that there’s no fight left in the spirit, I finally lets the vines fall to the ground for good this time."
+    "Assured that there’s no fight left in the spirit, I finally let the vines fall to the ground for good this time."
 
     # show phrarat angry
 
