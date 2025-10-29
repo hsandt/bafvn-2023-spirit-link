@@ -170,7 +170,7 @@ label .after_look:
     charlet "Okay, okay. I’ll just ask Aunt Urai next time."
 
     "Usually, I would avoid talking that much with Makara in a public space. Most Enonians cannot see nor hear spirits and would give me a funny look every time they see me speak alone."
-    "But since few people are coming by my booth and my neighbors are well-versed in island culture, it shouldn’t be an issue."
+    "But since few people are coming by my booth and my neighbors are well-versed in Islander culture, it shouldn’t be an issue."
     "Besides, the blue jewel that adorns my armband makes most people think that I own a telestone and that I am talking to someone remotely. But it’s just decorative, really."
 
     hide makara with character_dissolve
@@ -178,10 +178,10 @@ label .after_look:
     pause 0.5
 
     "Anyway, this event is my chance. I have to secure a sponsor."
-    "Otherwise, my dreams of preserving the island’s rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
+    "Otherwise, my dreams of preserving the Island’s rich culture will dissipate like the mists that once shrouded Moacu-Laedan some 250 years ago."
 
-    "The booth’s pamphlets, with their colorful photographs showcasing the island’s rich history, seem to mock me.
-    I have spent months researching the island and stayed up all night printing pamphlets."
+    "The booth’s pamphlets, with their colorful photographs showcasing the Island’s rich history, seem to mock me.
+    I have spent months researching the Island and stayed up all night printing pamphlets."
     "But for what? To hand out six to a handful of students who took them out of pity?"
 
     #stomach growling noise again

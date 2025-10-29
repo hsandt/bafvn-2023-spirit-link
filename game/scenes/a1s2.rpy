@@ -68,14 +68,14 @@ label .raegan_conversation:
 
     call end_cinematic
 
-    raegan "It’s always a pleasure to meet someone who can appreciate the island’s unique charm. What drove your interest?"
+    raegan "It’s always a pleasure to meet someone who can appreciate the Island’s unique charm. What drove your interest?"
 
-    charlet "My ancestors came from the island. Studying at the academia made me realize just how little we, in Enon, know about Moacu-Laedan."
+    charlet "My ancestors came from the Island. Studying at the academia made me realize just how little we, in Enon, know about Moacu-Laedan."
     charlet "It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
 
     show raegan neutral
 
-    raegan "Indeed… Pichit mentioned your goal was to catalogue folktales from the island? Have you ever heard any tales of Lalahon?"
+    raegan "Indeed… Pichit mentioned your goal was to catalogue folktales from the Island? Have you ever heard any tales of Lalahon?"
 
     show charlet intrigued
 
@@ -89,7 +89,7 @@ label .raegan_conversation:
 
     show charlet smile
 
-    charlet "Who knows, maybe we’ll even discover the secret behind the mist that covered the island!"
+    charlet "Who knows, maybe we’ll even discover the secret behind the mist that covered the Island!"
 
     show raegan smile
 
