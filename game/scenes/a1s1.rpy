@@ -243,7 +243,7 @@ label .pichit_arrives:
 
     "Fan is Pichit’s forest spirit. Like many companions, it has a very different personality than its human counterpart. But it definitely shares his love of nature."
 
-    "I let our spirits hold their whimsical conversation while I chitchat with Pichit."
+    "I let our spirits hold their whimsical conversation while I chitchat with Pichit. As we talk in Laedani, my northern accent gradually transitions to a southern one as I mimic Pichit."
 
     window hide
     pause 0.5

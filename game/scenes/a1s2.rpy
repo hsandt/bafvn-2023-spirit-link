@@ -9,7 +9,8 @@ label .raegan_arrives:
     pause 0.2
     show raegan neutral at character_warp_to("right")
 
-    "The stranger is tall and elegantly dressed in a three-piece suit, despite the heat. He should be drenched in sweat."
+    "The stranger is tall and elegantly dressed in a three-piece suit, despite the heat.
+    He should be drenched in sweat."
     "Instead, his collar and cuffs are clean and neat as though freshly laundered.
     Even his hair is impeccable. Meanwhile, my own hair feels matted and itchy."
 
@@ -21,6 +22,8 @@ label .raegan_arrives:
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
     raegan "A pleasure to meet you, Charlet. I’ve heard wonderful things about your plans."
+
+    "Just like Pichit, I switch to speaking Enonian."
 
     charlet smile "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
 
@@ -267,7 +270,7 @@ label .assassin_appears:
     show phrarat determined
 
     $ should_show_side_image = True
-    charlet scared "{i}A vigilante?!{/i}"
+    charlet scared "{i}He speaks Laedani… An ILF vigilante?!{/i}"
     $ should_show_side_image = False
 
     # TODO impact SFX and hit FX
