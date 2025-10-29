@@ -413,10 +413,53 @@ label .refuging_in_building:
 
     show raegan thinking
 
-    raegan "We should contact someone. Is this a telestone on your armband? Can you use it to reach the guards?"
+    raegan "We should contact the security."
 
-    "Raegan doesn't know that my blue gem is just decorative. The truth is, Makara allows me to use telepathy without any accessories."
-    "I can probably tell him about my spirit now. This is an emergency, and besides, he already knows that I am a descendant of the Islanders."
+    charlet "I'm on it."
+
+label .telecall:
+
+    call start_cinematic
+    show makara neutral at companion_warp_to("left"), flip
+    show charlet telepathy with character_dissolve
+    call end_cinematic
+
+    "Makara's power allows me to use telepathy to contact people I have already bound a connection with."
+    "I focus, trying to reach out to Jamil, the head of security."
+    "Our conversation is brief and to the point. Unsurprisingly given the chaos, he is being inundated with telecalls."
+
+    call start_cinematic
+    hide makara
+    show charlet neutral
+    with character_dissolve
+    call end_cinematic
+
+    charlet "I got someone. They’ll send a squad to Pichit’s location as soon as they can."
+    charlet "There have been several outbreaks of fire in the university’s district, so most firefighters and security guards have their hands full."
+
+    show raegan anxious
+
+    raegan "A coordinated attack… Let’s hope that Pichit will withstand that fight until then…"
+
+    window hide
+    pause 0.5
+    show raegan neutral
+    pause 0.5
+    window show
+
+    raegan "By the way, Charlet... How did you contact them?"
+
+    charlet "Uh?"
+
+    raegan "I haven't seen you touch your gemstone device at all. Is it a new model that doesn't need physical interactions?"
+
+    show charlet scared
+
+    charlet "{i}Oh no! I was so worried about Pichit that I totally forgot to pretend using my stone!{/i}"
+
+    show charlet neutral
+
+    charlet "{i}Well, I can probably tell him about my spirit now. This is an emergency, and besides, he already knows that I am a descendant of the Islanders.{/i}"
 
     charlet "Oh, that's..."
 
@@ -425,9 +468,10 @@ label .refuging_in_building:
     makara "Charlet, wait. We don't know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
     charlet "{i}But he's going to travel with us on the expedition. He's bound to notice your existence sooner or later.{/i}"
-    charlet "{i}Besides, this would allow us to share a telepathic connection with others. Raegan's pedigree may prove convincing in negociations.{/i}"
+    charlet "{i}Besides, creating a connection with him would allow me to contact him later, in case we get into troubles on the Island.{/i}"
 
-    makara "... Then I leave the choice to you."
+    makara "If that is so, you can simply mention my presence, and bind a connection with him later."
+    makara "But I leave the final choice to you."
 
     hide makara with character_dissolve
 
@@ -440,16 +484,16 @@ label .refuging_in_building:
         "Mention Makara but keep it invisible":
             call .choice_telecall_2_mention_makara
 
-        "Don't mention Makara and pretend to us a telestone":
+        "Don't mention Makara and pretend to use a telestone":
             call .choice_telecall_3_pretend_telestone
 
-    jump .telecall
+    jump .charlet_calls_pichit
 
 label .choice_telecall_1_2_common_start:
 
     show charlet smile
 
-    charlet "That's just a decorative jewel. I don’t need it to telecall people. I have much better."
+    charlet "No, no, that's just an armband with a decorative jewel. I don’t need it to telecall people. I have much better."
 
     show makara neutral at companion_warp_to("left"), flip
 
@@ -464,16 +508,22 @@ label .choice_telecall_1_2_common_start:
 
     charlet "You cannot see my spirit, right?"
 
-    charlet "Don't worry, it is not that easy for Enonians to do so. Even I had to do a special training on Moacu-Laedan to learn to sense the forces of nature."
+    show raegan neutral
+
+    charlet "Don't worry, Enonians are born spirit-blind. Even I had to do a special training on Moacu-Laedan to be able to perceive them."
 
     return
 
 label .choice_telecall_1_reveal_makara:
     call .choice_telecall_1_2_common_start
 
-    charlet "But I can help you see when you're close to me."
+    charlet "But I can help you see it when you're close to me."
+
+    show raegan surprised
 
     raegan "Really? How..."
+
+    show raegan neutral
 
     "I put my hand on Raegan's right shoulder and start singing an aria. I focus on Makara's energy, then on Raegan's psyche."
     "It's not a common thing to do, even for natives of Moacu-Laedan, so I'm not sure at all this is going to work."
@@ -492,9 +542,11 @@ label .choice_telecall_1_reveal_makara:
 
     charlet "Reagan, say hello to Makara."
 
-    raegan "... Yes. I can see it. Your spirit..."
+    raegan "... Hello?"
 
     makara "..."
+
+    charlet "Sorry, it's not very talkative."
 
     call .choice_telecall_1_2_common_end
 
@@ -511,40 +563,49 @@ label .choice_telecall_1_2_common_end:
     show charlet serious
     show raegan neutral
 
-    charlet "Anyway, Makara will help me reach other people’s minds."
+    charlet "Anyway, Makara allows me to reach other people’s minds."
 
     return
 
-label .choice_telecall_2_pretend_telestone:
+label .choice_telecall_3_pretend_telestone:
 
-    "Yes, that's a telestone. I'll use it to call the security."
+    charlet "Yes, it's a new kind of stone gear that connects directly to my brainwaves."
+
+    show raegan surprised
+
+    raegan "Really? That's impressive! Why didn't my technology watch group notify me of this? Can I have a look at it?"
+
+    show raegan neutral
+
+    show charlet scared at character_move_to_easein("left", 0.3)
+
+    "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
+
+    charlet "Sorry, it's... the university's lab lent it to me."
+    charlet "They are still experimenting with it, but it's not ready for production, so they prefer keeping it private for now."
+
+    show raegan sad
+    show charlet neutral
+
+    raegan "Oh, I... I understand. Please pardon my intrusion."
+
+    show raegan neutral
+    show charlet smile
+
+    charlet "It's alright."
 
     return
 
-label .telecall:
+label .charlet_calls_pichit:
 
-    call start_cinematic
-    show charlet telepathy with character_dissolve
-    call end_cinematic
+    window hide
+    pause 1.0
+    window show
 
-    "I focus, trying to reach out to Jamil, the head of security."
-    "Our conversation is brief and to the point. Unsurprisingly given the chaos, he is being inundated with telecalls."
-
-    call start_cinematic
-    show charlet neutral with character_dissolve
-    call end_cinematic
-
-    charlet "I got someone. They’ll send a squad to Pichit’s location as soon as they can."
-    charlet "There have been several outbreaks of fire in the university’s district, so most firefighters and security guards have their hands full."
-
-    show raegan anxious
-
-    raegan "A coordinated attack…"
-
-    raegan "Let’s hope that Pichit will withstand that fight until then…"
+    show charlet neutral
 
     charlet "…"
-    charlet "I will check on him."
+    charlet "I'm worried for Pichit. I will check on him."
 
     call start_cinematic
     show charlet telepathy with character_dissolve
