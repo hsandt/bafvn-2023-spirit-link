@@ -171,7 +171,7 @@ label .after_look:
 
     "Usually, I would avoid talking that much with Makara in a public space. Most Enonians cannot see nor hear spirits and would give me a funny look every time they see me speak alone."
     "But since few people are coming by my booth and my neighbors are well-versed in island culture, it shouldn’t be an issue."
-    "Besides, the recent invention of telestones, although still reserved to the higher classes who can afford them, help people imagine that I may be talking to someone remotely."
+    "Besides, the blue jewel that adorns my armband makes most people think that I own a telestone and that I am talking to someone remotely. But it’s just decorative, really."
 
     hide makara with character_dissolve
 

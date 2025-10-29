@@ -261,7 +261,7 @@ label .assassin_appears:
     show phrarat determined at character_warp_to("middle")
 
     "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him."
-    "A glowing shield is the only barrier between his chest and his assailant’s knife. As I suspected, the jewel on Raegan’s collar is not simply decorative."
+    "A glowing shield is the only barrier between his chest and his assailant’s knife. As I suspected, the red gem on Raegan’s collar is not decorative like mine."
 
     show phrarat shout
 
@@ -413,20 +413,34 @@ label .refuging_in_building:
 
     show raegan thinking
 
-    raegan "We should contact someone. Do you have a telestone? Can you reach the guards?"
+    raegan "We should contact someone. Is this a telestone on your armband? Can you use it to reach the guards?"
+
+    "Raegan doesn't know that my blue gem is just decorative."
+
+    show makara neutral at companion_warp_to("left"), flip
+
+    makara "I can use my power to use telepathy, but it may be wise not to reveal it to this man."
+
+    charlet "{i}But we can trust him, right?{/i}"
+
+    charlet "{i}Should I tell Raegan the truth?"
+
+    menu:
+        "Reveal Makara can do telepathy":
+            call .choice_telecall_1_reveal_power
+
+        "Pretend to us the telestone":
+            call .choice_telecall_2_pretend_telestone
+
+    jump .telecall
+
+label .choice_telecall_1_reveal_power:
 
     # TODO: add choice to tell Raegan the truth or not: her telestone is fake
 
     show charlet smile
 
     charlet "A telestone? I don’t need that. I have much better."
-
-    call start_cinematic
-
-    show makara neutral at companion_warp_to("left"), flip
-    pause 0.5
-
-    call end_cinematic
 
     show raegan surprised
 
@@ -443,6 +457,16 @@ label .refuging_in_building:
     show raegan neutral
 
     charlet "Anyway, Makara will help me reach other people’s minds."
+
+    return
+
+label .choice_telecall_2_pretend_telestone:
+
+    "Yes, that's a telestone. I'll use it to call the security."
+
+    return
+
+label .telecall:
 
     call start_cinematic
     show charlet telepathy with character_dissolve
