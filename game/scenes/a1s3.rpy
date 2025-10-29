@@ -389,7 +389,7 @@ label .aftermath:
 
     raegan "The militia should also come back later to ask you for more information. The more they know, the faster they’ll be able to identify the culprit."
 
-    raegan "Enon keeps a registry of all the islanders who moved to the continent, so it should be a matter of time."
+    raegan "Enon keeps a registry of all the Islanders who moved to the continent, so it should be a matter of time."
 
     # TODO: did you hear anything about him? Name or family situation? => player choice
     # in this case it's better NOT to have Raegan listen to the father story, so Pichit can hide information or not

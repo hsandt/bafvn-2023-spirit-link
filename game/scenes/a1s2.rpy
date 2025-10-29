@@ -415,28 +415,61 @@ label .refuging_in_building:
 
     raegan "We should contact someone. Is this a telestone on your armband? Can you use it to reach the guards?"
 
-    "Raegan doesn't know that my blue gem is just decorative."
+    "Raegan doesn't know that my blue gem is just decorative. The truth is, Makara allows me to use telepathy without any accessories."
+    "I can probably tell him about my spirit now. This is an emergency, and besides, he already knows that I am a descendant of the Islanders."
 
     show makara neutral at companion_warp_to("left"), flip
 
-    makara "I can use my power to use telepathy, but it may be wise not to reveal it to this man."
+    makara "Charlet, wait. We don't know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
-    charlet "{i}But we can trust him, right?{/i}"
+    charlet "{i}But he's going to travel with us on the expedition. He's bound to notice you sooner or later.{/i}"
 
-    charlet "{i}Should I tell Raegan the truth?"
+    makara "... Then I leave the choice to you."
+
+    charlet "{i}Should I introduce Raegan to Makara?{/i}"
 
     menu:
-        "Reveal Makara can do telepathy":
-            call .choice_telecall_1_reveal_power
+        "Reveal the existence of Makara and bind a connection with Raegan to show it":
+            call .choice_telecall_1_reveal_makara
+
+        "Talk about Makara but keep it hidden":
+            call .choice_telecall_2_mention_makara
 
         "Pretend to us the telestone":
-            call .choice_telecall_2_pretend_telestone
+            call .choice_telecall_3_pretend_telestone
 
     jump .telecall
 
-label .choice_telecall_1_reveal_power:
+label .choice_telecall_1_reveal_makara:
+    call .choice_telecall_1_2_common_start
 
-    # TODO: add choice to tell Raegan the truth or not: her telestone is fake
+    charlet "I can help you see it by establishing a connection with you."
+
+    raegan "Really? But I..."
+
+    "I take Raegan's right wrist with my two hands and start an aria. I focus on Makara's presence, then Raegan's psyche, and connect both."
+
+    # FX: Makara disappears and reappears for Raegan
+
+    show raegan surprised
+
+    charlet "So, did it work?"
+
+    raegan "... Yes. I can see it. Your spirit..."
+
+    makara "..."
+
+    call .choice_telecall_1_2_common_end
+
+    return
+
+label .choice_telecall_2_mention_makara:
+    call .choice_telecall_1_2_common_start
+    call .choice_telecall_1_2_common_end
+
+    return
+
+label .choice_telecall_1_2_common_start:
 
     show charlet smile
 
@@ -452,6 +485,8 @@ label .choice_telecall_1_reveal_power:
     raegan "So you have one, like Pichit?"
 
     charlet "Of course! My family has preserved the tradition of spirit binding for generations."
+
+label .choice_telecall_1_2_common_end:
 
     show charlet serious
     show raegan neutral
