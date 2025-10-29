@@ -418,42 +418,79 @@ label .refuging_in_building:
     "Raegan doesn't know that my blue gem is just decorative. The truth is, Makara allows me to use telepathy without any accessories."
     "I can probably tell him about my spirit now. This is an emergency, and besides, he already knows that I am a descendant of the Islanders."
 
+    charlet "Oh, that's..."
+
     show makara neutral at companion_warp_to("left"), flip
 
     makara "Charlet, wait. We don't know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
-    charlet "{i}But he's going to travel with us on the expedition. He's bound to notice you sooner or later.{/i}"
+    charlet "{i}But he's going to travel with us on the expedition. He's bound to notice your existence sooner or later.{/i}"
+    charlet "{i}Besides, this would allow us to share a telepathic connection with others. Raegan's pedigree may prove convincing in negociations.{/i}"
 
     makara "... Then I leave the choice to you."
 
-    charlet "{i}Should I introduce Raegan to Makara?{/i}"
+    hide makara with character_dissolve
+
+    charlet "{i}Alright. Should I introduce Raegan to Makara?{/i}"
 
     menu:
-        "Reveal the existence of Makara and bind a connection with Raegan to show it":
+        "Connect with Raegan to let him see Makara":
             call .choice_telecall_1_reveal_makara
 
-        "Talk about Makara but keep it hidden":
+        "Mention Makara but keep it invisible":
             call .choice_telecall_2_mention_makara
 
-        "Pretend to us the telestone":
+        "Don't mention Makara and pretend to us a telestone":
             call .choice_telecall_3_pretend_telestone
 
     jump .telecall
 
-label .choice_telecall_1_reveal_makara:
-    call .choice_telecall_1_2_common_start
+label .choice_telecall_1_2_common_start:
 
-    charlet "I can help you see it by establishing a connection with you."
+    show charlet smile
 
-    raegan "Really? But I..."
+    charlet "That's just a decorative jewel. I don’t need it to telecall people. I have much better."
 
-    "I take Raegan's right wrist with my two hands and start an aria. I focus on Makara's presence, then Raegan's psyche, and connect both."
+    show makara neutral at companion_warp_to("left"), flip
 
-    # FX: Makara disappears and reappears for Raegan
+    # visually, Charlet presents Makara with her arm bent in V with open hand like someone on an ad poster
+    "I designate Makara with my open hand."
 
     show raegan surprised
 
-    charlet "So, did it work?"
+    charlet "Here! My spirit companion. My family has preserved the tradition of spirit binding for generations."
+
+    "Raegan cannot hide his perplexity."
+
+    charlet "You cannot see my spirit, right?"
+
+    charlet "Don't worry, it is not that easy for Enonians to do so. Even I had to do a special training on Moacu-Laedan to learn to sense the forces of nature."
+
+    return
+
+label .choice_telecall_1_reveal_makara:
+    call .choice_telecall_1_2_common_start
+
+    charlet "But I can help you see when you're close to me."
+
+    raegan "Really? How..."
+
+    "I put my hand on Raegan's right shoulder and start singing an aria. I focus on Makara's energy, then on Raegan's psyche."
+    "It's not a common thing to do, even for natives of Moacu-Laedan, so I'm not sure at all this is going to work."
+
+    window hide
+    pause 0.5
+    window show
+
+    # FX: special screen effect to make Makara disappears and reappears for Raegan
+
+    show raegan surprised
+
+    raegan "... Oh, my!"
+
+    "The rich son looks taken aback. I suppose it did work after all."
+
+    charlet "Reagan, say hello to Makara."
 
     raegan "... Yes. I can see it. Your spirit..."
 
@@ -468,23 +505,6 @@ label .choice_telecall_2_mention_makara:
     call .choice_telecall_1_2_common_end
 
     return
-
-label .choice_telecall_1_2_common_start:
-
-    show charlet smile
-
-    charlet "A telestone? I don’t need that. I have much better."
-
-    show raegan surprised
-
-    # visually, Charlet presents Makara with her arm bent in V with open hand like someone on an ad poster
-    "Raegan cannot hide his perplexity as I present my companion flying in the air."
-
-    charlet "You cannot see my spirit, right?"
-
-    raegan "So you have one, like Pichit?"
-
-    charlet "Of course! My family has preserved the tradition of spirit binding for generations."
 
 label .choice_telecall_1_2_common_end:
 
