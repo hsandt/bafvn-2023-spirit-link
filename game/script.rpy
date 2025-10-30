@@ -82,12 +82,18 @@ default has_looked_at_booth = False
 default has_looked_at_crowd = False
 
 # A1S2
-default has_analyzed_assassin_weapon = False
-default has_analyzed_assassin_stone = False
+default has_told_assassin_family_story = False
+default has_told_assassin_spirit_appearance = False
+default has_told_trivia = False
+default has_told_thats_all = False
+default has_told_nothing = False
 
+# UNUSED
+# default has_analyzed_assassin_weapon = False
+# default has_analyzed_assassin_stone = False
 
 # Temp variables (just to avoid lint error)
-# Even if not used, you need to set a path to a fil that exists to avoid
+# Even if not used, you need to set a path to a file that exists to avoid
 # "is not loadable" Lint error
 default sfx_variant = 'audio/sfx/sfx_blade_clash1.opus'
 

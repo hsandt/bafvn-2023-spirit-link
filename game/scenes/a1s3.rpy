@@ -333,7 +333,7 @@ label .sprinkler:
 
     "Most of the guards leave the building to chase after him. Only a few remain to check on me and patrol the area in case new attackers appear."
 
-    "However, they spot no other signs of danger. It seems that the man in red – Phrarat – was an independent actor indeed."
+    "Fortunately, they spot no other signs of danger."
 
     jump .aftermath
 
@@ -343,7 +343,7 @@ label .aftermath:
     pause 0.5
     scene bg university_inside with wipeleft_fast
 
-    show pichit exhausted at character_warp_to("middle")
+    show pichit exhausted zorder 1 at character_warp_to("middle")
 
     "The guards accompany us to the infirmary. A nurse comes to administer me first aid."
 
@@ -377,33 +377,91 @@ label .aftermath:
 
     show raegan smile
 
-    raegan "Thank you both for protecting me."
+    raegan "Thank you for protecting me."
 
     pichit "Sure… You’re welcome."
 
-    pichit "{i}I hope… it was worth it…{/i}"
+    pichit "{i}I hope it will be worth it…{/i}"
+
+    # Raegan talks about the importance of reports and unintentionally reveals his role as lobbyist
 
     show raegan neutral
 
-    raegan "I will report this incident to my company. We don’t know when there will be new attacks, so I will ask for a closer protection for myself – and the expedition."
+    raegan "I will report the attack to my company. I will try to convince them to assign us bodyguards so I can still join the expedition safely."
 
-    raegan "The militia should also come back later to ask you for more information. The more they know, the faster they’ll be able to identify the culprit."
+    raegan "Normally, the militia should come back later to ask you for your testimony."
+    raegan "I know that Enon keeps a registry of all the Islanders who moved to the continent, as well as suspected ILF supporters."
+    raegan thinking "So, by crosschecking it with your description of the assassin, they may be able to identify him."
 
-    raegan "Enon keeps a registry of all the Islanders who moved to the continent, so it should be a matter of time."
+    show pichit intrigued
 
-    # TODO: did you hear anything about him? Name or family situation? => player choice
-    # in this case it's better NOT to have Raegan listen to the father story, so Pichit can hide information or not
-    # on purpose, depending on trust
+    "I'm amazed by how much Raegan knows about administrative and criminal matters.
+    Then again, he was the target, so it's not surprising that he would closely study the actions of any potential opponents."
 
-    raegan "But for now, you two should rest."
+    show pichit neutral
 
-    charlet "You’re right. We’ll meet again later."
+    raegan "That said, I can accelerate the process by passing on any revelant piece of information directly to the authorities, thanks to my extended network."
+
+    show charlet at darker
+
+    raegan "Pichit, did you notice anything during your fight that could help the investigation?"
+
+    "{i}Hm... That cloaked man – Phrarat, as I heard from his spirit – trusted in me by revealing his deep, personal motivations.{/i}"
+    "{i}Should I keep them for myself, or report them to gain Raegan's trust and maximize our chance of survivals during the expedition?{/i}"
+
+    while not (has_told_thats_all or has_told_nothing):
+        if has_told_assassin_family_story or has_told_trivia:
+            show pichit neutral
+            raegan neutral "Anything else?"
+
+        menu:
+            "I tell Raegan about the assassin's name and father." if not has_told_assassin_family_story:
+                pichit "I heard his spirit call him 'Phrarat'. It could be his nickname, though."
+                "I explain why Phrarat's family business closed and how his father died is one of Vanich's factory."
+                raegan sad "I see... An unfortunate accident."
+                raegan thinking "This will however prove precious information in identifying the culprit."
+                $ has_told_assassin_family_story = True
+            "I tell Raegan about his spirit." if not has_told_assassin_spirit_appearance:
+                pichit "He was accompanied by a flying spirit. It looked like a silkmoth with a cat head, and its body was covered with green and yellow stripes."
+                raegan thinking "Interesting... Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
+                raegan neutral "Most of them just want to live peacefully in Enon, after all."
+                $ has_told_assassin_spirit_appearance = True
+            "I tell Raegan some unusable trivia." if not has_told_trivia:
+                pichit smile "Ah, yes! He kept shouting the names of this attacks before using them!"
+                pichit intrigued "I'm not sure why he'd do that. I mean, shouldn't that help me dodge them?"
+                raegan surprised "I... see..."
+                $ has_told_trivia = True
+            "I tell Raegan I haven't noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
+                pichit "No, that was all."
+                raegan "I see. Thank you."
+                $ has_told_thats_all = True
+            "I tell Raegan that I haven't noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
+                pichit intrigued "Not really. I admit I was really focused on surviving all that time."
+                raegan "Understandable."
+                $ has_told_nothing = True
+
+    window hide
+    show pichit neutral
+    show charlet at reset_brightness
+    pause 0.5
+    window show
+
+    raegan "Well, I need to go back to my headquarters now. You two should rest."
+
     pichit "I don’t need to be asked twice!"
+    charlet "Same for me. We’ll meet again later."
 
-    show charlet at character_exit_to_right_easeout
-    show pichit at character_exit_to_right_easeout
+    call start_cinematic
 
-    show raegan thinking at character_move_to_easein("middle")
+    show charlet at character_exit_to_left_easeout(1.0)
+    show pichit at character_exit_to_left_easeout(1.5)
+    pause 1.5
+    # Known issue: small bug on move start
+    show raegan at character_move_to_easein("middle")
+    pause 1.0
+    show raegan thinking
+
+    call end_cinematic
 
     stop music fadeout 5.0
 
