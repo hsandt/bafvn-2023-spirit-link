@@ -174,7 +174,7 @@ label .fight2:
 
     phrarat "Tsk… I have no choice then."
 
-    "In the blink of an eye, he sets his own tunic on fire, along with the rest of scarf he still holds. A blazing whirl surrounds him."
+    "In the blink of an eye, he sets his own tunic on fire, along with what remains of his scarf. A blazing whirl surrounds him."
 
     show phrarat shout
 
@@ -400,7 +400,7 @@ label .aftermath:
 
     show pichit neutral
 
-    raegan "That said, I can accelerate the process by passing on any revelant piece of information directly to the authorities, thanks to my extended network."
+    raegan "That said, I can accelerate the process by passing on any relevant piece of information directly to the authorities, thanks to my extended network."
 
     show charlet at darker
 
@@ -417,7 +417,7 @@ label .aftermath:
         menu:
             "I tell Raegan about the assassin's name and father." if not has_told_assassin_family_story:
                 pichit "I heard his spirit call him 'Phrarat'. It could be his nickname, though."
-                "I explain why Phrarat's family business closed and how his father died is one of Vanich's factory."
+                "I explain why Phrarat's family business closed and how his father died in one of Vanich's factories."
                 raegan sad "I see... An unfortunate accident."
                 raegan thinking "This will however prove precious information in identifying the culprit."
                 $ has_told_assassin_family_story = True
@@ -427,7 +427,7 @@ label .aftermath:
                 raegan neutral "Most of them just want to live peacefully in Enon, after all."
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
-                pichit smile "Ah, yes! He kept shouting the names of this attacks before using them!"
+                pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
                 pichit intrigued "I'm not sure why he'd do that. I mean, shouldn't that help me dodge them?"
                 raegan surprised "I... see..."
                 $ has_told_trivia = True
