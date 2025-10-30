@@ -270,7 +270,7 @@ label .assassin_appears:
     show phrarat determined
 
     $ should_show_side_image = True
-    charlet scared "{i}He speaks Laedani… An ILF vigilante?!{/i}"
+    charlet scared "{i}He speaks Laedani… A separatist vigilante?!{/i}"
     $ should_show_side_image = False
 
     # TODO impact SFX and hit FX
@@ -478,13 +478,13 @@ label .telecall:
     charlet "{i}Alright. Should I introduce Raegan to Makara?{/i}"
 
     menu:
-        "Connect with Raegan to let him see Makara":
+        "I connect with Raegan to let him see Makara.":
             call .choice_telecall_1_reveal_makara
 
-        "Mention Makara but keep it invisible":
+        "I mention Makara but keep it invisible.":
             call .choice_telecall_2_mention_makara
 
-        "Don't mention Makara and pretend to use a telestone":
+        "I don't mention Makara and pretend to use a telestone.":
             call .choice_telecall_3_pretend_telestone
 
     jump .charlet_calls_pichit
