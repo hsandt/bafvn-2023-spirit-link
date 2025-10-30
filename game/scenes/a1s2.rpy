@@ -85,7 +85,8 @@ label .raegan_conversation:
     "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala’s heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon is powerful."
 
-    charlet "Only a couple passed down from my grandfather. Much of her history appears lost. I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
+    charlet "Only a couple passed down from my grandfather. Much of her history appears lost."
+    charlet "I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
 
     show charlet smile
 

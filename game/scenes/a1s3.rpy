@@ -125,7 +125,8 @@ label .fight2:
 
     phrarat "What did you… ?"
 
-    pichit "It is not wise to burn plants without knowing what they’re made of. With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
+    pichit "It's not recommended to burn plants without knowing what they’re made of."
+    pichit "With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
