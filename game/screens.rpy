@@ -467,33 +467,33 @@ screen gear_button(_text="NULL", _size=0.4, _xpos=0, _ypos=0, _action = NullActi
 
     $iconoffset = 0#
     if _isQuick:
-      $iconoffset = -3
+        $iconoffset = -3
 
     $offset = int(5*_size)
     add im.FactorScale("gui/gears/gear_big_b_26.png", _size) at circle_rotate(_xpos+offset, _ypos+offset)
 
     button:
-      if _id:
-        id _id
-      at circle_rotate(_xpos, _ypos)
-      background im.FactorScale("gui/gears/gear_big_w_26.png", _size)
-      hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
-      selected_idle_background im.FactorScale("gui/gears/gear_big_y2_26.png", _size)
-      selected_hover_background im.FactorScale("gui/gears/gear_big_y2_26.png", _size)
-      xpos _xpos
-      ypos _ypos
-      hovered Show("qm_tooltip",ttcontent=_tooltip,ttxpos=0,ttypos=0,quick=_isQuick)
-      unhovered Hide("qm_tooltip")
-      action [Hide("qm_tooltip"), _action]
-      xsize int(310 * _size)
-      ysize int(310 * _size)
-      has vbox:
-        yalign 0.5
-        xalign 0.5
-        if ".png" in _text:
-          add "gui/button/icon_"+_text yoffset iconoffset at circle_rotate_r(0, 0)
-        else:
-          text _text hover_color "#000000"  selected_idle_color "#000000" at circle_rotate_r(0, 0)
+        if _id:
+            id _id
+        at circle_rotate(_xpos, _ypos)
+        background im.FactorScale("gui/gears/gear_big_w_26.png", _size)
+        hover_background im.FactorScale("gui/gears/gear_big_y_26.png", _size)
+        selected_idle_background im.FactorScale("gui/gears/gear_big_y2_26.png", _size)
+        selected_hover_background im.FactorScale("gui/gears/gear_big_y2_26.png", _size)
+        xpos _xpos
+        ypos _ypos
+        hovered Show("qm_tooltip",ttcontent=_tooltip,ttxpos=0,ttypos=0,quick=_isQuick)
+        unhovered Hide("qm_tooltip")
+        action [Hide("qm_tooltip"), _action]
+        xsize int(310 * _size)
+        ysize int(310 * _size)
+        has vbox:
+            yalign 0.5
+            xalign 0.5
+            if ".png" in _text:
+                add "gui/button/icon_"+_text yoffset iconoffset at circle_rotate_r(0, 0)
+            else:
+                text _text color "#453708" hover_color "#292105" selected_idle_color "#000000" at circle_rotate_r(0, 0)
 
     #imagebutton idle im.FactorScale("gui/gears/gear_big_w_26.png", _size) hover im.FactorScale("gui/gears/gear_big_y_26.png", _size)  xpos _xpos  ypos _ypos  action _action
 
@@ -579,22 +579,22 @@ screen qm_tooltip(ttcontent,ttxpos,ttypos,quick):
     $frameyalign = 0.98
     $framelength = 300
     if quick:
-      $frameyalign = 0.6
-      $framelength = 250
+        $frameyalign = 0.6
+        $framelength = 250
 
     if renpy.get_screen('main_menu'):
-      $framelength = 550
+        $framelength = 550
 
     if not ttcontent == "":
-      frame:
-        xsize framelength
-        xalign framexalign
-        yalign frameyalign
-        #background Frame("gui/namebox.png",
-        background Frame("gui/namebox.png", Borders(5, 5, 5, 5))
-        text ttcontent:
-            style "caption_med"
-            xpos ttxpos ypos ttypos
+        frame:
+            xsize framelength
+            xalign framexalign
+            yalign frameyalign
+            #background Frame("gui/namebox.png",
+            background Frame("gui/namebox.png", Borders(5, 5, 5, 5))
+            text ttcontent:
+                style "caption_med"
+                xpos ttxpos ypos ttypos
 
 ################################################################################
 ## Main and Game Menu Screens
@@ -1619,13 +1619,13 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
 
     frame:
-                  background None
-                  xsize int(310*.4)
-                  ysize int(310*.4)
-                  xalign 0.4
-                  yalign 0.55
-                  use gear_button("Yes", 0.4, 0 , -20 ,  yes_action)
-                  use gear_button("No", 0.4, 200 , -20 ,  no_action)
+        background None
+        xsize int(310*.4)
+        ysize int(310*.4)
+        xalign 0.4
+        yalign 0.55
+        use gear_button("Yes", 0.4, 0 , -20 ,  yes_action)
+        use gear_button("No", 0.4, 200 , -20 ,  no_action)
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
