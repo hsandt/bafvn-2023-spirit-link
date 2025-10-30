@@ -80,10 +80,10 @@ label .raegan_conversation:
     show charlet intrigued
 
     "My eyes widen. That Raegan has heard of Lalahon at all, is surprising."
-    "Stories about Lalahon are rare and their contents contradictory. The few that I have heard have been told to me by my grandfather."
+    "Stories about Lalahon are rare and their contents contradictory. The few I've heard have been told to me by my grandfather."
 
     "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala’s heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
-    "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon is powerful."
+    "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
 
     charlet "Only a couple passed down from my grandfather. Much of her history appears lost."
     charlet "I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
@@ -140,7 +140,7 @@ label .smoke:
     "Before Raegan can respond, a bright flash blinds us. The air grows thick with the scent of smoke."
     "Coughs sound out in the alleys as confusion spreads among the crowd. People cover their mouths and noses, or those of the children they accompany."
     "Some start running toward the exit while others take refuge in the main building."
-    "As I look for the origin of the smoke, I see it pour out from Dr. Barouche’s alchemy station."
+    "I look for the origin of the smoke. It seems to pour out from Dr. Barouche’s alchemy station."
 
     show charlet at darker
     show raegan thinking

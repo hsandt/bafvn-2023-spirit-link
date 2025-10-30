@@ -51,7 +51,7 @@ label a1s1:
     "A glance in the mirror reveals uneven patches of skin and smeared rouge. I swipe at it hastily, hoping no one noticed."
     "No one did. Of course not. Tucked in between the history and literature department’s booths, my own remains woefully forgotten."
 
-    show charlet exhausted
+    show charlet exhausted zorder 1
 
     "Bored and sweaty, I amuse myself by looking around."
 
@@ -82,6 +82,9 @@ label .look_at_crowd:
 
     "The fair is a vibrant tapestry of agendas and ambitions. Representatives from all industries,
     from hunter’s and merchant’s guilds to investors, mingled with students and curious onlookers."
+
+    show charlet exhausted at character_warp_to("middle_left") zorder 1
+    with character_dissolve
 
     $ has_looked_at_crowd = True
     return
@@ -136,8 +139,8 @@ label .look_at_booth:
     "A big boast from a little dragon.\n"
     extend "Nonetheless, the words give me some comfort."
 
-    show charlet neutral
     hide makara with character_dissolve
+    show charlet exhausted
 
     $ has_looked_at_booth = True
     return
@@ -148,16 +151,15 @@ label .after_look:
 
     # maybe add a highlight of some sort of dessert like a call out a box in the middle of the screen?
 
+    window hide
     pause 1.0
-
-    # Show above companion
-    show charlet exhausted at character_warp_to("middle_left") zorder 1
+    window show
 
     "Coconut oil and burnt sugar. My stomach rumbles at the scent of ume cakes in the air. I wish I had time to eat breakfast that morning, but I’d been too busy setting up the booth."
 
     show charlet sad
 
-    charlet "I should have brought some traditional dishes from Moacu. That would be on topic, and I’d have an excuse to eat."
+    charlet "I wish I had brought some traditional dishes from Moacu. That would be on topic, and I’d have an excuse to eat."
 
     show makara neutral at companion_warp_to("middle_right")
 
@@ -169,9 +171,9 @@ label .after_look:
 
     charlet "Okay, okay. I’ll just ask Aunt Urai next time."
 
-    "Usually, I would avoid talking that much with Makara in a public space. Most Enonians cannot see nor hear spirits and would give me a funny look every time they see me speak alone."
-    "But since few people are coming by my booth and my neighbors are well-versed in Islander culture, it shouldn’t be an issue."
-    "Besides, the blue jewel that adorns my armband makes most people think that I own a telestone and that I am talking to someone remotely. But it’s just decorative, really."
+    "Talking so much with Makara in a public space would usually grant me funny looks from Enonians, who cannot see or hear spirits."
+    "But the only people here are my booth neighbors, who are well-versed in Islander culture. They won't blame me for this."
+    "Besides, the blue jewel that adorns my armband looks like a telestone on purpose: it makes people think that I'm remotely talking to someone. Good to live in the modern age."
 
     hide makara with character_dissolve
 
@@ -241,15 +243,15 @@ label .pichit_arrives:
     pause 0.2
     window show
 
-    "Fan is Pichit’s forest spirit. Like many companions, it has a very different personality than its human counterpart. But it definitely shares his love of nature."
+    "Fan is Pichit’s forest spirit. Like many companions, it has a very different personality than its human counterpart. But it does share his love of nature."
 
-    "I let our spirits hold their whimsical conversation while I chitchat with Pichit. As we talk in Laedani, my northern accent gradually transitions to a southern one as I mimic Pichit."
+    "I let our spirits hold their whimsical conversation while I chitchat with Pichit in Laedani. My northern accent gradually transitions to southern as I mimic Pichit to put him at ease."
 
     window hide
     pause 0.5
     window show
 
-    "As we discuss the impact of industrial progress of the fauna and flora, a man I don’t know approaches from behind Pichit."
+    "As we talk about the fair's organization, a man I don’t know approaches from behind Pichit."
 
     hide makara
     hide fan
