@@ -26,11 +26,11 @@ label a1s3:
 
     pichit "{i}Yeah… I’m fine.{/i}"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_18
     show pichit battle anxious
     show phrarat determined at character_enter_from_right_to_easein("right")
     pause 1.0
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_18
 
     pichit "{i}And, erm… I got him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
@@ -49,13 +49,13 @@ label a1s3:
 
     $ should_show_side_image = False
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_19
 
     # Known issue: a weird bug causes Phrarat to insta move right to prepare attack,
     # instead of tweening
-    call a1s2.pichit_phrarat_cross_blades
+    call a1s2.pichit_phrarat_cross_blades from _call_a1s2_pichit_phrarat_cross_blades_4
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_19
 
     jump .fight2
 
@@ -94,7 +94,7 @@ label .fight2:
 
     "We both wait for the smoke to disappear, then resume fighting."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_20
 
     play music battle
     # perfect timing for blades to cross on a beat
@@ -103,9 +103,9 @@ label .fight2:
     show pichit battle serious
     show phrarat determined
 
-    call a1s2.pichit_phrarat_cross_blades
+    call a1s2.pichit_phrarat_cross_blades from _call_a1s2_pichit_phrarat_cross_blades_5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_20
 
     "While I distract him with my sword, I let Fan grow vines from the plant with striking red leaves behind him."
 
@@ -252,7 +252,7 @@ label .fight2:
     jump .sprinkler
 
 label .sprinkler:
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_21
 
     stop music fadeout 2.0
     play sound audio.sfx.shower2
@@ -260,7 +260,7 @@ label .sprinkler:
     show phrarat surprised
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_21
 
     # TODO FX: rain followed by steam (can reuse smoke, a little more transparent maybe)
 
@@ -277,14 +277,14 @@ label .sprinkler:
 
     pen "Phrarat…"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_22
 
     hide pen with character_dissolve
     pause 0.2
     show pichit at character_move_to_ease("middle_left", 1.2)
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_22
 
     play music premonition
 
@@ -311,13 +311,13 @@ label .sprinkler:
 
     pichit "…"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_23
 
     show pichit battle serious
     play sound audio.sfx.running2
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_23
 
     "Hooves and shuffling boots resound at the greenhouse's entrance."
 
@@ -375,7 +375,7 @@ label .sprinkler:
 
 label .aftermath:
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_24
 
     scene bg black with wipeleft_fast
     pause 0.5
@@ -386,7 +386,7 @@ label .aftermath:
 
     show pichit exhausted zorder 1 at character_warp_to("middle")
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_24
 
     "The guards accompany us to the infirmary. A nurse comes to administer me first aid."
 
@@ -492,7 +492,7 @@ label .aftermath:
     pichit "I don’t need to be asked twice!"
     charlet "Same for me. We’ll meet again later."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_25
 
     show charlet at character_exit_to_left_easeout(1.0)
     show pichit at character_exit_to_left_easeout(1.5)
@@ -502,7 +502,7 @@ label .aftermath:
     pause 1.0
     show raegan thinking
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_25
 
     stop music fadeout 5.0
 
@@ -517,7 +517,7 @@ label .prologue_ending:
 
     # adapt cinematic effect from jam ending in a1s2
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_26
 
     pause 1.0
 

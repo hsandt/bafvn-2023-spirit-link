@@ -3,7 +3,7 @@ label a1s1:
     # Renpy needs to be told to stop Main Menu BGM (Title Theme)
     stop music fadeout 2.0
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic
 
     pause 1.0
 
@@ -18,13 +18,13 @@ label a1s1:
 
     hide act_title with dissolve
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic
 
     "How far would you go to achieve your dreams?"
     "This was a question Professor Mara once posed to me as a naive, first year."
     "At the time, I said “I’d do anything”. Now, I am reconsidering."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_1
 
     scene bg university_outside with fade
     play music mystery
@@ -34,7 +34,7 @@ label a1s1:
 
     show charlet exhausted at character_warp_to("middle_left")
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_1
 
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
@@ -215,7 +215,7 @@ label .pichit_arrives:
 
     "He is also accompanied by a spirit."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_2
 
     # Move characters to far sides to leave space for spirits
     show charlet at character_move_to("left", 0.5)
@@ -227,7 +227,7 @@ label .pichit_arrives:
 
     pause 0.5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_2
 
     makara "We meet again, my fellow. How do you feel today?"
 
