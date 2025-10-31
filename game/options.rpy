@@ -88,7 +88,7 @@ define config.has_voice = True
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 
-# define config.sample_sound = "sample-sound.ogg"
+define config.sample_sound = "audio/sfx/sfx_slash1.opus"
 # define config.sample_voice = "sample-voice.ogg"
 
 
@@ -110,12 +110,12 @@ define config.has_voice = True
 define config.enter_transition = dissolve
 define config.exit_transition = dissolve
 
-
 ## Between screens of the game menu.
 
 define config.intra_transition = dissolve
 
-# Used when entering the main menu from the splashscreen.
+
+## Used when entering the main menu from the splashscreen.
 
 define config.end_splash_transition = Dissolve(0.5)
 
@@ -131,6 +131,7 @@ define config.end_game_transition = Dissolve(0.5)
 ## A transition that is used after a game has been loaded.
 
 define config.after_load_transition = Dissolve(0.5)
+
 
 ## Used when yesno is shown.
 
