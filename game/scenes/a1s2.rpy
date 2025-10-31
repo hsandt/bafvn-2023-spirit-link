@@ -461,7 +461,7 @@ label .telecall:
     pause 0.5
     window show
 
-    raegan "By the way, Charlet... How did you contact them?"
+    raegan "By the way, Charlet… How did you contact them?"
 
     charlet "Uh?"
 
@@ -475,7 +475,7 @@ label .telecall:
 
     charlet "{i}Well, I can probably tell him about my spirit now. After all, he already knows that I am a descendant of the Islanders.{/i}"
 
-    charlet "Oh, that's..."
+    charlet "Oh, that's…"
 
     show makara neutral at companion_warp_to("left"), flip
 
@@ -541,13 +541,13 @@ label .choice_telecall_2_pretend_telestone:
 
     "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
 
-    charlet "Sorry, it's... a prototype from the university's lab. They lent it to me."
+    charlet "Sorry, it's… a prototype from the university's lab. They lent it to me."
     charlet "They are still experimenting with it, but it's not ready for production, so they prefer keeping it private for now."
 
     show raegan sad
     show charlet neutral
 
-    raegan "Oh, I... I understand. Please pardon my intrusion."
+    raegan "Oh, I… I understand. Please pardon my intrusion."
 
     show raegan neutral
     show charlet smile

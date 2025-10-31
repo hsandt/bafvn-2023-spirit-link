@@ -177,7 +177,7 @@ label .unused_choice_telecall_1_reveal_makara:
 
     show raegan surprised
 
-    raegan "Really? How..."
+    raegan "Really? How…"
 
     show raegan neutral
 
@@ -192,15 +192,15 @@ label .unused_choice_telecall_1_reveal_makara:
 
     show raegan surprised
 
-    raegan "... Oh, my!"
+    raegan "… Oh, my!"
 
     "The rich son looks taken aback. I suppose it did work after all."
 
     charlet "Reagan, say hello to Makara."
 
-    raegan "... Hello?"
+    raegan "… Hello?"
 
-    makara "..."
+    makara "…"
 
     charlet "Sorry, it's not very talkative."
 

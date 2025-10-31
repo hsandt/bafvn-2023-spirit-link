@@ -32,7 +32,7 @@ label a1s3:
     pause 1.0
     call end_cinematic
 
-    pichit "{i}And, erm... I got him into the building.{/i}"
+    pichit "{i}And, erm… I got him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
 
     charlet telepathy "Just keep fighting until he uses too much fire and triggers the sprinkler system."
@@ -286,7 +286,6 @@ label .sprinkler:
 
     call end_cinematic
 
-    # play music mystery
     play music premonition
 
     show phrarat determined
@@ -322,7 +321,7 @@ label .sprinkler:
 
     "Hooves and shuffling boots resound at the greenhouse's entrance."
 
-    "The criminal is soon surrounded by a dozen security guards, armed with tonfas and muskets."
+    "The man is soon surrounded by a dozen security guards, armed with tonfas and muskets."
 
     guard "Drop your weapons!"
 
@@ -360,7 +359,7 @@ label .sprinkler:
 
     "I look upward, just like the guards now scattered across the greenhouse’s alleys."
 
-    "The assassin is standing on the roof frame, now completely devoid of glass. He looks down at me one last time, before running away on the tangle of beams."
+    "The man in burnt clothes is standing on the roof frame, now completely devoid of glass. He looks down at me one last time, before running away on the tangle of beams."
 
     guard "Go after him! Quick!"
 
@@ -370,15 +369,24 @@ label .sprinkler:
 
     "Fortunately, they spot no other signs of danger."
 
+    stop music fadeout 2.0
+
     jump .aftermath
 
 label .aftermath:
 
+    call start_cinematic
+
     scene bg black with wipeleft_fast
     pause 0.5
     scene bg university_inside with wipeleft_fast
+    pause 0.5
+
+    play music mystery
 
     show pichit exhausted zorder 1 at character_warp_to("middle")
+
+    call end_cinematic
 
     "The guards accompany us to the infirmary. A nurse comes to administer me first aid."
 
@@ -406,9 +414,7 @@ label .aftermath:
 
     show raegan intrigued at character_enter_from_right_to_easein("right", 0.5)
 
-    "Raegan also enters the infirmary, but he has difficulties getting past the guards, who keep checking that Vanich’s son is unharmed."
-
-    "After assuring them that he’s fine, he finally joins us."
+    "Raegan joins us, a few band-aids on his hand and his face."
 
     show raegan smile
 
@@ -422,27 +428,31 @@ label .aftermath:
 
     show raegan neutral
 
-    raegan "I will report the attack to my company. I will try to convince them to assign us bodyguards so I can still join the expedition safely."
+    raegan "I've reported the attack to my company. They now feel uneasy about sending me on the expedition, but I assured them it will be fine, provided they assign us bodyguards."
 
-    raegan "Normally, the militia should come back later to ask you for your testimony."
+    window hide
+    pause 0.5
+    window show
+
+    raegan "By the way, the militia has been asking me for more information on the attacker, but I couldn't tell much."
+    raegan "You had the opportunity to observe him closely during your fight, so I think you'll be able to help them more."
+
     raegan "I know that Enon keeps a registry of all the Islanders who moved to the continent, as well as suspected ILF supporters."
     raegan thinking "So, by crosschecking it with your description of the assassin, they may be able to identify him."
 
     show pichit intrigued
 
     "I'm amazed by how much Raegan knows about administrative and criminal matters.
-    Then again, he was the target, so it's not surprising that he would closely study the actions of any potential opponents."
+    Then again, he was the target, so it's not surprising that he would closely study the actions of any potential threats."
 
     show pichit neutral
-
-    raegan "That said, I can accelerate the process by passing on any relevant piece of information directly to the authorities, thanks to my extended network."
-
     show charlet at darker
 
-    raegan "Pichit, did you notice anything during your fight that could help the investigation?"
+    raegan "Did you notice anything during your fight that could help the investigation?"
 
-    pichit "{i}Hm... That cloaked man – Phrarat, as I heard from his spirit – trusted in me by revealing his deep, personal motivations.{/i}"
-    pichit "{i}Should I keep them for myself, or report them to gain Raegan's trust and maximize our chance of survivals during the expedition?{/i}"
+    pichit "{i}Let's see... I want to gain Raegan's trust and prevent any further attacks during the expedition… but… that cloaked man...{/i}"
+
+    pichit "{i}What should I do?{/i}"
 
     while not (has_told_thats_all or has_told_nothing):
         if has_told_assassin_family_story or has_told_trivia:
@@ -453,18 +463,18 @@ label .aftermath:
             "I tell Raegan about the assassin's name and father." if not has_told_assassin_family_story:
                 pichit "I heard his spirit call him 'Phrarat'. It could be his nickname, though."
                 "I explain why Phrarat's family business closed and how his father died in one of Vanich's factories."
-                raegan sad "I see... An unfortunate accident."
+                raegan sad "I see… An unfortunate accident."
                 raegan thinking "This will however prove precious information in identifying the culprit."
                 $ has_told_assassin_family_story = True
             "I tell Raegan about his spirit." if not has_told_assassin_spirit_appearance:
                 pichit "He was accompanied by a flying spirit. It looked like a silkmoth with a cat head, and its body was covered with green and yellow stripes."
-                raegan thinking "Interesting... Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
+                raegan thinking "Interesting… Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
                 raegan neutral "Most of them just want to live peacefully in Enon, after all."
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
                 pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
                 pichit intrigued "I'm not sure why he'd do that. I mean, shouldn't that help me dodge them?"
-                raegan surprised "I... see..."
+                raegan surprised "I… see…"
                 $ has_told_trivia = True
             "I tell Raegan I haven't noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
                 pichit "No, that was all."
