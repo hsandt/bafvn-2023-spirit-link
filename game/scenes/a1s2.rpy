@@ -174,15 +174,13 @@ label .smoke:
 
     show pichit at darker
     show raegan at darker
-    show charlet anxious
-
-    "I feel a sudden unease."
 
     show makara neutral at companion_warp_to("far_left"), flip
 
     pause 0.5
 
-    makara "I sense ill intent behind this screen of smoke. We had better quickly leave this place."
+    show charlet anxious
+    makara "I sense ill intent lurking amidst this smoke. We had better quickly leave this place."
 
     show charlet serious
 
@@ -193,7 +191,7 @@ label .smoke:
     show raegan at reset_brightness
     show pichit at reset_brightness
 
-    charlet "Everyone, we should go."
+    charlet "Everyone, I think we should go. It doesn't feel safe here."
 
     raegan "Yes, that’s probably best."
 
