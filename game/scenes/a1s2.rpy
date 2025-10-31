@@ -257,10 +257,15 @@ label .assassin_appears:
 
     "I realize belatedly that Pichit has shoved me to the floor."
 
+    call start_cinematic
+    pause 1.0
+    play music premonition
     show phrarat determined at character_warp_to("middle")
+    pause 1.0
+    call end_cinematic
 
     "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him."
-    "A glowing shield is the only barrier between his chest and his assailant’s knife. As I suspected, the red gem on Raegan’s collar is not decorative like mine."
+    "A glowing shield is the only barrier between his chest and his assailant’s knife. As I suspected, the red gem on Raegan’s collar is not just decorative like mine."
 
     show phrarat shout
 
@@ -366,6 +371,8 @@ label .assassin_appears:
 
     play sound audio.sfx.running2
 
+    stop music fadeout 2.0
+
     "We run, dashing between confused onlookers and oblivious attendees still staring at the smoke billowing from the alchemy stands."
 
     pause 0.2
@@ -393,6 +400,8 @@ label .refuging_in_building:
     raegan "Not us. Me."
 
     show charlet intrigued
+
+    play music mystery
 
     charlet "Why would he be trying to kill you?"
 
@@ -607,6 +616,8 @@ label .charlet_calls_pichit:
     charlet "I'm worried for Pichit. I will check on him."
 
     call start_cinematic
+    stop music fadeout 1.0
+
     show charlet telepathy with character_dissolve
     pause 0.5
 
