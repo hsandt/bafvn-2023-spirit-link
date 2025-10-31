@@ -26,14 +26,16 @@ label a1s3:
 
     pichit "{i}Yeah… I’m fine.{/i}"
 
+    call start_cinematic
     show pichit battle anxious
-
     show phrarat determined at character_enter_from_right_to_easein("right")
+    pause 1.0
+    call end_cinematic
 
-    pichit "{i}I… managed to get him into the building.{/i}"
+    pichit "{i}And, erm... I got him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
 
-    charlet telepathy "Just keep fighting to drive him into a corner. When he starts using intense fire, it will trigger the sprinkler system and you’ll be able to get the edge."
+    charlet telepathy "Just keep fighting until he uses too much fire and triggers the sprinkler system."
 
     # Cut for now to get started with Raise your Voice jam 2025
     # charlet telepathy "I will help you as much as I can with my remote vision. Just tell me what you need to know."
@@ -71,7 +73,7 @@ label .fight2:
 
     show screen smoke
 
-    "One spark hits the Aquilaria tree at the center of the installation. It catches fire and starts spreading white smoke."
+    "One spark hits the Aquilaria tree at the center of the installation. It catches fire and immediately starts spreading white smoke."
 
     show phrarat surprised at character_move_to_easein("right", 0.3)
 
@@ -407,8 +409,8 @@ label .aftermath:
 
     raegan "Pichit, did you notice anything during your fight that could help the investigation?"
 
-    "{i}Hm... That cloaked man – Phrarat, as I heard from his spirit – trusted in me by revealing his deep, personal motivations.{/i}"
-    "{i}Should I keep them for myself, or report them to gain Raegan's trust and maximize our chance of survivals during the expedition?{/i}"
+    pichit "{i}Hm... That cloaked man – Phrarat, as I heard from his spirit – trusted in me by revealing his deep, personal motivations.{/i}"
+    pichit "{i}Should I keep them for myself, or report them to gain Raegan's trust and maximize our chance of survivals during the expedition?{/i}"
 
     while not (has_told_thats_all or has_told_nothing):
         if has_told_assassin_family_story or has_told_trivia:
