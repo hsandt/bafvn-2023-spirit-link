@@ -339,9 +339,9 @@ label .assassin_appears:
 
     call .pichit_phrarat_cross_blades(0.2)
 
-    "The assassin, enraged, lunges. Blade meets blade. The two seem evenly matched, but I can see Pichit tiring."
+    "The assassin, enraged, lunges. Blade meets blade. The two seem evenly matched."
 
-    "I look around for help, but people are even more panicked than before. Not only the visitors, but even hunters, are running away from the battle scene."
+    "I look around for help, but people are even more panicked than before. Even the hunters are running away from the battle scene."
 
     "I can’t blame them: they are trained to kill animals, not humans."
 
@@ -349,7 +349,9 @@ label .assassin_appears:
 
     pichit "What are you doing here? Go!"
 
-    charlet shout "But we can’t let you… !"
+    show pichit battle serious
+
+    charlet shout "But you–"
 
     show raegan anxious
     show charlet anxious
@@ -432,8 +434,7 @@ label .telecall:
     show charlet telepathy with character_dissolve
     call end_cinematic
 
-    "Makara's power allows me to use telepathy to contact people I have already bound a connection with."
-    "I focus, trying to reach out to Jamil, the head of security."
+    "I summon Makara and focus, using its telepathic power to reach out to Jamil, the head of security."
     "Our conversation is brief and to the point. Unsurprisingly given the chaos, he is being inundated with telecalls."
 
     call start_cinematic
@@ -463,11 +464,11 @@ label .telecall:
 
     show charlet scared
 
-    charlet "{i}Oh no! I was so worried about Pichit that I totally forgot to pretend using my stone!{/i}"
+    charlet "{i}Oh no! I was so worried about Pichit that I totally forgot to hide my power!{/i}"
 
     show charlet neutral
 
-    charlet "{i}Well, I can probably tell him about my spirit now. This is an emergency, and besides, he already knows that I am a descendant of the Islanders.{/i}"
+    charlet "{i}Well, I can probably tell him about my spirit now. After all, he already knows that I am a descendant of the Islanders.{/i}"
 
     charlet "Oh, that's..."
 
@@ -476,28 +477,23 @@ label .telecall:
     makara "Charlet, wait. We don't know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
     charlet "{i}But he's going to travel with us on the expedition. He's bound to notice your existence sooner or later.{/i}"
-    charlet "{i}Besides, creating a connection with him would allow me to contact him later, in case we get into troubles on the Island.{/i}"
 
-    makara "If that is so, you can simply mention my presence, and bind a connection with him later."
-    makara "But I leave the final choice to you."
+    makara "I see. Then, I leave the final choice to you."
 
     hide makara with character_dissolve
 
     charlet "{i}Alright. Should I introduce Raegan to Makara?{/i}"
 
     menu:
-        "I connect with Raegan to let him see Makara.":
-            call .choice_telecall_1_reveal_makara
-
-        "I mention Makara but keep it invisible.":
-            call .choice_telecall_2_mention_makara
+        "I mention the presence of Makara, although invisible.":
+            call .choice_telecall_1_mention_makara
 
         "I don't mention Makara and pretend to use a telestone.":
-            call .choice_telecall_3_pretend_telestone
+            call .choice_telecall_2_pretend_telestone
 
     jump .charlet_calls_pichit
 
-label .choice_telecall_1_2_common_start:
+label .choice_telecall_1_mention_makara:
 
     show charlet smile
 
@@ -510,63 +506,13 @@ label .choice_telecall_1_2_common_start:
 
     show raegan surprised
 
-    charlet "Here! My spirit companion. My family has preserved the tradition of spirit binding for generations."
+    charlet "Here! My spirit companion. You see, my family has preserved the tradition of spirit binding for generations."
 
     "Raegan cannot hide his perplexity."
 
     charlet "You cannot see my spirit, right?"
 
-    show raegan neutral
-
-    charlet "Don't worry, Enonians are born spirit-blind. Even I had to do a special training on Moacu-Laedan to be able to perceive them."
-
-    return
-
-label .choice_telecall_1_reveal_makara:
-    call .choice_telecall_1_2_common_start
-
-    charlet "But I can help you see it when you're close to me."
-
-    show raegan surprised
-
-    raegan "Really? How..."
-
-    show raegan neutral
-
-    "I put my hand on Raegan's right shoulder and start singing an aria. I focus on Makara's energy, then on Raegan's psyche."
-    "It's not a common thing to do, even for natives of Moacu-Laedan, so I'm not sure at all this is going to work."
-
-    window hide
-    pause 0.5
-    window show
-
-    # FX: special screen effect to make Makara disappears and reappears for Raegan
-
-    show raegan surprised
-
-    raegan "... Oh, my!"
-
-    "The rich son looks taken aback. I suppose it did work after all."
-
-    charlet "Reagan, say hello to Makara."
-
-    raegan "... Hello?"
-
-    makara "..."
-
-    charlet "Sorry, it's not very talkative."
-
-    call .choice_telecall_1_2_common_end
-
-    return
-
-label .choice_telecall_2_mention_makara:
-    call .choice_telecall_1_2_common_start
-    call .choice_telecall_1_2_common_end
-
-    return
-
-label .choice_telecall_1_2_common_end:
+    charlet "Don't worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
 
     show charlet serious
     show raegan neutral
@@ -575,7 +521,7 @@ label .choice_telecall_1_2_common_end:
 
     return
 
-label .choice_telecall_3_pretend_telestone:
+label .choice_telecall_2_pretend_telestone:
 
     charlet "Yes, it's a new kind of stone gear that connects directly to my brainwaves."
 
@@ -589,7 +535,7 @@ label .choice_telecall_3_pretend_telestone:
 
     "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
 
-    charlet "Sorry, it's... the university's lab lent it to me."
+    charlet "Sorry, it's... a prototype from the university's lab. They lent it to me."
     charlet "They are still experimenting with it, but it's not ready for production, so they prefer keeping it private for now."
 
     show raegan sad

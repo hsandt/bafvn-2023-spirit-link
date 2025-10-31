@@ -146,3 +146,64 @@ label .unused_jam_end:
     pause 5.0
 
     return
+
+# We removed the option to reveal Makara from Prologue, as it does sound early and odd to do that
+# while Pichit is fighting, if there is no reason to share telepathy
+# In the full version, if Charlet and Reagan work together to enable the fire sprinkler as in the
+# original script, this would make sense to establish a connection.
+# But the best is probably to move this to a later scene, on the boat or during the expedition where
+# they get closer to each other and need to work together on some task.
+
+label .unused_menu_with_choice_reveal_makara:
+
+    charlet "{i}Alright. Should I introduce Raegan to Makara?{/i}"
+
+    menu:
+        "I connect with Raegan to let him see Makara.":
+            call .choice_telecall_1_reveal_makara
+
+        "I mention Makara but keep it invisible.":
+            call .choice_telecall_2_mention_makara
+
+        "I don't mention Makara and pretend to use a telestone.":
+            call .choice_telecall_3_pretend_telestone
+
+    jump .charlet_calls_pichit
+
+label .unused_choice_telecall_1_reveal_makara:
+    call .choice_telecall_1_2_common_start
+
+    charlet "But I can help you see it when you're close to me."
+
+    show raegan surprised
+
+    raegan "Really? How..."
+
+    show raegan neutral
+
+    "I put my hand on Raegan's right shoulder and start singing an aria. I focus on Makara's energy, then on Raegan's psyche."
+    "It's not a common thing to do, even for natives of Moacu-Laedan, so I'm not sure at all this is going to work."
+
+    window hide
+    pause 0.5
+    window show
+
+    # FX: special screen effect to make Makara disappears and reappears for Raegan
+
+    show raegan surprised
+
+    raegan "... Oh, my!"
+
+    "The rich son looks taken aback. I suppose it did work after all."
+
+    charlet "Reagan, say hello to Makara."
+
+    raegan "... Hello?"
+
+    makara "..."
+
+    charlet "Sorry, it's not very talkative."
+
+    call .choice_telecall_1_2_common_end
+
+    return
