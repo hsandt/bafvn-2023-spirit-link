@@ -720,16 +720,14 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    #if gui.show_name:
-    #
-    #    vbox:
-    #        style "main_menu_vbox"
-    #
-    #        text "[config.name!t]":
-    #            style "main_menu_title"
-    #
-    #        text "[config.version]":
-    #            style "main_menu_version"
+    if gui.show_version:
+
+        # vbox is arbitrary, it's just to have an empty container
+        vbox:
+            style "main_menu_version_vbox"
+
+            text "[config.version]":
+                style "main_menu_version"
 
     frame:
         background None
@@ -768,11 +766,10 @@ style main_menu_frame:
 
     background "gui/overlay/game_menu.png"
 
-style main_menu_vbox:
+style main_menu_version_vbox:
     xalign 1.0
     xoffset -30
-    xmaximum 1200
-    yalign 0.5
+    yalign 1.0
     yoffset -30
 
 style main_menu_text:
