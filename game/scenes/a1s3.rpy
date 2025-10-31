@@ -450,10 +450,6 @@ label .aftermath:
 
     raegan "Did you notice anything during your fight that could help the investigation?"
 
-    pichit "{i}Let's see... I want to gain Raegan's trust and prevent any further attacks during the expedition… but… that cloaked man...{/i}"
-
-    pichit "{i}What should I do?{/i}"
-
     while not (has_told_thats_all or has_told_nothing):
         if has_told_assassin_family_story or has_told_trivia:
             show pichit neutral
@@ -473,7 +469,7 @@ label .aftermath:
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
                 pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
-                pichit intrigued "I'm not sure why he'd do that. I mean, shouldn't that help me dodge them?"
+                pichit intrigued "I'm not sure why he'd do that, though. I mean, doesn't that make them easier to dodge?"
                 raegan surprised "I… see…"
                 $ has_told_trivia = True
             "I tell Raegan I haven't noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
