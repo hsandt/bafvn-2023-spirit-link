@@ -628,7 +628,7 @@ label .fight1:
     play music battle
     pause 1.7
 
-    call .phrarat_whip_dodged_duck from _call_a1s2run_phrarat_whip_dodged
+    call .phrarat_whip_dodged_duck
 
     call end_cinematic
 
@@ -639,7 +639,6 @@ label .fight1:
     show pichit battle serious
 
     call .phrarat_blade_dodged_backward
-    # call .pichit_slash_blocked from _call_a1s2run_pichit_slash_blocked
 
     "Another sword strike. I dance out of reach, narrowly losing a finger."
 
@@ -648,12 +647,12 @@ label .fight1:
     call start_cinematic
 
     # TODO: change animation calls to match text
-    call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch
+    call .phrarat_whip_catch
     pause 0.25
-    call .pichit_cut_catching_whip from _call_a1s2run_pichit_cut_catching_whip
+    call .pichit_cut_catching_whip
     pause 0.25
 
-    call .pichit_phrarat_cross_blades(0.0) from _call_a1s2run_pichit_phrarat_cross_blades
+    call .pichit_phrarat_cross_blades(0.0)
 
     call end_cinematic
 
@@ -691,8 +690,8 @@ label .fight1:
 
     call start_cinematic
 
-    call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s2run_pichit_phrarat_cross_blades_1
-    call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s2run_pichit_phrarat_cross_blades_2
+    call .pichit_phrarat_cross_blades(-0.1, 2)
+    call .pichit_phrarat_cross_blades(-0.2, 1)
 
     call end_cinematic
 
@@ -710,7 +709,7 @@ label .fight1:
     show pichit battle serious
     hide fan with character_dissolve
 
-    call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch_1
+    call .phrarat_whip_catch
     pause 0.5
 
     call end_cinematic
@@ -1028,6 +1027,7 @@ label .phrarat_blade_dodged_backward:
 
     return
 
+# UNUSED
 label .pichit_slash_blocked:
     play sound audio.sfx.slash_impact3
     pause 0.15
@@ -1069,7 +1069,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
     pause 0.15
 
-    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2run_play_blade_clash_sfx_variant
+    call .play_blade_clash_sfx_variant(sfx_variant_number)
 
     # Hotfix to adjust timing, as SFX variant impact part is not playing at the same time
     if sfx_variant_number == 1:
@@ -1086,7 +1086,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
 label .play_blade_clash_sfx_random_variant:
     $ sfx_variant_number = renpy.random.randint(1, 2)
-    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2run_play_blade_clash_sfx_variant_1
+    call .play_blade_clash_sfx_variant(sfx_variant_number)
 
     return
 
