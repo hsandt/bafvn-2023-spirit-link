@@ -478,7 +478,7 @@ label .aftermath:
                 $ has_told_thats_all = True
             "I tell Raegan that I haven't noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
                 pichit intrigued "Not really. I admit I was really focused on surviving all that time."
-                raegan "Understandable."
+                raegan neutral "Understandable."
                 $ has_told_nothing = True
 
     window hide
@@ -487,7 +487,7 @@ label .aftermath:
     pause 0.5
     window show
 
-    raegan "Well, I need to go back to my headquarters now. You two should rest."
+    raegan neutral "Well, I need to go back to my headquarters now. You two should rest."
 
     pichit "I don’t need to be asked twice!"
     charlet "Same for me. We’ll meet again later."
@@ -532,32 +532,32 @@ label .prologue_ending:
 
     pause 1.78
 
-    image end_text1 = Text("Spirit Link - Prologue", textalign=0.5, slow_cps=20)
+    image end_text1 = Text("{color=[gui.idle_color]}{size=80}Spirit Link - Prologue{/size}{/color}")
 
     show end_text1 with dissolve:
         xalign 0.5
         yalign 0.5
-        yoffset -30
+        yoffset -60
 
     pause 2.29
 
-    image end_text2 = Text("End", textalign=0.5, slow_cps=10)
+    image end_text2 = Text("{color=[gui.idle_color]}{size=60}End{/size}{/color}")
 
     show end_text2 with dissolve:
         xalign 0.5
         yalign 0.5
-        yoffset 30
+        yoffset 60
 
-    pause 2.45
+    pause 2.29
 
     hide end_text1
     hide end_text2
     with dissolve
 
-    pause 10.7
+    pause 2.29
 
-    stop music fadeout 8.0
+    stop music fadeout 5.58
 
-    pause 5.0
+    pause 8.37
 
     return
