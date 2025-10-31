@@ -481,7 +481,7 @@ label .prologue_ending:
 
     pause 1.0
 
-    play music to_be_continued noloop
+    play music premonition
 
     show bg at sepia
     show raegan at sepia
