@@ -524,6 +524,7 @@ label .choice_telecall_1_mention_makara:
 
     charlet "Anyway, Makara allows me to reach other people’s minds."
 
+    $ has_mentioned_makara_to_raegan = True
     return
 
 label .choice_telecall_2_pretend_telestone:
