@@ -115,15 +115,30 @@ define config.exit_transition = dissolve
 
 define config.intra_transition = dissolve
 
+# Used when entering the main menu from the splashscreen.
 
-## A transition that is used after a game has been loaded.
+define config.end_splash_transition = Dissolve(0.5)
 
-define config.after_load_transition = None
+## Used when returning to the main menu from the game.
 
+define config.game_main_transition  = Dissolve(0.5)
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = Dissolve(0.5)
+
+
+## A transition that is used after a game has been loaded.
+
+define config.after_load_transition = Dissolve(0.5)
+
+## Used when yesno is shown.
+
+define config.enter_yesno_transition = Dissolve(0.2)
+
+## Used when the yesno is hidden.
+
+define config.exit_yesno_transition = Dissolve(0.2)
 
 
 ## A variable to set the transition used when the game starts does not exist.
