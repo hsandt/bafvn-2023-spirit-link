@@ -81,7 +81,9 @@ default should_show_side_image = False
 default has_looked_at_booth = False
 default has_looked_at_crowd = False
 
-# A1S2
+# A1S3
+default has_believed_assassin_no_last_surprise_attack = False
+
 default has_told_assassin_family_story = False
 default has_told_assassin_spirit_appearance = False
 default has_told_trivia = False

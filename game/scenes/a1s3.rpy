@@ -314,6 +314,7 @@ label .sprinkler:
 
     call start_cinematic
 
+    show pichit battle serious
     play sound audio.sfx.running2
     pause 1.0
 
@@ -332,9 +333,13 @@ label .sprinkler:
     "The fighter stays silent, his expression unaffected."
     "He grabs a circular pouch from his belt and slams it onto the ground. A cloud of smoke covers the room."
 
-    # TODO: player choice to brace oneself or not - trust Assassin won't attack me
-
-    "Fearing another surprise attack, I brace myself, but nothing happens."
+    menu:
+        "I brace myself for another surprise attack.":
+            show pichit battle anxious
+            "Fearing another surprise attack, I brace myself. But nothing happens."
+        "I stand still. I don't believe he'll cause any more harm.":
+            "I stand still while the guards are on the defensive."
+            $ has_believed_assassin_no_last_surprise_attack = True
 
     hide phrarat
     hide screen smoke
