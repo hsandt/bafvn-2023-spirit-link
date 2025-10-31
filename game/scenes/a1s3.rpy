@@ -87,7 +87,8 @@ label .fight2:
 
     show pichit anxious
 
-    pichit "{i}Why the sudden change of attitude? Is it my chance to counter attack? No, wait. I recognize this scent…{/i}"
+    pichit "{i}What's going on? Should I take that chance to attack him?{/i}"
+    pichit "{i}No, wait. I recognize this scent…{/i}"
 
     hide screen smoke with bg_dissolve
 
@@ -127,7 +128,7 @@ label .fight2:
 
     phrarat "Already gone? Looks like interior plants won’t help you much."
 
-    "The assassin deals a strong blow, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
+    "The assassin delivers a strong blow right into my guard, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
 
     phrarat shout "Phoenix…"
 
@@ -135,13 +136,14 @@ label .fight2:
 
     "The fighter interrupts his move, grabbing his chest and coughing."
 
+    # Voice acting: talk while panting and pausing, doing efforts to finish sentence
     phrarat "What did you… ?"
 
     pichit "It's not recommended to burn plants without knowing what they’re made of."
-    pichit "With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
+    pichit "With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
     pichit "This is over."
 
     window hide
@@ -155,7 +157,7 @@ label .fight2:
 
     pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use to honor the deceased."
 
-    pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
+    pichit "You stopped fighting because you remembered someone who passed away, didn’t you?"
 
     phrarat "…"
 
@@ -181,13 +183,13 @@ label .fight2:
 
     pen "…"
 
-    "His spirit looks exhausted. Was it the relentless weaving that drained its energy, or did the poison affect it via the assassin's body?"
+    "His spirit looks exhausted. Maybe the relentless weaving ended up draining its energy after all."
 
     hide pen with character_dissolve
 
-    phrarat "Tsk… I have no choice then."
+    phrarat "Tsk… I have no choice, then."
 
-    "In the blink of an eye, he sets his own tunic on fire, along with what remains of his scarf. A blazing whirl surrounds him."
+    "He sets his own tunic on fire, along with what remains of his scarf. A blazing whirl surrounds him."
 
     show phrarat shout
 
@@ -210,9 +212,9 @@ label .fight2:
 
     phrarat "Graaah!!"
 
-    "The assassin ignores his companion and makes the whirlwind accelerate. It flows higher and farther."
+    "The assassin ignores his companion and makes the whirlwind accelerate. It flows farther and higher."
 
-    "It ends up hitting the spirit, who was flying too close, projecting it backward."
+    "It ends up hitting the spirit, projecting it backward."
 
     show pen:
         parallel:
@@ -237,11 +239,13 @@ label .fight2:
     pen "…"
     pen "It’s too late… I can’t stop him now."
 
+    show pichit battle serious
+
+    "The flames spread in the greenhouse, burning half of the plants. Fan musters its energy to protect me and the other spirit from the destructive force."
+
+    "The blaze then spirals toward the ceiling. The glass panels break under the heat, {nw}"
     play sound audio.sfx.impact_glass
-
-    "The flames spread in the greenhouse, burning half of the plants. Fan muster its energy to protect me, and the other spirit, from the destructive force."
-
-    "The blaze then spirals toward the ceiling. The glass panels break under the heat, leaving nothing but glittering dust suspended in the air."
+    extend "leaving nothing but glittering dust suspended in the air."
 
     "The heat eventually reaches the fire sprinklers, causing their bubbles to break."
 
@@ -257,6 +261,8 @@ label .sprinkler:
     pause 1.0
 
     call end_cinematic
+
+    # TODO FX: rain followed by steam (can reuse smoke, a little more transparent maybe)
 
     "Sparkles of water coat everything in the greenhouse. Soon, even the assassin’s desperate flames are extinguished."
 
@@ -280,21 +286,29 @@ label .sprinkler:
 
     call end_cinematic
 
-    play music mystery
+    # play music mystery
+    play music premonition
 
     show phrarat determined
 
-    phrarat "How ironic that I was stopped by that safety system."
+    phrarat "Stopped by a fire protection system… How ironic."
+
+    show pichit battle anxious
+
+    pichit "What do you mean?"
 
     show phrarat neutral
 
-    phrarat "After Enon brought advanced industry to Moacu-Laedan, traditional cloth making stopped being profitable and my father had to close the family business."
+    phrarat "When Enon brought advanced industrial process to Moacu-Laedan, traditional cloth making started to become less and less profitable."
+    phrarat "My father ended up closing the family business."
 
-    phrarat "He joined one of Vanich’s factories in search for a more stable source of income."
+    phrarat "Then he joined one of Vanich’s factories in search for a more stable source of income."
 
     show phrarat determined
 
-    phrarat "Then, they let him burn alive during a night overtime because they weren’t willing to spend money on safety in a poorer district like ours."
+    phrarat "During one of his many night overtimes, a fire broke out."
+    phrarat "The workers could have been saved with proper safety measures, but Vanich wouldn't bother spending the money in a poorer district like ours."
+    phrarat "My father burned alive because of their negligence."
 
     pichit "…"
 
@@ -305,9 +319,9 @@ label .sprinkler:
 
     call end_cinematic
 
-    "Hooves and shuffling boots resound at the entrance to the greenhouse."
+    "Hooves and shuffling boots resound at the greenhouse's entrance."
 
-    "The assassin is soon surrounded by a dozen security guards, armed with tonfas and muskets."
+    "The criminal is soon surrounded by a dozen security guards, armed with tonfas and muskets."
 
     guard "Drop your weapons!"
 
@@ -315,7 +329,10 @@ label .sprinkler:
 
     show screen smoke
 
-    "The criminal grabs a circular pouch from his belt and slams it onto the ground. A cloud of smoke covers the room."
+    "The fighter stays silent, his expression unaffected."
+    "He grabs a circular pouch from his belt and slams it onto the ground. A cloud of smoke covers the room."
+
+    # TODO: player choice to brace oneself or not - trust Assassin won't attack me
 
     "Fearing another surprise attack, I brace myself, but nothing happens."
 

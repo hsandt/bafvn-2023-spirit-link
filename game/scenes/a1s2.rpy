@@ -379,6 +379,11 @@ label .assassin_appears:
 
     pause 0.2
 
+    # TODO: Let player choose whether to follow Pichit or Charlet's PoV (at first), in case they want to directly
+    # dive into the battle
+    # Eventually though, just before Charlet calls Pichit, we'll force PoV to Charlet and Raegan since
+    # player must make a choice to reveal Makara or not
+
     jump .refuging_in_building
 
 label .refuging_in_building:
