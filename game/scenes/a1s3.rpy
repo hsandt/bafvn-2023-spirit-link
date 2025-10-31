@@ -79,6 +79,8 @@ label .fight2:
 
     phrarat "… !!"
 
+    stop music fadeout 2.0
+
     show phrarat neutral
 
     "The assassin suddenly stops attacking, his angry expression replaced with sadness."
@@ -91,10 +93,18 @@ label .fight2:
 
     "We both wait for the smoke to disappear, then resume fighting."
 
+    call start_cinematic
+
+    play music battle
+    # perfect timing for blades to cross on a beat
+    pause 0.94
+
     show pichit battle serious
     show phrarat determined
 
     call a1s2.pichit_phrarat_cross_blades
+
+    call end_cinematic
 
     "While I distract him with my sword, I let Fan grow vines from the plant with striking red leaves behind him."
 
