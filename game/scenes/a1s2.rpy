@@ -576,9 +576,10 @@ label .charlet_calls_pichit:
 # BATTLE WITH PICHIT
 label .fight_intro:
 
-    # Place fights at zorder 1 so we can easily draw spirit sprites behind them later
+    # Place fights at zorder >= 1 so we can easily draw spirit sprites behind them later
+    # Place assassin a bit above since Pichit's left arm looks more in the background
     show pichit battle serious zorder 1 at character_warp_to("left")
-    show phrarat determined zorder 1 at character_warp_to("right")
+    show phrarat determined zorder 2 at character_warp_to("right")
 
     pause 1.0
 
@@ -603,14 +604,14 @@ label .fight_intro:
 
     phrarat "Haven’t you seen what Vanich did to our nation?"
 
-    pichit "But Raegan’s different. He’s trying to improve our relationship with Enon and the rest of the mainlanders."
+    pichit "I know… But Raegan’s different. He’s trying to improve our relationship with Enon and the rest of the mainlanders."
 
-    phrarat "Yeah, I overheard your little conversation… But you really think he’ll be satisfied just building bridges?"
-    phrarat "He’ll want more and more… Just like the continentals are seizing more and more from our lands… and our spirits."
+    phrarat "Ha! You really think he’ll be satisfied just building bridges?"
+    phrarat "He’ll want more and more… Until he completely consumes our homeland."
 
-    pichit "Maybe… But for now, I need him. Alive."
+    pichit "Maybe… But for now, I have to count on him to make things better."
 
-    phrarat "Then I have no choice but to crush you on my way."
+    phrarat "Then I have no choice but to crush you too."
 
     jump .fight1
 
@@ -660,7 +661,7 @@ label .fight1:
 
     phrarat "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?!"
 
-    show pichit battle serious zorder 2
+    show pichit battle serious
     show phrarat anxious
 
     "I vault over a booth, kicking at its legs. It sags, the canopy falling to obstruct the assassin."
@@ -679,7 +680,7 @@ label .fight1:
 
     show phrarat determined
 
-    "The sword gives me better reach, but this close, the advantage is lost. He slices forward with his dagger. Quick strikes that force me backward."
+    "The sword gives me better reach, but this close, the advantage is lost. With his dagger, my assailant chains quick strikes that force me backward."
     "As our blades clash, I inch closer to the fountain at the center of the university yard."
 
     call start_cinematic
@@ -695,7 +696,7 @@ label .fight1:
 
     fan "To your right…"
 
-    "I jump back. A blade slices down. It narrowly misses me. Without Fan’s warning, I would have died."
+    "I jump back just in time to dodge his blade. Without Fan’s warning, I would have been badly hurt."
     "The assassin’s wrist flicks forward."
 
     call start_cinematic
@@ -721,9 +722,9 @@ label .fight1:
 
     "He pulls the whip back to make me lose my balance. My back slams into a nearby crate, the wind knocked out of me."
 
-    "{i}That damn whip. If only I could get rid of it!{/i}"
+    pichit "{i}That damn whip. If only I could get rid of it!{/i}"
 
-    "{i}How come it hasn’t already been consumed by the flames? How much fabric does this guy have?!{/i}"
+    pichit "{i}How come it hasn’t already been consumed by the flames? How much fabric does this guy have?!{/i}"
 
     "My thoughts scatter as the assassin lunges at me. He raises his dagger, ready to stab me in the chest."
 
@@ -796,15 +797,19 @@ label .fight1:
 
     "While the assassin was busy burning my shield, Fan blasted numerous vines from this fertile soil to block the assassin’s limbs."
 
+    # Note that it was a backward fall so this will make Pichit stand up but also move forward (right) a little
     show pichit at reset_fall(0.2)
 
     "I stand up, throwing away the remains of my carbonized shield. Now, I have the upper hand."
+
+    # Force reset in case player skipped pause above, to avoid getting stuck in the middle of translation
+    show pichit at reset_fall
 
     show phrarat anxious
 
     phrarat "More plants, really? I’ll just burn them like the rest…"
 
-    "With a snap of fingers, he spawns flames at each of the vines restraining him. But they refuse to yield, simply emitting puffs of steam and smoke instead."
+    "With a snap of fingers, he sparks fire at the vines restraining him. But they refuse to yield."
 
     show phrarat shout
 
@@ -816,23 +821,23 @@ label .fight1:
 
     hide fan with character_dissolve
 
-    "{i}Now’s my chance!{/i}"
+    pichit "{i}Now’s my chance!{/i}"
 
     call start_cinematic
 
-    show pichit at character_move_to_easein("middle_left", 0.2)
+    show pichit at character_move_to_easein("middle_left", 0.2, _xpos_offset=-0.05)
     pause 0.3
-    show pichit at character_move_to_easein("left", 0.2)
+    show pichit at character_move_to_easein("left", 0.2, _xpos_offset=-0.05)
 
     call end_cinematic
 
     "I step forward to strike my opponent, but he uses his whip to keep me at bay."
 
-    "{i}I can’t get too close…{/i}"
+    pichit "{i}I can’t get too close…{/i}"
 
-    "{i}He can still wield that scarf with mere movements of the wrist, and my vines are not strong enough to paralyze his every articulation.{/i}"
+    "He can still wield that scarf with mere movements of the wrist, and my vines are not strong enough to paralyze his every articulation."
 
-    "{i}How should I approach him? If only I knew the source of his power…{/i}"
+    pichit "{i}How should I approach him? If only I knew the source of his power…{/i}"
 
     $ should_show_side_image = True
     charlet telepathy "Pichit! Can you hear me?"
@@ -853,7 +858,7 @@ label .fight1:
 
     "Then I see it. I mistook it for the heat!"
 
-    "It’s producing red cloth from its own body and weaving it at the same time, at a faster pace than the assassin consumes it."
+    "It’s producing red cloth from its own body and weaving it at the same time, at a faster pace than the assassin burns it."
 
     show pichit battle anxious
 
@@ -863,7 +868,7 @@ label .fight1:
 
     phrarat "Graaah!!"
 
-    "Unable to burn the vines, the assassin takes his dagger with his free hand and starts cutting the vines."
+    "My thoughts are interrupted once more. Unable to burn the vines, the assassin takes his dagger with his free hand and starts cutting the vines."
 
     show phrarat determined
     show pichit battle serious
@@ -886,15 +891,15 @@ label .fight1:
 
     hide fan with character_dissolve
 
-    "{i}Charlet, I can’t reach it!{/i}"
+    pichit "{i}Charlet, I can’t reach it!{/i}"
 
     $ should_show_side_image = True
 
-    charlet telepathy "Try to lure him to the greenhouse! The fire sprinklers there will prevent him from using his flames!"
+    charlet telepathy "Try to lure him to the greenhouse! It has fire sprinklers!"
 
     pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
-    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water is not as good as my mind abilities…"
+    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water is not that good…"
 
     pichit battle serious "{i}It’s okay… I’ll find a way.{/i}"
 
@@ -910,7 +915,7 @@ label .fight1:
 
     show phrarat smile
 
-    phrarat "Maybe you forgot your ancestral values after spending time with those Enonians for too long?"
+    phrarat "Maybe you forgot your ancestral values after living with those Enonians for too long?"
 
     show phrarat shout
 
@@ -924,7 +929,7 @@ label .fight1:
 
     phrarat "…"
 
-    phrarat "A necessary evil to put an end to this craziness."
+    phrarat "A necessary evil to put an end to this madness."
 
     show phrarat shout
 
@@ -936,11 +941,11 @@ label .fight1:
 
     "This time, it spins thick threads, moving from place to place among the plants like a spider. It’s so fast that my eyes can barely follow."
 
-    "The small garden is soon covered by a web of viscous fibers, trapping the wisteria sprouts inside."
+    "The small garden is soon covered by a web of viscous fibers, trapping the perpetua sprouts inside."
 
     show phrarat smile
 
-    "With now new vines coming at him, it’s not long before the assassin gets rid of the last remnants of them."
+    "With no new vines coming at him, it’s not long before the assassin gets rid of the last remnants of them."
 
     show pichit battle anxious
 
@@ -951,7 +956,7 @@ label .fight1:
     show phrarat determined
 
     phrarat "You’re not my target, but you may lead me to Vanich…"
-    phrarat "Besides, you proved to be too dangerous to be left alone."
+    phrarat "… and you're too dangerous to be left alone."
     phrarat shout "Pen!"
 
     "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin’s arm."
@@ -968,7 +973,7 @@ label .fight1:
 
     "Keeping the momentum of his thrust, the assassin takes an offensive stance."
 
-    show phrarat shout at character_enter_from_right_to_easein("middle", 0.3)
+    show phrarat shout zorder 2 at character_enter_from_right_to_easein("middle", 0.3)
 
     phrarat "Phoenix Dance!"
 
