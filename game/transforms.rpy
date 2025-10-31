@@ -147,7 +147,7 @@ init:
         easein_elastic fall_duration yoffset 300
 
     transform reset_fall(duration=0.0):
-        easein duration yoffset duration
+        easein duration offset (0.0, 0.0)
 
     # Misc utilities
 
