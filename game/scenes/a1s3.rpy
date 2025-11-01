@@ -18,19 +18,19 @@ label a1s3:
     hide fan with character_dissolve
 
     $ should_show_side_image = True
-    # technically we should show telepathy shared but we don't have such a variant,
-    # so let's just show scared without blue effect
+    # technically we should show telepathy shared but we don’t have such a variant,
+    # so let’s just show scared without blue effect
     charlet scared "Pichit! Are you alright?"
 
     show pichit battle serious
 
     pichit "{i}Yeah… I’m fine.{/i}"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_18
     show pichit battle anxious
     show phrarat determined at character_enter_from_right_to_easein("right")
     pause 1.0
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_18
 
     pichit "{i}And, erm… I got him into the building.{/i}"
     pichit "{i}What should I do now?{/i}"
@@ -49,13 +49,13 @@ label a1s3:
 
     $ should_show_side_image = False
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_19
 
     # Known issue: a weird bug causes Phrarat to insta move right to prepare attack,
     # instead of tweening
-    call a1s2.pichit_phrarat_cross_blades
+    call a1s2.pichit_phrarat_cross_blades from _call_a1s2_pichit_phrarat_cross_blades_4
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_19
 
     jump .fight2
 
@@ -87,14 +87,14 @@ label .fight2:
 
     show pichit anxious
 
-    pichit "{i}What's going on? Should I take that chance to attack him?{/i}"
+    pichit "{i}What’s going on? Should I take that chance to attack him?{/i}"
     pichit "{i}No, wait. I recognize this scent…{/i}"
 
     hide screen smoke with bg_dissolve
 
     "We both wait for the smoke to disappear, then resume fighting."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_20
 
     play music battle
     # perfect timing for blades to cross on a beat
@@ -103,9 +103,9 @@ label .fight2:
     show pichit battle serious
     show phrarat determined
 
-    call a1s2.pichit_phrarat_cross_blades
+    call a1s2.pichit_phrarat_cross_blades from _call_a1s2_pichit_phrarat_cross_blades_5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_20
 
     "While I distract him with my sword, I let Fan grow vines from the plant with striking red leaves behind him."
 
@@ -139,7 +139,7 @@ label .fight2:
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
     phrarat "What did you… ?"
 
-    pichit "It's not recommended to burn plants without knowing what they’re made of."
+    pichit "It’s not recommended to burn plants without knowing what they’re made of."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
@@ -252,7 +252,7 @@ label .fight2:
     jump .sprinkler
 
 label .sprinkler:
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_21
 
     stop music fadeout 2.0
     play sound audio.sfx.shower2
@@ -260,7 +260,7 @@ label .sprinkler:
     show phrarat surprised
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_21
 
     # TODO FX: rain followed by steam (can reuse smoke, a little more transparent maybe)
 
@@ -277,14 +277,14 @@ label .sprinkler:
 
     pen "Phrarat…"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_22
 
     hide pen with character_dissolve
     pause 0.2
     show pichit at character_move_to_ease("middle_left", 1.2)
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_22
 
     play music premonition
 
@@ -306,20 +306,20 @@ label .sprinkler:
     show phrarat determined
 
     phrarat "During one of his many night overtimes, a fire broke out."
-    phrarat "The workers could have been saved with proper safety measures, but Vanich wouldn't bother spending the money in a poorer district like ours."
+    phrarat "The workers could have been saved with proper safety measures, but Vanich wouldn’t bother spending the money in a poorer district like ours."
     phrarat "My father burned alive because of their negligence."
 
     pichit "…"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_23
 
     show pichit battle serious
     play sound audio.sfx.running2
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_23
 
-    "Hooves and shuffling boots resound at the greenhouse's entrance."
+    "Hooves and shuffling boots resound at the greenhouse’s entrance."
 
     "The man is soon surrounded by a dozen security guards, armed with tonfas and muskets."
 
@@ -336,7 +336,7 @@ label .sprinkler:
         "I brace myself for another surprise attack.":
             show pichit battle anxious
             "Fearing another surprise attack, I brace myself. But nothing happens."
-        "I stand still. I don't believe he'll cause any more harm.":
+        "I stand still. I don’t believe he’ll cause any more harm.":
             "I stand still while the guards are on the defensive."
             $ has_believed_assassin_no_last_surprise_attack = True
 
@@ -375,7 +375,7 @@ label .sprinkler:
 
 label .aftermath:
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_24
 
     scene bg black with wipeleft_fast
     pause 0.5
@@ -386,7 +386,7 @@ label .aftermath:
 
     show pichit exhausted zorder 1 at character_warp_to("middle")
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_24
 
     "The guards accompany us to the infirmary. A nurse comes to administer me first aid."
 
@@ -428,22 +428,22 @@ label .aftermath:
 
     show raegan neutral
 
-    raegan "I've reported the attack to my company. They now feel uneasy about sending me on the expedition, but I assured them it will be fine, provided they assign us bodyguards."
+    raegan "I’ve reported the attack to my company. They now feel uneasy about sending me on the expedition, but I assured them it will be fine, provided they assign us bodyguards."
 
     window hide
     pause 0.5
     window show
 
-    raegan "By the way, the militia has been asking me for more information on the attacker, but I couldn't tell much."
-    raegan "You had the opportunity to observe him closely during your fight, so I think you'll be able to help them more."
+    raegan "By the way, the militia has been asking me for more information on the attacker, but I couldn’t tell much."
+    raegan "You had the opportunity to observe him closely during your fight, so I think you’ll be able to help them more."
 
     raegan "I know that Enon keeps a registry of all the Islanders who moved to the continent, as well as suspected ILF supporters."
     raegan thinking "So, by crosschecking it with your description of the assassin, they may be able to identify him."
 
     show pichit intrigued
 
-    "I'm amazed by how much Raegan knows about administrative and criminal matters.
-    Then again, he was the target, so it's not surprising that he would closely study the actions of any potential threats."
+    "I’m amazed by how much Raegan knows about administrative and criminal matters.
+    Then again, he was the target, so it’s not surprising that he would closely study the actions of any potential threats."
 
     show pichit neutral
     show charlet at darker
@@ -456,9 +456,9 @@ label .aftermath:
             raegan neutral "Anything else?"
 
         menu:
-            "I tell Raegan about the assassin's name and father." if not has_told_assassin_family_story:
-                pichit "I heard his spirit call him 'Phrarat'. It could be his nickname, though."
-                "I explain why Phrarat's family business closed and how his father died in one of Vanich's factories."
+            "I tell Raegan about the assassin’s name and father." if not has_told_assassin_family_story:
+                pichit "I heard his spirit call him “Phrarat”. It could be his nickname, though."
+                "I explain why Phrarat’s family business closed and how his father died in one of Vanich’s factories."
                 raegan sad "I see… An unfortunate accident."
                 raegan thinking "This will however prove precious information in identifying the culprit."
                 $ has_told_assassin_family_story = True
@@ -469,14 +469,14 @@ label .aftermath:
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
                 pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
-                pichit intrigued "I'm not sure why he'd do that, though. I mean, doesn't that make them easier to dodge?"
+                pichit intrigued "I’m not sure why he’d do that, though. I mean, doesn’t that make them easier to dodge?"
                 raegan surprised "I… see…"
                 $ has_told_trivia = True
-            "I tell Raegan I haven't noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
+            "I tell Raegan I haven’t noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
                 pichit "No, that was all."
                 raegan "I see. Thank you."
                 $ has_told_thats_all = True
-            "I tell Raegan that I haven't noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
+            "I tell Raegan that I haven’t noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
                 pichit intrigued "Not really. I admit I was really focused on surviving all that time."
                 raegan neutral "Understandable."
                 $ has_told_nothing = True
@@ -492,7 +492,7 @@ label .aftermath:
     pichit "I don’t need to be asked twice!"
     charlet "Same for me. We’ll meet again later."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_25
 
     show charlet at character_exit_to_left_easeout(1.0)
     show pichit at character_exit_to_left_easeout(1.5)
@@ -502,7 +502,7 @@ label .aftermath:
     pause 1.0
     show raegan thinking
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_25
 
     stop music fadeout 5.0
 
@@ -517,7 +517,7 @@ label .prologue_ending:
 
     # adapt cinematic effect from jam ending in a1s2
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_26
 
     pause 1.0
 

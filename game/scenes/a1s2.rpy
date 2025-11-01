@@ -45,13 +45,13 @@ label .raegan_conversation:
     # scene bg university_outside
     # show charlet smile at character_warp_to("left")
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_3
 
     show raegan smile zorder 1 at character_move_to("middle")
 
     # Currently, chaining transforms with comma `,` will not play them in parallel,
     # so we need to play both in sequence with pause
-    # (or in parallel but that'd need a dedicated transform)
+    # (or in parallel but that’d need a dedicated transform)
     # See https://github.com/renpy/renpy/issues/6681
     # show pichit neutral at character_move_to("right"), darker
 
@@ -66,7 +66,7 @@ label .raegan_conversation:
 
     show pichit at darker
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_3
 
     raegan "It’s always a pleasure to meet someone who can appreciate the Island’s unique charm. What drove your interest?"
 
@@ -80,7 +80,7 @@ label .raegan_conversation:
     show charlet intrigued
 
     "My eyes widen. That Raegan has heard of Lalahon at all, is surprising."
-    "Stories about Lalahon are rare and their contents contradictory. The few I've heard have been told to me by my grandfather."
+    "Stories about Lalahon are rare and their contents contradictory. The few I’ve heard have been told to me by my grandfather."
 
     "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala’s heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
@@ -111,7 +111,7 @@ label .smoke:
     # see more below)
     #
     # Normally we should `show fx smoke onlayer fx` with `fx` added to custom config.layers
-    # but this currently doesn't work, see https://lemmasoft.renai.us/forums/viewtopic.php?p=574874#p574874
+    # but this currently doesn’t work, see https://lemmasoft.renai.us/forums/viewtopic.php?p=574874#p574874
     # so we must use a trick from https://lemmasoft.renai.us/forums/viewtopic.php?p=571461
     # to show particles on a separate screen
     #
@@ -121,7 +121,7 @@ label .smoke:
     #   see https://lemmasoft.renai.us/forums/viewtopic.php?t=70172
     show screen smoke
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_4
 
     show charlet intrigued
     show raegan surprised
@@ -135,7 +135,7 @@ label .smoke:
     # End flash
     hide overlay with Dissolve(0.15)
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_4
 
     "Before Raegan can respond, a bright flash blinds us. The air grows thick with the scent of smoke."
     "Coughs sound out in the alleys as confusion spreads among the crowd. People cover their mouths and noses, or those of the children they accompany."
@@ -191,11 +191,11 @@ label .smoke:
     show raegan at reset_brightness
     show pichit at reset_brightness
 
-    charlet "Everyone, I think we should go. It doesn't feel safe here."
+    charlet "Everyone, I think we should go. It doesn’t feel safe here."
 
     raegan "Yes, that’s probably best."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_5
 
     show charlet at character_exit_to_left_easeout(1.5)
     show raegan at character_exit_to_left_easeout(1.7)
@@ -247,7 +247,7 @@ label .assassin_appears:
     # change BG and show Pichit in fighting stance blocking the fire
     # more cinematic: show the fire being blocked, then reveal it was Pichit
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_5
 
     "As we’re moving away, a red shape emerges from the smoke."
 
@@ -257,12 +257,12 @@ label .assassin_appears:
 
     "I realize belatedly that Pichit has shoved me to the floor."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_6
     pause 1.0
     play music premonition
     show phrarat determined at character_warp_to("middle")
     pause 1.0
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_6
 
     "I look up, shocked to find Raegan half-sprawled over the table of my booth, a dark figure standing over him."
     "A glowing shield is the only barrier between his chest and his assailant’s knife. As I suspected, the red gem on Raegan’s collar is not just decorative like mine."
@@ -300,7 +300,7 @@ label .assassin_appears:
 
     "The two men go rolling, the pamphlets I had printed falling with them."
 
-    # show charlet on top since she's shorter and on the edge
+    # show charlet on top since she’s shorter and on the edge
     show raegan surprised at character_warp_to("left")
     show charlet scared at character_warp_to("far_left")
 
@@ -337,7 +337,7 @@ label .assassin_appears:
 
     #TODO Sword SFX and FX
 
-    call .pichit_phrarat_cross_blades(0.2)
+    call .pichit_phrarat_cross_blades(0.2) from _call_a1s2_pichit_phrarat_cross_blades
 
     "The assassin, enraged, lunges. Blade meets blade. The two seem evenly matched."
 
@@ -379,16 +379,16 @@ label .assassin_appears:
 
     pause 0.2
 
-    # TODO: Let player choose whether to follow Pichit or Charlet's PoV (at first), in case they want to directly
+    # TODO: Let player choose whether to follow Pichit or Charlet’s PoV (at first), in case they want to directly
     # dive into the battle
-    # Eventually though, just before Charlet calls Pichit, we'll force PoV to Charlet and Raegan since
+    # Eventually though, just before Charlet calls Pichit, we’ll force PoV to Charlet and Raegan since
     # player must make a choice to reveal Makara or not
 
     jump .refuging_in_building
 
 label .refuging_in_building:
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_7
 
     scene bg university_inside with wiperight_medium
     show charlet serious at character_warp_to("middle_left")
@@ -396,7 +396,7 @@ label .refuging_in_building:
 
     pause 0.5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_7
 
     "Now safe behind the university’s wards, the realization of what happened hits me."
 
@@ -430,23 +430,23 @@ label .refuging_in_building:
 
     raegan "We should contact the security."
 
-    charlet "I'm on it."
+    charlet "I’m on it."
 
 label .telecall:
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_8
     show makara neutral at companion_warp_to("left"), flip
     show charlet telepathy with character_dissolve
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_8
 
     "I summon Makara and focus, using its telepathic power to reach out to Jamil, the head of security."
     "Our conversation is brief and to the point. Unsurprisingly given the chaos, he is being inundated with telecalls."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_9
     hide makara
     show charlet neutral
     with character_dissolve
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_9
 
     charlet "I got someone. They’ll send a squad to Pichit’s location as soon as they can."
     charlet "There have been several outbreaks of fire in the university’s district, so most firefighters and security guards have their hands full."
@@ -465,7 +465,7 @@ label .telecall:
 
     charlet "Uh?"
 
-    raegan "I haven't seen you touch your gemstone device at all. Is it a new model that doesn't need physical interactions?"
+    raegan "I haven’t seen you touch your gemstone device at all. Is it a new model that doesn’t need physical interactions?"
 
     show charlet scared
 
@@ -475,13 +475,13 @@ label .telecall:
 
     charlet "{i}Well, I can probably tell him about my spirit now. After all, he already knows that I am a descendant of the Islanders.{/i}"
 
-    charlet "Oh, that's…"
+    charlet "Oh, that’s…"
 
     show makara neutral at companion_warp_to("left"), flip
 
-    makara "Charlet, wait. We don't know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
+    makara "Charlet, wait. We don’t know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
-    charlet "{i}But he's going to travel with us on the expedition. He's bound to notice your existence sooner or later.{/i}"
+    charlet "{i}But he’s going to travel with us on the expedition. He’s bound to notice your existence sooner or later.{/i}"
 
     makara "I see. Then, I leave the final choice to you."
 
@@ -491,10 +491,10 @@ label .telecall:
 
     menu:
         "I mention the presence of Makara, although invisible.":
-            call .choice_telecall_1_mention_makara
+            call .choice_telecall_1_mention_makara from _call_a1s2_choice_telecall_1_mention_makara
 
-        "I don't mention Makara and pretend to use a telestone.":
-            call .choice_telecall_2_pretend_telestone
+        "I don’t mention Makara and pretend to use a telestone.":
+            call .choice_telecall_2_pretend_telestone from _call_a1s2_choice_telecall_2_pretend_telestone
 
     jump .charlet_calls_pichit
 
@@ -502,7 +502,7 @@ label .choice_telecall_1_mention_makara:
 
     show charlet smile
 
-    charlet "No, no, that's just an armband with a decorative jewel. I don’t need it to telecall people. I have much better."
+    charlet "No, no, that’s just an armband with a decorative jewel. I don’t need it to telecall people. I have much better."
 
     show makara neutral at companion_warp_to("left"), flip
 
@@ -517,7 +517,7 @@ label .choice_telecall_1_mention_makara:
 
     charlet "You cannot see my spirit, right?"
 
-    charlet "Don't worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
+    charlet "Don’t worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
 
     show charlet serious
     show raegan neutral
@@ -529,11 +529,11 @@ label .choice_telecall_1_mention_makara:
 
 label .choice_telecall_2_pretend_telestone:
 
-    charlet "Yes, it's a new kind of stone gear that connects directly to my brainwaves."
+    charlet "Yes, it’s a new kind of stone gear that connects directly to my brainwaves."
 
     show raegan surprised
 
-    raegan "Really? That's impressive! Why didn't my technology watch group notify me of this? Can I have a look at it?"
+    raegan "Really? That’s impressive! Why didn’t my technology watch group notify me of this? Can I have a look at it?"
 
     show raegan neutral
 
@@ -541,8 +541,8 @@ label .choice_telecall_2_pretend_telestone:
 
     "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
 
-    charlet "Sorry, it's… a prototype from the university's lab. They lent it to me."
-    charlet "They are still experimenting with it, but it's not ready for production, so they prefer keeping it private for now."
+    charlet "Sorry, it’s… a prototype from the university’s lab. They lent it to me."
+    charlet "They are still experimenting with it, but it’s not ready for production, so they prefer keeping it private for now."
 
     show raegan sad
     show charlet neutral
@@ -552,7 +552,7 @@ label .choice_telecall_2_pretend_telestone:
     show raegan neutral
     show charlet smile
 
-    charlet "It's alright."
+    charlet "It’s alright."
 
     return
 
@@ -565,15 +565,15 @@ label .charlet_calls_pichit:
     show charlet neutral
 
     charlet "…"
-    charlet "I'm worried for Pichit. I will check on him."
+    charlet "I’m worried for Pichit. I will check on him."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_10
     stop music fadeout 1.0
 
     show charlet telepathy with character_dissolve
     pause 0.5
 
-    # BETTER FX: zoom on Charlet's head and dissolve to Pichit, ARMS manga transition style
+    # BETTER FX: zoom on Charlet’s head and dissolve to Pichit, ARMS manga transition style
 
     scene bg university_outside with wipeleft_medium
 
@@ -583,13 +583,13 @@ label .charlet_calls_pichit:
 label .fight_intro:
 
     # Place fights at zorder >= 1 so we can easily draw spirit sprites behind them later
-    # Place assassin a bit above since Pichit's left arm looks more in the background
+    # Place assassin a bit above since Pichit’s left arm looks more in the background
     show pichit battle serious zorder 1 at character_warp_to("left")
     show phrarat determined zorder 2 at character_warp_to("right")
 
     pause 1.0
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_10
 
     phrarat shout "Don’t get in my way! My quarrel is not with you!"
 
@@ -623,14 +623,14 @@ label .fight_intro:
 
 label .fight1:
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_11
 
     play music battle
     pause 1.7
 
-    call .phrarat_whip_dodged_duck from _call_a1s2run_phrarat_whip_dodged
+    call .phrarat_whip_dodged_duck from _call_a1s2_phrarat_whip_dodged_duck
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_11
 
     show pichit battle anxious
 
@@ -638,24 +638,23 @@ label .fight1:
 
     show pichit battle serious
 
-    call .phrarat_blade_dodged_backward
-    # call .pichit_slash_blocked from _call_a1s2run_pichit_slash_blocked
+    call .phrarat_blade_dodged_backward from _call_a1s2_phrarat_blade_dodged_backward
 
     "Another sword strike. I dance out of reach, narrowly losing a finger."
 
     pichit "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off…{/i}"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_12
 
     # TODO: change animation calls to match text
-    call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch
+    call .phrarat_whip_catch from _call_a1s2_phrarat_whip_catch
     pause 0.25
-    call .pichit_cut_catching_whip from _call_a1s2run_pichit_cut_catching_whip
+    call .pichit_cut_catching_whip from _call_a1s2_pichit_cut_catching_whip
     pause 0.25
 
-    call .pichit_phrarat_cross_blades(0.0) from _call_a1s2run_pichit_phrarat_cross_blades
+    call .pichit_phrarat_cross_blades(0.0) from _call_a1s2_pichit_phrarat_cross_blades_1
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_12
 
     "A jab. Another twist. I rush forward, slashing forward with my blade."
 
@@ -689,12 +688,12 @@ label .fight1:
     "The sword gives me better reach, but this close, the advantage is lost. With his dagger, my assailant chains quick strikes that force me backward."
     "As our blades clash, I inch closer to the fountain at the center of the university yard."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_13
 
-    call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s2run_pichit_phrarat_cross_blades_1
-    call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s2run_pichit_phrarat_cross_blades_2
+    call .pichit_phrarat_cross_blades(-0.1, 2) from _call_a1s2_pichit_phrarat_cross_blades_2
+    call .pichit_phrarat_cross_blades(-0.2, 1) from _call_a1s2_pichit_phrarat_cross_blades_3
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_13
 
     "Our blades lock. A stalemate. I feel myself tiring. At this rate, I’ll die."
 
@@ -705,15 +704,15 @@ label .fight1:
     "I jump back just in time to dodge his blade. Without Fan’s warning, I would have been badly hurt."
     "The assassin’s wrist flicks forward."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_14
 
     show pichit battle serious
     hide fan with character_dissolve
 
-    call .phrarat_whip_catch from _call_a1s2run_phrarat_whip_catch_1
+    call .phrarat_whip_catch from _call_a1s2_phrarat_whip_catch_1
     pause 0.5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_14
 
     show pichit battle grimace
 
@@ -768,7 +767,7 @@ label .fight1:
 
     phrarat "Your dry wood stands no chance against my flames. Let’s put an end to this."
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_15
 
     show pichit battle serious
 
@@ -779,16 +778,16 @@ label .fight1:
     show phrarat surprised at character_move_to_easein_elastic("middle")
     pause 0.5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_15
 
     phrarat "What?!"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_16
 
     show fan neutral at companion_warp_to("right"), reset_flip
     pause 0.5
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_16
 
     show pichit battle shout
 
@@ -829,13 +828,13 @@ label .fight1:
 
     pichit "{i}Now’s my chance!{/i}"
 
-    call start_cinematic
+    call start_cinematic from _call_start_cinematic_17
 
     show pichit at character_move_to_easein("middle_left", 0.2, _xpos_offset=-0.05)
     pause 0.3
     show pichit at character_move_to_easein("left", 0.2, _xpos_offset=-0.05)
 
-    call end_cinematic
+    call end_cinematic from _call_end_cinematic_17
 
     "I step forward to strike my opponent, but he uses his whip to keep me at bay."
 
@@ -856,7 +855,7 @@ label .fight1:
 
     charlet telepathy "I see it! His spirit is on his left shoulder!"
 
-    # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet's vision power
+    # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet’s vision power
 
     "My eyes narrow, seeking the faint shimmer of a spirit in hiding."
 
@@ -962,7 +961,7 @@ label .fight1:
     show phrarat determined
 
     phrarat "You’re not my target, but you may lead me to Vanich…"
-    phrarat "… and you're too dangerous to be left alone."
+    phrarat "… and you’re too dangerous to be left alone."
     phrarat shout "Pen!"
 
     "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin’s arm."
@@ -1028,6 +1027,7 @@ label .phrarat_blade_dodged_backward:
 
     return
 
+# UNUSED
 label .pichit_slash_blocked:
     play sound audio.sfx.slash_impact3
     pause 0.15
@@ -1069,7 +1069,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
     pause 0.15
 
-    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2run_play_blade_clash_sfx_variant
+    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2_play_blade_clash_sfx_variant
 
     # Hotfix to adjust timing, as SFX variant impact part is not playing at the same time
     if sfx_variant_number == 1:
@@ -1086,7 +1086,7 @@ label .pichit_phrarat_cross_blades(_xpos_offset=0.0, sfx_variant_number=1):
 
 label .play_blade_clash_sfx_random_variant:
     $ sfx_variant_number = renpy.random.randint(1, 2)
-    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2run_play_blade_clash_sfx_variant_1
+    call .play_blade_clash_sfx_variant(sfx_variant_number) from _call_a1s2_play_blade_clash_sfx_variant_1
 
     return
 

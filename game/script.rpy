@@ -82,7 +82,7 @@ default has_looked_at_booth = False
 default has_looked_at_crowd = False
 
 # A1S2
-$ has_mentioned_makara_to_raegan = False
+default has_mentioned_makara_to_raegan = False
 
 # A1S3
 default has_believed_assassin_no_last_surprise_attack = False
