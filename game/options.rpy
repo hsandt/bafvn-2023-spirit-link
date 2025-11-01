@@ -18,12 +18,12 @@ define config.name = _("Spirit Link")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_version = True
 
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "2.0"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -88,7 +88,7 @@ define config.has_voice = True
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 
-# define config.sample_sound = "sample-sound.ogg"
+define config.sample_sound = "audio/sfx/sfx_slash1.opus"
 # define config.sample_voice = "sample-voice.ogg"
 
 
@@ -110,20 +110,36 @@ define config.has_voice = True
 define config.enter_transition = dissolve
 define config.exit_transition = dissolve
 
-
 ## Between screens of the game menu.
 
 define config.intra_transition = dissolve
 
 
-## A transition that is used after a game has been loaded.
+## Used when entering the main menu from the splashscreen.
 
-define config.after_load_transition = None
+define config.end_splash_transition = Dissolve(0.5)
 
+## Used when returning to the main menu from the game.
+
+define config.game_main_transition  = Dissolve(0.5)
 
 ## Used when entering the main menu after the game has ended.
 
-define config.end_game_transition = None
+define config.end_game_transition = Dissolve(0.5)
+
+
+## A transition that is used after a game has been loaded.
+
+define config.after_load_transition = Dissolve(0.5)
+
+
+## Used when yesno is shown.
+
+define config.enter_yesno_transition = Dissolve(0.2)
+
+## Used when the yesno is hidden.
+
+define config.exit_yesno_transition = Dissolve(0.2)
 
 
 ## A variable to set the transition used when the game starts does not exist.
@@ -140,7 +156,7 @@ define config.end_game_transition = None
 ## After the game has started, this can be changed with the "window show",
 ## "window hide", and "window auto" statements.
 
-define config.window = "auto"
+define config.window = "hide"
 
 
 ## Transitions used to show and hide the dialogue window

@@ -4,7 +4,9 @@
 # Uncomment this when you have issues with Renpy reloading again and again after the shift manual reload (Shift+R)
 # even if there are no changes
 # See https://github.com/renpy/renpy/issues/4762
-define config.autoreload = False
+# define config.autoreload = False
+
+define config.layers = [ 'master', 'fx', 'transient', 'screens', 'overlay' ]
 
 
 init python:
@@ -28,9 +30,10 @@ init python:
 
     # Extra SFX channels for simultaneous sounds
     # Usage:
+    # play sfx1 "filename.opus"
     # $ renpy.music.play("filename.opus", channel="sfx1")
-    renpy.music.register_channel("sfx1", "sfx")
-    renpy.music.register_channel("sfx2", "sfx")
+    renpy.music.register_channel("sfx1", "sfx", loop=False)
+    renpy.music.register_channel("sfx2", "sfx", loop=False)
 
 
 # Copied and adapted from renpy-sdk/renpy/common/00definitions.rpy
@@ -39,7 +42,10 @@ define hpunch_powerful = Move((30, 0), (-30, 0), .10, bounce=True, repeat=True, 
 
 define bg_dissolve = Dissolve(0.25)
 define character_dissolve = Dissolve(0.25)
+define wipeleft_medium = CropMove(0.5, "wipeleft")
+define wiperight_medium = CropMove(0.5, "wiperight")
 define wipeleft_fast = CropMove(0.25, "wipeleft")
+define wiperight_fast = CropMove(0.25, "wiperight")
 
 
 # Declare characters used by this game. The color argument colorizes the
@@ -55,10 +61,14 @@ define raegan = Character("Raegan", color="#e1cc5e", image="raegan")
 define phrarat = Character("Assassin", color="#dd796e", image="phrarat")
 define makara = Character("Makara", color="#6495ed")
 define fan = Character("Fan", color="#89d47d")
+define pen = Character("Pen", color="#ffdc18")
 
 # Secondary characters
-define mara = Character("Professor Mara")
-define man_with_rifle = Character("Man")
+define guard = Character("Guard")
+
+# UNUSED
+# define mara = Character("Professor Mara")
+# define man_with_rifle = Character("Man")
 
 
 # Visual flags
@@ -72,11 +82,49 @@ default has_looked_at_booth = False
 default has_looked_at_crowd = False
 
 # A1S2
-default has_analyzed_assassin_weapon = False
-default has_analyzed_assassin_stone = False
+default has_mentioned_makara_to_raegan = False
 
+# A1S3
+default has_believed_assassin_no_last_surprise_attack = False
+
+default has_told_assassin_family_story = False
+default has_told_assassin_spirit_appearance = False
+default has_told_trivia = False
+default has_told_thats_all = False
+default has_told_nothing = False
+
+# UNUSED
+# default has_analyzed_assassin_weapon = False
+# default has_analyzed_assassin_stone = False
+
+# Temp variables (just to avoid lint error)
+# Even if not used, you need to set a path to a file that exists to avoid
+# "is not loadable" Lint error
+default sfx_variant = 'audio/sfx/sfx_blade_clash1.opus'
+
+
+# call this label on cinematic start to hide both dialogue window and quick menu
+label start_cinematic:
+    # need to set flag first so `window hide` below can fade out quick menu too
+    $ quick_menu = False
+    # no argument, this will automatically use config.window_hide_transition
+    window hide
+    return
+
+# call this label on cinematic end to show both dialogue window and quick menu again
+label end_cinematic:
+    # need to set flag first so `window show` below can fade in quick menu too
+    $ quick_menu = True
+    # no argument, this will automatically use config.window_show_transition
+    window show
+    return
 
 # The game starts here.
 
 label start:
     jump a1s1
+
+# Typographical characters for easy copy
+# ’ single quote (apostrophe)
+# “” double quote
+# … ellipsis

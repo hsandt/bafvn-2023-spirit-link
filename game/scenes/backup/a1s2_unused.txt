@@ -1,0 +1,209 @@
+label .unused_jam_end:
+
+    "An idea pops into my head. A crazy idea. The type of idea that would have Charlet yelling and my mother tanning my hide."
+
+    "I do it anyway. Allowing my exhaustion to show, I ask Fan to make another attempt. As the assassin blocks it, I begin to cough and sway."
+
+    "The assassin is on me in moments. The flat of his dagger presses into my throat, close enough that the simplest movement would slice my skin to ribbons."
+
+    "I swallow, suddenly realizing just how big a risk I am taking."
+
+    show pichit battle grimace
+
+    pichit "You win! I give up! He’s in the school! In the faculty room!"
+
+    phrarat "How do you know that?"
+
+    pichit "My friend. She told me!"
+
+    "The assassin’s eyes narrow with suspicion. My heart races in my throat as the seconds pass. Then the pressure of the knife eases."
+
+    phrarat "Thank you… friend."
+
+    "Then the assassin turns, disappearing neatly into the crowd."
+
+    # $ should_show_side_image = True
+    # pichit telepathy "He’s coming your way. Get ready!"
+    # $ should_show_side_image = False
+
+
+    # CHARLET POV SWITCH
+
+    scene bg black with wipeleft_fast
+    pause 0.5
+    scene bg university_inside with wipeleft_fast
+    show charlet surprised at character_warp_to("far_left", 0.5)
+    show raegan surprised at character_warp_to("middle_left", 0.5)
+    show pichit exhausted at character_warp_to("middle_right", 0.5)
+
+    pause 0.5
+
+    "I wait, my pulse racing, as Pichit’s voice fades. It feels like an eternity before I hear Pichit skids into the store room."
+
+    charlet relieved "Pichit! You’re alright!"
+
+    pichit "Barely. I swear I just lost a few years of my life."
+
+    raegan anxious "And the assassin? Has he been dealt with?"
+
+    pichit "Not exactly… I told him you were hiding in the faculty room."
+
+    show raegan thinking
+
+    "It was a clever idea. The faculty room was in the opposite wing. It would buy us time."
+
+    #pichit "Go fight him, of course?"
+
+    #charlet "Fight? What about the guards? They’ll be coming soon!"
+
+    #pichit "Not fast enough to stop him! How long do you think he’ll stay once he finds out he’s been duped? We need to catch him while his guard is down!"
+
+    #"Pichit had a point, but I wasn’t a fighter. I’d only barely passed archery and while Makara was stronger than the average spirit, we hadn’t ever had to fight anything stronger than an imp."
+    #"Though…the greenhouse would have plants and water. Both Fan and Makara would be at an advantage…"
+
+    call start_cinematic
+
+    pause 0.5
+    play sound audio.sfx.impact1
+    show charlet surprised
+    show raegan surprised
+    show pichit surprised
+    pause 1.0
+
+    call end_cinematic
+
+    raegan "What was that?"
+
+    show charlet anxious
+    show raegan thinking
+    show pichit intrigued
+
+    pichit "I don’t know. It sounded like–"
+
+    play sound audio.sfx.hit
+    show charlet scared
+    show raegan surprised
+    show pichit surprised
+
+    "To my horror, the door swung open. My heart dropped."
+
+    # we could potentially stop here is we don't have time.
+
+    # End of playtesting
+
+    call start_cinematic
+
+    scene bg university_inside with bg_dissolve
+
+    pause 0.5
+
+    show phrarat determined at character_warp_to("middle")
+    pause 0.7
+    play sound audio.sfx.fire
+    pause 0.2
+
+    stop music fadeout 5.0
+
+    call end_cinematic
+
+    "The assassin!"
+
+    call start_cinematic
+
+    pause 0.5
+
+    play music to_be_continued noloop
+
+    # Couldn't find a way to convert full screen at once, so doing it for each part
+    # Eventually we'll probably have CG for this anyway
+    # In the meantime, I found ways to apply shader to each item (still individually, but not a problem
+    # for uniform transformations like sepia, unlike gradient), but for this simple effect, that's enough
+    show bg at sepia
+    show phrarat at sepia
+
+    pause 1.0
+
+    image to_be_continued = Text("TO BE CONTINUED…", outlines=[ (absolute(2), "#000", absolute(0), absolute(0)) ], slow_cps=20)
+
+    # zorder 1 to remain on top of black "midlay"
+    show to_be_continued zorder 1 with dissolve:
+        xalign 0.5
+        yalign 0.5
+
+    pause 1.9
+
+    # Show black "midlay" as image, not scene bg, so to_be_continued text remains on top
+    show black with Dissolve(1.0)
+
+    pause 3.8
+
+    hide to_be_continued with dissolve
+
+    pause 2.0
+
+    stop music fadeout 8.0
+
+    pause 5.0
+
+    return
+
+# We removed the option to reveal Makara from Prologue, as it does sound early and odd to do that
+# while Pichit is fighting, if there is no reason to share telepathy
+# In the full version, if Charlet and Reagan work together to enable the fire sprinkler as in the
+# original script, this would make sense to establish a connection.
+# But the best is probably to move this to a later scene, on the boat or during the expedition where
+# they get closer to each other and need to work together on some task.
+
+label .unused_menu_with_choice_reveal_makara:
+
+    charlet "{i}Alright. Should I introduce Raegan to Makara?{/i}"
+
+    menu:
+        "I connect with Raegan to let him see Makara.":
+            call .choice_telecall_1_reveal_makara
+
+        "I mention Makara but keep it invisible.":
+            call .choice_telecall_2_mention_makara
+
+        "I don't mention Makara and pretend to use a telestone.":
+            call .choice_telecall_3_pretend_telestone
+
+    jump .charlet_calls_pichit
+
+label .unused_choice_telecall_1_reveal_makara:
+    call .choice_telecall_1_2_common_start
+
+    charlet "But I can help you see it when you're close to me."
+
+    show raegan surprised
+
+    raegan "Really? How…"
+
+    show raegan neutral
+
+    "I put my hand on Raegan's right shoulder and start singing an aria. I focus on Makara's energy, then on Raegan's psyche."
+    "It's not a common thing to do, even for natives of Moacu-Laedan, so I'm not sure at all this is going to work."
+
+    window hide
+    pause 0.5
+    window show
+
+    # FX: special screen effect to make Makara disappears and reappears for Raegan
+
+    show raegan surprised
+
+    raegan "… Oh, my!"
+
+    "The rich son looks taken aback. I suppose it did work after all."
+
+    charlet "Reagan, say hello to Makara."
+
+    raegan "… Hello?"
+
+    makara "…"
+
+    charlet "Sorry, it's not very talkative."
+
+    call .choice_telecall_1_2_common_end
+
+    return
