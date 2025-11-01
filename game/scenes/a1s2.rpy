@@ -51,7 +51,7 @@ label .raegan_conversation:
 
     # Currently, chaining transforms with comma `,` will not play them in parallel,
     # so we need to play both in sequence with pause
-    # (or in parallel but that'd need a dedicated transform)
+    # (or in parallel but that’d need a dedicated transform)
     # See https://github.com/renpy/renpy/issues/6681
     # show pichit neutral at character_move_to("right"), darker
 
@@ -80,7 +80,7 @@ label .raegan_conversation:
     show charlet intrigued
 
     "My eyes widen. That Raegan has heard of Lalahon at all, is surprising."
-    "Stories about Lalahon are rare and their contents contradictory. The few I've heard have been told to me by my grandfather."
+    "Stories about Lalahon are rare and their contents contradictory. The few I’ve heard have been told to me by my grandfather."
 
     "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala’s heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
@@ -111,7 +111,7 @@ label .smoke:
     # see more below)
     #
     # Normally we should `show fx smoke onlayer fx` with `fx` added to custom config.layers
-    # but this currently doesn't work, see https://lemmasoft.renai.us/forums/viewtopic.php?p=574874#p574874
+    # but this currently doesn’t work, see https://lemmasoft.renai.us/forums/viewtopic.php?p=574874#p574874
     # so we must use a trick from https://lemmasoft.renai.us/forums/viewtopic.php?p=571461
     # to show particles on a separate screen
     #
@@ -191,7 +191,7 @@ label .smoke:
     show raegan at reset_brightness
     show pichit at reset_brightness
 
-    charlet "Everyone, I think we should go. It doesn't feel safe here."
+    charlet "Everyone, I think we should go. It doesn’t feel safe here."
 
     raegan "Yes, that’s probably best."
 
@@ -300,7 +300,7 @@ label .assassin_appears:
 
     "The two men go rolling, the pamphlets I had printed falling with them."
 
-    # show charlet on top since she's shorter and on the edge
+    # show charlet on top since she’s shorter and on the edge
     show raegan surprised at character_warp_to("left")
     show charlet scared at character_warp_to("far_left")
 
@@ -379,9 +379,9 @@ label .assassin_appears:
 
     pause 0.2
 
-    # TODO: Let player choose whether to follow Pichit or Charlet's PoV (at first), in case they want to directly
+    # TODO: Let player choose whether to follow Pichit or Charlet’s PoV (at first), in case they want to directly
     # dive into the battle
-    # Eventually though, just before Charlet calls Pichit, we'll force PoV to Charlet and Raegan since
+    # Eventually though, just before Charlet calls Pichit, we’ll force PoV to Charlet and Raegan since
     # player must make a choice to reveal Makara or not
 
     jump .refuging_in_building
@@ -430,7 +430,7 @@ label .refuging_in_building:
 
     raegan "We should contact the security."
 
-    charlet "I'm on it."
+    charlet "I’m on it."
 
 label .telecall:
 
@@ -465,7 +465,7 @@ label .telecall:
 
     charlet "Uh?"
 
-    raegan "I haven't seen you touch your gemstone device at all. Is it a new model that doesn't need physical interactions?"
+    raegan "I haven’t seen you touch your gemstone device at all. Is it a new model that doesn’t need physical interactions?"
 
     show charlet scared
 
@@ -475,13 +475,13 @@ label .telecall:
 
     charlet "{i}Well, I can probably tell him about my spirit now. After all, he already knows that I am a descendant of the Islanders.{/i}"
 
-    charlet "Oh, that's…"
+    charlet "Oh, that’s…"
 
     show makara neutral at companion_warp_to("left"), flip
 
-    makara "Charlet, wait. We don't know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
+    makara "Charlet, wait. We don’t know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
-    charlet "{i}But he's going to travel with us on the expedition. He's bound to notice your existence sooner or later.{/i}"
+    charlet "{i}But he’s going to travel with us on the expedition. He’s bound to notice your existence sooner or later.{/i}"
 
     makara "I see. Then, I leave the final choice to you."
 
@@ -493,7 +493,7 @@ label .telecall:
         "I mention the presence of Makara, although invisible.":
             call .choice_telecall_1_mention_makara from _call_a1s2_choice_telecall_1_mention_makara
 
-        "I don't mention Makara and pretend to use a telestone.":
+        "I don’t mention Makara and pretend to use a telestone.":
             call .choice_telecall_2_pretend_telestone from _call_a1s2_choice_telecall_2_pretend_telestone
 
     jump .charlet_calls_pichit
@@ -502,7 +502,7 @@ label .choice_telecall_1_mention_makara:
 
     show charlet smile
 
-    charlet "No, no, that's just an armband with a decorative jewel. I don’t need it to telecall people. I have much better."
+    charlet "No, no, that’s just an armband with a decorative jewel. I don’t need it to telecall people. I have much better."
 
     show makara neutral at companion_warp_to("left"), flip
 
@@ -517,7 +517,7 @@ label .choice_telecall_1_mention_makara:
 
     charlet "You cannot see my spirit, right?"
 
-    charlet "Don't worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
+    charlet "Don’t worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
 
     show charlet serious
     show raegan neutral
@@ -529,11 +529,11 @@ label .choice_telecall_1_mention_makara:
 
 label .choice_telecall_2_pretend_telestone:
 
-    charlet "Yes, it's a new kind of stone gear that connects directly to my brainwaves."
+    charlet "Yes, it’s a new kind of stone gear that connects directly to my brainwaves."
 
     show raegan surprised
 
-    raegan "Really? That's impressive! Why didn't my technology watch group notify me of this? Can I have a look at it?"
+    raegan "Really? That’s impressive! Why didn’t my technology watch group notify me of this? Can I have a look at it?"
 
     show raegan neutral
 
@@ -541,8 +541,8 @@ label .choice_telecall_2_pretend_telestone:
 
     "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
 
-    charlet "Sorry, it's… a prototype from the university's lab. They lent it to me."
-    charlet "They are still experimenting with it, but it's not ready for production, so they prefer keeping it private for now."
+    charlet "Sorry, it’s… a prototype from the university’s lab. They lent it to me."
+    charlet "They are still experimenting with it, but it’s not ready for production, so they prefer keeping it private for now."
 
     show raegan sad
     show charlet neutral
@@ -552,7 +552,7 @@ label .choice_telecall_2_pretend_telestone:
     show raegan neutral
     show charlet smile
 
-    charlet "It's alright."
+    charlet "It’s alright."
 
     return
 
@@ -565,7 +565,7 @@ label .charlet_calls_pichit:
     show charlet neutral
 
     charlet "…"
-    charlet "I'm worried for Pichit. I will check on him."
+    charlet "I’m worried for Pichit. I will check on him."
 
     call start_cinematic from _call_start_cinematic_10
     stop music fadeout 1.0
@@ -573,7 +573,7 @@ label .charlet_calls_pichit:
     show charlet telepathy with character_dissolve
     pause 0.5
 
-    # BETTER FX: zoom on Charlet's head and dissolve to Pichit, ARMS manga transition style
+    # BETTER FX: zoom on Charlet’s head and dissolve to Pichit, ARMS manga transition style
 
     scene bg university_outside with wipeleft_medium
 
@@ -583,7 +583,7 @@ label .charlet_calls_pichit:
 label .fight_intro:
 
     # Place fights at zorder >= 1 so we can easily draw spirit sprites behind them later
-    # Place assassin a bit above since Pichit's left arm looks more in the background
+    # Place assassin a bit above since Pichit’s left arm looks more in the background
     show pichit battle serious zorder 1 at character_warp_to("left")
     show phrarat determined zorder 2 at character_warp_to("right")
 
@@ -855,7 +855,7 @@ label .fight1:
 
     charlet telepathy "I see it! His spirit is on his left shoulder!"
 
-    # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet's vision power
+    # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet’s vision power
 
     "My eyes narrow, seeking the faint shimmer of a spirit in hiding."
 
@@ -961,7 +961,7 @@ label .fight1:
     show phrarat determined
 
     phrarat "You’re not my target, but you may lead me to Vanich…"
-    phrarat "… and you're too dangerous to be left alone."
+    phrarat "… and you’re too dangerous to be left alone."
     phrarat shout "Pen!"
 
     "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin’s arm."
