@@ -75,15 +75,23 @@ label .fight2:
 
     "One spark hits the Aquilaria tree at the center of the installation. It catches fire and immediately starts spreading white smoke."
 
-    show phrarat surprised at character_move_to_easein("right", 0.3)
+    "In my now limited field of vision, I don't see where the next attack is coming from."
+    "I sense danger and look to the left, but it's too late. My throat is already within reach of the assassin's knife."
+
+    show phrarat surprised
 
     phrarat "… !!"
 
+    "The knife stops a few inches away from my body."
+
+    show phrarat at character_move_to_easein("right", 0.3)
+
     stop music fadeout 2.0
+    pause 2.0
 
     show phrarat neutral
 
-    "The assassin suddenly stops attacking, his angry expression replaced with sadness."
+    "The assassin steps back, his angry expression replaced with sadness."
 
     show pichit anxious
 
@@ -157,7 +165,7 @@ label .fight2:
 
     pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use to honor the deceased."
 
-    pichit "You stopped fighting because you remembered someone who passed away, didn’t you?"
+    pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
 
     phrarat "…"
 
