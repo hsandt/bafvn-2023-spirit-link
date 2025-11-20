@@ -414,7 +414,7 @@ label .refuging_in_building:
 
     show raegan sad
 
-    raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more that would kill me just to spite my father."
+    raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more who would kill me just to spite my father."
 
     "Raegan’s expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
 
