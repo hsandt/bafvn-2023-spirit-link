@@ -143,7 +143,7 @@ label .smoke:
     "I look for the origin of the smoke. It seems to pour out from Dr. Barouche’s alchemy station."
 
     show charlet at darker
-    show raegan thinking
+    show raegan anxious
 
     raegan "My pardons, Pichit… Do you know what’s happening?"
 
@@ -154,6 +154,7 @@ label .smoke:
     pichit "Some demonstrations must have malfunctioned. I’m sure it’s nothing to be concerned about, sir."
 
     show pichit neutral
+    show raegan thinking
     show charlet at reset_brightness
 
     charlet "…"
