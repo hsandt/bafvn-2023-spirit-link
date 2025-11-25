@@ -36,6 +36,7 @@ label a1s1:
 
     call end_cinematic from _call_end_cinematic_1
 
+    voice "audio/voice/charlet_1101a.opus"
     charlet "Great Garuda, why did they have to choose {i}today{/i} to hold this event?"
 
     #sunlight effect? flash?
@@ -44,6 +45,7 @@ label a1s1:
     dyed in the traditional patterns of the Mawi tribe, did little to protect from the heat."
     "I dab at the sweat on my brow, lamenting the loss of the expensive powder I applied that morning."
 
+    voice "audio/voice/charlet_1102b.opus"
     charlet sad "Great. So much for best impressions."
 
     #maybe show a mirror
@@ -130,6 +132,7 @@ label .look_at_booth:
 
     "I force levity into my voice."
 
+    voice "audio/voice/charlet_1103a.opus"
     charlet smile "Well, at least I have you, {i}oh mighty Makara{/i}, to save me in spite of my poor, human senses."
 
     makara "Indeed. With me here, you need not fear anything."
@@ -159,16 +162,19 @@ label .after_look:
 
     show charlet sad
 
+    voice "audio/voice/charlet_1104a.opus"
     charlet "I wish I had brought some traditional dishes from Moacu. That would be on topic, and I’d have an excuse to eat."
 
     show makara neutral at companion_warp_to("middle_right")
 
     makara "An interesting idea. Whom would you ask to cook them?"
 
+    voice "audio/voice/charlet_1105a.opus"
     charlet "Sorry? I can handle a few son-in-law eggs on my own."
 
     makara "Yet, I do remember that your experiments from last year did not lead to the expected color. While I do not eat human food, my keen sense of smell suggested that–"
 
+    voice "audio/voice/charlet_1106a.opus"
     charlet "Okay, okay. I’ll just ask Aunt Urai next time."
 
     "Talking so much with Makara in a public space would usually grant me funny looks from Enonians, who cannot see or hear spirits."
@@ -188,6 +194,7 @@ label .after_look:
 
     #stomach growling noise again
 
+    voice "audio/voice/charlet_1107b.opus"
     charlet "… Maybe I should just grab lunch. It doesn’t look like anyone is coming anytime soon."
     "Just as I prepare to leave, a voice stops me."
 
@@ -211,6 +218,7 @@ label .pichit_arrives:
 
     show charlet smile
 
+    voice "audio/voice/charlet_1108a.opus"
     charlet "Hey, Pichit! Thanks for coming today."
 
     "He is also accompanied by a spirit."

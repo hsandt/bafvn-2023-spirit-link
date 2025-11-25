@@ -25,6 +25,7 @@ label .raegan_arrives:
 
     "Just like Pichit, I switch to speaking Enonian."
 
+    voice "audio/voice/charlet_1201a.opus"
     charlet smile "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
 
     raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
@@ -33,6 +34,7 @@ label .raegan_arrives:
 
     "His smile is dangerously charming and I find myself flustered by my own reaction to it."
 
+    voice "audio/voice/charlet_1202a.opus"
     charlet smile "Raegan, then."
 
     jump .raegan_conversation
@@ -70,7 +72,10 @@ label .raegan_conversation:
 
     raegan "It’s always a pleasure to meet someone who can appreciate the Island’s unique charm. What drove your interest?"
 
+    voice "audio/voice/charlet_1203a.opus"
     charlet "My ancestors came from the Island. Studying at the academia made me realize just how little we, in Enon, know about Moacu-Laedan."
+
+    voice "audio/voice/charlet_1204a.opus"
     charlet "It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
 
     show raegan neutral
@@ -85,17 +90,22 @@ label .raegan_conversation:
     "According to his tales, Lalahon is either a benevolent goddess born from the ashes of great god Bathala’s heart, or an evil beast that killed Bathala and used his fire to destroy the forests."
     "Which version of the tale was true, has been the subject of many debates between the two of us. Only one thing was certain: Lalahon was powerful."
 
+    voice "audio/voice/charlet_1205a.opus"
     charlet "Only a couple passed down from my grandfather. Much of her history appears lost."
+
+    voice "audio/voice/charlet_1206a.opus"
     charlet "I hope that this expedition will allow many more of these tales to be collected and preserved for future generations."
 
     show charlet smile
 
+    voice "audio/voice/charlet_1207a.opus"
     charlet "Who knows, maybe we’ll even discover the secret behind the mist that covered the Island!"
 
     show raegan smile
 
     raegan "A worthy endeavor for sure. I look forward to hearing more of your goals and the tourism business proposition."
 
+    voice "audio/voice/charlet_1208a.opus"
     charlet "Of course. I have a schedule here, would you like to set up a time to meet?"
 
     jump .smoke
