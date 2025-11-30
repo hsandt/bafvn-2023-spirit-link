@@ -197,6 +197,7 @@ label .smoke:
     pause 0.5
 
     show charlet anxious
+    voice "audio/voice/makara_1201a.opus"
     makara "I sense ill intent lurking amidst this smoke. We had better quickly leave this place."
 
     show charlet serious
@@ -507,10 +508,12 @@ label .telecall:
 
     show makara neutral at companion_warp_to("left"), flip
 
+    voice "audio/voice/makara_1202a.opus"
     makara "Charlet, wait. We don’t know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
     charlet "{i}But he’s going to travel with us on the expedition. He’s bound to notice your existence sooner or later.{/i}"
 
+    voice "audio/voice/makara_1203a.opus"
     makara "I see. Then, I leave the final choice to you."
 
     hide makara with character_dissolve

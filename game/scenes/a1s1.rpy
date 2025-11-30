@@ -110,6 +110,7 @@ label .look_at_booth:
 
     show makara neutral at companion_warp_to("middle_right")
 
+    voice "audio/voice/makara_1101a.opus"
     makara "Fear not. I can smell the weapon is unloaded. Although it is true that humans should be more cautious. Especially with such weak senses."
 
     show charlet neutral
@@ -135,6 +136,7 @@ label .look_at_booth:
     voice "audio/voice/charlet_1103a.opus"
     charlet smile "Well, at least I have you, {i}oh mighty Makara{/i}, to save me in spite of my poor, human senses."
 
+    voice "audio/voice/makara_1102a.opus"
     makara "Indeed. With me here, you need not fear anything."
 
     show charlet smile
@@ -167,11 +169,13 @@ label .after_look:
 
     show makara neutral at companion_warp_to("middle_right")
 
+    voice "audio/voice/makara_1103a.opus"
     makara "An interesting idea. Whom would you ask to cook them?"
 
     voice "audio/voice/charlet_1105a.opus"
     charlet "Sorry? I can handle a few son-in-law eggs on my own."
 
+    voice "audio/voice/makara_1104a.opus"
     makara "Yet, I do remember that your experiments from last year did not lead to the expected color. While I do not eat human food, my keen sense of smell suggested that–"
 
     voice "audio/voice/charlet_1106a.opus"
@@ -237,6 +241,7 @@ label .pichit_arrives:
 
     call end_cinematic from _call_end_cinematic_2
 
+    voice "audio/voice/makara_1105a.opus"
     makara "We meet again, my fellow. How do you feel today?"
 
     window hide
@@ -246,6 +251,7 @@ label .pichit_arrives:
     voice "audio/voice/fan_1101a.opus"
     fan "The flowers here are healthy despite the summer sun… The gardeners must be paying close attention."
 
+    voice "audio/voice/makara_1106a.opus"
     makara "… I suppose this means you are fine."
 
     window hide
