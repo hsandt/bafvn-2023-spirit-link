@@ -332,6 +332,7 @@ label .sprinkler:
 
     "The man is soon surrounded by a dozen security guards, armed with tonfas and muskets."
 
+    voice "audio/voice/guard_1301a.opus"
     guard "Drop your weapons!"
 
     show phrarat determined
@@ -370,6 +371,7 @@ label .sprinkler:
 
     "The man in burnt clothes is standing on the roof frame, now completely devoid of glass. He looks down at me one last time, before running away on the tangle of beams."
 
+    voice "audio/voice/guard_1302b.opus"
     guard "Go after him! Quick!"
 
     play sound audio.sfx.running2
