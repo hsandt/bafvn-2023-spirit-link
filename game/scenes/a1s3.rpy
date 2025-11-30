@@ -120,6 +120,7 @@ label .fight2:
 
     show pen neutral at companion_warp_to("right")
 
+    voice "audio/voice/pen_1301b.opus"
     pen "I’ll cover your back!"
 
     "This time, his spirit takes control of the scarf, splitting it into multiple, thinner strips to intercept the vines."
@@ -190,6 +191,7 @@ label .fight2:
 
     show phrarat determined
 
+    voice "audio/voice/pen_vocalize_silence_exhausted_a.opus"
     pen "…"
 
     "His spirit looks exhausted. Maybe the relentless weaving ended up draining its energy after all."
@@ -216,7 +218,10 @@ label .fight2:
 
     show pen neutral at companion_warp_to("middle")
 
+    voice "audio/voice/pen_1302b.opus"
     pen "Phrarat, wait… !"
+
+    voice "audio/voice/pen_1303c.opus"
     pen "Your body won’t stand it if you use all of the gem’s power at once!"
 
     phrarat "Graaah!!"
@@ -233,6 +238,7 @@ label .fight2:
         parallel:
             easeout 0.3 ypos 0.6
 
+    voice "audio/voice/pen_vocalize_grunt_hurt_b.opus"
     pen "Aw!!"
 
     # Safety on skip: terminate previous animation
@@ -245,7 +251,10 @@ label .fight2:
 
     pichit "Hey! Are you alright?"
 
+    voice "audio/voice/pen_vocalize_silence_depressed_c.opus"
     pen "…"
+
+    voice "audio/voice/pen_1304a.opus"
     pen "It’s too late… I can’t stop him now."
 
     show pichit battle serious
@@ -284,6 +293,7 @@ label .sprinkler:
 
     "His spirit joins him."
 
+    voice "audio/voice/pen_1305c.opus"
     pen "Phrarat…"
 
     call start_cinematic from _call_start_cinematic_22
