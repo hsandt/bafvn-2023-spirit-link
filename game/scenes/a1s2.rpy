@@ -710,6 +710,7 @@ label .fight1:
 
     show fan neutral at companion_warp_to("far_left"), flip
 
+    voice "audio/voice/fan_1102a.opus"
     fan "To your right…"
 
     "I jump back just in time to dodge his blade. Without Fan’s warning, I would have been badly hurt."

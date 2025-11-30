@@ -243,6 +243,7 @@ label .pichit_arrives:
     pause 1.0
     window show
 
+    voice "audio/voice/fan_1101a.opus"
     fan "The flowers here are healthy despite the summer sun… The gardeners must be paying close attention."
 
     makara "… I suppose this means you are fine."

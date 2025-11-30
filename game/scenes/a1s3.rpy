@@ -9,6 +9,7 @@ label a1s3:
 
     "Fortunately, Fan created soft beech bark behind my back to cushion the impact, so I didn’t break anything."
 
+    voice "audio/voice/fan_1103a.opus"
     fan "This reminds me of your childhood… I would always protect you from bad falls when you were playing outdoors."
 
     show pichit battle anxious
