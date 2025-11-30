@@ -427,6 +427,7 @@ label .aftermath:
 
     show raegan smile
 
+    voice "audio/voice/raegan_1301a.opus"
     raegan "Thank you for protecting me."
 
     pichit "Sure… You’re welcome."
@@ -437,16 +438,23 @@ label .aftermath:
 
     show raegan neutral
 
+    voice "audio/voice/raegan_1302a.opus"
     raegan "I’ve reported the attack to my company. They now feel uneasy about sending me on the expedition, but I assured them it will be fine, provided they assign us bodyguards."
 
     window hide
     pause 0.5
     window show
 
+    voice "audio/voice/raegan_1303a.opus"
     raegan "By the way, the militia has been asking me for more information on the attacker, but I couldn’t tell much."
+
+    voice "audio/voice/raegan_1304a.opus"
     raegan "You had the opportunity to observe him closely during your fight, so I think you’ll be able to help them more."
 
+    voice "audio/voice/raegan_1305a.opus"
     raegan "I know that Enon keeps a registry of all the Islanders who moved to the continent, as well as suspected ILF supporters."
+
+    voice "audio/voice/raegan_1306a.opus"
     raegan thinking "So, by crosschecking it with your description of the assassin, they may be able to identify him."
 
     show pichit intrigued
@@ -457,36 +465,51 @@ label .aftermath:
     show pichit neutral
     show charlet at darker
 
+    voice "audio/voice/raegan_1307a.opus"
     raegan "Did you notice anything during your fight that could help the investigation?"
 
     while not (has_told_thats_all or has_told_nothing):
         if has_told_assassin_family_story or has_told_trivia:
             show pichit neutral
+            voice "audio/voice/raegan_1308a.opus"
             raegan neutral "Anything else?"
 
         menu:
             "I tell Raegan about the assassin’s name and father." if not has_told_assassin_family_story:
                 pichit "I heard his spirit call him “Phrarat”. It could be his nickname, though."
                 "I explain why Phrarat’s family business closed and how his father died in one of Vanich’s factories."
+
+                voice "audio/voice/raegan_1309a.opus"
                 raegan sad "I see… An unfortunate accident."
+
+                voice "audio/voice/raegan_1310a.opus"
                 raegan thinking "This will however prove precious information in identifying the culprit."
+
                 $ has_told_assassin_family_story = True
             "I tell Raegan about his spirit." if not has_told_assassin_spirit_appearance:
                 pichit "He was accompanied by a flying spirit. It looked like a silkmoth with a cat head, and its body was covered with green and yellow stripes."
+
+                voice "audio/voice/raegan_1311a.opus"
                 raegan thinking "Interesting… Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
+
+                voice "audio/voice/raegan_1312a.opus"
                 raegan neutral "Most of them just want to live peacefully in Enon, after all."
+
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
                 pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
                 pichit intrigued "I’m not sure why he’d do that, though. I mean, doesn’t that make them easier to dodge?"
+                voice "audio/voice/raegan_1313a.opus"
                 raegan surprised "I… see…"
                 $ has_told_trivia = True
             "I tell Raegan I haven’t noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
                 pichit "No, that was all."
+                voice "audio/voice/raegan_1314a.opus"
                 raegan "I see. Thank you."
                 $ has_told_thats_all = True
             "I tell Raegan that I haven’t noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
                 pichit intrigued "Not really. I admit I was really focused on surviving all that time."
+                voice "audio/voice/raegan_1315a.opus"
                 raegan neutral "Understandable."
                 $ has_told_nothing = True
 
@@ -496,6 +519,7 @@ label .aftermath:
     pause 0.5
     window show
 
+    voice "audio/voice/raegan_1316a.opus"
     raegan neutral "Well, I need to go back to my headquarters now. You two should rest."
 
     pichit "I don’t need to be asked twice!"
@@ -515,7 +539,10 @@ label .aftermath:
 
     stop music fadeout 5.0
 
+    voice "audio/voice/raegan_vocalize_silence_thinking_a.opus"
     raegan "…"
+
+    voice "audio/voice/raegan_1317a.opus"
     raegan "Looks like it won’t be that easy…"
 
     jump .prologue_ending

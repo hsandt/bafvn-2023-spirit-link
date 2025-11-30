@@ -21,6 +21,7 @@ label .raegan_arrives:
 
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
+    voice "audio/voice/raegan_1201a.opus"
     raegan "A pleasure to meet you, Charlet. I’ve heard wonderful things about your plans."
 
     "Just like Pichit, I switch to speaking Enonian."
@@ -28,6 +29,7 @@ label .raegan_arrives:
     voice "audio/voice/charlet_1201a.opus"
     charlet smile "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
 
+    voice "audio/voice/raegan_1202a.opus"
     raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
 
     show charlet neutral
@@ -70,6 +72,7 @@ label .raegan_conversation:
 
     call end_cinematic from _call_end_cinematic_3
 
+    voice "audio/voice/raegan_1203a.opus"
     raegan "It’s always a pleasure to meet someone who can appreciate the Island’s unique charm. What drove your interest?"
 
     voice "audio/voice/charlet_1203a.opus"
@@ -80,6 +83,7 @@ label .raegan_conversation:
 
     show raegan neutral
 
+    voice "audio/voice/raegan_1204a.opus"
     raegan "Indeed… Pichit mentioned your goal was to catalogue folktales from the Island? Have you ever heard any tales of Lalahon?"
 
     show charlet intrigued
@@ -103,6 +107,7 @@ label .raegan_conversation:
 
     show raegan smile
 
+    voice "audio/voice/raegan_1205a.opus"
     raegan "A worthy endeavor for sure. I look forward to hearing more of your goals and the tourism business proposition."
 
     voice "audio/voice/charlet_1208a.opus"
@@ -155,6 +160,7 @@ label .smoke:
     show charlet at darker
     show raegan anxious
 
+    voice "audio/voice/raegan_1206a.opus"
     raegan "My pardons, Pichit… Do you know what’s happening?"
 
     show pichit smile
@@ -204,6 +210,7 @@ label .smoke:
 
     charlet "Everyone, I think we should go. It doesn’t feel safe here."
 
+    voice "audio/voice/raegan_1207a.opus"
     raegan "Yes, that’s probably best."
 
     call start_cinematic from _call_start_cinematic_5
@@ -369,6 +376,7 @@ label .assassin_appears:
 
     "Vanich grabs my arm, hauling me backward."
 
+    voice "audio/voice/raegan_1208a.opus"
     raegan "We need to get away, now."
 
     show charlet serious
@@ -415,6 +423,7 @@ label .refuging_in_building:
 
     charlet "Did… did he just try to kill us?!"
 
+    voice "audio/voice/raegan_1209a.opus"
     raegan "Not us. Me."
 
     show charlet intrigued
@@ -425,6 +434,7 @@ label .refuging_in_building:
 
     show raegan sad
 
+    voice "audio/voice/raegan_1210a.opus"
     raegan "A man in my position makes many enemies, Dr. Kasamsun. And there are even more who would kill me just to spite my father."
 
     "Raegan’s expression is dark and his gaze worried. His eyes scan the room, lingering on the boxes stacked against the wall."
@@ -464,6 +474,7 @@ label .telecall:
 
     show raegan anxious
 
+    voice "audio/voice/raegan_1213a.opus"
     raegan "A coordinated attack… Let’s hope that Pichit will withstand that fight until then…"
 
     window hide
@@ -472,10 +483,12 @@ label .telecall:
     pause 0.5
     window show
 
+    voice "audio/voice/raegan_1214a.opus"
     raegan "By the way, Charlet… How did you contact them?"
 
     charlet "Uh?"
 
+    voice "audio/voice/raegan_1215a.opus"
     raegan "I haven’t seen you touch your gemstone device at all. Is it a new model that doesn’t need physical interactions?"
 
     show charlet scared
@@ -520,10 +533,11 @@ label .choice_telecall_1_mention_makara:
     # visually, Charlet presents Makara with her arm bent in V with open hand like someone on an ad poster
     "I designate Makara with my open hand."
 
-    show raegan surprised
-
     charlet "Here! My spirit companion. You see, my family has preserved the tradition of spirit binding for generations."
 
+    show raegan intrigued
+
+    voice "audio/voice/raegan_vocalize_silence_thinking_a.opus"
     "Raegan cannot hide his perplexity."
 
     charlet "You can’t see my spirit, right?"
@@ -544,6 +558,7 @@ label .choice_telecall_2_pretend_telestone:
 
     show raegan surprised
 
+    voice "audio/voice/raegan_1216a.opus"
     raegan "Really? That’s impressive! Why didn’t my technology watch group notify me of this? Can I have a look at it?"
 
     show raegan neutral
@@ -558,6 +573,7 @@ label .choice_telecall_2_pretend_telestone:
     show raegan sad
     show charlet neutral
 
+    voice "audio/voice/raegan_1217a.opus"
     raegan "Oh, I… I understand. Please pardon my intrusion."
 
     show raegan neutral
