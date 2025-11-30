@@ -441,6 +441,8 @@ label .refuging_in_building:
 
     "I realize that the gemstone on his collar is cracked. The protective shield he used earlier must have been single-use."
 
+    # Waiting for asset
+    # voice "audio/voice/raegan_1211a.opus"
     raegan "Are we safe here?"
 
     charlet "As safe as can be. The university’s wards won’t allow non-staff into the store rooms. You wouldn’t have been able to get in without me."
@@ -449,6 +451,8 @@ label .refuging_in_building:
 
     show raegan thinking
 
+    # Waiting for asset
+    # voice "audio/voice/raegan_1212a.opus"
     raegan "We should contact the security."
 
     charlet "I’m on it."
