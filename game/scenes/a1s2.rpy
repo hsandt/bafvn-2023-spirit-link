@@ -413,7 +413,7 @@ label .refuging_in_building:
 
     show charlet scared
 
-    charlet "D–did… did he just try to kill us?!"
+    charlet "Did… did he just try to kill us?!"
 
     raegan "Not us. Me."
 
@@ -526,7 +526,7 @@ label .choice_telecall_1_mention_makara:
 
     "Raegan cannot hide his perplexity."
 
-    charlet "You cannot see my spirit, right?"
+    charlet "You can’t see my spirit, right?"
 
     charlet "Don’t worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
 
@@ -553,7 +553,7 @@ label .choice_telecall_2_pretend_telestone:
     "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
 
     charlet "Sorry, it’s… a prototype from the university’s lab. They lent it to me."
-    charlet "They are still experimenting with it, but it’s not ready for production, so they prefer keeping it private for now."
+    charlet "They’re still experimenting with it, but it’s not ready for production, so they prefer keeping it private for now."
 
     show raegan sad
     show charlet neutral
@@ -576,7 +576,7 @@ label .charlet_calls_pichit:
     show charlet neutral
 
     charlet "…"
-    charlet "I’m worried for Pichit. I will check on him."
+    charlet "I’m worried for Pichit. I’ll go check on him."
 
     call start_cinematic from _call_start_cinematic_10
     stop music fadeout 1.0
@@ -915,7 +915,7 @@ label .fight1:
 
     pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
-    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water is not that good…"
+    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
 
     pichit battle serious "{i}It’s okay… I’ll find a way.{/i}"
 

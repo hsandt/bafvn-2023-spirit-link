@@ -163,7 +163,7 @@ label .after_look:
     show charlet sad
 
     voice "audio/voice/charlet_1104a.opus"
-    charlet "I wish I had brought some traditional dishes from Moacu. That would be on topic, and I’d have an excuse to eat."
+    charlet "I wish I brought some traditional dishes from Moacu. That would be on topic, and I’d have an excuse to eat."
 
     show makara neutral at companion_warp_to("middle_right")
 
