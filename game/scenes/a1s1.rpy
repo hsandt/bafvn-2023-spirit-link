@@ -180,7 +180,7 @@ label .after_look:
     voice "audio/voice/makara_1104a.opus"
     makara "Yet, I do remember that your experiments from last year did not lead to the expected color. While I do not eat human food, my keen sense of smell suggested that–"
 
-    voice "audio/voice/charlet_1106a.opus"
+    voice "audio/voice/charlet_1106c.opus"
     charlet "Okay, okay. I’ll just ask Aunt Urai next time."
 
     "Talking so much with Makara in a public space would usually grant me funny looks from Enonians, who cannot see or hear spirits."

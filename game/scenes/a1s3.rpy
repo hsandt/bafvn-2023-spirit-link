@@ -24,6 +24,7 @@ label a1s3:
     # technically we should show telepathy shared but we don’t have such a variant,
     # so let’s just show scared without blue effect
     show charlet scared
+    voice "audio/voice/charlet_1301a.opus"
     charlet "Pichit! Are you alright?"
 
     show pichit battle serious
@@ -44,6 +45,7 @@ label a1s3:
     pichit "{i}What should I do now?{/i}"
 
     show charlet telepathy
+    voice "audio/voice/charlet_1302a.opus"
     charlet "Just keep fighting until he uses too much fire and triggers the sprinkler system."
 
     # Cut for now to get started with Raise your Voice jam 2025
@@ -448,6 +450,7 @@ label .aftermath:
     show charlet anxious at character_enter_from_left_to_easein("left", 0.5)
     pause 0.2
 
+    voice "audio/voice/charlet_1303a.opus"
     charlet "Pichit! Are you alright?"
 
     show pichit smile
@@ -590,6 +593,7 @@ label .aftermath:
     voice "audio/voice/pichit_1325b.opus"
     pichit "I don’t need to be asked twice!"
 
+    voice "audio/voice/charlet_1304a.opus"
     charlet "Same for me. We’ll meet again later."
 
     call start_cinematic from _call_start_cinematic_25

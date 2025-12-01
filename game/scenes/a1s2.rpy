@@ -93,7 +93,7 @@ label .raegan_conversation:
     voice "audio/voice/charlet_1203a.opus"
     charlet "My ancestors came from the Island. Studying at the academia made me realize just how little we, in Enon, know about Moacu-Laedan."
 
-    voice "audio/voice/charlet_1204a.opus"
+    voice "audio/voice/charlet_1204c.opus"
     charlet "It is my hope that this expedition will help build a bridge between our people and promote appreciation of spirits."
 
     show raegan neutral
@@ -189,6 +189,7 @@ label .smoke:
     show raegan thinking
     show charlet at reset_brightness
 
+    voice "audio/voice/charlet_vocalize_thinking.opus"
     charlet "…"
 
     show bg at invert(0.2)
@@ -218,6 +219,7 @@ label .smoke:
 
     show charlet serious
 
+    voice "audio/voice/charlet_1209a.opus"
     charlet "{i}Understood.{/i}"
 
     hide makara with character_dissolve
@@ -225,6 +227,7 @@ label .smoke:
     show raegan at reset_brightness
     show pichit at reset_brightness
 
+    voice "audio/voice/charlet_1210a.opus"
     charlet "Everyone, I think we should go. It doesn’t feel safe here."
 
     voice "audio/voice/raegan_1207a.opus"
@@ -310,6 +313,7 @@ label .assassin_appears:
 
     $ should_show_side_image = True
     show charlet scared
+    voice "audio/voice/charlet_1211a.opus"
     charlet "{i}He speaks Laedani… A separatist vigilante?!{/i}"
     $ should_show_side_image = False
 
@@ -390,6 +394,7 @@ label .assassin_appears:
     show pichit battle serious
 
     show charlet shout
+    voice "audio/voice/charlet_1212a.opus"
     charlet "But you–"
 
     show raegan anxious
@@ -405,6 +410,7 @@ label .assassin_appears:
     "My gaze flicks between Pichit and Vanich. Then I nod."
 
     show charlet shout
+    voice "audio/voice/charlet_1213a.opus"
     charlet "I know somewhere we’ll be safe!"
 
     show charlet serious
@@ -443,6 +449,7 @@ label .refuging_in_building:
 
     show charlet scared
 
+    voice "audio/voice/charlet_1214a.opus"
     charlet "Did… did he just try to kill us?!"
 
     voice "audio/voice/raegan_1209a.opus"
@@ -452,6 +459,7 @@ label .refuging_in_building:
 
     play music mystery
 
+    voice "audio/voice/charlet_1215a.opus"
     charlet "Why would he be trying to kill you?"
 
     show raegan sad
@@ -467,6 +475,7 @@ label .refuging_in_building:
     # voice "audio/voice/raegan_1211a.opus"
     raegan "Are we safe here?"
 
+    voice "audio/voice/charlet_1216a.opus"
     charlet "As safe as can be. The university’s wards won’t allow non-staff into the store rooms. You wouldn’t have been able to get in without me."
 
     "Or my keystone rather. Setting up wards to recognize specific people was impossible."
@@ -477,6 +486,7 @@ label .refuging_in_building:
     # voice "audio/voice/raegan_1212a.opus"
     raegan "We should contact the security."
 
+    voice "audio/voice/charlet_1217a.opus"
     charlet "I’m on it."
 
 label .telecall:
@@ -495,7 +505,10 @@ label .telecall:
     with character_dissolve
     call end_cinematic from _call_end_cinematic_9
 
+    voice "audio/voice/charlet_1218a.opus"
     charlet "I got someone. They’ll send a squad to Pichit’s location as soon as they can."
+
+    voice "audio/voice/charlet_1219a.opus"
     charlet "There have been several outbreaks of fire in the university’s district, so most firefighters and security guards have their hands full."
 
     show raegan anxious
@@ -512,6 +525,7 @@ label .telecall:
     voice "audio/voice/raegan_1214a.opus"
     raegan "By the way, Charlet… How did you contact them?"
 
+    voice "audio/voice/charlet_1220b.opus"
     charlet "Uh?"
 
     voice "audio/voice/raegan_1215a.opus"
@@ -519,12 +533,15 @@ label .telecall:
 
     show charlet scared
 
+    voice "audio/voice/charlet_1221a.opus"
     charlet "{i}Oh no! I was so worried about Pichit that I totally forgot to hide my power!{/i}"
 
     show charlet neutral
 
+    voice "audio/voice/charlet_1222a.opus"
     charlet "{i}Well, I can probably tell him about my spirit now. After all, he already knows that I am a descendant of the Islanders.{/i}"
 
+    voice "audio/voice/charlet_1223a.opus"
     charlet "Oh, that’s…"
 
     show makara neutral at companion_warp_to("left"), flip
@@ -532,6 +549,7 @@ label .telecall:
     voice "audio/voice/makara_1202a.opus"
     makara "Charlet, wait. We don’t know if we can trust that man yet. It may be unwise to reveal too much about you before you know him better."
 
+    voice "audio/voice/charlet_1224a.opus"
     charlet "{i}But he’s going to travel with us on the expedition. He’s bound to notice your existence sooner or later.{/i}"
 
     voice "audio/voice/makara_1203a.opus"
@@ -539,6 +557,7 @@ label .telecall:
 
     hide makara with character_dissolve
 
+    voice "audio/voice/charlet_1225a.opus"
     charlet "{i}Alright. Should I introduce Raegan to Makara?{/i}"
 
     menu:
@@ -554,6 +573,7 @@ label .choice_telecall_1_mention_makara:
 
     show charlet smile
 
+    voice "audio/voice/charlet_1226b.opus"
     charlet "No, no, that’s just an armband with a decorative jewel. I don’t need it to telecall people. I have much better."
 
     show makara neutral at companion_warp_to("left"), flip
@@ -561,6 +581,7 @@ label .choice_telecall_1_mention_makara:
     # visually, Charlet presents Makara with her arm bent in V with open hand like someone on an ad poster
     "I designate Makara with my open hand."
 
+    voice "audio/voice/charlet_1227a.opus"
     charlet "Here! My spirit companion. You see, my family has preserved the tradition of spirit binding for generations."
 
     show raegan intrigued
@@ -568,13 +589,16 @@ label .choice_telecall_1_mention_makara:
     voice "audio/voice/raegan_vocalize_silence_thinking_a.opus"
     "Raegan cannot hide his perplexity."
 
+    voice "audio/voice/charlet_1228a.opus"
     charlet "You can’t see my spirit, right?"
 
+    voice "audio/voice/charlet_1229a.opus"
     charlet "Don’t worry, Enonians are simply born spirit-blind. Even I had to do a special training on Moacu-Laedan so I could perceive them."
 
     show charlet serious
     show raegan neutral
 
+    voice "audio/voice/charlet_1230a.opus"
     charlet "Anyway, Makara allows me to reach other people’s minds."
 
     $ has_mentioned_makara_to_raegan = True
@@ -582,6 +606,7 @@ label .choice_telecall_1_mention_makara:
 
 label .choice_telecall_2_pretend_telestone:
 
+    voice "audio/voice/charlet_1231a.opus"
     charlet "Yes, it’s a new kind of stone gear that connects directly to my brainwaves."
 
     show raegan surprised
@@ -595,7 +620,10 @@ label .choice_telecall_2_pretend_telestone:
 
     "As Raegan tries to touch my armband, I instinctively withdraw it out of his reach."
 
+    voice "audio/voice/charlet_1232a.opus"
     charlet "Sorry, it’s… a prototype from the university’s lab. They lent it to me."
+
+    voice "audio/voice/charlet_1233a.opus"
     charlet "They’re still experimenting with it, but it’s not ready for production, so they prefer keeping it private for now."
 
     show raegan sad
@@ -607,6 +635,7 @@ label .choice_telecall_2_pretend_telestone:
     show raegan neutral
     show charlet smile
 
+    voice "audio/voice/charlet_1234a.opus"
     charlet "It’s alright."
 
     return
@@ -619,7 +648,10 @@ label .charlet_calls_pichit:
 
     show charlet neutral
 
+    voice "audio/voice/charlet_vocalize_thinking.opus"
     charlet "…"
+
+    voice "audio/voice/charlet_1235a.opus"
     charlet "I’m worried for Pichit. I’ll go check on him."
 
     call start_cinematic from _call_start_cinematic_10
@@ -646,7 +678,8 @@ label .fight_intro:
 
     call end_cinematic from _call_end_cinematic_10
 
-    phrarat shout "Don’t get in my way! My quarrel is not with you!"
+    show phrarat shout
+    phrarat "Don’t get in my way! My quarrel is not with you!"
 
     show phrarat determined
     show pichit battle shout
@@ -919,6 +952,7 @@ label .fight1:
 
     $ should_show_side_image = True
     show charlet telepathy
+    voice "audio/voice/charlet_1236a.opus"
     charlet "Pichit! Can you hear me?"
 
     show pichit battle anxious
@@ -928,6 +962,7 @@ label .fight1:
     show pichit battle serious
 
     show charlet telepathy
+    voice "audio/voice/charlet_1237a.opus"
     charlet "I see it! His spirit is on his left shoulder!"
 
     # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet’s vision power
@@ -980,12 +1015,14 @@ label .fight1:
     $ should_show_side_image = True
 
     show charlet telepathy
+    voice "audio/voice/charlet_1238a.opus"
     charlet "Try to lure him to the greenhouse! It has fire sprinklers!"
 
     voice "audio/voice/pichit_1227b.opus"
     pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
     show charlet telepathy
+    voice "audio/voice/charlet_1239a.opus"
     charlet "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
 
     show pichit battle serious
@@ -1048,7 +1085,9 @@ label .fight1:
 
     phrarat "You’re not my target, but you may lead me to Vanich…"
     phrarat "… and you’re too dangerous to be left alone."
-    phrarat shout "Pen!"
+
+    show phrarat shout
+    phrarat "Pen!"
 
     "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin’s arm."
 
