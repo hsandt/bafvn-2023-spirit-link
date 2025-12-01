@@ -212,6 +212,7 @@ label .pichit_arrives:
     # not looking at Charlet
     show pichit smile at character_warp_to("right") zorder 1
 
+    voice "audio/voice/pichit_1101b.opus"
     pichit "Oi! Charlet! Hey!"
 
     show pichit at character_move_to("middle_right")

@@ -3,6 +3,7 @@ label a1s3:
     show pichit battle grimace at character_enter_from_right_to_easein("far_left", 0.3)
     pause 0.6
 
+    voice "audio/voice/pichit_vocalize_grunt_hit_wall_b.opus"
     pichit "Urg!"
 
     show fan neutral at companion_warp_to("middle_left")
@@ -14,6 +15,7 @@ label a1s3:
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1301b.opus"
     pichit "Aha… Yeah… Thanks for having my back."
 
     hide fan with character_dissolve
@@ -25,6 +27,7 @@ label a1s3:
 
     show pichit battle serious
 
+    voice "audio/voice/pichit_1302b.opus"
     pichit "{i}Yeah… I’m fine.{/i}"
 
     call start_cinematic from _call_start_cinematic_18
@@ -33,7 +36,10 @@ label a1s3:
     pause 1.0
     call end_cinematic from _call_end_cinematic_18
 
+    voice "audio/voice/pichit_1303a.opus"
     pichit "{i}And, erm… I got him into the building.{/i}"
+
+    voice "audio/voice/pichit_1304b.opus"
     pichit "{i}What should I do now?{/i}"
 
     charlet telepathy "Just keep fighting until he uses too much fire and triggers the sprinkler system."
@@ -46,6 +52,7 @@ label a1s3:
 
     show pichit battle serious
 
+    voice "audio/voice/pichit_1305a.opus"
     pichit "{i}Understood.{/i}"
 
     $ should_show_side_image = False
@@ -96,7 +103,10 @@ label .fight2:
 
     show pichit anxious
 
+    voice "audio/voice/pichit_1306a.opus"
     pichit "{i}What’s going on? Should I take that chance to attack him?{/i}"
+
+    voice "audio/voice/pichit_1307b.opus"
     pichit "{i}No, wait. I recognize this scent…{/i}"
 
     hide screen smoke with bg_dissolve
@@ -149,11 +159,15 @@ label .fight2:
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
     phrarat "What did you… ?"
 
+    voice "audio/voice/pichit_1308a.opus"
     pichit "It’s not recommended to burn plants without knowing what they’re made of."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
+    voice "audio/voice/pichit_1309b.opus"
     pichit "With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
+
+    voice "audio/voice/pichit_1310b.opus"
     pichit "This is over."
 
     window hide
@@ -165,8 +179,10 @@ label .fight2:
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1311b.opus"
     pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use to honor the deceased."
 
+    voice "audio/voice/pichit_1312c.opus"
     pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
 
     phrarat "…"
@@ -179,6 +195,7 @@ label .fight2:
 
     "My opponent gathers his last ounce of strength to stand up."
 
+    voice "audio/voice/pichit_1313b.opus"
     pichit "Stop. You’ll just waste what’s left of your life force."
 
     show phrarat shout
@@ -249,6 +266,7 @@ label .fight2:
 
     "I catch it mid-air to prevent it from crashing on the ground."
 
+    voice "audio/voice/pichit_1314a.opus"
     pichit "Hey! Are you alright?"
 
     voice "audio/voice/pen_vocalize_silence_depressed_c.opus"
@@ -313,6 +331,7 @@ label .sprinkler:
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1315a.opus"
     pichit "What do you mean?"
 
     show phrarat neutral
@@ -328,6 +347,7 @@ label .sprinkler:
     phrarat "The workers could have been saved with proper safety measures, but Vanich wouldn’t bother spending the money in a poorer district like ours."
     phrarat "My father burned alive because of their negligence."
 
+    voice "audio/voice/pichit_vocalize_silence_bad_news_b.opus"
     pichit "…"
 
     call start_cinematic from _call_start_cinematic_23
@@ -413,6 +433,7 @@ label .aftermath:
 
     # TODO: reconstruct Pichit non-battle pose with grimace sprite from normal pose + battle grimace
 
+    voice "audio/voice/pichit_vocalize_grunt_stingy_a.opus"
     pichit "Ouch!"
 
     # TODO: describe cuts and injuries during the fight
@@ -428,6 +449,7 @@ label .aftermath:
 
     show pichit smile
 
+    voice "audio/voice/pichit_1316a.opus"
     pichit "Yeah… Thanks for helping me get through this."
 
     show charlet neutral
@@ -442,8 +464,10 @@ label .aftermath:
     voice "audio/voice/raegan_1301a.opus"
     raegan "Thank you for protecting me."
 
+    voice "audio/voice/pichit_1317b.opus"
     pichit "Sure… You’re welcome."
 
+    voice "audio/voice/pichit_1318b.opus"
     pichit "{i}I hope it will be worth it…{/i}"
 
     # Raegan talks about the importance of reports and unintentionally reveals his role as lobbyist
@@ -488,6 +512,7 @@ label .aftermath:
 
         menu:
             "I tell Raegan about the assassin’s name and father." if not has_told_assassin_family_story:
+                voice "audio/voice/pichit_1319a.opus"
                 pichit "I heard his spirit call him “Phrarat”. It could be his nickname, though."
                 "I explain why Phrarat’s family business closed and how his father died in one of Vanich’s factories."
 
@@ -499,6 +524,7 @@ label .aftermath:
 
                 $ has_told_assassin_family_story = True
             "I tell Raegan about his spirit." if not has_told_assassin_spirit_appearance:
+                voice "audio/voice/pichit_1320a.opus"
                 pichit "He was accompanied by a flying spirit. It looked like a silkmoth with a cat head, and its body was covered with green and yellow stripes."
 
                 voice "audio/voice/raegan_1311a.opus"
@@ -509,20 +535,34 @@ label .aftermath:
 
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
-                pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
-                pichit intrigued "I’m not sure why he’d do that, though. I mean, doesn’t that make them easier to dodge?"
+                show pichit smile
+                voice "audio/voice/pichit_1321a.opus"
+                pichit "Ah, yes! He kept shouting the names of his attacks before using them!"
+
+                show pichit intrigued
+                voice "audio/voice/pichit_1322b.opus"
+                pichit "I’m not sure why he’d do that, though. I mean, doesn’t that make them easier to dodge?"
+
+                show raegan surprised
                 voice "audio/voice/raegan_1313a.opus"
                 raegan surprised "I… see…"
+
                 $ has_told_trivia = True
             "I tell Raegan I haven’t noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
+                voice "audio/voice/pichit_1323b.opus"
                 pichit "No, that was all."
+
                 voice "audio/voice/raegan_1314a.opus"
                 raegan "I see. Thank you."
+
                 $ has_told_thats_all = True
             "I tell Raegan that I haven’t noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
+                voice "audio/voice/pichit_1324a.opus"
                 pichit intrigued "Not really. I admit I was really focused on surviving all that time."
+
                 voice "audio/voice/raegan_1315a.opus"
                 raegan neutral "Understandable."
+
                 $ has_told_nothing = True
 
     window hide
@@ -534,7 +574,9 @@ label .aftermath:
     voice "audio/voice/raegan_1316a.opus"
     raegan neutral "Well, I need to go back to my headquarters now. You two should rest."
 
+    voice "audio/voice/pichit_1325b.opus"
     pichit "I don’t need to be asked twice!"
+
     charlet "Same for me. We’ll meet again later."
 
     call start_cinematic from _call_start_cinematic_25

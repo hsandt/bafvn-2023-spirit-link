@@ -14,11 +14,23 @@ label .raegan_arrives:
     "Instead, his collar and cuffs are clean and neat as though freshly laundered.
     Even his hair is impeccable. Meanwhile, my own hair feels matted and itchy."
 
-    pichit smile "Oh, you’re back."
+    show pichit smile
 
+    voice "audio/voice/pichit_1201b.opus"
+    pichit "Oh, you’re back."
+
+    # Forgot to add "pichit" 2 lines below at first, so "He said..." wasn't exported in dialogue.tab
+    # and we had to insert this line later in the spreadsheet, so exceptionally we use suffixes
+    # "-1" and "-2" since we don't want to offset all the voiced line numbers after that
+
+    voice "audio/voice/pichit_1202-1b.opus"
     pichit "Charlet, I’d like to introduce you to Mr. Raegan Vanich! He is the third child of Lord Vanich, founder of Vanich Corporation."
-    "He said he was interested in sponsoring the expedition!"
 
+    # Waiting for asset
+    # voice "audio/voice/pichit_1202-2b.opus"
+    pichit "He said he was interested in sponsoring the expedition!"
+
+    voice "audio/voice/pichit_1203a.opus"
     pichit "Raegan, this is Dr. Charlet Kasamsun, the brains behind the expedition."
 
     voice "audio/voice/raegan_1201a.opus"
@@ -167,6 +179,7 @@ label .smoke:
 
     "Pichit smiles, nonchalantly waving a hand to dismiss the commotion, but I can see tension in his shoulders."
 
+    voice "audio/voice/pichit_1204b.opus"
     pichit "Some demonstrations must have malfunctioned. I’m sure it’s nothing to be concerned about, sir."
 
     show pichit neutral
@@ -344,6 +357,7 @@ label .assassin_appears:
 
     show pichit battle shout
 
+    voice "audio/voice/pichit_1205a.opus"
     pichit "Don’t just sit there! Get inside! Now!"
 
     show pichit battle serious
@@ -366,6 +380,7 @@ label .assassin_appears:
 
     show pichit battle shout
 
+    voice "audio/voice/pichit_1206b.opus"
     pichit "What are you doing here? Go!"
 
     show pichit battle serious
@@ -630,6 +645,7 @@ label .fight_intro:
     show phrarat determined
     show pichit battle shout
 
+    voice "audio/voice/pichit_1207b.opus"
     pichit "Who are you? Why are you attacking us?"
 
     show pichit battle serious
@@ -644,11 +660,13 @@ label .fight_intro:
 
     phrarat "Haven’t you seen what Vanich did to our nation?"
 
+    voice "audio/voice/pichit_1208a.opus"
     pichit "I know… But Raegan’s different. He’s trying to improve our relationship with Enon and the rest of the mainlanders."
 
     phrarat "Ha! You really think he’ll be satisfied just building bridges?"
     phrarat "He’ll want more and more… Until he completely consumes our homeland."
 
+    voice "audio/voice/pichit_1209b.opus"
     pichit "Maybe… But for now, I have to count on him to make things better."
 
     phrarat "Then I have no choice but to crush you too."
@@ -676,6 +694,7 @@ label .fight1:
 
     "Another sword strike. I dance out of reach, narrowly losing a finger."
 
+    voice "audio/voice/pichit_1210b.opus"
     pichit "{i}It looks like all the sword dance lessons my mother forced me to learn are finally paying off…{/i}"
 
     call start_cinematic from _call_start_cinematic_12
@@ -711,6 +730,7 @@ label .fight1:
 
     show phrarat determined
 
+    voice "audio/voice/pichit_1211b.opus"
     pichit "Sorry, but Raegan is our last hope to lead Vanich Industries toward the right path."
 
     show phrarat shout
@@ -762,14 +782,17 @@ label .fight1:
 
     "He pulls the whip back to make me lose my balance. My back slams into a nearby crate, the wind knocked out of me."
 
+    voice "audio/voice/pichit_1212a.opus"
     pichit "{i}That damn whip. If only I could get rid of it!{/i}"
 
+    voice "audio/voice/pichit_1213a.opus"
     pichit "{i}How come it hasn’t already been consumed by the flames? How much fabric does this guy have?!{/i}"
 
     "My thoughts scatter as the assassin lunges at me. He raises his dagger, ready to stab me in the chest."
 
     show pichit battle shout
 
+    voice "audio/voice/pichit_1214b.opus"
     pichit "Fan, now!"
 
     play sound audio.sfx.summon
@@ -789,6 +812,7 @@ label .fight1:
 
     show phrarat determined
 
+    voice "audio/voice/pichit_1215a.opus"
     pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
 
     phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to claim their powers for themselves."
@@ -826,12 +850,16 @@ label .fight1:
 
     show pichit battle shout
 
+    voice "audio/voice/pichit_1216a.opus"
     pichit "Good job, Fan!"
 
     show pichit battle serious
 
+    voice "audio/voice/pichit_1217a.opus"
     pichit "You really thought I was just losing ground all that time, uh?"
-    pichit "Never cared having a break for a minute to appreciate the nature surrounding you?"
+
+    voice "audio/voice/pichit_1218a.opus"
+    pichit "Never cared having a break for a minute to appreciate nature surrounding you?"
 
     "As we moved along the university courtyard, cobblestones made way for grass, filled with bushes and decorative flowers. A nearby fountain keeps them hydrated."
 
@@ -857,10 +885,12 @@ label .fight1:
 
     show phrarat anxious
 
+    voice "audio/voice/pichit_1219b.opus"
     pichit "Can’t recognize the perpetuas that grow in our homeland? Sturdy and quick to absorb water, they will resist your fire for a while."
 
     hide fan with character_dissolve
 
+    voice "audio/voice/pichit_1220a.opus"
     pichit "{i}Now’s my chance!{/i}"
 
     call start_cinematic from _call_start_cinematic_17
@@ -873,10 +903,12 @@ label .fight1:
 
     "I step forward to strike my opponent, but he uses his whip to keep me at bay."
 
+    voice "audio/voice/pichit_1221a.opus"
     pichit "{i}I can’t get too close…{/i}"
 
     "He can still wield that scarf with mere movements of the wrist, and my vines are not strong enough to paralyze his every articulation."
 
+    voice "audio/voice/pichit_1222a.opus"
     pichit "{i}How should I approach him? If only I knew the source of his power…{/i}"
 
     $ should_show_side_image = True
@@ -902,6 +934,7 @@ label .fight1:
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1223c.opus"
     pichit "{i}Wait a minute. If his spirit’s power is related to cloth, where does his fire come from?{/i}"
 
     show phrarat shout
@@ -915,10 +948,12 @@ label .fight1:
 
     "I reinforce my connection with Fan to spawn new ones faster than he can cut them. But even aided by the natural flora behind me, I can feel Fan struggling to keep up."
 
-    pichit "{i}I need to finish this quick!{/i}"
+    voice "audio/voice/pichit_1224b.opus"
+    pichit "{i}I need to finish this quickly!{/i}"
 
     show fan neutral at companion_warp_to("far_right")
 
+    voice "audio/voice/pichit_1225a.opus"
     pichit "{i}Fan! Focus on his shoulder!{/i}"
 
     # FX: vines
@@ -931,16 +966,19 @@ label .fight1:
 
     hide fan with character_dissolve
 
+    voice "audio/voice/pichit_1226a.opus"
     pichit "{i}Charlet, I can’t reach it!{/i}"
 
     $ should_show_side_image = True
 
     charlet telepathy "Try to lure him to the greenhouse! It has fire sprinklers!"
 
+    voice "audio/voice/pichit_1227b.opus"
     pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
     charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
 
+    voice "audio/voice/pichit_1228a.opus"
     pichit battle serious "{i}It’s okay… I’ll find a way.{/i}"
 
     $ should_show_side_image = False
@@ -963,8 +1001,10 @@ label .fight1:
 
     show phrarat determined
 
+    voice "audio/voice/pichit_1229a.opus"
     pichit "What are you talking about? We’re in the middle of a fight, and {i}you{/i} attacked us!"
 
+    voice "audio/voice/pichit_1230a.opus"
     pichit "Besides, who’s betraying our traditions? Your fire comes from a gemstone, right?"
 
     phrarat "…"
@@ -1009,6 +1049,7 @@ label .fight1:
 
     show pichit battle grimace at character_warp_to("left")
 
+    voice "audio/voice/pichit_1231c.opus"
     pichit "Uh-oh…"
 
     "Keeping the momentum of his thrust, the assassin takes an offensive stance."
