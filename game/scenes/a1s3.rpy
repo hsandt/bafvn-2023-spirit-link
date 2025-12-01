@@ -180,7 +180,7 @@ label .fight2:
     window show
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
-    phrarat "… Is that so? Then why don’t you finish me then?"
+    phrarat "… Is that so? Then why don’t you finish me?"
 
     show pichit battle anxious
 
