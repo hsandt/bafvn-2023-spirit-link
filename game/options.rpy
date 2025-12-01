@@ -31,11 +31,11 @@ define config.version = "2.1"
 
 define gui.about = _p("""
 This game was developed for {a=https://itch.io/jam/baf-jam-2023}Battle Action Fantasy VN Jam 2023{/a}.
+It was later expanded with new scenes and voices for {a=https://itch.io/jam/raise-2025}Raise Your Voice Jam 2025{/a}.
 
 See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io/jam/baf-jam-2023/rate/2126602}submission page{/a}
 
-
-{u}Credits{/u}
+{size=*2.0}Credits{/size}
 
 {a=https://komehara.itch.io/}komehara{/a} - Writing, Script programming
 
@@ -47,7 +47,7 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 {a=https://jazzy-chanss.itch.io/}jazzy_chanss{/a} - Art direction, Background art
 
-{a=https://zwaany.itch.io/}Zwaany{/a}: Art direction, Character art
+{a=https://zwaany.itch.io/}Zwaany{/a} - Art direction, Character art
 
 {a=https://anawfullotofcups.itch.io/}AnAwfulLotOfCups{/a} - BGM
 
@@ -55,25 +55,25 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 Kristoff Grey - Audio engineering
 
-= Voice actors =
+{size=*1.5}Voice actors{/size}
 
-{a=https://x.com/chardevoire}RedVelvetVA{/a} - Charlet
+RedVelvetVA - Charlet - {a=https://x.com/chardevoire}https://x.com/chardevoire{/a}
 
 Kristoff Grey - Pichit
 
-Bryce Buckley - Raegan
+Bryce Buckley - Raegan - {a=https://x.com/XenoBlazeVA}https://x.com/XenoBlazeVA{/a}
 
-Hikaru - Assassin (Phrarat)
+Hikaru - Assassin (Phrarat) - {a=https://x.com/HikaruuKanzaki}https://x.com/HikaruuKanzaki{/a}
 
 Shane Tyler - Guard
 
 David Wamala - Makara
 
-Sun - Fan
+Sun - Fan - {a=https://x.com/JSunVO}https://x.com/JSunVO{/a}
 
-Ren_ - Pen
+{a=https://renovershares.itch.io/}Ren_{/a} - Pen
 
-{u}License{/u}
+{size=*2.0}License{/size}
 
 Unless otherwise stated, all assets are under copyright of their respective authors.
 
