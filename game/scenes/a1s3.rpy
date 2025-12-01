@@ -119,7 +119,9 @@ label .fight2:
 
     call start_cinematic from _call_start_cinematic_20
 
-    play music battle
+    # Trick to balance BGM volume to hear voices better without touching the BGM asset
+    # Same as a1s2.fight1
+    play music battle volume 0.7
     # perfect timing for blades to cross on a beat
     pause 0.94
 
