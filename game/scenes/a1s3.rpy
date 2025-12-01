@@ -91,6 +91,7 @@ label .fight2:
 
     show phrarat surprised
 
+    voice "audio/voice/assassin_vocalize_surprise_g.opus"
     phrarat "… !!"
 
     "The knife stops a few inches away from my body."
@@ -140,6 +141,7 @@ label .fight2:
 
     show phrarat smile
 
+    voice "audio/voice/assassin_1301c.opus"
     phrarat "Humph. You thought that would work twice?"
 
     hide pen with character_dissolve
@@ -149,19 +151,25 @@ label .fight2:
 
     "They emit a purple smoke as they are consumed by the flames."
 
+    voice "audio/voice/assassin_1302a.opus"
     phrarat "Already gone? Looks like interior plants won’t help you much."
 
     "The assassin delivers a strong blow right into my guard, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
 
     show phrarat shout
+    voice "audio/voice/assassin_1303b.opus"
     phrarat "Phoenix…"
 
     show phrarat surprised
+    voice "audio/voice/assassin_vocalize_grunt_poisoned_b.opus"
     phrarat "Ugh… !"
 
+    # Play cough as SFX, not voice, as it doesn't need to auto advance in sync
+    play sound "audio/voice/assassin_vocalize_grunt_poisoned_continued_f.opus"
     "The fighter interrupts his move, grabbing his chest and coughing."
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    voice "audio/voice/assassin_1304_g.opus"
     phrarat "What did you… ?"
 
     voice "audio/voice/pichit_1308a.opus"
@@ -180,6 +188,7 @@ label .fight2:
     window show
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    voice "audio/voice/assassin_1305a.opus"
     phrarat "… Is that so? Then why don’t you finish me?"
 
     show pichit battle anxious
@@ -190,9 +199,11 @@ label .fight2:
     voice "audio/voice/pichit_1312c.opus"
     pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
 
+    voice "audio/voice/assassin_vocalize_silence_unmasked2a.opus"
     phrarat "…"
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    voice "audio/voice/assassin_1306e.opus"
     phrarat "I… don’t need your pity."
 
     show pichit battle serious
@@ -205,10 +216,12 @@ label .fight2:
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1307b.opus"
     phrarat "My family has been working with toxic dyes for years! You think a little poison is gonna stop me?!"
 
     show pen neutral at companion_warp_to("far_right"), flip
 
+    voice "audio/voice/assassin_1308b.opus"
     phrarat "Pen! I need more cloth!"
 
     show phrarat determined
@@ -220,12 +233,14 @@ label .fight2:
 
     hide pen with character_dissolve
 
+    voice "audio/voice/assassin_1309a.opus"
     phrarat "Tsk… I have no choice, then."
 
     "He sets his own tunic on fire, along with what remains of his scarf. A blazing whirl surrounds him."
 
     show phrarat shout
 
+    voice "audio/voice/assassin_bark_dragon_tornado_c.opus"
     phrarat "Dragon Tornado!!"
 
     show pichit battle grimace
@@ -236,6 +251,7 @@ label .fight2:
 
     show pichit battle anxious
 
+    voice "audio/voice/assassin_1310a.opus"
     phrarat "If I can’t make it out alive… at least I’ll bring you down with this whole place! With Vanich!"
 
     show pen neutral at companion_warp_to("middle")
@@ -246,6 +262,7 @@ label .fight2:
     voice "audio/voice/pen_1303c.opus"
     pen "Your body won’t stand it if you use all of the gem’s power at once!"
 
+    voice "audio/voice/assassin_vocalize_grunt_attack_long2b.opus"
     phrarat "Graaah!!"
 
     "The assassin ignores his companion and makes the whirlwind accelerate. It flows farther and higher."
@@ -332,6 +349,7 @@ label .sprinkler:
 
     show phrarat determined
 
+    voice "audio/voice/assassin_1311c.opus"
     phrarat "Stopped by a fire protection system… How ironic."
 
     show pichit battle anxious
@@ -341,15 +359,27 @@ label .sprinkler:
 
     show phrarat neutral
 
+    voice "audio/voice/assassin_1312.opus"
     phrarat "When Enon brought advanced industrial process to Moacu-Laedan, traditional cloth making started to become less and less profitable."
+
+    voice "audio/voice/assassin_1313.opus"
     phrarat "My father ended up closing the family business."
 
+    voice "audio/voice/assassin_1314.opus"
     phrarat "Then he joined one of Vanich’s factories in search for a more stable source of income."
 
     show phrarat determined
 
+    # Waiting for asset
+    # voice "audio/voice/assassin_1315.opus"
     phrarat "During one of his many night overtimes, a fire broke out."
+
+    # Waiting for asset
+    # voice "audio/voice/assassin_1316.opus"
     phrarat "The workers could have been saved with proper safety measures, but Vanich wouldn’t bother spending the money in a poorer district like ours."
+
+    # Waiting for asset
+    # voice "audio/voice/assassin_1317.opus"
     phrarat "My father burned alive because of their negligence."
 
     voice "audio/voice/pichit_vocalize_silence_bad_news_b.opus"
@@ -398,6 +428,9 @@ label .sprinkler:
     "I hear a voice from above."
 
     # Voice acting: post-process: shout from far, echo
+
+    # Waiting for asset
+    # voice "audio/voice/assassin_1318.opus"
     phrarat "You really think the Vanich son is better than his father? That he’ll help you for the sake of Moacu-Laedan?"
 
     show pichit battle serious

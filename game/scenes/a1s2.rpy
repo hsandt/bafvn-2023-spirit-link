@@ -307,6 +307,7 @@ label .assassin_appears:
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1201a.opus"
     phrarat "That damn gemstone… !"
 
     show phrarat determined
@@ -679,6 +680,7 @@ label .fight_intro:
     call end_cinematic from _call_end_cinematic_10
 
     show phrarat shout
+    voice "audio/voice/assassin_1202d.opus"
     phrarat "Don’t get in my way! My quarrel is not with you!"
 
     show phrarat determined
@@ -690,24 +692,30 @@ label .fight_intro:
     show pichit battle serious
     show phrarat smile
 
+    # TODO SFX / Voice acting: narration voice for scoff "Humph!"
     "The assassin scoffs at me."
 
-    # Voice acting: voice the scoff "Humph!" at the beginning of this line
+    voice "audio/voice/assassin_1203c.opus"
     phrarat "Can’t you guess? You’re from Moacu-Laedan, right?"
 
     show phrarat determined
 
+    voice "audio/voice/assassin_1204b.opus"
     phrarat "Haven’t you seen what Vanich did to our nation?"
 
     voice "audio/voice/pichit_1208a.opus"
     pichit "I know… But Raegan’s different. He’s trying to improve our relationship with Enon and the rest of the mainlanders."
 
+    voice "audio/voice/assassin_1205b.opus"
     phrarat "Ha! You really think he’ll be satisfied just building bridges?"
+
+    voice "audio/voice/assassin_1206a.opus"
     phrarat "He’ll want more and more… Until he completely consumes our homeland."
 
     voice "audio/voice/pichit_1209b.opus"
     pichit "Maybe… But for now, I have to count on him to make things better."
 
+    voice "audio/voice/assassin_1207d.opus"
     phrarat "Then I have no choice but to crush you too."
 
     jump .fight1
@@ -756,6 +764,7 @@ label .fight1:
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1208b.opus"
     phrarat "Traitor! You dishonor our people by siding with the likes of him! Have you no pride?!"
 
     show pichit battle serious
@@ -765,6 +774,7 @@ label .fight1:
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1209b.opus"
     phrarat "Stop this! Just let me get rid of that worm and I’ll leave you be!"
 
     show phrarat determined
@@ -774,6 +784,7 @@ label .fight1:
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1210a.opus"
     phrarat "You really think that? He’ll be just like his father! Just like everyone else!"
 
     show phrarat determined
@@ -843,10 +854,12 @@ label .fight1:
 
     show pichit battle serious
 
+    voice "audio/voice/assassin_1211c.opus"
     phrarat "So, you finally showed your spirit."
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1212a.opus"
     phrarat "But you betray our heritage by using your power for the likes of Vanich!"
 
     show phrarat determined
@@ -854,6 +867,7 @@ label .fight1:
     voice "audio/voice/pichit_1215a.opus"
     pichit "Ironic coming from someone who keeps burning his own tribal cloth. What would your ancestors say?"
 
+    voice "audio/voice/assassin_1213a.opus"
     phrarat "A small price to pay. Their corruption must stop. They have invaded our land, and now they are exploiting spirits to claim their powers for themselves."
 
     show pichit battle anxious
@@ -863,6 +877,7 @@ label .fight1:
     show pichit battle grimace
     hide fan with character_dissolve
 
+    voice "audio/voice/assassin_1214a.opus"
     phrarat "Your dry wood stands no chance against my flames. Let’s put an end to this."
 
     call start_cinematic from _call_start_cinematic_15
@@ -878,6 +893,7 @@ label .fight1:
 
     call end_cinematic from _call_end_cinematic_15
 
+    voice "audio/voice/assassin_1215e.opus"
     phrarat "What?!"
 
     call start_cinematic from _call_start_cinematic_16
@@ -914,12 +930,14 @@ label .fight1:
 
     show phrarat anxious
 
+    voice "audio/voice/assassin_1216d.opus"
     phrarat "More plants, really? I’ll just burn them like the rest…"
 
     "With a snap of fingers, he sparks fire at the vines restraining him. But they refuse to yield."
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1217a.opus"
     phrarat "Why are they resisting?!"
 
     show phrarat anxious
@@ -982,6 +1000,7 @@ label .fight1:
 
     show phrarat shout
 
+    voice "audio/voice/assassin_vocalize_grunt_attack_long_b.opus"
     phrarat "Graaah!!"
 
     "My thoughts are interrupted once more. Unable to burn the vines, the assassin takes his dagger with his free hand and starts cutting the vines."
@@ -1037,14 +1056,17 @@ label .fight1:
     pause 0.5
     window show
 
+    voice "audio/voice/assassin_1218c.opus"
     phrarat "So, you finally noticed my spirit, uh? It took you time…"
 
     show phrarat smile
 
+    voice "audio/voice/assassin_1219a.opus"
     phrarat "Maybe you forgot your ancestral values after living with those Enonians for too long?"
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1220d.opus"
     phrarat "Even lowering yourself to attacking someone else’s spirit!"
 
     show phrarat determined
@@ -1055,12 +1077,15 @@ label .fight1:
     voice "audio/voice/pichit_1230a.opus"
     pichit "Besides, who’s betraying our traditions? Your fire comes from a gemstone, right?"
 
+    voice "audio/voice/assassin_vocalize_silence_unmasked_c.opus"
     phrarat "…"
 
+    voice "audio/voice/assassin_1221c.opus"
     phrarat "A necessary evil to put an end to this madness."
 
     show phrarat shout
 
+    voice "audio/voice/assassin_bark_pen_b.opus"
     phrarat "Pen!"
 
     show phrarat determined
@@ -1083,10 +1108,14 @@ label .fight1:
 
     show phrarat determined
 
+    voice "audio/voice/assassin_1222a.opus"
     phrarat "You’re not my target, but you may lead me to Vanich…"
+
+    voice "audio/voice/assassin_1223a.opus"
     phrarat "… and you’re too dangerous to be left alone."
 
     show phrarat shout
+    voice "audio/voice/assassin_bark_pen_b.opus"
     phrarat "Pen!"
 
     "I turn my head back to my opponent. His spirit spins a thread and throws it forward. It wraps around a lamp post on my right, and its other end around the assassin’s arm."
@@ -1106,6 +1135,7 @@ label .fight1:
 
     show phrarat shout zorder 2 at character_enter_from_right_to_easein("middle", 0.3)
 
+    voice "audio/voice/assassin_bark_phoenix_dance_c.opus"
     phrarat "Phoenix Dance!"
 
     # CG: Phoenix Dance
