@@ -23,7 +23,8 @@ label a1s3:
     $ should_show_side_image = True
     # technically we should show telepathy shared but we don’t have such a variant,
     # so let’s just show scared without blue effect
-    charlet scared "Pichit! Are you alright?"
+    show charlet scared
+    charlet "Pichit! Are you alright?"
 
     show pichit battle serious
 
@@ -42,11 +43,11 @@ label a1s3:
     voice "audio/voice/pichit_1304b.opus"
     pichit "{i}What should I do now?{/i}"
 
-    charlet telepathy "Just keep fighting until he uses too much fire and triggers the sprinkler system."
+    show charlet telepathy
+    charlet "Just keep fighting until he uses too much fire and triggers the sprinkler system."
 
     # Cut for now to get started with Raise your Voice jam 2025
-    # charlet telepathy "I will help you as much as I can with my remote vision. Just tell me what you need to know."
-
+    # charlet "I will help you as much as I can with my remote vision. Just tell me what you need to know."
     # Known issue: a weird bug causes Pichit to quickly move to the left before moving
     show pichit at character_move_to_easein("left", 0.5, 0.05)
 
@@ -150,9 +151,11 @@ label .fight2:
 
     "The assassin delivers a strong blow right into my guard, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
 
-    phrarat shout "Phoenix…"
+    show phrarat shout
+    phrarat "Phoenix…"
 
-    phrarat surprised "Ugh… !"
+    show phrarat surprised
+    phrarat "Ugh… !"
 
     "The fighter interrupts his move, grabbing his chest and coughing."
 
@@ -490,8 +493,9 @@ label .aftermath:
     voice "audio/voice/raegan_1305a.opus"
     raegan "I know that Enon keeps a registry of all the Islanders who moved to the continent, as well as suspected ILF supporters."
 
+    show raegan thinking
     voice "audio/voice/raegan_1306a.opus"
-    raegan thinking "So, by crosschecking it with your description of the assassin, they may be able to identify him."
+    raegan "So, by crosschecking it with your description of the assassin, they may be able to identify him."
 
     show pichit intrigued
 
@@ -507,8 +511,10 @@ label .aftermath:
     while not (has_told_thats_all or has_told_nothing):
         if has_told_assassin_family_story or has_told_trivia:
             show pichit neutral
+
+            show raegan neutral
             voice "audio/voice/raegan_1308a.opus"
-            raegan neutral "Anything else?"
+            raegan "Anything else?"
 
         menu:
             "I tell Raegan about the assassin’s name and father." if not has_told_assassin_family_story:
@@ -516,22 +522,26 @@ label .aftermath:
                 pichit "I heard his spirit call him “Phrarat”. It could be his nickname, though."
                 "I explain why Phrarat’s family business closed and how his father died in one of Vanich’s factories."
 
+                show raegan sad
                 voice "audio/voice/raegan_1309a.opus"
-                raegan sad "I see… An unfortunate accident."
+                raegan "I see… An unfortunate accident."
 
+                show raegan thinking
                 voice "audio/voice/raegan_1310a.opus"
-                raegan thinking "This will however prove precious information in identifying the culprit."
+                raegan "This will however prove precious information in identifying the culprit."
 
                 $ has_told_assassin_family_story = True
             "I tell Raegan about his spirit." if not has_told_assassin_spirit_appearance:
                 voice "audio/voice/pichit_1320a.opus"
                 pichit "He was accompanied by a flying spirit. It looked like a silkmoth with a cat head, and its body was covered with green and yellow stripes."
 
+                show raegan thinking
                 voice "audio/voice/raegan_1311a.opus"
-                raegan thinking "Interesting… Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
+                raegan "Interesting… Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
 
+                show raegan neutral
                 voice "audio/voice/raegan_1312a.opus"
-                raegan neutral "Most of them just want to live peacefully in Enon, after all."
+                raegan "Most of them just want to live peacefully in Enon, after all."
 
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
@@ -545,7 +555,7 @@ label .aftermath:
 
                 show raegan surprised
                 voice "audio/voice/raegan_1313a.opus"
-                raegan surprised "I… see…"
+                raegan "I… see…"
 
                 $ has_told_trivia = True
             "I tell Raegan I haven’t noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
@@ -557,11 +567,13 @@ label .aftermath:
 
                 $ has_told_thats_all = True
             "I tell Raegan that I haven’t noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
+                show pichit intrigued
                 voice "audio/voice/pichit_1324a.opus"
-                pichit intrigued "Not really. I admit I was really focused on surviving all that time."
+                pichit "Not really. I admit I was really focused on surviving all that time."
 
+                show raegan neutral
                 voice "audio/voice/raegan_1315a.opus"
-                raegan neutral "Understandable."
+                raegan "Understandable."
 
                 $ has_told_nothing = True
 
@@ -571,8 +583,9 @@ label .aftermath:
     pause 0.5
     window show
 
+    show raegan neutral
     voice "audio/voice/raegan_1316a.opus"
-    raegan neutral "Well, I need to go back to my headquarters now. You two should rest."
+    raegan "Well, I need to go back to my headquarters now. You two should rest."
 
     voice "audio/voice/pichit_1325b.opus"
     pichit "I don’t need to be asked twice!"

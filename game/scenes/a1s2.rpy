@@ -38,18 +38,21 @@ label .raegan_arrives:
 
     "Just like Pichit, I switch to speaking Enonian."
 
+    show charlet smile
     voice "audio/voice/charlet_1201a.opus"
-    charlet smile "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
+    charlet "Likewise, Mr. Vanich. Vanich Industries has done so many amazing things, it is a great honor to meet you."
 
+    show raegan smile
     voice "audio/voice/raegan_1202a.opus"
-    raegan smile "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
+    raegan "Just Raegan, please. Should all go well, I imagine we will be working very closely together."
 
     show charlet neutral
 
     "His smile is dangerously charming and I find myself flustered by my own reaction to it."
 
+    show charlet smile
     voice "audio/voice/charlet_1202a.opus"
-    charlet smile "Raegan, then."
+    charlet "Raegan, then."
 
     jump .raegan_conversation
 
@@ -306,7 +309,8 @@ label .assassin_appears:
     show phrarat determined
 
     $ should_show_side_image = True
-    charlet scared "{i}He speaks Laedani… A separatist vigilante?!{/i}"
+    show charlet scared
+    charlet "{i}He speaks Laedani… A separatist vigilante?!{/i}"
     $ should_show_side_image = False
 
     # TODO impact SFX and hit FX
@@ -385,7 +389,8 @@ label .assassin_appears:
 
     show pichit battle serious
 
-    charlet shout "But you–"
+    show charlet shout
+    charlet "But you–"
 
     show raegan anxious
     show charlet anxious
@@ -399,7 +404,8 @@ label .assassin_appears:
 
     "My gaze flicks between Pichit and Vanich. Then I nod."
 
-    charlet shout "I know somewhere we’ll be safe!"
+    show charlet shout
+    charlet "I know somewhere we’ll be safe!"
 
     show charlet serious
 
@@ -912,7 +918,8 @@ label .fight1:
     pichit "{i}How should I approach him? If only I knew the source of his power…{/i}"
 
     $ should_show_side_image = True
-    charlet telepathy "Pichit! Can you hear me?"
+    show charlet telepathy
+    charlet "Pichit! Can you hear me?"
 
     show pichit battle anxious
 
@@ -920,7 +927,8 @@ label .fight1:
 
     show pichit battle serious
 
-    charlet telepathy "I see it! His spirit is on his left shoulder!"
+    show charlet telepathy
+    charlet "I see it! His spirit is on his left shoulder!"
 
     # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet’s vision power
 
@@ -971,15 +979,18 @@ label .fight1:
 
     $ should_show_side_image = True
 
-    charlet telepathy "Try to lure him to the greenhouse! It has fire sprinklers!"
+    show charlet telepathy
+    charlet "Try to lure him to the greenhouse! It has fire sprinklers!"
 
     voice "audio/voice/pichit_1227b.opus"
     pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
-    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
+    show charlet telepathy
+    charlet "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
 
+    show pichit battle serious
     voice "audio/voice/pichit_1228a.opus"
-    pichit battle serious "{i}It’s okay… I’ll find a way.{/i}"
+    pichit "{i}It’s okay… I’ll find a way.{/i}"
 
     $ should_show_side_image = False
 

@@ -45,8 +45,9 @@ label a1s1:
     dyed in the traditional patterns of the Mawi tribe, did little to protect from the heat."
     "I dab at the sweat on my brow, lamenting the loss of the expensive powder I applied that morning."
 
+    show charlet sad
     voice "audio/voice/charlet_1102b.opus"
-    charlet sad "Great. So much for best impressions."
+    charlet "Great. So much for best impressions."
 
     #maybe show a mirror
 
@@ -133,8 +134,9 @@ label .look_at_booth:
 
     "I force levity into my voice."
 
+    show charlet smile
     voice "audio/voice/charlet_1103a.opus"
-    charlet smile "Well, at least I have you, {i}oh mighty Makara{/i}, to save me in spite of my poor, human senses."
+    charlet "Well, at least I have you, {i}oh mighty Makara{/i}, to save me in spite of my poor, human senses."
 
     voice "audio/voice/makara_1102a.opus"
     makara "Indeed. With me here, you need not fear anything."
