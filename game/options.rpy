@@ -23,7 +23,7 @@ define gui.show_version = True
 
 ## The version of the game.
 
-define config.version = "2.0"
+define config.version = "2.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -53,6 +53,25 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 {a=https://itch.io/profile/jojoworthington}JoJo Worthington{/a} - Sound design - {a=http://jojoworthington.com/}http://jojoworthington.com/{/a}
 
+Kristoff Grey - Audio engineering
+
+= Voice actors =
+
+{a=https://x.com/chardevoire}RedVelvetVA{/a} - Charlet
+
+Kristoff Grey - Pichit
+
+Bryce Buckley - Raegan
+
+Hikaru - Assassin (Phrarat)
+
+Shane Tyler - Guard
+
+David Wamala - Makara
+
+Sun - Fan
+
+Ren_ - Pen
 
 {u}License{/u}
 
@@ -89,7 +108,7 @@ define config.has_voice = True
 ## uncomment a line below and use it to set a sample sound to play.
 
 define config.sample_sound = "audio/sfx/sfx_slash1.opus"
-# define config.sample_voice = "sample-voice.ogg"
+define config.sample_voice = "audio/voice/charlet_great_garuda_sample.opus"
 
 
 ## Uncomment the following line to set an audio file that will be played while

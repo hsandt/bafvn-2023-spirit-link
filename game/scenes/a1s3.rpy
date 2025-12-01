@@ -3,16 +3,19 @@ label a1s3:
     show pichit battle grimace at character_enter_from_right_to_easein("far_left", 0.3)
     pause 0.6
 
+    voice "audio/voice/pichit_vocalize_grunt_hit_wall_b.opus"
     pichit "Urg!"
 
     show fan neutral at companion_warp_to("middle_left")
 
     "Fortunately, Fan created soft beech bark behind my back to cushion the impact, so I didn’t break anything."
 
+    voice "audio/voice/fan_1103a.opus"
     fan "This reminds me of your childhood… I would always protect you from bad falls when you were playing outdoors."
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1301b.opus"
     pichit "Aha… Yeah… Thanks for having my back."
 
     hide fan with character_dissolve
@@ -20,10 +23,13 @@ label a1s3:
     $ should_show_side_image = True
     # technically we should show telepathy shared but we don’t have such a variant,
     # so let’s just show scared without blue effect
-    charlet scared "Pichit! Are you alright?"
+    show charlet scared
+    voice "audio/voice/charlet_1301a.opus"
+    charlet "Pichit! Are you alright?"
 
     show pichit battle serious
 
+    voice "audio/voice/pichit_1302b.opus"
     pichit "{i}Yeah… I’m fine.{/i}"
 
     call start_cinematic from _call_start_cinematic_18
@@ -32,19 +38,24 @@ label a1s3:
     pause 1.0
     call end_cinematic from _call_end_cinematic_18
 
+    voice "audio/voice/pichit_1303a.opus"
     pichit "{i}And, erm… I got him into the building.{/i}"
+
+    voice "audio/voice/pichit_1304b.opus"
     pichit "{i}What should I do now?{/i}"
 
-    charlet telepathy "Just keep fighting until he uses too much fire and triggers the sprinkler system."
+    show charlet telepathy
+    voice "audio/voice/charlet_1302a.opus"
+    charlet "Just keep fighting until he uses too much fire and triggers the sprinkler system."
 
     # Cut for now to get started with Raise your Voice jam 2025
-    # charlet telepathy "I will help you as much as I can with my remote vision. Just tell me what you need to know."
-
+    # charlet "I will help you as much as I can with my remote vision. Just tell me what you need to know."
     # Known issue: a weird bug causes Pichit to quickly move to the left before moving
     show pichit at character_move_to_easein("left", 0.5, 0.05)
 
     show pichit battle serious
 
+    voice "audio/voice/pichit_1305a.opus"
     pichit "{i}Understood.{/i}"
 
     $ should_show_side_image = False
@@ -75,19 +86,31 @@ label .fight2:
 
     "One spark hits the Aquilaria tree at the center of the installation. It catches fire and immediately starts spreading white smoke."
 
-    show phrarat surprised at character_move_to_easein("right", 0.3)
+    "In my now limited field of vision, I don't see where the next attack is coming from."
+    "I sense danger and look to the left, but it's too late. My throat is already within reach of the assassin's knife."
 
+    show phrarat surprised
+
+    voice "audio/voice/assassin_vocalize_surprise_g.opus"
     phrarat "… !!"
 
+    "The knife stops a few inches away from my body."
+
+    show phrarat at character_move_to_easein("right", 0.3)
+
     stop music fadeout 2.0
+    pause 2.0
 
     show phrarat neutral
 
-    "The assassin suddenly stops attacking, his angry expression replaced with sadness."
+    "The assassin steps back, his angry expression replaced with sadness."
 
     show pichit anxious
 
+    voice "audio/voice/pichit_1306a.opus"
     pichit "{i}What’s going on? Should I take that chance to attack him?{/i}"
+
+    voice "audio/voice/pichit_1307b.opus"
     pichit "{i}No, wait. I recognize this scent…{/i}"
 
     hide screen smoke with bg_dissolve
@@ -96,7 +119,9 @@ label .fight2:
 
     call start_cinematic from _call_start_cinematic_20
 
-    play music battle
+    # Trick to balance BGM volume to hear voices better without touching the BGM asset
+    # Same as a1s2.fight1
+    play music battle volume 0.7
     # perfect timing for blades to cross on a beat
     pause 0.94
 
@@ -111,12 +136,14 @@ label .fight2:
 
     show pen neutral at companion_warp_to("right")
 
+    voice "audio/voice/pen_1301b.opus"
     pen "I’ll cover your back!"
 
     "This time, his spirit takes control of the scarf, splitting it into multiple, thinner strips to intercept the vines."
 
     show phrarat smile
 
+    voice "audio/voice/assassin_1301c.opus"
     phrarat "Humph. You thought that would work twice?"
 
     hide pen with character_dissolve
@@ -126,24 +153,35 @@ label .fight2:
 
     "They emit a purple smoke as they are consumed by the flames."
 
+    voice "audio/voice/assassin_1302a.opus"
     phrarat "Already gone? Looks like interior plants won’t help you much."
 
     "The assassin delivers a strong blow right into my guard, making me lose my balance. He lowers his body and takes a stance I recognize from earlier."
 
-    phrarat shout "Phoenix…"
+    show phrarat shout
+    voice "audio/voice/assassin_1303b.opus"
+    phrarat "Phoenix…"
 
-    phrarat surprised "Ugh… !"
+    show phrarat surprised
+    voice "audio/voice/assassin_vocalize_grunt_poisoned_b.opus"
+    phrarat "Ugh… !"
 
+    voice "audio/voice/assassin_vocalize_grunt_poisoned_continued_f.opus"
     "The fighter interrupts his move, grabbing his chest and coughing."
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    voice "audio/voice/assassin_1304g.opus"
     phrarat "What did you… ?"
 
+    voice "audio/voice/pichit_1308a.opus"
     pichit "It’s not recommended to burn plants without knowing what they’re made of."
 
     "The vigilante goes down on bended knee, panting faster and faster. Drops of sweat start trickling from his forehead."
 
+    voice "audio/voice/pichit_1309b.opus"
     pichit "With the amount of toxic particles you’ve inhaled, you won’t be able to breathe normally for a while."
+
+    voice "audio/voice/pichit_1310b.opus"
     pichit "This is over."
 
     window hide
@@ -151,17 +189,22 @@ label .fight2:
     window show
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
-    phrarat "… Is that so? Then why don’t you finish me then?"
+    voice "audio/voice/assassin_1305a.opus"
+    phrarat "… Is that so? Then why don’t you finish me?"
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1311b.opus"
     pichit "… Earlier, when that tree burnt… I recognized the scent of oud incense. The one we use to honor the deceased."
 
-    pichit "You stopped fighting because you remembered someone who passed away, didn’t you?"
+    voice "audio/voice/pichit_1312c.opus"
+    pichit "You stopped fighting because you remembered someone dear who passed away, didn’t you?"
 
+    voice "audio/voice/assassin_vocalize_silence_unmasked2a.opus"
     phrarat "…"
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
+    voice "audio/voice/assassin_1306e.opus"
     phrarat "I… don’t need your pity."
 
     show pichit battle serious
@@ -169,30 +212,36 @@ label .fight2:
 
     "My opponent gathers his last ounce of strength to stand up."
 
+    voice "audio/voice/pichit_1313b.opus"
     pichit "Stop. You’ll just waste what’s left of your life force."
 
     show phrarat shout
 
+    voice "audio/voice/assassin_1307b.opus"
     phrarat "My family has been working with toxic dyes for years! You think a little poison is gonna stop me?!"
 
     show pen neutral at companion_warp_to("far_right"), flip
 
+    voice "audio/voice/assassin_1308b.opus"
     phrarat "Pen! I need more cloth!"
 
     show phrarat determined
 
+    voice "audio/voice/pen_vocalize_silence_exhausted_a.opus"
     pen "…"
 
     "His spirit looks exhausted. Maybe the relentless weaving ended up draining its energy after all."
 
     hide pen with character_dissolve
 
+    voice "audio/voice/assassin_1309a.opus"
     phrarat "Tsk… I have no choice, then."
 
     "He sets his own tunic on fire, along with what remains of his scarf. A blazing whirl surrounds him."
 
     show phrarat shout
 
+    voice "audio/voice/assassin_bark_dragon_tornado_c.opus"
     phrarat "Dragon Tornado!!"
 
     show pichit battle grimace
@@ -203,13 +252,18 @@ label .fight2:
 
     show pichit battle anxious
 
+    voice "audio/voice/assassin_1310a.opus"
     phrarat "If I can’t make it out alive… at least I’ll bring you down with this whole place! With Vanich!"
 
     show pen neutral at companion_warp_to("middle")
 
+    voice "audio/voice/pen_1302b.opus"
     pen "Phrarat, wait… !"
+
+    voice "audio/voice/pen_1303c.opus"
     pen "Your body won’t stand it if you use all of the gem’s power at once!"
 
+    voice "audio/voice/assassin_vocalize_grunt_attack_long2b.opus"
     phrarat "Graaah!!"
 
     "The assassin ignores his companion and makes the whirlwind accelerate. It flows farther and higher."
@@ -224,6 +278,7 @@ label .fight2:
         parallel:
             easeout 0.3 ypos 0.6
 
+    voice "audio/voice/pen_vocalize_grunt_hurt_b.opus"
     pen "Aw!!"
 
     # Safety on skip: terminate previous animation
@@ -234,9 +289,13 @@ label .fight2:
 
     "I catch it mid-air to prevent it from crashing on the ground."
 
+    voice "audio/voice/pichit_1314a.opus"
     pichit "Hey! Are you alright?"
 
+    voice "audio/voice/pen_vocalize_silence_depressed_c.opus"
     pen "…"
+
+    voice "audio/voice/pen_1304a.opus"
     pen "It’s too late… I can’t stop him now."
 
     show pichit battle serious
@@ -275,6 +334,7 @@ label .sprinkler:
 
     "His spirit joins him."
 
+    voice "audio/voice/pen_1305c.opus"
     pen "Phrarat…"
 
     call start_cinematic from _call_start_cinematic_22
@@ -290,25 +350,40 @@ label .sprinkler:
 
     show phrarat determined
 
+    voice "audio/voice/assassin_1311c.opus"
     phrarat "Stopped by a fire protection system… How ironic."
 
     show pichit battle anxious
 
+    voice "audio/voice/pichit_1315a.opus"
     pichit "What do you mean?"
 
     show phrarat neutral
 
+    voice "audio/voice/assassin_1312.opus"
     phrarat "When Enon brought advanced industrial process to Moacu-Laedan, traditional cloth making started to become less and less profitable."
+
+    voice "audio/voice/assassin_1313.opus"
     phrarat "My father ended up closing the family business."
 
+    voice "audio/voice/assassin_1314.opus"
     phrarat "Then he joined one of Vanich’s factories in search for a more stable source of income."
 
     show phrarat determined
 
+    # Waiting for asset
+    # voice "audio/voice/assassin_1315.opus"
     phrarat "During one of his many night overtimes, a fire broke out."
+
+    # Waiting for asset
+    # voice "audio/voice/assassin_1316.opus"
     phrarat "The workers could have been saved with proper safety measures, but Vanich wouldn’t bother spending the money in a poorer district like ours."
+
+    # Waiting for asset
+    # voice "audio/voice/assassin_1317.opus"
     phrarat "My father burned alive because of their negligence."
 
+    voice "audio/voice/pichit_vocalize_silence_bad_news_b.opus"
     pichit "…"
 
     call start_cinematic from _call_start_cinematic_23
@@ -323,6 +398,7 @@ label .sprinkler:
 
     "The man is soon surrounded by a dozen security guards, armed with tonfas and muskets."
 
+    voice "audio/voice/guard_1301a.opus"
     guard "Drop your weapons!"
 
     show phrarat determined
@@ -353,6 +429,9 @@ label .sprinkler:
     "I hear a voice from above."
 
     # Voice acting: post-process: shout from far, echo
+
+    # Waiting for asset
+    # voice "audio/voice/assassin_1318.opus"
     phrarat "You really think the Vanich son is better than his father? That he’ll help you for the sake of Moacu-Laedan?"
 
     show pichit battle serious
@@ -361,6 +440,7 @@ label .sprinkler:
 
     "The man in burnt clothes is standing on the roof frame, now completely devoid of glass. He looks down at me one last time, before running away on the tangle of beams."
 
+    voice "audio/voice/guard_1302b.opus"
     guard "Go after him! Quick!"
 
     play sound audio.sfx.running2
@@ -392,6 +472,7 @@ label .aftermath:
 
     # TODO: reconstruct Pichit non-battle pose with grimace sprite from normal pose + battle grimace
 
+    voice "audio/voice/pichit_vocalize_grunt_stingy_a.opus"
     pichit "Ouch!"
 
     # TODO: describe cuts and injuries during the fight
@@ -403,10 +484,12 @@ label .aftermath:
     show charlet anxious at character_enter_from_left_to_easein("left", 0.5)
     pause 0.2
 
+    voice "audio/voice/charlet_1303a.opus"
     charlet "Pichit! Are you alright?"
 
     show pichit smile
 
+    voice "audio/voice/pichit_1316a.opus"
     pichit "Yeah… Thanks for helping me get through this."
 
     show charlet neutral
@@ -418,27 +501,38 @@ label .aftermath:
 
     show raegan smile
 
+    voice "audio/voice/raegan_1301a.opus"
     raegan "Thank you for protecting me."
 
+    voice "audio/voice/pichit_1317b.opus"
     pichit "Sure… You’re welcome."
 
+    voice "audio/voice/pichit_1318b.opus"
     pichit "{i}I hope it will be worth it…{/i}"
 
     # Raegan talks about the importance of reports and unintentionally reveals his role as lobbyist
 
     show raegan neutral
 
+    voice "audio/voice/raegan_1302a.opus"
     raegan "I’ve reported the attack to my company. They now feel uneasy about sending me on the expedition, but I assured them it will be fine, provided they assign us bodyguards."
 
     window hide
     pause 0.5
     window show
 
+    voice "audio/voice/raegan_1303a.opus"
     raegan "By the way, the militia has been asking me for more information on the attacker, but I couldn’t tell much."
+
+    voice "audio/voice/raegan_1304a.opus"
     raegan "You had the opportunity to observe him closely during your fight, so I think you’ll be able to help them more."
 
+    voice "audio/voice/raegan_1305a.opus"
     raegan "I know that Enon keeps a registry of all the Islanders who moved to the continent, as well as suspected ILF supporters."
-    raegan thinking "So, by crosschecking it with your description of the assassin, they may be able to identify him."
+
+    show raegan thinking
+    voice "audio/voice/raegan_1306a.opus"
+    raegan "So, by crosschecking it with your description of the assassin, they may be able to identify him."
 
     show pichit intrigued
 
@@ -448,37 +542,76 @@ label .aftermath:
     show pichit neutral
     show charlet at darker
 
+    voice "audio/voice/raegan_1307a.opus"
     raegan "Did you notice anything during your fight that could help the investigation?"
 
     while not (has_told_thats_all or has_told_nothing):
         if has_told_assassin_family_story or has_told_trivia:
             show pichit neutral
-            raegan neutral "Anything else?"
+
+            show raegan neutral
+            voice "audio/voice/raegan_1308a.opus"
+            raegan "Anything else?"
 
         menu:
             "I tell Raegan about the assassin’s name and father." if not has_told_assassin_family_story:
+                voice "audio/voice/pichit_1319a.opus"
                 pichit "I heard his spirit call him “Phrarat”. It could be his nickname, though."
                 "I explain why Phrarat’s family business closed and how his father died in one of Vanich’s factories."
-                raegan sad "I see… An unfortunate accident."
-                raegan thinking "This will however prove precious information in identifying the culprit."
+
+                show raegan sad
+                voice "audio/voice/raegan_1309a.opus"
+                raegan "I see… An unfortunate accident."
+
+                show raegan thinking
+                voice "audio/voice/raegan_1310a.opus"
+                raegan "This will however prove precious information in identifying the culprit."
+
                 $ has_told_assassin_family_story = True
             "I tell Raegan about his spirit." if not has_told_assassin_spirit_appearance:
+                voice "audio/voice/pichit_1320a.opus"
                 pichit "He was accompanied by a flying spirit. It looked like a silkmoth with a cat head, and its body was covered with green and yellow stripes."
-                raegan thinking "Interesting… Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
-                raegan neutral "Most of them just want to live peacefully in Enon, after all."
+
+                show raegan thinking
+                voice "audio/voice/raegan_1311a.opus"
+                raegan "Interesting… Most guards will be unable to see it, but some Islanders may accept to help us identify it in the crowd."
+
+                show raegan neutral
+                voice "audio/voice/raegan_1312a.opus"
+                raegan "Most of them just want to live peacefully in Enon, after all."
+
                 $ has_told_assassin_spirit_appearance = True
             "I tell Raegan some unusable trivia." if not has_told_trivia:
-                pichit smile "Ah, yes! He kept shouting the names of his attacks before using them!"
-                pichit intrigued "I’m not sure why he’d do that, though. I mean, doesn’t that make them easier to dodge?"
-                raegan surprised "I… see…"
+                show pichit smile
+                voice "audio/voice/pichit_1321a.opus"
+                pichit "Ah, yes! He kept shouting the names of his attacks before using them!"
+
+                show pichit intrigued
+                voice "audio/voice/pichit_1322b.opus"
+                pichit "I’m not sure why he’d do that, though. I mean, doesn’t that make them easier to dodge?"
+
+                show raegan surprised
+                voice "audio/voice/raegan_1313a.opus"
+                raegan "I… see…"
+
                 $ has_told_trivia = True
             "I tell Raegan I haven’t noticed anything else." if not has_told_thats_all and (has_told_assassin_family_story or has_told_trivia):
+                voice "audio/voice/pichit_1323b.opus"
                 pichit "No, that was all."
+
+                voice "audio/voice/raegan_1314a.opus"
                 raegan "I see. Thank you."
+
                 $ has_told_thats_all = True
             "I tell Raegan that I haven’t noticed anything particular." if not has_told_nothing and not (has_told_assassin_family_story or has_told_trivia):
-                pichit intrigued "Not really. I admit I was really focused on surviving all that time."
-                raegan neutral "Understandable."
+                show pichit intrigued
+                voice "audio/voice/pichit_1324a.opus"
+                pichit "Not really. I admit I was really focused on surviving all that time."
+
+                show raegan neutral
+                voice "audio/voice/raegan_1315a.opus"
+                raegan "Understandable."
+
                 $ has_told_nothing = True
 
     window hide
@@ -487,9 +620,14 @@ label .aftermath:
     pause 0.5
     window show
 
-    raegan neutral "Well, I need to go back to my headquarters now. You two should rest."
+    show raegan neutral
+    voice "audio/voice/raegan_1316a.opus"
+    raegan "Well, I need to go back to my headquarters now. You two should rest."
 
+    voice "audio/voice/pichit_1325b.opus"
     pichit "I don’t need to be asked twice!"
+
+    voice "audio/voice/charlet_1304a.opus"
     charlet "Same for me. We’ll meet again later."
 
     call start_cinematic from _call_start_cinematic_25
@@ -506,7 +644,10 @@ label .aftermath:
 
     stop music fadeout 5.0
 
+    voice "audio/voice/raegan_vocalize_silence_thinking_a.opus"
     raegan "…"
+
+    voice "audio/voice/raegan_1317a.opus"
     raegan "Looks like it won’t be that easy…"
 
     jump .prologue_ending
