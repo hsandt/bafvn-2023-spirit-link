@@ -169,7 +169,7 @@ label .fight2:
     "The fighter interrupts his move, grabbing his chest and coughing."
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence
-    voice "audio/voice/assassin_1304_g.opus"
+    voice "audio/voice/assassin_1304g.opus"
     phrarat "What did you… ?"
 
     voice "audio/voice/pichit_1308a.opus"
