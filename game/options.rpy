@@ -53,6 +53,23 @@ See {a=https://komehara.itch.io/spirit-link}game page{/a} and {a=https://itch.io
 
 {a=https://itch.io/profile/jojoworthington}JoJo Worthington{/a} - Sound design - {a=http://jojoworthington.com/}http://jojoworthington.com/{/a}
 
+= Voice actors =
+
+{a=https://x.com/chardevoire}RedVelvetVA{/a} - Charlet
+
+Kristoff Grey - Pichit
+
+Bryce Buckley - Raegan
+
+Hikaru - Assassin (Phrarat)
+
+Shane Tyler - Guard
+
+David Wamala - Makara
+
+Sun - Fan
+
+Ren_ - Pen
 
 {u}License{/u}
 
