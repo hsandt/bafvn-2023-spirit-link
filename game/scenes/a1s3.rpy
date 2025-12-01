@@ -164,8 +164,7 @@ label .fight2:
     voice "audio/voice/assassin_vocalize_grunt_poisoned_b.opus"
     phrarat "Ugh… !"
 
-    # Play cough as SFX, not voice, as it doesn't need to auto advance in sync
-    play sound "audio/voice/assassin_vocalize_grunt_poisoned_continued_f.opus"
+    voice "audio/voice/assassin_vocalize_grunt_poisoned_continued_f.opus"
     "The fighter interrupts his move, grabbing his chest and coughing."
 
     # Voice acting: talk while panting and pausing, doing efforts to finish sentence

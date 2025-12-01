@@ -692,7 +692,7 @@ label .fight_intro:
     show pichit battle serious
     show phrarat smile
 
-    play sound "audio/voice/assassin_vocalize_scoff.opus"
+    voice "audio/voice/assassin_vocalize_scoff.opus"
     "The assassin scoffs at me."
 
     voice "audio/voice/assassin_1203c.opus"
