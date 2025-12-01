@@ -724,7 +724,7 @@ label .fight1:
 
     call start_cinematic from _call_start_cinematic_11
 
-    play music battle
+    play music battle volume 0.7
     pause 1.7
 
     call .phrarat_whip_dodged_duck from _call_a1s2_phrarat_whip_dodged_duck
