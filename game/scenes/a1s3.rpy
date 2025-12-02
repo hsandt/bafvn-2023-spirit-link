@@ -23,9 +23,8 @@ label a1s3:
     $ should_show_side_image = True
     # technically we should show telepathy shared but we don’t have such a variant,
     # so let’s just show scared without blue effect
-    show charlet scared
     voice "audio/voice/charlet_1301a.opus"
-    charlet "Pichit! Are you alright?"
+    charlet scared "Pichit! Are you alright?"
 
     show pichit battle serious
 
@@ -44,9 +43,8 @@ label a1s3:
     voice "audio/voice/pichit_1304b.opus"
     pichit "{i}What should I do now?{/i}"
 
-    show charlet telepathy
     voice "audio/voice/charlet_1302a.opus"
-    charlet "Just keep fighting until he uses too much fire and triggers the sprinkler system."
+    charlet telepathy "Just keep fighting until he uses too much fire and triggers the sprinkler system."
 
     # Cut for now to get started with Raise your Voice jam 2025
     # charlet "I will help you as much as I can with my remote vision. Just tell me what you need to know."

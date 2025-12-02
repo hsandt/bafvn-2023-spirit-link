@@ -970,9 +970,8 @@ label .fight1:
     pichit "{i}How should I approach him? If only I knew the source of his power…{/i}"
 
     $ should_show_side_image = True
-    show charlet telepathy
     voice "audio/voice/charlet_1236a.opus"
-    charlet "Pichit! Can you hear me?"
+    charlet telepathy "Pichit! Can you hear me?"
 
     show pichit battle anxious
 
@@ -980,9 +979,8 @@ label .fight1:
 
     show pichit battle serious
 
-    show charlet telepathy
     voice "audio/voice/charlet_1237a.opus"
-    charlet "I see it! His spirit is on his left shoulder!"
+    charlet telepathy "I see it! His spirit is on his left shoulder!"
 
     # FX: special shader or blue layer to show the spirit as a faint shimmer, then reveal it fully thanks to Charlet’s vision power
 
@@ -1034,16 +1032,14 @@ label .fight1:
 
     $ should_show_side_image = True
 
-    show charlet telepathy
     voice "audio/voice/charlet_1238a.opus"
-    charlet "Try to lure him to the greenhouse! It has fire sprinklers!"
+    charlet telepathy "Try to lure him to the greenhouse! It has fire sprinklers!"
 
     voice "audio/voice/pichit_1227b.opus"
     pichit "{i}I see… It won’t be that easy to lead such an aggressive guy, though.{/i}"
 
-    show charlet telepathy
     voice "audio/voice/charlet_1239a.opus"
-    charlet "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
+    charlet telepathy "I’m sorry… I wish I could help you with my spirit, but my mastery of water isn’t that good…"
 
     show pichit battle serious
     voice "audio/voice/pichit_1228a.opus"
