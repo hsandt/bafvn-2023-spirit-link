@@ -121,7 +121,7 @@ label .fight2:
 
     # Trick to balance BGM volume to hear voices better without touching the BGM asset
     # Same as a1s2.fight1
-    play music battle volume 0.7
+    play music battle volume 0.5
     # perfect timing for blades to cross on a beat
     pause 0.94
 
