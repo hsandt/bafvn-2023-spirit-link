@@ -477,7 +477,7 @@ label .aftermath:
 
     "My wound stings as she rubs a swab on it. Multiple cuts and small burns cover my body and my clothes. My muscles still ache from the past fight."
 
-    "Even then, I haven’t suffered any major damage. I thank Fan for his support."
+    "Even then, I haven’t suffered any major damage. I thank Fan for its support."
 
     show charlet anxious at character_enter_from_left_to_easein("left", 0.5)
     pause 0.2
