@@ -335,6 +335,16 @@ screen say(who, what):
 
         text what id "what"
 
+        # Voice replay button
+        if voice_can_replay():
+            imagebutton:
+                auto "gui/button/icon_replay_voice_%s.webp"
+                xpos gui.dialogue_xpos
+                ypos gui.dialogue_ypos - 45
+                xanchor 0.0
+                yanchor 1.0
+                action VoiceReplay()
+
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
