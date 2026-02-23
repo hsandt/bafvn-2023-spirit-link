@@ -88,6 +88,8 @@ transform loop_random_rotation:
 image fx_speed_lines_forward = "images/fx/speed_lines_forward_1080p.webp"
 
 image fx_fire_forward = "images/fx/fx_fire_forward.webp"
+image fx_fan_summon_base_small = "images/fx/fx_fan_summon_base_small.webp"
+image fx_fan_summon_halo_small = "images/fx/fx_fan_summon_halo_small.webp"
 
 ## Characters
 

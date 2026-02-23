@@ -845,6 +845,18 @@ label .fight1:
     voice "audio/voice/pichit_1214b.opus"
     pichit "Fan, now!"
 
+    show fx_fan_summon_base_small zorder 0 with ImageDissolve("image-gradients/default_topdown.webp", 2.0):
+        xpos 259
+        ypos 759
+        xanchor 0.5
+        yanchor 1.0
+
+    show fx_fan_summon_halo_small zorder 0.5 with ImageDissolve("image-gradients/default_topdown.webp", 2.0):
+        xpos 259
+        ypos 759
+        xanchor 0.5
+        yanchor 1.0
+
     play sound audio.sfx.summon
     show fan neutral at companion_warp_to("far_left", _ypos_offset=0.25), flip
     pause 0.5
