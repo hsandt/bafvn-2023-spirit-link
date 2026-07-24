@@ -229,14 +229,14 @@ init python:
         v_uv_rel = a_position.xy / u_model_size - 0.5;
     """, fragment_300="""
         vec2 v_edge_projected;
-        float v_squared_ratio_to_edge;
+        float f_squared_ratio_to_edge;
         vec2 v_transformed_uv;
         v_edge_projected = 0.5 * vec2(
             clamp(v_uv_rel.x / abs(v_uv_rel.y), -1.0, 1.0),
             clamp(v_uv_rel.y / abs(v_uv_rel.x), -1.0, 1.0)
         );
-        v_squared_ratio_to_edge = dot(v_uv_rel, v_uv_rel) / dot(v_edge_projected, v_edge_projected);
-        v_transformed_uv = 0.5 + pow(v_squared_ratio_to_edge, 0.5 * (1.0 / u_zoom_out_power - 1.0)) * v_uv_rel;
+        f_squared_ratio_to_edge = dot(v_uv_rel, v_uv_rel) / dot(v_edge_projected, v_edge_projected);
+        v_transformed_uv = 0.5 + pow(f_squared_ratio_to_edge, 0.5 * (1.0 / u_zoom_out_power - 1.0)) * v_uv_rel;
 
         gl_FragColor = texture2D(tex0, v_transformed_uv);
     """)
