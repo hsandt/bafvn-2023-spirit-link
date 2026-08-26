@@ -313,9 +313,8 @@ label .assassin_appears:
     show phrarat determined
 
     $ should_show_side_image = True
-    show charlet scared
     voice "audio/voice/charlet_1211a.opus"
-    charlet "{i}He speaks Laedani… A separatist vigilante?!{/i}"
+    charlet scared "{i}He speaks Laedani… A separatist vigilante?!{/i}"
     $ should_show_side_image = False
 
     # TODO impact SFX and hit FX
